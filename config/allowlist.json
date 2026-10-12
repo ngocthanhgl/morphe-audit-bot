@@ -2,10 +2,21 @@
   "domains": ["googleapis.com", "youtube.com", "google.com", "gstatic.com", "morphe.software", "githubusercontent.com", "github.com", "sponsorblock", "dearrow", "returnyoutubedislike", "last.fm", "listenbrainz.org", "musicbrainz.org"],
   "premiumOnly": ["returnEarly", "isPremium", "hideAds", "disableTelemetry", "unlockPro", "bypassPaywall"],
   "dangerousPermissions": ["READ_SMS", "READ_CONTACTS", "ACCESS_FINE_LOCATION", "RECORD_AUDIO", "CAMERA", "READ_PHONE_STATE", "REQUEST_INSTALL_PACKAGES", "BIND_ACCESSIBILITY_SERVICE"],
-  "sources": ["getDeviceId", "getAccounts", "Location", "Contacts", "Clipboard", "getLine1Number", "READ_SMS"],
+  "sources": ["getDeviceId", "getAccounts", "Location", "Contacts", "Clipboard", "getLine1Number", "READ_SMS", "CallLog", "getPrimaryClip", "ClipboardManager", "subscriberId", "getSerial", "getCookie", "CookieManager", "SmsMessage", "getInstalledApplications"],
   "sinks": ["HttpURLConnection", "OkHttp", "Socket", "WebView", "Intent", "loadUrl", "openConnection"],
   "secretPatterns": ["AKIA[0-9A-Z]{16}", "ghp_[A-Za-z0-9]{30,}", "xoxb-[0-9A-Za-z-]+", "private_key", "BEGIN RSA PRIVATE KEY"],
   "pinning": ["OverrideCertificatePinning", "TrustAllCerts", "X509TrustManager", "setHostnameVerifier"],
   "proxyNet": ["setProxy", "ProxySelector", "forwardedFor", "ngrok", "pastebin", "discord.com/api/webhooks", "api.telegram.org"],
-  "riskyInfra": ["ngrok", "ngrok-free.app", "duckdns.org", "nip.io", "sslip.io", "workers.dev", "pages.dev", "vercel.app", "glitch.me", "repl.co", "herokuapp.com", ".onion", "bit.ly", "t.co", "tinyurl.com", "is.gd", "pastebin.com", "paste.rs", "ix.io", "0x0.st", "discord.com/api/webhooks", "api.telegram.org", "t.me/"]
+  "riskyInfra": ["ngrok", "ngrok-free.app", "duckdns.org", "nip.io", "sslip.io", "workers.dev", "pages.dev", "vercel.app", "glitch.me", "repl.co", "herokuapp.com", ".onion", "bit.ly", "t.co", "tinyurl.com", "is.gd", "pastebin.com", "paste.rs", "ix.io", "0x0.st", "discord.com/api/webhooks", "api.telegram.org", "t.me/", "docs.google.com/forms", "firebaseio.com", "api.allorigins.win", "corsproxy.io", "webhook.site", "requestbin", "pipedream.net", "transfer.sh", "file.io", "gofile.io", "sheets.googleapis.com"],
+  "smsPatterns": ["SmsMessage", "SMS_RECEIVED", "Telephony.Sms", "SmsReceiver"],
+  "spyServices": ["NotificationListenerService", "AccessibilityService", "onNotificationPosted", "onAccessibilityEvent"],
+  "keylog": ["TYPE_VIEW_TEXT_CHANGED", "TextWatcher", "onKeyEvent"],
+  "stagedExec": ["DexClassLoader", "PathClassLoader", "InMemoryDexClassLoader", "defineClass"],
+  "webBridge": ["addJavascriptInterface", "evaluateJavascript"],
+  "dnsApi": ["getByName", "getAllByName", "DnsResolver"],
+  "dnsEnc": ["Base64", "Base32", "encodeToString", "toHexString"],
+  "rootExec": ["exec(\"su", "su -c", "/xbin/su", "/bin/su"],
+  "handoff": ["setPackage(", "createPackageContext"],
+  "mediaSpy": ["MediaProjection", "createScreenCaptureIntent", "MediaRecorder", "AudioRecord", "CameraDevice"],
+  "reflection": ["getDeclaredMethod", "Method.invoke", "setAccessible", "getDeclaredField"]
 }

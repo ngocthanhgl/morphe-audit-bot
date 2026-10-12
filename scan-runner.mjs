@@ -39,18 +39,33 @@ for (const t of targets) {
     if (!existsSync(reportDir)) mkdirSync(reportDir, { recursive: true });
     writeFileSync(reportDir + "/" + t.name + ".md", renderRepoReport(t.repo, head, findings, today) + "\n_" + note + "_\n");
     state[t.name] = head;
+    const crit = findings.filter((f) => f.severity === "critical").length;
     const high = findings.filter((f) => f.severity === "high").length;
     const med = findings.filter((f) => f.severity === "medium").length;
-    rows.push({ name: t.name, repo: t.repo, sha: head.slice(0, 7), status: high > 0 ? "RED" : med > 0 ? "WARN" : "OK", high, med });
+    rows.push({ name: t.name, repo: t.repo, sha: head.slice(0, 7), status: crit > 0 ? "CRIT" : high > 0 ? "RED" : med > 0 ? "WARN" : "OK", crit, high, med, crits: findings.filter((f) => f.severity === "critical") });
   } catch (e) {
-    rows.push({ name: t.name, repo: t.repo, sha: "error", status: "ERROR", high: 0, med: 0 });
+    rows.push({ name: t.name, repo: t.repo, sha: "error", status: "ERROR", crit: 0, high: 0, med: 0, crits: [] });
   }
 }
 writeFileSync("state.json", JSON.stringify(state, null, 2) + "\n");
 writeFileSync("signals.json", JSON.stringify(signals, null, 2) + "\n");
-let readme = "# Morphe patches audit\n\nScans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v2): base64/hex/split-string deobfuscation, non-decimal IP forms, risky-infra hosts, native-binary flagging, cross-window memory via signals.json (45d).\n\n| target | scan | commit | status | high | med | report |\n|---|---|---|---|---|---|---|\n";
+const totalCrit = rows.reduce((n, r) => n + (r.crit || 0), 0);
+writeFileSync("crit-alert.txt", String(totalCrit) + "\n");
+let readme = "# Morphe patches audit\n\nScans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d).\n\n## :warning: Critical findings\n\n";
+if (totalCrit === 0) {
+  readme += "No critical findings in this window.\n\n";
+} else {
+  readme += "| :warning: | target | file | reason | report |\n|---|---|---|---|---|\n";
+  for (const r of rows) {
+    for (const c of r.crits || []) {
+      readme += "| :warning: | " + r.name + " | " + c.file + " | " + c.reason + " | reports/" + today + "/" + r.name + ".md |\n";
+    }
+  }
+  readme += "\n";
+}
+readme += "| target | scan | commit | status | crit | high | med | report |\n|---|---|---|---|---|---|---|---|\n";
 for (const r of rows) {
-  readme += "| " + r.name + " | " + today + " | " + r.sha + " | " + r.status + " | " + r.high + " | " + r.med + " | reports/" + today + "/" + r.name + ".md |\n";
+  readme += "| " + r.name + " | " + today + " | " + r.sha + " | " + r.status + " | " + (r.crit || 0) + " | " + r.high + " | " + r.med + " | reports/" + today + "/" + r.name + ".md |\n";
 }
 readme += "\n## Secrets policy\n\nNever paste tokens into chat or code. The workflow needs no token for public repos; if GitHub rate-limits, add an Actions secret named `SCAN_TOKEN` and use it via `secrets.SCAN_TOKEN` only.\n";
 writeFileSync("README.md", readme);

