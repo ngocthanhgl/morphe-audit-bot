@@ -1,0 +1,27 @@
+name: morphe-audit
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run rule tests
+        run: node --test tests/scanner.test.mjs
+      - name: Scan targets (diff-only since last state)
+        run: |
+          node scan-runner.mjs
+      - name: Commit reports without retriggering
+        run: |
+          git config user.name "morphe-audit-bot"
+          git config user.email "morphe-audit-bot@users.noreply.github.com"
+          git add README.md reports state.json
+          git diff --cached --quiet && echo "no changes" || git commit -m "audit: $(date -u +%F) scan [skip ci]"
+          git push

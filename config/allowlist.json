@@ -1,0 +1,10 @@
+{
+  "domains": ["googleapis.com", "youtube.com", "google.com", "gstatic.com", "morphe.software", "githubusercontent.com", "github.com", "sponsorblock", "dearrow", "returnyoutubedislike", "last.fm", "listenbrainz.org", "musicbrainz.org"],
+  "premiumOnly": ["returnEarly", "isPremium", "hideAds", "disableTelemetry", "unlockPro", "bypassPaywall"],
+  "dangerousPermissions": ["READ_SMS", "READ_CONTACTS", "ACCESS_FINE_LOCATION", "RECORD_AUDIO", "CAMERA", "READ_PHONE_STATE", "REQUEST_INSTALL_PACKAGES", "BIND_ACCESSIBILITY_SERVICE"],
+  "sources": ["getDeviceId", "getAccounts", "Location", "Contacts", "Clipboard", "getLine1Number", "READ_SMS"],
+  "sinks": ["HttpURLConnection", "OkHttp", "Socket", "WebView", "Intent", "loadUrl", "openConnection"],
+  "secretPatterns": ["AKIA[0-9A-Z]{16}", "ghp_[A-Za-z0-9]{30,}", "xoxb-[0-9A-Za-z-]+", "private_key", "BEGIN RSA PRIVATE KEY"],
+  "pinning": ["OverrideCertificatePinning", "TrustAllCerts", "X509TrustManager", "setHostnameVerifier"],
+  "proxyNet": ["setProxy", "ProxySelector", "forwardedFor", "ngrok", "pastebin", "discord.com/api/webhooks", "api.telegram.org"]
+}

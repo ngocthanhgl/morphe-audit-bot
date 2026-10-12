@@ -1,0 +1,14 @@
+[
+  { "name": "morphe-patches", "repo": "MorpheApp/morphe-patches" },
+  { "name": "bearinmind", "repo": "bearinmindcat/morphe-patches" },
+  { "name": "d0nj", "repo": "d0nj/morphe-patches" },
+  { "name": "piko", "repo": "crimera/piko" },
+  { "name": "piko-ig-lite", "repo": "crimera/piko-ig-lite" },
+  { "name": "piko-newx", "repo": "crimera/piko-newx" },
+  { "name": "gboard", "repo": "jasonwu1994/Gboard-patches" },
+  { "name": "hush-messenger", "repo": "SysAdminDoc/HushMessenger" },
+  { "name": "hush-facebook", "repo": "SysAdminDoc/HushFacebook" },
+  { "name": "zeldris", "repo": "zeldrisho/morphe-patches" },
+  { "name": "adobo", "repo": "jkennethcarino/adobo" },
+  { "name": "doom", "repo": "rushiranpise/morphe-patches" }
+]

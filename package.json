@@ -1,0 +1,7 @@
+{
+  "name": "morphe-audit-bot",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "test": "node --test tests/scanner.test.mjs", "scan": "node scanner.mjs" },
+  "engines": { "node": ">=22" }
+}
