@@ -14,18 +14,114 @@ function hasAny(text, list) {
   return list.filter((k) => text.includes(k));
 }
 
+function hexToDotted(h) {
+  const n = parseInt(h, 16);
+  return [(n >>> 24) & 255, (n >>> 16) & 255, (n >>> 8) & 255, n & 255].join(".");
+}
+
 function findNewHosts(text, allowDomains) {
+  const src = String(text).replace(/%2e/gi, ".");
   const out = new Set();
   const re = /https?:\/\/([A-Za-z0-9.-]+)/g;
   let m;
-  while ((m = re.exec(text)) !== null) {
+  while ((m = re.exec(src)) !== null) {
     const host = m[1].toLowerCase();
     if (!allowDomains.some((d) => host === d || host.endsWith("." + d))) out.add(m[0]);
   }
-  const ipRe = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g;
-  let ip;
-  while ((ip = ipRe.exec(text)) !== null) out.add("http://" + ip[0]);
+  const patterns = [
+    /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g,
+    /\b(?:0[xX][0-9a-fA-F]{1,2}\.){3}0[xX][0-9a-fA-F]{1,2}\b/g,
+    /\b0[0-7]{2,3}(?:\.0[0-7]{2,3}){3}\b/g,
+  ];
+  for (const r of patterns) {
+    let hit;
+    while ((hit = r.exec(src)) !== null) out.add("http://" + hit[0]);
+  }
+  const hexFull = /\b0[xX]([0-9a-fA-F]{8})\b/g;
+  while ((m = hexFull.exec(src)) !== null) out.add("http://" + hexToDotted(m[1]));
   return [...out];
+}
+
+function hostOf(url) {
+  const m = /^https?:\/\/([^/:]+)/i.exec(url);
+  return m ? m[1].toLowerCase() : "";
+}
+
+function isRiskyUrl(url, riskyInfra) {
+  const u = url.toLowerCase();
+  const host = hostOf(url);
+  return riskyInfra.some((r) => {
+    const e = r.toLowerCase();
+    if (e.includes("/")) return u.includes(e);
+    return host === e || host.endsWith("." + e);
+  });
+}
+
+function normalizeText(text) {
+  let t = String(text).replace(/%2e/gi, ".");
+  for (let i = 0; i < 5; i++) {
+    const next = t.replace(/"([^"\n]*)"\s*\+\s*"([^"\n]*)"/g, '"$1$2"');
+    if (next === t) break;
+    t = next;
+  }
+  const defs = {};
+  const defRe = /\bval\s+([A-Za-z_][A-Za-z0-9_]*)\s*=\s*"([^"\n]{4,})"/g;
+  let m;
+  while ((m = defRe.exec(t)) !== null) {
+    if (/(:\/\/|\.[a-z]{2,}|\\x[0-9a-fA-F]{2})/.test(m[2])) defs[m[1]] = m[2];
+  }
+  for (const [k, v] of Object.entries(defs)) {
+    t = t.replace(new RegExp("\\b" + k + "\\b", "g"), '"' + v + '"');
+  }
+  return t;
+}
+
+function decodeBlobs(text) {
+  const chunks = [];
+  const b64re = /[A-Za-z0-9+/]{40,}={0,2}/g;
+  let m;
+  while ((m = b64re.exec(text)) !== null) {
+    try {
+      const dec = Buffer.from(m[0], "base64").toString("utf8");
+      if (/^[\x20-\x7e\t\r\n]{8,}$/.test(dec) && /[.:/]/.test(dec)) chunks.push(dec);
+    } catch { /* not decodable, ignore */ }
+  }
+  const hexre = /(\\x[0-9a-fA-F]{2}){8,}/g;
+  while ((m = hexre.exec(text)) !== null) {
+    const dec = m[0].split("\\x").slice(1).map((h) => String.fromCharCode(parseInt(h, 16))).join("");
+    if (/^[\x20-\x7e\t\r\n]{8,}$/.test(dec)) chunks.push(dec);
+  }
+  return chunks.join("\n");
+}
+
+export function analyzeAdded(added, cfg) {
+  const normalized = normalizeText(added);
+  const decoded = decodeBlobs(normalized);
+  const enriched = normalized + "\n" + decoded;
+  const plainHosts = findNewHosts(added, cfg.domains);
+  const enrichedHosts = findNewHosts(enriched, cfg.domains);
+  const obHosts = enrichedHosts.filter((h) => !plainHosts.includes(h));
+  const testSecrets = (t) => cfg.secretPatterns.filter((p) => new RegExp(p).test(t));
+  const plainSecrets = testSecrets(added);
+  const obSecrets = testSecrets(enriched).filter((s) => !plainSecrets.includes(s));
+  const riskyHosts = enrichedHosts.filter((h) => isRiskyUrl(h, cfg.riskyInfra || []));
+  const intIp = /\b\d{9,10}\b/.test(normalized)
+    ? (normalized.match(/\b\d{9,10}\b/g) || []).filter((n) => Number(n) <= 4294967295)
+    : [];
+  return {
+    hosts: plainHosts.filter((h) => !riskyHosts.includes(h)),
+    riskyHosts,
+    obHosts,
+    obSecrets,
+    intIp,
+    perms: hasAny(normalized, cfg.dangerousPermissions),
+    src: hasAny(normalized, cfg.sources),
+    sink: hasAny(normalized, cfg.sinks),
+    secrets: plainSecrets,
+    pin: hasAny(normalized, cfg.pinning),
+    prx: hasAny(normalized, cfg.proxyNet),
+    prem: hasAny(normalized, cfg.premiumOnly),
+  };
 }
 
 export function parseDiff(diffText) {
@@ -36,54 +132,155 @@ export function parseDiff(diffText) {
       const m = / b\/(.+)$/.exec(line);
       cur = { file: m ? m[1] : "unknown", added: "" };
       files.push(cur);
+    } else if (/^Binary files \S+ and b\/(.+) differ$/.test(line)) {
+      const m = /^Binary files \S+ and b\/(.+) differ$/.exec(line);
+      files.push({ file: m ? m[1] : "unknown", added: "", binary: true });
+      cur = null;
     } else if (cur && line.startsWith("+") && !line.startsWith("+++")) {
       cur.added += line.slice(1) + "\n";
     }
   }
-  return files.filter((f) => f.added.trim().length > 0);
+  return files.filter((f) => f.binary || f.added.trim().length > 0);
 }
 
 export function findingsForFile(file, added, cfg) {
   const findings = [];
   const excerpt = added.split("\n").slice(0, 15).join("\n");
-  const prem = hasAny(added, cfg.premiumOnly);
-  const suspiciousHosts = findNewHosts(added, cfg.domains);
-  const perms = hasAny(added, cfg.dangerousPermissions);
-  const src = hasAny(added, cfg.sources);
-  const sink = hasAny(added, cfg.sinks);
-  const secrets = cfg.secretPatterns.filter((p) => new RegExp(p).test(added));
-  const pin = hasAny(added, cfg.pinning);
-  const prx = hasAny(added, cfg.proxyNet);
-  const isPremiumOnly = prem.length > 0 && suspiciousHosts.length === 0 && perms.length === 0 && src.length === 0 && secrets.length === 0;
+  const a = analyzeAdded(added, cfg);
+  const hasPlaceholderKey = added.includes("REPLACE_WITH_");
+  const isPremiumOnly = a.prem.length > 0 && a.hosts.length === 0 && a.riskyHosts.length === 0 &&
+    a.obHosts.length === 0 && a.perms.length === 0 && a.src.length === 0 &&
+    a.secrets.length === 0 && a.obSecrets.length === 0 && a.intIp.length === 0;
   if (isPremiumOnly) return findings;
-  if (secrets.length > 0) {
-    findings.push({ severity: "high", file, reason: "embedded secret pattern: " + secrets.join(", "), excerpt });
+  if (a.secrets.length > 0) {
+    findings.push({ severity: "high", file, reason: "embedded secret pattern: " + a.secrets.join(", "), excerpt });
   }
-  if (src.length > 0 && sink.length > 0) {
+  if (a.obSecrets.length > 0 || a.obHosts.length > 0) {
+    const what = [...a.obHosts, ...a.obSecrets.map((s) => "secret:" + s)].join(", ");
+    findings.push({ severity: "high", file, reason: "obfuscated network indicator (base64/hex/split string): " + what, excerpt });
+  }
+  if (a.src.length > 0 && a.sink.length > 0) {
     findings.push({ severity: "high", file, reason: "sensitive source reaches network sink", excerpt });
   }
-  if (pin.length > 0 && (prx.length > 0 || suspiciousHosts.length > 0)) {
+  if (a.pin.length > 0 && (a.prx.length > 0 || a.hosts.length > 0 || a.riskyHosts.length > 0 || a.obHosts.length > 0)) {
     findings.push({ severity: "high", file, reason: "cert-pinning bypass combined with proxy or unknown host", excerpt });
   }
-  if (perms.length > 0 && file.includes("AndroidManifest")) {
-    findings.push({ severity: "high", file, reason: "dangerous permission added by patch: " + perms.join(","), excerpt });
-  } else if (perms.length > 0 && sink.length > 0) {
+  if (a.perms.length > 0 && file.includes("AndroidManifest")) {
+    findings.push({ severity: "high", file, reason: "dangerous permission added by patch: " + a.perms.join(","), excerpt });
+  } else if (a.perms.length > 0 && a.sink.length > 0) {
     findings.push({ severity: "medium", file, reason: "dangerous permission plus network sink in same file", excerpt });
   }
-  const hasPlaceholderKey = added.includes("REPLACE_WITH_");
-  if (suspiciousHosts.length > 0 && findings.length === 0 && !hasPlaceholderKey) {
+  if (a.intIp.length > 0 && (a.sink.length > 0 || a.prx.length > 0) && findings.length === 0) {
+    findings.push({ severity: "medium", file, reason: "decimal-encoded IP literal with network context: " + a.intIp.join(", "), excerpt });
+  }
+  if (a.riskyHosts.length > 0) {
+    if (findings.length > 0) {
+      findings.push({ severity: "high", file, reason: "risky-infra host combined with other signals: " + a.riskyHosts.join(", "), excerpt });
+    } else {
+      findings.push({ severity: "medium", file, reason: "anonymizer/risky-infra URL: " + a.riskyHosts.join(", "), excerpt });
+    }
+  } else if (a.hosts.length > 0 && findings.length === 0 && !hasPlaceholderKey) {
     findings.push({ severity: "medium", file, reason: "new non-allowlisted URL or IP", excerpt });
   }
   return findings;
 }
 
+const NATIVE_BIN = [".so", ".dex", ".apk", ".jar", ".aar", ".node", ".o", ".a"];
+
 export function scanDiff(diffText, cfg) {
   const out = [];
-  for (const { file, added } of parseDiff(diffText)) {
-    if (!isScannableFile(file)) continue;
-    for (const f of findingsForFile(file, added, cfg)) out.push(f);
+  for (const entry of parseDiff(diffText)) {
+    if (entry.binary) {
+      const native = NATIVE_BIN.some((e) => entry.file.toLowerCase().endsWith(e));
+      out.push({
+        severity: native ? "medium" : "info",
+        file: entry.file,
+        reason: native
+          ? "native binary added/changed — cannot review textually"
+          : "binary asset added/changed — cannot review textually",
+        excerpt: "(binary diff)",
+      });
+      continue;
+    }
+    if (!isScannableFile(entry.file)) continue;
+    for (const f of findingsForFile(entry.file, entry.added, cfg)) out.push(f);
   }
   return out;
+}
+
+export function extractSignals(diffText, cfg) {
+  const sig = { hosts: [], sources: [], sinks: [], perms: [], pinning: [] };
+  for (const entry of parseDiff(diffText)) {
+    if (entry.binary || !isScannableFile(entry.file)) continue;
+    const a = analyzeAdded(entry.added, cfg);
+    for (const h of [...a.hosts, ...a.riskyHosts, ...a.obHosts]) {
+      if (!sig.hosts.includes(h)) sig.hosts.push(h);
+    }
+    for (const s of a.src) if (!sig.sources.includes(s)) sig.sources.push(s);
+    for (const s of a.sink) if (!sig.sinks.includes(s)) sig.sinks.push(s);
+    for (const p of a.perms) if (!sig.perms.includes(p)) sig.perms.push(p);
+    for (const p of a.pin) if (!sig.pinning.includes(p)) sig.pinning.push(p);
+  }
+  return sig;
+}
+
+function mergeEntries(prev, curValues, today) {
+  const seen = new Set(prev.map((e) => e.v));
+  const merged = [...prev];
+  for (const v of curValues) {
+    if (!seen.has(v)) {
+      seen.add(v);
+      merged.push({ v, d: today });
+    }
+  }
+  const cutoff = new Date(today).getTime() - 45 * 864e5;
+  return merged.filter((e) => new Date(e.d).getTime() >= cutoff).slice(-50);
+}
+
+export function updateSignalsAndCrossCheck(name, diffText, cfg, store, today) {
+  const all = store && store.repos ? store.repos : {};
+  const blank = { hosts: [], sources: [], sinks: [], perms: [], pinning: [], updated: today };
+  const prev = all[name] || blank;
+  const cur = extractSignals(diffText, cfg);
+  const findings = [];
+  const prevTerms = [...prev.sources.map((s) => s.v), ...prev.sinks.map((s) => s.v)];
+  if (cur.hosts.length > 0 && prevTerms.length > 0) {
+    findings.push({
+      severity: "high", file: "cross-window",
+      reason: "exfil completed across windows: new host " + cur.hosts.join(", ") + " with previously seen " + prevTerms.join(", ") + " (" + prev.updated + ")",
+      excerpt: "(see report of " + prev.updated + " for the earlier half)",
+    });
+  }
+  if ((cur.sources.length > 0 || cur.sinks.length > 0) && prev.hosts.length > 0) {
+    findings.push({
+      severity: "high", file: "cross-window",
+      reason: "exfil completed across windows: previously seen host " + prev.hosts.map((h) => h.v).join(", ") + " (" + prev.updated + ") with new " + [...cur.sources, ...cur.sinks].join(", "),
+      excerpt: "(see report of " + prev.updated + " for the earlier half)",
+    });
+  }
+  if ((cur.pinning.length > 0 && prev.hosts.length > 0) || (prev.pinning.length > 0 && cur.hosts.length > 0)) {
+    findings.push({
+      severity: "high", file: "cross-window",
+      reason: "pinning bypass plus unknown host split across windows (earlier half in " + prev.updated + ")",
+      excerpt: "(see report of " + prev.updated + " for the earlier half)",
+    });
+  }
+  if ((cur.perms.length > 0 && prev.sinks.length > 0) || (prev.perms.length > 0 && cur.sinks.length > 0)) {
+    findings.push({
+      severity: "medium", file: "cross-window",
+      reason: "dangerous permission plus network sink split across windows (earlier half in " + prev.updated + ")",
+      excerpt: "(see report of " + prev.updated + " for the earlier half)",
+    });
+  }
+  const merged = {
+    hosts: mergeEntries(prev.hosts || [], cur.hosts, today),
+    sources: mergeEntries(prev.sources || [], cur.sources, today),
+    sinks: mergeEntries(prev.sinks || [], cur.sinks, today),
+    perms: mergeEntries(prev.perms || [], cur.perms, today),
+    pinning: mergeEntries(prev.pinning || [], cur.pinning, today),
+    updated: today,
+  };
+  return { findings, store: { repos: { ...all, [name]: merged } } };
 }
 
 export function renderRepoReport(repo, sha, findings, date) {

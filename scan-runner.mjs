@@ -1,11 +1,12 @@
 import { execSync } from "node:child_process";
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
-import { loadConfig, scanDiff, renderRepoReport } from "./scanner.mjs";
+import { loadConfig, scanDiff, renderRepoReport, updateSignalsAndCrossCheck } from "./scanner.mjs";
 
 const today = new Date().toISOString().slice(0, 10);
 const targets = JSON.parse(readFileSync("targets.json", "utf8"));
 const cfg = loadConfig("config/allowlist.json");
 const state = existsSync("state.json") ? JSON.parse(readFileSync("state.json", "utf8") || "{}") : {};
+let signals = existsSync("signals.json") ? JSON.parse(readFileSync("signals.json", "utf8") || "{}") : {};
 if (!existsSync("work")) mkdirSync("work");
 
 const rows = [];
@@ -26,7 +27,13 @@ for (const t of targets) {
         diff = execSync("git -C " + dir + " diff " + old + ".." + head + " --", { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
       } catch { diff = ""; }
     }
-    let findings = diff ? scanDiff(diff, cfg) : [];
+    let findings = [];
+    if (diff) {
+      findings = scanDiff(diff, cfg);
+      const cross = updateSignalsAndCrossCheck(t.name, diff, cfg, signals, today);
+      signals = cross.store;
+      findings = findings.concat(cross.findings);
+    }
     let note = old ? "" : " (baseline: first scan, diff unavailable — run again after next window for diff-only results)";
     const reportDir = "reports/" + today;
     if (!existsSync(reportDir)) mkdirSync(reportDir, { recursive: true });
@@ -40,7 +47,8 @@ for (const t of targets) {
   }
 }
 writeFileSync("state.json", JSON.stringify(state, null, 2) + "\n");
-let readme = "# Morphe patches audit\n\nScans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design.\n\n| target | scan | commit | status | high | med | report |\n|---|---|---|---|---|---|---|\n";
+writeFileSync("signals.json", JSON.stringify(signals, null, 2) + "\n");
+let readme = "# Morphe patches audit\n\nScans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v2): base64/hex/split-string deobfuscation, non-decimal IP forms, risky-infra hosts, native-binary flagging, cross-window memory via signals.json (45d).\n\n| target | scan | commit | status | high | med | report |\n|---|---|---|---|---|---|---|\n";
 for (const r of rows) {
   readme += "| " + r.name + " | " + today + " | " + r.sha + " | " + r.status + " | " + r.high + " | " + r.med + " | reports/" + today + "/" + r.name + ".md |\n";
 }

@@ -6,5 +6,6 @@
   "sinks": ["HttpURLConnection", "OkHttp", "Socket", "WebView", "Intent", "loadUrl", "openConnection"],
   "secretPatterns": ["AKIA[0-9A-Z]{16}", "ghp_[A-Za-z0-9]{30,}", "xoxb-[0-9A-Za-z-]+", "private_key", "BEGIN RSA PRIVATE KEY"],
   "pinning": ["OverrideCertificatePinning", "TrustAllCerts", "X509TrustManager", "setHostnameVerifier"],
-  "proxyNet": ["setProxy", "ProxySelector", "forwardedFor", "ngrok", "pastebin", "discord.com/api/webhooks", "api.telegram.org"]
+  "proxyNet": ["setProxy", "ProxySelector", "forwardedFor", "ngrok", "pastebin", "discord.com/api/webhooks", "api.telegram.org"],
+  "riskyInfra": ["ngrok", "ngrok-free.app", "duckdns.org", "nip.io", "sslip.io", "workers.dev", "pages.dev", "vercel.app", "glitch.me", "repl.co", "herokuapp.com", ".onion", "bit.ly", "t.co", "tinyurl.com", "is.gd", "pastebin.com", "paste.rs", "ix.io", "0x0.st", "discord.com/api/webhooks", "api.telegram.org", "t.me/"]
 }
