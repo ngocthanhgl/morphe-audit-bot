@@ -11,7 +11,7 @@ Full-tree Semgrep over all targets (dormant-code hunt). Deterministic rule engin
 | piko-ig-lite | b3f4a9d | 0 | 0 | 0 |
 | piko-newx | 6c3b0b8 | 0 | 0 | 0 |
 | gboard | 6f8064a | 0 | 0 | 468 |
-| hush-messenger | 2065322 | 0 | 0 | 8 |
+| hush-messenger | 9071056 | 0 | 0 | 8 |
 | hush-facebook | 64f5040 | 0 | 0 | 54 |
 | zeldris | 9418386 | 0 | 0 | 3 |
 | adobo | a42ace2 | 0 | 0 | 1 |
