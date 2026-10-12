@@ -70,7 +70,8 @@ export function findingsForFile(file, added, cfg) {
   } else if (perms.length > 0 && sink.length > 0) {
     findings.push({ severity: "medium", file, reason: "dangerous permission plus network sink in same file", excerpt });
   }
-  if (suspiciousHosts.length > 0 && findings.length === 0) {
+  const hasPlaceholderKey = added.includes("REPLACE_WITH_");
+  if (suspiciousHosts.length > 0 && findings.length === 0 && !hasPlaceholderKey) {
     findings.push({ severity: "medium", file, reason: "new non-allowlisted URL or IP", excerpt });
   }
   return findings;

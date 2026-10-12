@@ -44,3 +44,10 @@ describe("audit rules", () => {
     assert.equal(f[0].severity, "high");
   });
 });
+  it("ignores user-configured example snippets with placeholder keys", () => {
+    const d = diffFor("patches/JsExamples.kt", [
+      "const apiKey = \"REPLACE_WITH_OPENAI_API_KEY\";",
+      "url: \"https://api.openai.com/v1/responses\",",
+    ]);
+    assert.equal(scanDiff(d, cfg).length, 0);
+  });
