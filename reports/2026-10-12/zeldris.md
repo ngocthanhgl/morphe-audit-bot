@@ -4,4 +4,4 @@ Commit: 9418386935c67b382a58cbac7084eb67bc20ae86 | Status: OK | high:0 med:0
 
 No suspicious changes in this window.
 
-_ (baseline: first scan, diff unavailable — run again after next window for diff-only results)_
+__

@@ -1,11 +1,11 @@
 # Morphe patches audit
 
-Scans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design.
+Scans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v2): base64/hex/split-string deobfuscation, non-decimal IP forms, risky-infra hosts, native-binary flagging, cross-window memory via signals.json (45d).
 
 | target | scan | commit | status | high | med | report |
 |---|---|---|---|---|---|---|
 | morphe-patches | 2026-10-12 | e546439 | OK | 0 | 0 | reports/2026-10-12/morphe-patches.md |
-| bearinmind | 2026-10-12 | 690761d | OK | 0 | 0 | reports/2026-10-12/bearinmind.md |
+| bearinmind | 2026-10-12 | fd2d053 | RED | 1 | 1 | reports/2026-10-12/bearinmind.md |
 | d0nj | 2026-10-12 | 04034fd | OK | 0 | 0 | reports/2026-10-12/d0nj.md |
 | piko | 2026-10-12 | a0ed9a5 | OK | 0 | 0 | reports/2026-10-12/piko.md |
 | piko-ig-lite | 2026-10-12 | b3f4a9d | OK | 0 | 0 | reports/2026-10-12/piko-ig-lite.md |

@@ -1,0 +1,31 @@
+{
+  "repos": {
+    "bearinmind": {
+      "hosts": [],
+      "sources": [
+        {
+          "v": "Location",
+          "d": "2026-10-12"
+        }
+      ],
+      "sinks": [
+        {
+          "v": "Intent",
+          "d": "2026-10-12"
+        }
+      ],
+      "perms": [
+        {
+          "v": "ACCESS_FINE_LOCATION",
+          "d": "2026-10-12"
+        },
+        {
+          "v": "CAMERA",
+          "d": "2026-10-12"
+        }
+      ],
+      "pinning": [],
+      "updated": "2026-10-12"
+    }
+  }
+}

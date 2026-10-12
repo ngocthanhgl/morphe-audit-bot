@@ -4,4 +4,4 @@ Commit: e5464395441e916b643af4e2175c4e253e6df487 | Status: OK | high:0 med:0
 
 No suspicious changes in this window.
 
-_ (baseline: first scan, diff unavailable — run again after next window for diff-only results)_
+__
