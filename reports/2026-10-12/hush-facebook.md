@@ -1,220 +1,98 @@
 # SysAdminDoc/HushFacebook — 2026-10-12
 
-Commit: 0620806ea0fff283da476571090cab98942c8684 | Status: WARN | crit:0 high:0 med:8
+Commit: 59d9ea5be3fdf6cb984b153fdb9cad9b7fd4bb31 | Status: CRIT | crit:1 high:2 med:3
 
 <details>
-<summary>[info] assets/marketplace-active.png — binary asset added/changed — cannot review textually</summary>
+<summary>[medium] extensions/facebook/src/test/java/app/morphe/extension/facebook/settings/ScreenLogTest.java — new non-allowlisted URL or IP</summary>
 
 ```
-(binary diff)
-```
-
-</details>
-
-<details>
-<summary>[info] assets/marketplace-off.png — binary asset added/changed — cannot review textually</summary>
-
-```
-(binary diff)
-```
-
-</details>
-
-<details>
-<summary>[info] assets/settings-downloads.png — binary asset added/changed — cannot review textually</summary>
-
-```
-(binary diff)
-```
-
-</details>
-
-<details>
-<summary>[info] assets/settings-overview.png — binary asset added/changed — cannot review textually</summary>
-
-```
-(binary diff)
-```
-
-</details>
-
-<details>
-<summary>[medium] extensions/facebook/src/main/java/app/morphe/extension/facebook/notifications/PushStateStore.java — new non-allowlisted URL or IP</summary>
-
-```
-/*
- * Copyright 2026 Hushfacebook contributors
- * https://github.com/SysAdminDoc/Hushfacebook
- */
-package app.morphe.extension.facebook.notifications;
-
-import android.os.SystemClock;
-import android.util.AtomicFile;
-
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-```
-
-</details>
-
-<details>
-<summary>[medium] extensions/facebook/src/main/java/app/morphe/extension/facebook/settings/DialogChoices.java — new non-allowlisted URL or IP</summary>
-
-```
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.RippleDrawable;
-            choice.setTextColor(ScreenColors.dimmedWhenDisabled(colors.title));
-            GradientDrawable surface = new GradientDrawable();
-            surface.setCornerRadius(Math.round(4 * density));
-            surface.setColor(new ColorStateList(new int[][]{{android.R.attr.state_checked}, {}},
-                    new int[]{(colors.accent & 0xFFFFFF) | 0x22000000, Color.TRANSPARENT}));
-            surface.setStroke(Math.round(2 * density), ScreenColors.focusStroke(colors.heading, Color.TRANSPARENT));
-            choice.setBackground(new RippleDrawable(ColorStateList.valueOf(ScreenColors.half(colors.accent)),
-                    surface, null));
-
-```
-
-</details>
-
-<details>
-<summary>[medium] extensions/facebook/src/main/java/app/morphe/extension/facebook/settings/ScreenColors.java — new non-allowlisted URL or IP</summary>
-
-```
-        dialog = 0xFF10151D;
-        card = 0xFF10151D;
-        outline = 0xFF222C3A;
-            title.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
-            summary.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13);
-            thumb.setCornerRadius(dp(row, 4));
-            track.setCornerRadius(dp(row, 6));
-        surface.setStroke(dp(row, 1), focusStroke(heading, outline));
-        Drawable inset = new InsetDrawable(surface, dp(row, 18), first ? dp(row, 4) : -dp(row, 1),
-                dp(row, 18), last ? dp(row, 4) : 0);
-        int vertical = preference.getIcon() == null ? 18 : 14;
-        row.setPaddingRelative(dp(row, 34), dp(row, vertical + (first ? 4 : 0)),
-                dp(row, 34), dp(row, vertical + (last ? 4 : 0)));
-        row.setPaddingRelative(dp(row, 22), dp(row, 22), dp(row, 22), dp(row, 10));
-        int height = row.getResources().getConfiguration().screenHeightDp;
-```
-
-</details>
-
-<details>
-<summary>[medium] extensions/facebook/src/test/java/app/morphe/extension/facebook/download/CodecProcess.java — new non-allowlisted URL or IP</summary>
-
-```
-import java.io.OutputStream;
-import java.util.concurrent.atomic.AtomicBoolean;
-    private boolean ready, groupGone, closed;
-            if (owned.posix != null) owned.pid = Integer.parseInt(read(owned.control.resolve("ready")).trim());
-            int child = posix.waitpid(-pid, status, 1); // WNOHANG. The live guard is outside this group.
-    /** Linux adopts the guard too if its launcher was killed; it moved outside the tool group. */
-    private boolean reapGuard() throws IOException {
-        if (subreaper == null) return true;
-        int child = posix.waitpid(pid, new IntByReference(), 1);
-        if (child == pid) return true;
-        if (child == 0) return false;
-        int error = Native.getLastError();
-        if (error == ECHILD) return true; // A live launcher reaps its own guard.
-        if (error == 4) return false;
-        throw nativeFailure("reap codec group guard", error);
-```
-
-</details>
-
-<details>
-<summary>[medium] extensions/facebook/src/test/java/app/morphe/extension/facebook/download/MediaSaveAdmissionTest.java — new non-allowlisted URL or IP</summary>
-
-```
-/*
- * Copyright 2026 Hushfacebook contributors
- * https://github.com/SysAdminDoc/Hushfacebook
- */
-package app.morphe.extension.facebook.download;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
+import app.morphe.extension.shared.diagnostics.DiagnosticRedactor;
+    /**
+     * An app link's ids never reach the report: the redaction cuts only ids of fifteen digits or
+     * more, and an older account's or a Page's id is shorter, so "profile/1234567890" would have
+     * said whose profile was opened in a report pasted on GitHub.
+     */
+    @Test
+    public void anAppLinksIdsAreWrittenAsHashes() {
+        assertEquals("X profile/#", ScreenLog.describe("X", null, Uri.parse("fb://profile/1234567890")));
+        assertEquals("X group/#/permalink/#",
+                ScreenLog.describe("X", null, Uri.parse("fb://group/123456789/permalink/98765")));
+        assertEquals("X page/#", ScreenLog.describe("X", null, Uri.parse("FB://page/u2b3x9")));
+        assertEquals("X messenger/share", ScreenLog.describe("X", null, Uri.parse("fb-messenger://messenger/share")));
+        for (String line : new String[]{ScreenLog.describe("X", null, Uri.parse("fb://profile/4")),
+```
 
-import android.content.Context;
+</details>
+
+<details>
+<summary>[medium] extensions/facebook/src/test/java/app/morphe/extension/shared/diagnostics/DiagnosticRedactorTest.java — new non-allowlisted URL or IP</summary>
+
+```
+    /**
+     * The other Meta sites Facebook opens in its browser, as the screen list writes them: a path
+     * there is a handle or a short id, which the handle and id rules don't catch after a slash.
+     */
+    @Test public void anotherMetaSitesAddressGoesWholeToo() {
+        assertEquals("[host omitted] [host omitted] [host omitted]", DiagnosticRedactor.redact(
+                "m.me/1234567890 www.instagram.com/janedoe www.threads.net/@janedoe"));
+        assertEquals("[host omitted] and [host omitted]",
+                DiagnosticRedactor.redact("threads.com/@jane.doe and wa.whatsapp.com/send"));
+        String[] apps = {"app: com.instagram.android 400.0.0.1", "com.whatsapp.w4b", "com.instagram.barcelona"};
+        for (String line : apps) assertEquals(line, DiagnosticRedactor.redact(line));
+    }
+
 
 ```
 
 </details>
 
 <details>
-<summary>[medium] extensions/facebook/src/test/java/app/morphe/extension/facebook/download/ReelSidebarDiagnosticsTest.java — new non-allowlisted URL or IP</summary>
+<summary>[medium] patches/src/test/kotlin/app/morphe/patches/facebook/coexist/AppLabelTest.kt — new non-allowlisted URL or IP</summary>
 
 ```
 /*
  * Copyright 2026 Hushfacebook contributors
  * https://github.com/SysAdminDoc/Hushfacebook
  */
-package app.morphe.extension.facebook.download;
+package app.morphe.patches.facebook.coexist
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.robolectric.Shadows.shadowOf;
+import app.morphe.patcher.patch.PatchException
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertThrows
+import org.junit.Test
+import org.w3c.dom.Document
+import org.w3c.dom.Element
+import javax.xml.parsers.DocumentBuilderFactory
 
-import android.os.Looper;
-import android.os.SystemClock;
-import android.view.View;
-import android.widget.FrameLayout;
 ```
 
 </details>
 
 <details>
-<summary>[medium] extensions/facebook/src/test/java/app/morphe/extension/facebook/settings/SourcesEditorTest.java — new non-allowlisted URL or IP</summary>
+<summary>[critical] cross-window — theft primitive completed across windows: previously seen TextWatcher (2026-10-12) with new network use</summary>
 
 ```
-/*
- * Copyright 2026 Hushfacebook contributors
- * https://github.com/SysAdminDoc/Hushfacebook
- */
-package app.morphe.extension.facebook.settings;
-
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.view.View;
-import android.view.ViewParent;
-import android.view.inputmethod.EditorInfo;
-import android.widget.ScrollView;
-
-import app.morphe.extension.facebook.feed.PostSources;
-import app.morphe.extension.shared.SettingsContextRule;
+(see report of 2026-10-12 for the earlier half)
 ```
 
 </details>
 
 <details>
-<summary>[medium] extensions/facebook/src/test/java/app/morphe/extension/shared/settings/preference/ExportDiagnosticReportPreferenceTest.java — new non-allowlisted URL or IP</summary>
+<summary>[high] cross-window — exfil completed across windows: new host https://www., http://400.0.0.1, http://schemas.android.com with previously seen Clipboard, getPrimaryClip, ClipboardManager (2026-10-12)</summary>
 
 ```
-/*
- * Copyright 2026 Hushfacebook contributors
- * https://github.com/SysAdminDoc/Hushfacebook
- */
-package app.morphe.extension.shared.settings.preference;
+(see report of 2026-10-12 for the earlier half)
+```
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+</details>
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.provider.MediaStore;
+<details>
+<summary>[high] cross-window — exfil completed across windows: previously seen host http://72.80.85.83, http://34.0.0.0, http://255.16.21.29, http://255.34.44.58, https://man7.org, https://first.fbcdn.net, https://second.fbcdn.net, https://example.com, http://10.9.8.7, https://private.example, https://www.facebook.com (2026-10-12) with new Location, Intent</summary>
+
+```
+(see report of 2026-10-12 for the earlier half)
 ```
 
 </details>

@@ -1,3 +1,18 @@
 {
-  "repos": {}
+  "repos": {
+    "hush-messenger": {
+      "repo": "SysAdminDoc/HushMessenger",
+      "since": "2026-10-12",
+      "sha": "37ac6df6c027",
+      "reason": "theft primitive completed across windows: previously seen TextWatcher (2026-10-12) with new network use",
+      "report": "reports/2026-10-12/hush-messenger.md"
+    },
+    "hush-facebook": {
+      "repo": "SysAdminDoc/HushFacebook",
+      "since": "2026-10-12",
+      "sha": "59d9ea5be3fd",
+      "reason": "theft primitive completed across windows: previously seen TextWatcher (2026-10-12) with new network use",
+      "report": "reports/2026-10-12/hush-facebook.md"
+    }
+  }
 }
