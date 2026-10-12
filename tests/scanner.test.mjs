@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { scanDiff, updateSignalsAndCrossCheck } from "../scanner.mjs";
+import { scanDiff, updateSignalsAndCrossCheck, updateBlacklist } from "../scanner.mjs";
 import { readFileSync } from "node:fs";
 
 const cfg = JSON.parse(readFileSync("config/allowlist.json", "utf8"));
@@ -201,5 +201,32 @@ describe("v3 critical and sneaky tricks", () => {
   it("does not flag plain reflection without network", () => {
     const d = diffFor("patches/Hook.kt", ["val m = cls.getDeclaredMethod(\"doPay\")", "m.isAccessible = true"]);
     assert.equal(scanDiff(d, cfg).length, 0);
+  });
+});
+
+describe("v4 permanent blacklist", () => {
+  it("blacklists a repo on its first critical finding", () => {
+    const findings = [{ severity: "critical", file: "patches/Sms.kt", reason: "SMS/OTP interception", excerpt: "" }];
+    const r = updateBlacklist("demo", "o/demo", "abc1234567890", findings, {}, "2026-10-12");
+    assert.equal(r.banned, true);
+    assert.equal(r.blacklist.repos.demo.since, "2026-10-12");
+    assert.match(r.blacklist.repos.demo.report, /demo\.md/);
+    assert.match(r.blacklist.repos.demo.reason, /SMS/);
+  });
+  it("does not blacklist on clean or high-only findings", () => {
+    const r1 = updateBlacklist("demo", "o/demo", "abc", [], {}, "2026-10-12");
+    assert.equal(r1.banned, false);
+    assert.deepEqual(r1.blacklist, { repos: {} });
+    const r2 = updateBlacklist("demo", "o/demo", "abc",
+      [{ severity: "high", file: "x", reason: "y", excerpt: "" }], {}, "2026-10-12");
+    assert.equal(r2.banned, false);
+    assert.deepEqual(r2.blacklist, { repos: {} });
+  });
+  it("keeps the original entry forever once blacklisted", () => {
+    const store = { repos: { demo: { repo: "o/demo", since: "2026-10-01", sha: "oldsha", reason: "old", report: "reports/2026-10-01/demo.md" } } };
+    const r = updateBlacklist("demo", "o/demo", "newsha", [], store, "2026-10-12");
+    assert.equal(r.banned, true);
+    assert.equal(r.blacklist.repos.demo.since, "2026-10-01");
+    assert.equal(r.blacklist.repos.demo.sha, "oldsha");
   });
 });

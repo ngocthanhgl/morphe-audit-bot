@@ -428,6 +428,22 @@ export function updateSignalsAndCrossCheck(name, diffText, cfg, store, today) {
   return { findings, store: { repos: { ...all, [name]: merged } } };
 }
 
+export function updateBlacklist(name, repo, sha, findings, blacklist, today) {
+  const list = blacklist && blacklist.repos ? { ...blacklist.repos } : {};
+  if (list[name]) return { blacklist: { repos: list }, banned: true, entry: list[name] };
+  const crits = findings.filter((f) => f.severity === "critical");
+  if (crits.length === 0) return { blacklist: { repos: list }, banned: false, entry: null };
+  const entry = {
+    repo,
+    since: today,
+    sha: String(sha).slice(0, 12),
+    reason: crits[0].reason,
+    report: "reports/" + today + "/" + name + ".md",
+  };
+  list[name] = entry;
+  return { blacklist: { repos: list }, banned: true, entry };
+}
+
 export function renderRepoReport(repo, sha, findings, date) {
   const crit = findings.filter((f) => f.severity === "critical").length;
   const high = findings.filter((f) => f.severity === "high").length;
