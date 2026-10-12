@@ -1,0 +1,70 @@
+import { execSync } from "node:child_process";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { renderRepoReport } from "./scanner.mjs";
+import { mapSemgrep } from "./semgrep.mjs";
+import { buildReviewPrompt, callReviewer, reviewerDecision, readSpend, recordSpend } from "./llm-review.mjs";
+
+const LLM_KEY = process.env.LLM_API_KEY || "";
+const LLM_MODEL = process.env.LLM_MODEL || "";
+const LLM_FALLBACKS = (process.env.LLM_FALLBACKS || "").split(",").map((s) => s.trim()).filter(Boolean);
+const LLM_BUDGET = parseFloat(process.env.LLM_MONTHLY_BUDGET_USD || "5");
+const LLM_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
+function currentMonth() { return new Date().toISOString().slice(0, 7); }
+
+const today = new Date().toISOString().slice(0, 10);
+const targets = JSON.parse(readFileSync("targets.json", "utf8"));
+if (!existsSync("work-weekly")) mkdirSync("work-weekly");
+
+let reviewQueue = existsSync("review-queue.json") ? JSON.parse(readFileSync("review-queue.json", "utf8") || "{}") : {};
+if (!reviewQueue.items) reviewQueue.items = {};
+const summary = [];
+for (const t of targets) {
+  const dir = "work-weekly/" + t.name;
+  try {
+    if (!existsSync(dir)) {
+      execSync("git clone --depth 400 https://github.com/" + t.repo + ".git " + dir, { stdio: "inherit" });
+    } else {
+      execSync("git -C " + dir + " fetch --depth 400 origin", { stdio: "inherit" });
+      execSync("git -C " + dir + " reset --hard origin/HEAD", { stdio: "inherit" });
+    }
+    const head = execSync("git -C " + dir + " rev-parse HEAD", { encoding: "utf8" }).trim();
+    let findings = [];
+    try {
+      execSync("semgrep --version", { stdio: "ignore" });
+      const sgFile = "work-weekly/sg-" + t.name + ".json";
+      execSync("semgrep scan --config semgrep/ --json -o " + sgFile + " --include='*.kt' --include='*.java' " + dir + " || true", { stdio: "ignore" });
+      if (existsSync(sgFile)) findings = mapSemgrep(readFileSync(sgFile, "utf8"));
+    } catch { /* semgrep failed: report empty */ }
+    const detHigh = findings.some((f) => f.severity === "high");
+    if (LLM_KEY && LLM_MODEL && detHigh && !readSpend("llm-spend.json", currentMonth(), LLM_BUDGET).overBudget) {
+      for (const rt of findings.filter((f) => f.severity === "high").slice(0, 2)) {
+        try {
+          const prompt = buildReviewPrompt({ repo: t.repo, file: rt.file, reason: rt.reason, excerpt: rt.excerpt, history: "weekly full-tree scan" });
+          const r = await callReviewer({ endpoint: LLM_ENDPOINT, apiKey: LLM_KEY, model: LLM_MODEL, fallbacks: LLM_FALLBACKS, prompt });
+          recordSpend("llm-spend.json", r.cost || 0, currentMonth());
+          const action = reviewerDecision({ verdict: r.verdict, detHigh: true });
+          if (action === "ban") {
+            findings.push({ severity: "critical", file: rt.file, reason: "[llm-reviewer " + r.model + "] malicious (" + r.verdict.confidence + ", " + r.verdict.category + "): " + r.verdict.evidence.join(","), excerpt: String(r.verdict.reasoning).slice(0, 500) });
+          } else if (action === "queue") {
+            const key = today + "|" + t.name + "|" + rt.file + "|" + r.verdict.verdict;
+            reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, evidence: r.verdict.evidence, reasoning: String(r.verdict.reasoning).slice(0, 300), source: "weekly" };
+          }
+        } catch { /* reviewer failed: deterministic findings stand */ }
+      }
+    }
+    const reportDir = "reports/weekly/" + today;
+    if (!existsSync(reportDir)) mkdirSync(reportDir, { recursive: true });
+    writeFileSync(reportDir + "/" + t.name + ".md", renderRepoReport(t.repo, head, findings, today) + "\n_weekly full-tree Semgrep scan_\n");
+    const high = findings.filter((f) => f.severity === "high").length;
+    const crit = findings.filter((f) => f.severity === "critical").length;
+    summary.push({ name: t.name, sha: head.slice(0, 7), crit, high, total: findings.length });
+  } catch (e) {
+    summary.push({ name: t.name, sha: "error", crit: 0, high: 0, total: 0 });
+  }
+}
+writeFileSync("review-queue.json", JSON.stringify(reviewQueue, null, 2) + "\n");
+if (!existsSync("llm-spend.json")) writeFileSync("llm-spend.json", JSON.stringify({ month: currentMonth(), total: 0 }, null, 2) + "\n");
+let md = "# Weekly deep scan — " + today + "\n\nFull-tree Semgrep over all targets (dormant-code hunt). Deterministic rule engine stays diff-only in the 4h workflow.\n\n| target | commit | crit | high | total |\n|---|---|---|---|---|\n";
+for (const s of summary) md += "| " + s.name + " | " + s.sha + " | " + s.crit + " | " + s.high + " | " + s.total + " |\n";
+writeFileSync("reports/weekly/" + today + "/summary.md", md);
+console.log("weekly done " + summary.length + " targets");

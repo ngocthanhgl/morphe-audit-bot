@@ -1,0 +1,98 @@
+rules:
+  - id: morphe-taint-device-to-net
+    mode: taint
+    pattern-sources:
+      - patterns:
+          - pattern-either:
+              - pattern: $TM.getDeviceId(...)
+              - pattern: $TM.getSubscriberId(...)
+              - pattern: $TM.getSerial(...)
+              - pattern: $ACC.getAccounts(...)
+              - pattern: $LOC.getLastLocation(...)
+    pattern-sinks:
+      - patterns:
+          - pattern-either:
+              - pattern: $C.newCall(...)
+              - pattern: $CON.connect(...)
+              - pattern: $S.getOutputStream(...)
+              - pattern: $WV.loadUrl(...)
+              - pattern: Intent(...)
+    message: device/account/location identifier flows to a network sink
+    severity: ERROR
+    languages: [kotlin, java]
+
+  - id: morphe-taint-sms-to-net
+    mode: taint
+    pattern-sources:
+      - patterns:
+          - pattern-either:
+              - pattern: SmsMessage.createFromPdu(...)
+              - pattern: Telephony.Sms.CONTENT_URI
+              - pattern: CallLog.Calls.CONTENT_URI
+    pattern-sinks:
+      - patterns:
+          - pattern-either:
+              - pattern: $C.newCall(...)
+              - pattern: $CON.connect(...)
+              - pattern: $S.getOutputStream(...)
+              - pattern: $WV.loadUrl(...)
+    message: SMS/call-log content flows to a network sink
+    severity: ERROR
+    languages: [kotlin, java]
+
+  - id: morphe-taint-input-to-net
+    mode: taint
+    pattern-sources:
+      - patterns:
+          - pattern-either:
+              - pattern: $CM.getPrimaryClip(...)
+              - pattern: $ACC_EVENT.getText(...)
+              - pattern: $NOTIF.extras
+    pattern-sinks:
+      - patterns:
+          - pattern-either:
+              - pattern: $C.newCall(...)
+              - pattern: $CON.connect(...)
+              - pattern: $S.getOutputStream(...)
+    message: clipboard/accessibility/notification text flows to a network sink
+    severity: ERROR
+    languages: [kotlin, java]
+
+  - id: morphe-dynamic-url-load
+    mode: taint
+    pattern-sources:
+      - patterns:
+          - pattern-either:
+              - pattern: $RC.getString(...)
+              - pattern: $PREFS.getString(...)
+              - pattern: $IN.readLine(...)
+    pattern-sinks:
+      - patterns:
+          - pattern-either:
+              - pattern: DexClassLoader(...)
+              - pattern: PathClassLoader(...)
+              - pattern: URL(...)
+    message: runtime-fetched string flows into code loading or URL construction
+    severity: ERROR
+    languages: [kotlin, java]
+
+  - id: morphe-custom-crypto-xor
+    patterns:
+      - pattern: |
+          for ($I in $RANGE) {
+            ...
+            $OUT[$I] = $A xor $B
+            ...
+          }
+    message: custom xor loop over bytes (possible hidden payload or URL)
+    severity: WARNING
+    languages: [kotlin, java]
+
+  - id: morphe-reflection-hidden-call
+    patterns:
+      - pattern-either:
+          - pattern: $C.getDeclaredMethod(...)
+          - pattern: $M.invoke(...)
+    message: reflection used to resolve a call (inspect what it hides)
+    severity: WARNING
+    languages: [kotlin, java]

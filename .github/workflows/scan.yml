@@ -14,15 +14,25 @@ jobs:
         with:
           node-version: 22
       - name: Run rule tests
-        run: node --test tests/scanner.test.mjs
+        run: node --test tests/scanner.test.mjs tests/binary.test.mjs tests/semgrep.test.mjs tests/llm-review.test.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Semgrep
+        run: pip install semgrep
       - name: Scan targets (diff-only since last state)
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          LLM_FALLBACKS: ${{ vars.LLM_FALLBACKS }}
+          LLM_MONTHLY_BUDGET_USD: ${{ vars.LLM_MONTHLY_BUDGET_USD }}
         run: |
           node scan-runner.mjs
       - name: Commit reports without retriggering
         run: |
           git config user.name "morphe-audit-bot"
           git config user.email "morphe-audit-bot@users.noreply.github.com"
-          git add README.md reports state.json signals.json blacklist.json crit-alert.txt
+          git add README.md reports state.json signals.json blacklist.json review-queue.json llm-spend.json crit-alert.txt
           git diff --cached --quiet && echo "no changes" || git commit -m "audit: $(date -u +%F) scan [skip ci]"
           git push
       - name: Alarm on critical findings
