@@ -1,6 +1,12 @@
 # Morphe patches audit
 
-Scans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d).
+Scans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Permanent blacklist: one critical finding bans a target forever (blacklist.json).
+
+## :octagonal_sign: Blacklisted — permanently untrusted
+
+Once a target produces a critical finding it stays here forever. Clean later pushes never clear it; removal requires a manual edit of `blacklist.json`.
+
+No blacklisted targets.
 
 ## :warning: Critical findings
 
