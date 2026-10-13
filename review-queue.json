@@ -1,3 +1,18 @@
 {
-  "items": {}
+  "items": {
+    "2026-10-13|commit-regrets-morphe-youtube-vr-patches|gradle/wrapper/gradle-wrapper.jar|pending": {
+      "date": "2026-10-13",
+      "target": "commit-regrets-morphe-youtube-vr-patches",
+      "repo": "commit-regrets/morphe-youtube-vr-patches",
+      "file": "gradle/wrapper/gradle-wrapper.jar",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "native binary added/changed — cannot review textually"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    }
+  }
 }
