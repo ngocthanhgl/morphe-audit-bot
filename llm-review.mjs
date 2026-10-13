@@ -100,6 +100,14 @@ export function reviewerDecision({ verdict, detHigh }) {
   return "ignore";
 }
 
+export function adjudicateFinding({ finding, verdict, detHigh }) {
+  if (!verdict) return { action: "pending" };
+  const d = reviewerDecision({ verdict, detHigh });
+  if (d === "ban") return { action: "ban" };
+  if (d === "queue") return { action: "queue" };
+  return { action: "overrule" };
+}
+
 export function readSpend(path, month, budgetUsd = Infinity) {
   let total = 0;
   let seenMonth = month;

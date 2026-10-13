@@ -3,14 +3,14 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 
 import { loadConfig, scanDiff, renderRepoReport, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, reportFilename, nextRunSeq } from "./scanner.mjs";
 import { analyzeBlob } from "./binary.mjs";
 import { mapSemgrep } from "./semgrep.mjs";
-import { buildReviewPrompt, callReviewer, reviewerDecision, readSpend, recordSpend } from "./llm-review.mjs";
+import { buildReviewPrompt, callReviewer, reviewerDecision, adjudicateFinding, readSpend, recordSpend } from "./llm-review.mjs";
 
 const LLM_KEY = process.env.LLM_API_KEY || "";
 const LLM_MODEL = process.env.LLM_MODEL || "";
 const LLM_FALLBACKS = (process.env.LLM_FALLBACKS || "").split(",").map((s) => s.trim()).filter(Boolean);
 const LLM_BUDGET = parseFloat(process.env.LLM_MONTHLY_BUDGET_USD || "5");
 const LLM_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
-const LLM_MAX_REVIEWS = 6;
+const LLM_MAX_REVIEWS = 12;
 let llmReviewsUsed = 0;
 function currentMonth() { return new Date().toISOString().slice(0, 7); }
 function llmAllowed() {
@@ -86,23 +86,43 @@ for (const t of targets) {
         freshAuthor = win.some((a) => !hist.has(a));
       } catch { freshAuthor = false; }
       const detHigh = findings.some((f) => f.severity === "high" || f.severity === "critical");
-      const reviewTargets = findings.filter((f) => f.severity === "high" || f.severity === "critical").slice(0, 2);
+      const reviewTargets = findings
+        .filter((f) => f.severity === "high" || f.severity === "critical")
+        .sort((a, b) => (a.severity === b.severity ? 0 : a.severity === "critical" ? -1 : 1));
       if (freshAuthor && findings.length > 0 && reviewTargets.length === 0 && findings[0]) reviewTargets.push(findings[0]);
       for (const rt of reviewTargets) {
-        if (!llmAllowed()) break;
+        if (!llmAllowed()) {
+          rt.llm = "unreviewed";
+          rt.reason += " [llm: unreviewed — review cap or budget reached, no ban]";
+          continue;
+        }
         try {
           const prompt = buildReviewPrompt({ repo: t.repo, file: rt.file, reason: rt.reason, excerpt: rt.excerpt });
           const r = await callReviewer({ endpoint: LLM_ENDPOINT, apiKey: LLM_KEY, model: LLM_MODEL, fallbacks: LLM_FALLBACKS, prompt });
           recordSpend("llm-spend.json", r.cost || 0, currentMonth());
           llmReviewsUsed++;
-          const action = reviewerDecision({ verdict: r.verdict, detHigh });
-          if (action === "ban") {
-            findings.push({ severity: "critical", file: rt.file, reason: "[llm-reviewer " + r.model + "] malicious (" + r.verdict.confidence + ", " + r.verdict.category + "): " + r.verdict.evidence.join(","), excerpt: String(r.verdict.reasoning).slice(0, 500) });
-          } else if (action === "queue") {
+          const adj = adjudicateFinding({ finding: rt, verdict: r.verdict, detHigh });
+          if (adj.action === "ban") {
+            rt.llm = "confirmed";
+            findings.push({ severity: "critical", llm: "confirmed", file: rt.file, reason: "[llm-reviewer " + r.model + "] malicious (" + r.verdict.confidence + ", " + r.verdict.category + "): " + r.verdict.evidence.join(","), excerpt: String(r.verdict.reasoning).slice(0, 500) });
+          } else if (adj.action === "queue") {
+            rt.llm = "queued";
             const key = today + "|" + t.name + "|" + rt.file + "|" + r.verdict.verdict;
             reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, evidence: r.verdict.evidence, reasoning: String(r.verdict.reasoning).slice(0, 300), source: "4h" };
+          } else if (adj.action === "overrule") {
+            rt.llm = "overruled";
+            if (rt.severity === "critical") rt.severity = "high";
+            rt.reason += " [llm: benign " + r.verdict.confidence + " — no ban]";
+          } else {
+            rt.llm = "pending";
+            const key = today + "|" + t.name + "|" + rt.file + "|pending";
+            reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: "pending", confidence: 0, category: "unreviewed", evidence: [rt.reason], reasoning: "reviewer produced no usable verdict", source: "4h" };
           }
-        } catch { /* reviewer failed: deterministic findings stand */ }
+        } catch {
+          rt.llm = "pending";
+          const key = today + "|" + t.name + "|" + rt.file + "|pending";
+          reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: "pending", confidence: 0, category: "reviewer-error", evidence: [rt.reason], reasoning: "reviewer call failed; deterministic finding stands without ban", source: "4h" };
+        }
       }
     }
     let note = old ? "" : " (baseline: first scan, diff unavailable — run again after next window for diff-only results)";
@@ -133,7 +153,7 @@ writeFileSync("review-queue.json", JSON.stringify(reviewQueue, null, 2) + "\n");
 if (!existsSync("llm-spend.json")) writeFileSync("llm-spend.json", JSON.stringify({ month: currentMonth(), total: 0 }, null, 2) + "\n");
 const totalCrit = rows.reduce((n, r) => n + (r.crit || 0), 0);
 writeFileSync("crit-alert.txt", String(totalCrit) + "\n");
-let readme = "# Morphe patches audit\n\nScans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Permanent blacklist: one critical finding bans a target forever (blacklist.json). v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json.\n\n## :octagonal_sign: Blacklisted — permanently untrusted\n\nOnce a target produces a critical finding it stays here forever. Clean later pushes never clear it; removal requires a manual pardon in `config/pardons.json`.\n\n";
+let readme = "# Morphe patches audit\n\nScans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Permanent blacklist: one critical finding bans a target forever (blacklist.json). v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. v7: every critical/high goes through the LLM judge; bans only on LLM confirmation.\n\n## :octagonal_sign: Blacklisted — permanently untrusted\n\nOnce the LLM confirms a malicious finding the target stays here forever. Clean later pushes never clear it; removal requires a manual pardon in `config/pardons.json`. Deterministic findings without confirmation never ban.\n\n";
 const banned = Object.entries((blacklist.repos || {}));
 if (banned.length === 0) {
   readme += "No blacklisted targets.\n\n";
@@ -160,7 +180,7 @@ readme += "| target | scan | commit | status | crit | high | med | report |\n|--
 for (const r of rows) {
   readme += "| " + r.name + " | " + today + " | " + r.sha + " | " + r.status + " | " + (r.crit || 0) + " | " + r.high + " | " + r.med + " | " + (r.report || ("reports/" + today + "/" + r.name + ".md")) + " |\n";
 }
-readme += "\n## Review queue (needs human)\n\nLLM-suspect items below the auto-ban bar. Confirm in code, then ban by editing `blacklist.json` or dismiss by deleting the entry from `review-queue.json`.\n\n";
+readme += "\n## Review queue (needs human)\n\nLLM-suspect items below the confirmation bar, plus pending items awaiting a usable verdict — no ban until the judge confirms. Confirm in code, then ban by editing `blacklist.json` or dismiss by deleting the entry from `review-queue.json`.\n\n";
 if (queueItems.length === 0) {
   readme += "Queue empty.\n\n";
 } else {

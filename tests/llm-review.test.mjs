@@ -7,6 +7,7 @@ import {
   callReviewer,
   parseVerdict,
   reviewerDecision,
+  adjudicateFinding,
   readSpend,
   recordSpend,
 } from "../llm-review.mjs";
@@ -71,6 +72,14 @@ describe("llm reviewer", () => {
     assert.equal(reviewerDecision({ verdict: { ...GOOD, verdict: "suspicious" }, detHigh: true }), "queue");
     assert.equal(reviewerDecision({ verdict: { ...GOOD, verdict: "benign" }, detHigh: true }), "ignore");
     assert.equal(reviewerDecision({ verdict: null, detHigh: true }), "ignore");
+  });
+  it("adjudicates findings: ban only on confirmation, overrule on benign, pending on failure", () => {
+    const f = { severity: "critical", file: "x", reason: "y", excerpt: "" };
+    assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD }, detHigh: true }).action, "ban");
+    assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD, confidence: 0.5 }, detHigh: true }).action, "queue");
+    assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD, verdict: "suspicious" }, detHigh: true }).action, "queue");
+    assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD, verdict: "benign" }, detHigh: true }).action, "overrule");
+    assert.equal(adjudicateFinding({ finding: f, verdict: null, detHigh: true }).action, "pending");
   });
   it("tracks spend and enforces the budget cap", () => {
     const f = join(tmpdir(), "spend-test-" + process.pid + "-" + Date.now() + ".json");

@@ -477,13 +477,13 @@ export function applyPardons(blacklist, pardons) {
 export function updateBlacklist(name, repo, sha, findings, blacklist, today, report) {
   const list = blacklist && blacklist.repos ? { ...blacklist.repos } : {};
   if (list[name]) return { blacklist: { repos: list }, banned: true, entry: list[name] };
-  const crits = findings.filter((f) => f.severity === "critical");
-  if (crits.length === 0) return { blacklist: { repos: list }, banned: false, entry: null };
+  const confirmed = findings.filter((f) => f.severity === "critical" && f.llm === "confirmed");
+  if (confirmed.length === 0) return { blacklist: { repos: list }, banned: false, entry: null };
   const entry = {
     repo,
     since: today,
     sha: String(sha).slice(0, 12),
-    reason: crits[0].reason,
+    reason: confirmed[0].reason,
     report: report || ("reports/" + today + "/" + name + ".md"),
   };
   list[name] = entry;

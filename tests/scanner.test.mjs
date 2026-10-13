@@ -253,13 +253,22 @@ describe("v3 critical and sneaky tricks", () => {
 });
 
 describe("v4 permanent blacklist", () => {
-  it("blacklists a repo on its first critical finding", () => {
-    const findings = [{ severity: "critical", file: "patches/Sms.kt", reason: "SMS/OTP interception", excerpt: "" }];
-    const r = updateBlacklist("demo", "o/demo", "abc1234567890", findings, {}, "2026-10-12");
+  it("blacklists only on LLM-confirmed critical findings", () => {
+    const confirmed = [{ severity: "critical", file: "x", reason: "SMS theft", excerpt: "", llm: "confirmed" }];
+    const r = updateBlacklist("demo", "o/demo", "abc123", confirmed, {}, "2026-10-12");
     assert.equal(r.banned, true);
     assert.equal(r.blacklist.repos.demo.since, "2026-10-12");
     assert.match(r.blacklist.repos.demo.report, /demo\.md/);
     assert.match(r.blacklist.repos.demo.reason, /SMS/);
+  });
+  it("never bans on unconfirmed, pending or overruled criticals", () => {
+    for (const mark of [undefined, "pending", "queued", "overruled", "unreviewed"]) {
+      const f = [{ severity: "critical", file: "x", reason: "y", excerpt: "" }];
+      if (mark) f[0].llm = mark;
+      const r = updateBlacklist("demo", "o/demo", "abc", f, {}, "2026-10-12");
+      assert.equal(r.banned, false, "banned on mark=" + mark);
+      assert.deepEqual(r.blacklist, { repos: {} });
+    }
   });
   it("does not blacklist on clean or high-only findings", () => {
     const r1 = updateBlacklist("demo", "o/demo", "abc", [], {}, "2026-10-12");
