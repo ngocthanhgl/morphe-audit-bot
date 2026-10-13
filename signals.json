@@ -32,253 +32,223 @@
       "updated": "2026-10-12"
     },
     "hush-messenger": {
-      "hosts": [
-        {
-          "v": "http://255.0.0.0",
-          "d": "2026-10-12"
+      "files": {
+        "extensions/messenger/src/main/java/app/hushmessenger/extension/SettingsActivity.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "http://255.250.247.249",
-          "d": "2026-10-12"
+        "patches/src/main/kotlin/app/hushmessenger/patches/controls/AiMentionRows.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "http://255.255.255.255",
-          "d": "2026-10-12"
+        "patches/src/main/kotlin/app/hushmessenger/patches/controls/ControlHooks.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "http://255.18.20.25",
-          "d": "2026-10-12"
+        "patches/src/main/kotlin/app/hushmessenger/patches/controls/ControlProfiles.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "http://255.33.27.35",
-          "d": "2026-10-12"
+        "patches/src/main/kotlin/app/hushmessenger/patches/controls/MessengerControlsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "http://255.244.241.243",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.100.89.102",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.174.179.191",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.158.49.87",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.243.166.184",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.222.214.221",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.48.54.64",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.139.124.137",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.101.112.128",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.217.208.216",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.43.48.57",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://34.158.49.87",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://51.243.166.184",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.242.235.240",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.27.31.38",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.228.217.225",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.41.47.57",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.179.38.30",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://255.255.180.171",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://0.255.255.255",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://85.0.0.0",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://104.101.97.100",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://104.104.101.97",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://79.83.47.50",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://127.11.0.66",
-          "d": "2026-10-12"
+        "scripts/CompatReport.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
-      ],
-      "sources": [
-        {
-          "v": "Location",
-          "d": "2026-10-12"
-        }
-      ],
-      "sinks": [
-        {
-          "v": "Intent",
-          "d": "2026-10-12"
-        }
-      ],
-      "perms": [
-        {
-          "v": "CAMERA",
-          "d": "2026-10-12"
-        }
-      ],
-      "pinning": [],
-      "sms": [],
-      "spy": [],
-      "keylog": [
-        {
-          "v": "TextWatcher",
-          "d": "2026-10-12"
-        }
-      ],
-      "staged": [],
-      "updated": "2026-10-12"
+      },
+      "updated": "2026-10-13"
     },
     "hush-facebook": {
-      "hosts": [
-        {
-          "v": "http://72.80.85.83",
-          "d": "2026-10-12"
+      "files": {
+        "build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "http://34.0.0.0",
-          "d": "2026-10-12"
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/download/SaveControl.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "http://255.16.21.29",
-          "d": "2026-10-12"
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/download/TransferRate.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "http://255.34.44.58",
-          "d": "2026-10-12"
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/media/ProgressBar.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "https://man7.org",
-          "d": "2026-10-12"
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/settings/NetworkUsage.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "https://first.fbcdn.net",
-          "d": "2026-10-12"
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/settings/PatchFamily.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "https://second.fbcdn.net",
-          "d": "2026-10-12"
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/settings/SettingsEntry.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "https://example.com",
-          "d": "2026-10-12"
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/L10nTranslations.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "http://10.9.8.7",
-          "d": "2026-10-12"
+        "gradle/verification-metadata.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "https://private.example",
-          "d": "2026-10-12"
+        "patches/src/main/kotlin/app/morphe/patches/facebook/media/progressbar/KeepProgressBarPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "https://www.facebook.com",
-          "d": "2026-10-12"
+        "scripts/FingerprintCandidates.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "https://www.",
-          "d": "2026-10-12"
+        "scripts/FingerprintFixture.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         },
-        {
-          "v": "http://400.0.0.1",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "http://schemas.android.com",
-          "d": "2026-10-12"
+        "settings.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
-      ],
-      "sources": [
-        {
-          "v": "Clipboard",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "getPrimaryClip",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "ClipboardManager",
-          "d": "2026-10-12"
-        },
-        {
-          "v": "Location",
-          "d": "2026-10-12"
-        }
-      ],
-      "sinks": [
-        {
-          "v": "Intent",
-          "d": "2026-10-12"
-        }
-      ],
-      "perms": [],
-      "pinning": [],
-      "sms": [],
-      "spy": [],
-      "keylog": [
-        {
-          "v": "TextWatcher",
-          "d": "2026-10-12"
-        }
-      ],
-      "staged": [],
-      "updated": "2026-10-12"
+      },
+      "updated": "2026-10-13"
     }
   }
 }
