@@ -1,5 +1,33 @@
 {
   "items": {
+    "2026-10-13|sysadmindoc-hushpinterest|extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/PinTransfer.java|pending": {
+      "date": "2026-10-13",
+      "target": "sysadmindoc-hushpinterest",
+      "repo": "SysAdminDoc/HushPinterest",
+      "file": "extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/PinTransfer.java",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "cross-app private data access with network: Cookies"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-13|bearinmind|extensions/extension/src/main/java/org/ungoogled/ui/Steer.java|pending": {
+      "date": "2026-10-13",
+      "target": "bearinmind",
+      "repo": "bearinmindcat/morphe-patches",
+      "file": "extensions/extension/src/main/java/org/ungoogled/ui/Steer.java",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "sensitive source reaches network sink"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
     "2026-10-13|commit-regrets-morphe-youtube-vr-patches|gradle/wrapper/gradle-wrapper.jar|pending": {
       "date": "2026-10-13",
       "target": "commit-regrets-morphe-youtube-vr-patches",
