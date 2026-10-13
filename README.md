@@ -13,25 +13,22 @@ Once a target produces a critical finding it stays here forever. Clean later pus
 
 ## :warning: Critical findings
 
-| :warning: | target | file | reason | report |
-|---|---|---|---|---|
-| :warning: | hush-messenger | cross-window | theft primitive completed across windows: previously seen TextWatcher (2026-10-12) with new network use | reports/2026-10-12/hush-messenger.md |
-| :warning: | hush-facebook | cross-window | theft primitive completed across windows: previously seen TextWatcher (2026-10-12) with new network use | reports/2026-10-12/hush-facebook.md |
+No critical findings in this window.
 
 | target | scan | commit | status | crit | high | med | report |
 |---|---|---|---|---|---|---|---|
-| morphe-patches | 2026-10-12 | e546439 | OK | 0 | 0 | 0 | reports/2026-10-12/morphe-patches.md |
-| bearinmind | 2026-10-12 | ba25e7b | WARN | 0 | 0 | 1 | reports/2026-10-12/bearinmind.md |
-| d0nj | 2026-10-12 | 04034fd | OK | 0 | 0 | 0 | reports/2026-10-12/d0nj.md |
-| piko | 2026-10-12 | a0ed9a5 | OK | 0 | 0 | 0 | reports/2026-10-12/piko.md |
-| piko-ig-lite | 2026-10-12 | b3f4a9d | OK | 0 | 0 | 0 | reports/2026-10-12/piko-ig-lite.md |
-| piko-newx | 2026-10-12 | 6c3b0b8 | OK | 0 | 0 | 0 | reports/2026-10-12/piko-newx.md |
-| gboard | 2026-10-12 | 6f8064a | OK | 0 | 0 | 0 | reports/2026-10-12/gboard.md |
-| hush-messenger | 2026-10-12 | 37ac6df | BANNED | 1 | 2 | 2 | reports/2026-10-12/hush-messenger.md |
-| hush-facebook | 2026-10-12 | 59d9ea5 | BANNED | 1 | 2 | 3 | reports/2026-10-12/hush-facebook.md |
-| zeldris | 2026-10-12 | 9418386 | OK | 0 | 0 | 0 | reports/2026-10-12/zeldris.md |
-| adobo | 2026-10-12 | a42ace2 | OK | 0 | 0 | 0 | reports/2026-10-12/adobo.md |
-| doom | 2026-10-12 | e3bb3af | OK | 0 | 0 | 0 | reports/2026-10-12/doom.md |
+| morphe-patches | 2026-10-13 | e546439 | OK | 0 | 0 | 0 | reports/2026-10-13/morphe-patches.md |
+| bearinmind | 2026-10-13 | ba25e7b | OK | 0 | 0 | 0 | reports/2026-10-13/bearinmind.md |
+| d0nj | 2026-10-13 | 04034fd | OK | 0 | 0 | 0 | reports/2026-10-13/d0nj.md |
+| piko | 2026-10-13 | a0ed9a5 | OK | 0 | 0 | 0 | reports/2026-10-13/piko.md |
+| piko-ig-lite | 2026-10-13 | b3f4a9d | OK | 0 | 0 | 0 | reports/2026-10-13/piko-ig-lite.md |
+| piko-newx | 2026-10-13 | 6c3b0b8 | OK | 0 | 0 | 0 | reports/2026-10-13/piko-newx.md |
+| gboard | 2026-10-13 | 6f8064a | OK | 0 | 0 | 0 | reports/2026-10-13/gboard.md |
+| hush-messenger | 2026-10-13 | 37ac6df | BANNED | 0 | 0 | 0 | reports/2026-10-12/hush-messenger.md |
+| hush-facebook | 2026-10-13 | 59d9ea5 | BANNED | 0 | 0 | 0 | reports/2026-10-12/hush-facebook.md |
+| zeldris | 2026-10-13 | 9418386 | OK | 0 | 0 | 0 | reports/2026-10-13/zeldris.md |
+| adobo | 2026-10-13 | a42ace2 | OK | 0 | 0 | 0 | reports/2026-10-13/adobo.md |
+| doom | 2026-10-13 | e3bb3af | OK | 0 | 0 | 0 | reports/2026-10-13/doom.md |
 
 ## Review queue (needs human)
 
