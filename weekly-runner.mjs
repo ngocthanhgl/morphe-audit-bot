@@ -1,6 +1,7 @@
 import { execSync } from "node:child_process";
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, rmSync } from "node:fs";
 import { renderRepoReport } from "./scanner.mjs";
+import { cloneUrl, prunableReports } from "./targets.mjs";
 import { mapSemgrep } from "./semgrep.mjs";
 import { buildReviewPrompt, callReviewer, reviewerDecision, readSpend, recordSpend } from "./llm-review.mjs";
 
@@ -11,6 +12,7 @@ const LLM_BUDGET = parseFloat(process.env.LLM_MONTHLY_BUDGET_USD || "5");
 const LLM_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
 function currentMonth() { return new Date().toISOString().slice(0, 7); }
 
+const SCAN_TOKEN = process.env.SCAN_TOKEN || "";
 const today = new Date().toISOString().slice(0, 10);
 const targets = JSON.parse(readFileSync("targets.json", "utf8"));
 if (!existsSync("work-weekly")) mkdirSync("work-weekly");
@@ -22,7 +24,7 @@ for (const t of targets) {
   const dir = "work-weekly/" + t.name;
   try {
     if (!existsSync(dir)) {
-      execSync("git clone --depth 400 https://github.com/" + t.repo + ".git " + dir, { stdio: "inherit" });
+      execSync("git clone --depth 400 " + cloneUrl(t, SCAN_TOKEN) + " " + dir, { stdio: "inherit" });
     } else {
       execSync("git -C " + dir + " fetch --depth 400 origin", { stdio: "inherit" });
       execSync("git -C " + dir + " reset --hard origin/HEAD", { stdio: "inherit" });
@@ -67,4 +69,18 @@ if (!existsSync("llm-spend.json")) writeFileSync("llm-spend.json", JSON.stringif
 let md = "# Weekly deep scan — " + today + "\n\nFull-tree Semgrep over all targets (dormant-code hunt). Deterministic rule engine stays diff-only in the 4h workflow.\n\n| target | commit | crit | high | total |\n|---|---|---|---|---|\n";
 for (const s of summary) md += "| " + s.name + " | " + s.sha + " | " + s.crit + " | " + s.high + " | " + s.total + " |\n";
 writeFileSync("reports/weekly/" + today + "/summary.md", md);
+// Prune OK-only 4h reports older than 30 days (findings reports stay forever).
+try {
+  const entries = [];
+  for (const d of readdirSync("reports", { withFileTypes: true })) {
+    if (!d.isDirectory() || d.name === "weekly" || !/^\d{4}-\d{2}-\d{2}$/.test(d.name)) continue;
+    for (const f of readdirSync("reports/" + d.name)) {
+      const m = f.match(/-run\d+-([A-Z]+)(-|_|\.)/);
+      entries.push({ path: "reports/" + d.name + "/" + f, date: d.name, status: m ? m[1] : "" });
+    }
+  }
+  const gone = prunableReports(entries, today, 30);
+  for (const p of gone) { try { rmSync(p); } catch { /* already gone */ } }
+  console.log("pruned " + gone.length + " old OK reports");
+} catch { /* reports dir absent: nothing to prune */ }
 console.log("weekly done " + summary.length + " targets");

@@ -1,20 +1,21 @@
 name: morphe-audit
 on:
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: "0 0,6,12,18 * * *"
   workflow_dispatch:
 permissions:
   contents: write
 jobs:
   scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - name: Run rule tests
-        run: node --test tests/scanner.test.mjs tests/binary.test.mjs tests/semgrep.test.mjs tests/llm-review.test.mjs
+        run: node --test tests/scanner.test.mjs tests/binary.test.mjs tests/semgrep.test.mjs tests/llm-review.test.mjs tests/targets.test.mjs
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -22,6 +23,7 @@ jobs:
         run: pip install semgrep
       - name: Scan targets (diff-only since last state)
         env:
+          SCAN_TOKEN: ${{ secrets.SCAN_TOKEN }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_MODEL: ${{ vars.LLM_MODEL }}
           LLM_FALLBACKS: ${{ vars.LLM_FALLBACKS }}

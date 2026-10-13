@@ -5,7 +5,10 @@ import { analyzeBlob } from "./binary.mjs";
 import { mapSemgrep } from "./semgrep.mjs";
 import { buildReviewPrompt, callReviewer, reviewerDecision, adjudicateFinding, readSpend, recordSpend } from "./llm-review.mjs";
 
+import { cloneUrl } from "./targets.mjs";
+
 const LLM_KEY = process.env.LLM_API_KEY || "";
+const SCAN_TOKEN = process.env.SCAN_TOKEN || "";
 const LLM_MODEL = process.env.LLM_MODEL || "";
 const LLM_FALLBACKS = (process.env.LLM_FALLBACKS || "").split(",").map((s) => s.trim()).filter(Boolean);
 const LLM_BUDGET = parseFloat(process.env.LLM_MONTHLY_BUDGET_USD || "5");
@@ -43,18 +46,34 @@ for (const t of targets) {
   const dir = "work/" + t.name;
   try {
     if (!existsSync(dir)) {
-      execSync("git clone --depth 100 https://github.com/" + t.repo + ".git " + dir, { stdio: "inherit" });
+      execSync("git clone --depth 100 " + cloneUrl(t, SCAN_TOKEN) + " " + dir, { stdio: "inherit" });
     } else {
+      try { execSync("git -C " + dir + " remote set-url origin " + cloneUrl(t, SCAN_TOKEN), { stdio: "ignore" }); } catch { /* keep existing remote */ }
       execSync("git -C " + dir + " fetch --depth 100 origin", { stdio: "inherit" });
       execSync("git -C " + dir + " reset --hard origin/HEAD", { stdio: "inherit" });
     }
     const head = execSync("git -C " + dir + " rev-parse HEAD", { encoding: "utf8" }).trim();
     const old = state[t.name];
     let diff = "";
+    let shallow = false;
     if (old) {
       try {
         diff = execSync("git -C " + dir + " diff " + old + ".." + head + " --", { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
-      } catch { diff = ""; }
+      } catch {
+        try {
+          execSync("git -C " + dir + " fetch --deepen=500 origin", { stdio: "ignore" });
+          diff = execSync("git -C " + dir + " diff " + old + ".." + head + " --", { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
+        } catch { shallow = true; }
+      }
+    }
+    if (shallow) {
+      const reportDir = "reports/" + today;
+      if (!existsSync(reportDir)) mkdirSync(reportDir, { recursive: true });
+      const seq = nextRunSeq(existsSync(reportDir) ? readdirSync(reportDir) : [], t.name);
+      const reportRel = reportDir + "/" + reportFilename(t.name, today, seq, "OK", { crit: 0, high: 0, med: 0 });
+      writeFileSync(reportRel, renderRepoReport(t.repo, head, [], today) + "\n_history too shallow for diff " + String(old).slice(0, 7) + ".." + head.slice(0, 7) + " even after deepen — skipped honestly, will retry next window (state not advanced)_\n");
+      rows.push({ name: t.name, repo: t.repo, sha: head.slice(0, 7), status: "SHALLOW", crit: 0, high: 0, med: 0, crits: [], report: reportRel });
+      continue;
     }
     let findings = [];
     if (diff) {
@@ -153,7 +172,7 @@ writeFileSync("review-queue.json", JSON.stringify(reviewQueue, null, 2) + "\n");
 if (!existsSync("llm-spend.json")) writeFileSync("llm-spend.json", JSON.stringify({ month: currentMonth(), total: 0 }, null, 2) + "\n");
 const totalCrit = rows.reduce((n, r) => n + (r.crit || 0), 0);
 writeFileSync("crit-alert.txt", String(totalCrit) + "\n");
-let readme = "# Morphe patches audit\n\nScans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Permanent blacklist: one critical finding bans a target forever (blacklist.json). v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. v7: every critical/high goes through the LLM judge; bans only on LLM confirmation.\n\n## :octagonal_sign: Blacklisted — permanently untrusted\n\nOnce the LLM confirms a malicious finding the target stays here forever. Clean later pushes never clear it; removal requires a manual pardon in `config/pardons.json`. Deterministic findings without confirmation never ban.\n\n";
+let readme = "# Morphe patches audit\n\nScans 4x daily (`0 0,6,12,18 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Permanent blacklist: one critical finding bans a target forever (blacklist.json). v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. v7: every critical/high goes through the LLM judge; bans only on LLM confirmation.\n\n## :octagonal_sign: Blacklisted — permanently untrusted\n\nOnce the LLM confirms a malicious finding the target stays here forever. Clean later pushes never clear it; removal requires a manual pardon in `config/pardons.json`. Deterministic findings without confirmation never ban.\n\n";
 const banned = Object.entries((blacklist.repos || {}));
 if (banned.length === 0) {
   readme += "No blacklisted targets.\n\n";

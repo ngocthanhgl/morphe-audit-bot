@@ -8,6 +8,7 @@ permissions:
 jobs:
   weekly:
     runs-on: ubuntu-latest
+    timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -30,6 +31,7 @@ jobs:
           echo "resolved model: $(cat .llm-model)"
       - name: Weekly full-tree scan
         env:
+          SCAN_TOKEN: ${{ secrets.SCAN_TOKEN }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_MODEL: ${{ vars.LLM_MODEL }}
           LLM_FALLBACKS: ${{ vars.LLM_FALLBACKS }}
@@ -42,6 +44,6 @@ jobs:
         run: |
           git config user.name "morphe-audit-bot"
           git config user.email "morphe-audit-bot@users.noreply.github.com"
-          git add reports/weekly review-queue.json llm-spend.json
+          git add reports review-queue.json llm-spend.json
           git diff --cached --quiet && echo "no changes" || git commit -m "audit: $(date -u +%F) weekly [skip ci]"
           git push
