@@ -14,18 +14,18 @@ No critical findings in this window.
 
 | target | scan | commit | status | crit | high | med | report |
 |---|---|---|---|---|---|---|---|
-| morphe-patches | 2026-10-13 | e546439 | OK | 0 | 0 | 0 | reports/2026-10-13/morphe-patches.md |
-| bearinmind | 2026-10-13 | ba25e7b | OK | 0 | 0 | 0 | reports/2026-10-13/bearinmind.md |
-| d0nj | 2026-10-13 | 04034fd | OK | 0 | 0 | 0 | reports/2026-10-13/d0nj.md |
-| piko | 2026-10-13 | a0ed9a5 | OK | 0 | 0 | 0 | reports/2026-10-13/piko.md |
-| piko-ig-lite | 2026-10-13 | b3f4a9d | OK | 0 | 0 | 0 | reports/2026-10-13/piko-ig-lite.md |
-| piko-newx | 2026-10-13 | 6c3b0b8 | OK | 0 | 0 | 0 | reports/2026-10-13/piko-newx.md |
-| gboard | 2026-10-13 | 6f8064a | OK | 0 | 0 | 0 | reports/2026-10-13/gboard.md |
-| hush-messenger | 2026-10-13 | 7452327 | OK | 0 | 0 | 0 | reports/2026-10-13/hush-messenger.md |
-| hush-facebook | 2026-10-13 | b06d2aa | WARN | 0 | 0 | 1 | reports/2026-10-13/hush-facebook.md |
-| zeldris | 2026-10-13 | 9418386 | OK | 0 | 0 | 0 | reports/2026-10-13/zeldris.md |
-| adobo | 2026-10-13 | a42ace2 | OK | 0 | 0 | 0 | reports/2026-10-13/adobo.md |
-| doom | 2026-10-13 | e3bb3af | OK | 0 | 0 | 0 | reports/2026-10-13/doom.md |
+| morphe-patches | 2026-10-13 | e546439 | OK | 0 | 0 | 0 | reports/2026-10-13/morphe-patches-run01-OK.md |
+| bearinmind | 2026-10-13 | ba25e7b | OK | 0 | 0 | 0 | reports/2026-10-13/bearinmind-run01-OK.md |
+| d0nj | 2026-10-13 | 04034fd | OK | 0 | 0 | 0 | reports/2026-10-13/d0nj-run01-OK.md |
+| piko | 2026-10-13 | a0ed9a5 | OK | 0 | 0 | 0 | reports/2026-10-13/piko-run01-OK.md |
+| piko-ig-lite | 2026-10-13 | b3f4a9d | OK | 0 | 0 | 0 | reports/2026-10-13/piko-ig-lite-run01-OK.md |
+| piko-newx | 2026-10-13 | 6c3b0b8 | OK | 0 | 0 | 0 | reports/2026-10-13/piko-newx-run01-OK.md |
+| gboard | 2026-10-13 | 6f8064a | OK | 0 | 0 | 0 | reports/2026-10-13/gboard-run01-OK.md |
+| hush-messenger | 2026-10-13 | 7452327 | OK | 0 | 0 | 0 | reports/2026-10-13/hush-messenger-run01-OK.md |
+| hush-facebook | 2026-10-13 | b06d2aa | OK | 0 | 0 | 0 | reports/2026-10-13/hush-facebook-run01-OK.md |
+| zeldris | 2026-10-13 | 9418386 | OK | 0 | 0 | 0 | reports/2026-10-13/zeldris-run01-OK.md |
+| adobo | 2026-10-13 | a42ace2 | OK | 0 | 0 | 0 | reports/2026-10-13/adobo-run01-OK.md |
+| doom | 2026-10-13 | e3bb3af | OK | 0 | 0 | 0 | reports/2026-10-13/doom-run01-OK.md |
 
 ## Review queue (needs human)
 
