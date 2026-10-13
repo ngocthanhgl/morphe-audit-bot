@@ -10,13 +10,29 @@ export function isScannableFile(name) {
   return SCAN_EXT.some((e) => name.endsWith(e));
 }
 
+export function isTestPath(name) {
+  const n = String(name);
+  return /(^|\/)(test|tests|androidTest|__tests__)\//.test(n) ||
+    /(^|\/)[^/]*Test\.(kt|java|js|ts|mjs)$/.test(n) ||
+    /(^|\/)Test[^/]*\.(kt|java|js|ts|mjs)$/.test(n);
+}
+
 function hasAny(text, list) {
   return list.filter((k) => text.includes(k));
 }
 
-function hexToDotted(h) {
-  const n = parseInt(h, 16);
-  return [(n >>> 24) & 255, (n >>> 16) & 255, (n >>> 8) & 255, n & 255].join(".");
+function validOctets(ip) {
+  return ip.split(".").every((o) => /^\d{1,3}$/.test(o) && Number(o) <= 255);
+}
+
+function routableIp(ip) {
+  const first = Number(ip.split(".")[0]);
+  return first >= 1 && first <= 223 && first !== 127;
+}
+
+function validHost(host) {
+  const h = String(host);
+  return h.includes(".") && /^[A-Za-z0-9]([A-Za-z0-9.-]{0,250}[A-Za-z0-9])?$/.test(h);
 }
 
 function findNewHosts(text, allowDomains) {
@@ -25,20 +41,26 @@ function findNewHosts(text, allowDomains) {
   const re = /https?:\/\/([A-Za-z0-9.-]+)/g;
   let m;
   while ((m = re.exec(src)) !== null) {
-    const host = m[1].toLowerCase();
-    if (!allowDomains.some((d) => host === d || host.endsWith("." + d))) out.add(m[0]);
+    const raw = m[0].replace(/[.,;:!?)\]]+$/, "");
+    const host = hostOf(raw).toLowerCase();
+    if (!host || !validHost(host)) continue;
+    if (!allowDomains.some((d) => host === d || host.endsWith("." + d))) out.add(raw);
   }
-  const patterns = [
-    /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g,
+  const dotted = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g;
+  let hit;
+  while ((hit = dotted.exec(src)) !== null) {
+    if (validOctets(hit[0]) && routableIp(hit[0])) out.add("http://" + hit[0]);
+  }
+  const structured = [
     /\b(?:0[xX][0-9a-fA-F]{1,2}\.){3}0[xX][0-9a-fA-F]{1,2}\b/g,
     /\b0[0-7]{2,3}(?:\.0[0-7]{2,3}){3}\b/g,
   ];
-  for (const r of patterns) {
-    let hit;
-    while ((hit = r.exec(src)) !== null) out.add("http://" + hit[0]);
+  for (const r of structured) {
+    while ((hit = r.exec(src)) !== null) {
+      const ip = hit[0].split(".").map((o) => (/^0[xX]/i.test(o) ? parseInt(o, 16) : parseInt(o, 8))).join(".");
+      if (validOctets(ip) && routableIp(ip)) out.add("http://" + ip);
+    }
   }
-  const hexFull = /\b0[xX]([0-9a-fA-F]{8})\b/g;
-  while ((m = hexFull.exec(src)) !== null) out.add("http://" + hexToDotted(m[1]));
   return [...out];
 }
 
@@ -153,9 +175,9 @@ export function analyzeAdded(added, cfg) {
   const obSecrets = testSecrets(enriched).filter((s) => !plainSecrets.includes(s));
   const riskyHosts = enrichedHosts.filter((h) => isRiskyUrl(h, cfg.riskyInfra || []));
   const typo = findTyposquat(enrichedHosts, cfg);
-  const intIp = /\b\d{9,10}\b/.test(normalized)
-    ? (normalized.match(/\b\d{9,10}\b/g) || []).filter((n) => Number(n) <= 4294967295)
-    : [];
+  const decIp = (normalized.match(/\b\d{9,10}\b/g) || []).filter((n) => Number(n) <= 4294967295);
+  const hexIp = (normalized.match(/\b0[xX][0-9a-fA-F]{8}\b/g) || []).map((h) => String(parseInt(h, 16)));
+  const intIp = [...decIp, ...hexIp];
   return {
     hosts: plainHosts.filter((h) => !riskyHosts.includes(h)),
     riskyHosts,
@@ -323,30 +345,36 @@ export function scanDiff(diffText, cfg) {
       });
       continue;
     }
-    if (!isScannableFile(entry.file)) continue;
+    if (!isScannableFile(entry.file) || isTestPath(entry.file)) continue;
     for (const f of findingsForFile(entry.file, entry.added, cfg)) out.push(f);
   }
   return out;
 }
 
+const SIG_KEYS = ["hosts", "sources", "sinks", "perms", "pinning", "sms", "spy", "keylog", "staged"];
+
+function blankFileSig() {
+  return { hosts: [], sources: [], sinks: [], perms: [], pinning: [], sms: [], spy: [], keylog: [], staged: [] };
+}
+
 export function extractSignals(diffText, cfg) {
-  const sig = { hosts: [], sources: [], sinks: [], perms: [], pinning: [], sms: [], spy: [], keylog: [], staged: [] };
+  const files = {};
   for (const entry of parseDiff(diffText)) {
-    if (entry.binary || !isScannableFile(entry.file)) continue;
+    if (entry.binary || !isScannableFile(entry.file) || isTestPath(entry.file)) continue;
     const a = analyzeAdded(entry.added, cfg);
-    for (const h of [...a.hosts, ...a.riskyHosts, ...a.obHosts]) {
-      if (!sig.hosts.includes(h)) sig.hosts.push(h);
-    }
-    for (const s of a.src) if (!sig.sources.includes(s)) sig.sources.push(s);
-    for (const s of a.sink) if (!sig.sinks.includes(s)) sig.sinks.push(s);
-    for (const p of a.perms) if (!sig.perms.includes(p)) sig.perms.push(p);
-    for (const p of a.pin) if (!sig.pinning.includes(p)) sig.pinning.push(p);
-    for (const s of a.sms) if (!sig.sms.includes(s)) sig.sms.push(s);
-    for (const s of a.spy) if (!sig.spy.includes(s)) sig.spy.push(s);
-    for (const s of a.keylog) if (!sig.keylog.includes(s)) sig.keylog.push(s);
-    for (const s of a.staged) if (!sig.staged.includes(s)) sig.staged.push(s);
+    const f = (files[entry.file] ||= blankFileSig());
+    const push = (arr, vals) => { for (const v of vals) if (!arr.includes(v)) arr.push(v); };
+    push(f.hosts, [...a.hosts, ...a.riskyHosts, ...a.obHosts]);
+    push(f.sources, a.src);
+    push(f.sinks, a.sink);
+    push(f.perms, a.perms);
+    push(f.pinning, a.pin);
+    push(f.sms, a.sms);
+    push(f.spy, a.spy);
+    push(f.keylog, a.keylog);
+    push(f.staged, a.staged);
   }
-  return sig;
+  return { files };
 }
 
 function mergeEntries(prev, curValues, today) {
@@ -364,68 +392,86 @@ function mergeEntries(prev, curValues, today) {
 
 export function updateSignalsAndCrossCheck(name, diffText, cfg, store, today) {
   const all = store && store.repos ? store.repos : {};
-  const blank = { hosts: [], sources: [], sinks: [], perms: [], pinning: [], sms: [], spy: [], keylog: [], staged: [], updated: today };
-  const prev = all[name] || blank;
+  const rawPrev = all[name] || {};
+  const prevFiles = rawPrev.files || {};
+  const prevUpdated = rawPrev.updated || today;
   const cur = extractSignals(diffText, cfg);
   const findings = [];
-  const prevTerms = [...prev.sources.map((s) => s.v), ...prev.sinks.map((s) => s.v)];
-  const prevSpyTerms = [...(prev.sms || []).map((s) => s.v), ...(prev.spy || []).map((s) => s.v), ...(prev.keylog || []).map((s) => s.v), ...(prev.staged || []).map((s) => s.v)];
-  const curSpyTerms = [...cur.sms, ...cur.spy, ...cur.keylog, ...cur.staged];
-  if (prevSpyTerms.length > 0 && (cur.hosts.length > 0 || cur.sinks.length > 0)) {
-    findings.push({
-      severity: "critical", file: "cross-window",
-      reason: "theft primitive completed across windows: previously seen " + prevSpyTerms.join(", ") + " (" + prev.updated + ") with new network use",
-      excerpt: "(see report of " + prev.updated + " for the earlier half)",
-    });
+  const nextFiles = {};
+  for (const [p, pf] of Object.entries(prevFiles)) {
+    nextFiles[p] = mergeFileSig(pf, blankFileSig(), today);
   }
-  if (curSpyTerms.length > 0 && (prev.hosts.length > 0 || prev.sinks.length > 0)) {
-    findings.push({
-      severity: "critical", file: "cross-window",
-      reason: "theft primitive completed across windows: new " + curSpyTerms.join(", ") + " with previously seen network (" + prev.updated + ")",
-      excerpt: "(see report of " + prev.updated + " for the earlier half)",
-    });
+  for (const [path, curFile] of Object.entries(cur.files)) {
+    const pf = prevFiles[path] || blankFileSig();
+    const prevTerms = [...(pf.sources || []).map((s) => s.v), ...(pf.sinks || []).map((s) => s.v)];
+    const prevSpyTerms = [...(pf.sms || []).map((s) => s.v), ...(pf.spy || []).map((s) => s.v), ...(pf.keylog || []).map((s) => s.v), ...(pf.staged || []).map((s) => s.v)];
+    const curSpyTerms = [...curFile.sms, ...curFile.spy, ...curFile.keylog, ...curFile.staged];
+    const xw = "(see report of " + prevUpdated + " for the earlier half)";
+    if (prevSpyTerms.length > 0 && (curFile.hosts.length > 0 || curFile.sinks.length > 0)) {
+      findings.push({
+        severity: "critical", file: "cross-window",
+        reason: "theft primitive completed across windows in " + path + ": previously seen " + prevSpyTerms.join(", ") + " (" + prevUpdated + ") with new network use",
+        excerpt: xw,
+      });
+    }
+    if (curSpyTerms.length > 0 && ((pf.hosts || []).length > 0 || (pf.sinks || []).length > 0)) {
+      findings.push({
+        severity: "critical", file: "cross-window",
+        reason: "theft primitive completed across windows in " + path + ": new " + curSpyTerms.join(", ") + " with previously seen network (" + prevUpdated + ")",
+        excerpt: xw,
+      });
+    }
+    if (curFile.hosts.length > 0 && prevTerms.length > 0) {
+      findings.push({
+        severity: "high", file: "cross-window",
+        reason: "exfil completed across windows in " + path + ": new host " + curFile.hosts.join(", ") + " with previously seen " + prevTerms.join(", ") + " (" + prevUpdated + ")",
+        excerpt: xw,
+      });
+    }
+    if ((curFile.sources.length > 0 || curFile.sinks.length > 0) && (pf.hosts || []).length > 0) {
+      findings.push({
+        severity: "high", file: "cross-window",
+        reason: "exfil completed across windows in " + path + ": previously seen host " + (pf.hosts || []).map((h) => h.v).join(", ") + " (" + prevUpdated + ") with new " + [...curFile.sources, ...curFile.sinks].join(", "),
+        excerpt: xw,
+      });
+    }
+    if ((curFile.pinning.length > 0 && (pf.hosts || []).length > 0) || ((pf.pinning || []).length > 0 && curFile.hosts.length > 0)) {
+      findings.push({
+        severity: "high", file: "cross-window",
+        reason: "pinning bypass plus unknown host split across windows in " + path + " (earlier half in " + prevUpdated + ")",
+        excerpt: xw,
+      });
+    }
+    if ((curFile.perms.length > 0 && (pf.sinks || []).length > 0) || ((pf.perms || []).length > 0 && curFile.sinks.length > 0)) {
+      findings.push({
+        severity: "medium", file: "cross-window",
+        reason: "dangerous permission plus network sink split across windows in " + path + " (earlier half in " + prevUpdated + ")",
+        excerpt: xw,
+      });
+    }
+    nextFiles[path] = mergeFileSig(pf, curFile, today);
   }
-  if (cur.hosts.length > 0 && prevTerms.length > 0) {
-    findings.push({
-      severity: "high", file: "cross-window",
-      reason: "exfil completed across windows: new host " + cur.hosts.join(", ") + " with previously seen " + prevTerms.join(", ") + " (" + prev.updated + ")",
-      excerpt: "(see report of " + prev.updated + " for the earlier half)",
-    });
+  return { findings, store: { repos: { ...all, [name]: { files: nextFiles, updated: today } } } };
+}
+
+function mergeFileSig(prev, curValues, today) {
+  const merged = {};
+  for (const k of SIG_KEYS) {
+    merged[k] = mergeEntries((prev && prev[k]) || [], curValues[k] || [], today);
   }
-  if ((cur.sources.length > 0 || cur.sinks.length > 0) && prev.hosts.length > 0) {
-    findings.push({
-      severity: "high", file: "cross-window",
-      reason: "exfil completed across windows: previously seen host " + prev.hosts.map((h) => h.v).join(", ") + " (" + prev.updated + ") with new " + [...cur.sources, ...cur.sinks].join(", "),
-      excerpt: "(see report of " + prev.updated + " for the earlier half)",
-    });
+  return merged;
+}
+
+export function applyPardons(blacklist, pardons) {
+  const list = blacklist && blacklist.repos ? { ...blacklist.repos } : {};
+  const freed = [];
+  for (const n of (pardons && pardons.pardoned) || []) {
+    if (list[n]) {
+      delete list[n];
+      freed.push(n);
+    }
   }
-  if ((cur.pinning.length > 0 && prev.hosts.length > 0) || (prev.pinning.length > 0 && cur.hosts.length > 0)) {
-    findings.push({
-      severity: "high", file: "cross-window",
-      reason: "pinning bypass plus unknown host split across windows (earlier half in " + prev.updated + ")",
-      excerpt: "(see report of " + prev.updated + " for the earlier half)",
-    });
-  }
-  if ((cur.perms.length > 0 && prev.sinks.length > 0) || (prev.perms.length > 0 && cur.sinks.length > 0)) {
-    findings.push({
-      severity: "medium", file: "cross-window",
-      reason: "dangerous permission plus network sink split across windows (earlier half in " + prev.updated + ")",
-      excerpt: "(see report of " + prev.updated + " for the earlier half)",
-    });
-  }
-  const merged = {
-    hosts: mergeEntries(prev.hosts || [], cur.hosts, today),
-    sources: mergeEntries(prev.sources || [], cur.sources, today),
-    sinks: mergeEntries(prev.sinks || [], cur.sinks, today),
-    perms: mergeEntries(prev.perms || [], cur.perms, today),
-    pinning: mergeEntries(prev.pinning || [], cur.pinning, today),
-    sms: mergeEntries(prev.sms || [], cur.sms, today),
-    spy: mergeEntries(prev.spy || [], cur.spy, today),
-    keylog: mergeEntries(prev.keylog || [], cur.keylog, today),
-    staged: mergeEntries(prev.staged || [], cur.staged, today),
-    updated: today,
-  };
-  return { findings, store: { repos: { ...all, [name]: merged } } };
+  return { blacklist: { repos: list }, freed };
 }
 
 export function updateBlacklist(name, repo, sha, findings, blacklist, today) {

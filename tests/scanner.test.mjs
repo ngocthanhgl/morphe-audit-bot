@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { scanDiff, updateSignalsAndCrossCheck, updateBlacklist } from "../scanner.mjs";
+import { scanDiff, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, isTestPath, extractSignals } from "../scanner.mjs";
 import { readFileSync } from "node:fs";
 
 const cfg = JSON.parse(readFileSync("config/allowlist.json", "utf8"));
@@ -113,16 +113,64 @@ describe("v2 smart rules", () => {
     assert.equal(fmpe[0].severity, "info");
   });
   it("cross-window: stored host plus new source/sink flags high", () => {
-    const store = { repos: { demo: { hosts: [{ v: EVIL, d: "2026-10-01" }], sources: [], sinks: [], perms: [], pinning: [], updated: "2026-10-01" } } };
+    const store = { repos: { demo: { files: { "patches/Sync.kt": { hosts: [{ v: EVIL, d: "2026-10-01" }], sources: [], sinks: [], perms: [], pinning: [], sms: [], spy: [], keylog: [], staged: [] } }, updated: "2026-10-01" } } };
     const d = diffFor("patches/Sync.kt", ["val id = getDeviceId()", "OkHttp.newCall(url).execute()"]);
     const r = updateSignalsAndCrossCheck("demo", d, cfg, store, "2026-10-12");
     assert.ok(r.findings.some((x) => x.severity === "high" && /across windows/.test(x.reason)));
   });
   it("cross-window: new unknown host plus stored source flags high", () => {
-    const store = { repos: { demo: { hosts: [], sources: [{ v: "getDeviceId", d: "2026-10-01" }], sinks: [], perms: [], pinning: [], updated: "2026-10-01" } } };
+    const store = { repos: { demo: { files: { "patches/Ping.kt": { hosts: [], sources: [{ v: "getDeviceId", d: "2026-10-01" }], sinks: [], perms: [], pinning: [], sms: [], spy: [], keylog: [], staged: [] } }, updated: "2026-10-01" } } };
     const d = diffFor("patches/Ping.kt", ["val u = \"" + EVIL + "\""]);
     const r = updateSignalsAndCrossCheck("demo", d, cfg, store, "2026-10-12");
     assert.ok(r.findings.some((x) => x.severity === "high" && /across windows/.test(x.reason)));
+  });
+  it("cross-window: halves in different files do not combine", () => {
+    const store = { repos: { demo: { files: { "feat/A.kt": { hosts: [], sources: [{ v: "getDeviceId", d: "2026-10-01" }], sinks: [], perms: [], pinning: [], sms: [], spy: [], keylog: [], staged: [] } }, updated: "2026-10-01" } } };
+    const d = diffFor("feat/B.kt", ["val u = \"" + EVIL + "\""]);
+    const r = updateSignalsAndCrossCheck("demo", d, cfg, store, "2026-10-12");
+    assert.equal(r.findings.length, 0);
+  });
+});
+
+describe("v6 false-positive kills", () => {
+  it("skips test files entirely (findings and signals)", () => {
+    assert.ok(isTestPath("extensions/facebook/src/test/java/app/ScreenLogTest.java"));
+    assert.ok(isTestPath("patches/src/test/kotlin/app/AppLabelTest.kt"));
+    assert.ok(!isTestPath("patches/Sync.kt"));
+    const d = diffFor("patches/src/test/kotlin/app/EvilTest.kt", ["val u = \"https://evil.example.evil123/x\"", "OkHttp.newCall(u).execute()"]);
+    assert.equal(scanDiff(d, cfg).length, 0);
+    assert.deepEqual(extractSignals(d, cfg), { files: {} });
+  });
+  it("ignores font-magic hex constants without network context (Hush FontFile)", () => {
+    const d = diffFor("extensions/messenger/FontFile.java", ["private static final int HEAD = 0x68656164;", "private static final int HHEA = 0x68686561;", "private static final int OS2 = 0x4F532F32;"]);
+    assert.equal(scanDiff(d, cfg).length, 0);
+  });
+  it("rejects invalid and non-routable IP literals", () => {
+    assert.equal(scanDiff(diffFor("patches/V.kt", ["val v = \"400.0.0.1\""]), cfg).length, 0);
+    assert.equal(scanDiff(diffFor("patches/C.kt", ["val c = 0x00FFFFFF", "val m = 0xFFFAF7F9"]), cfg).length, 0);
+    assert.equal(scanDiff(diffFor("patches/U.kt", ["val u = \"https://www.\""]), cfg).length, 0);
+  });
+  it("still flags encoded IP when a real network sink is present", () => {
+    const d = diffFor("patches/Net.kt", ["val ip = 0xC0A80114", "OkHttp.newCall(ip).execute()"]);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.some((x) => x.severity === "medium"));
+  });
+  it("does not treat a bare Intent as an exfil sink", () => {
+    const d = diffFor("patches/Share.kt", ["val id = getDeviceId()", "startActivity(new Intent(ctx, ShareActivity.class))"]);
+    assert.equal(scanDiff(d, cfg).length, 0);
+  });
+  it("Hush regression: test-fixture URLs plus stored TextWatcher do not ban", () => {
+    const store = { repos: { demo: { files: { "feat/Input.kt": { hosts: [], sources: [], sinks: [], perms: [], pinning: [], sms: [], spy: [], keylog: [{ v: "TextWatcher", d: "2026-10-12" }], staged: [] } }, updated: "2026-10-12" } } };
+    const d = diffFor("extensions/facebook/src/test/java/app/ScreenLogTest.java", ["Uri.parse(\"fb://profile/1234567890\")", "redact(\"m.me/1234567890 www.instagram.com/janedoe\")"]);
+    const r = updateSignalsAndCrossCheck("demo", d, cfg, store, "2026-10-13");
+    assert.equal(r.findings.length, 0);
+  });
+  it("migrates legacy repo-level signal stores without crashing", () => {
+    const legacy = { repos: { demo: { hosts: [{ v: "https://old.example/x", d: "2026-10-01" }], sources: [], sinks: [], perms: [], pinning: [], updated: "2026-10-01" } } };
+    const d = diffFor("patches/Sync.kt", ["val id = getDeviceId()"]);
+    const r = updateSignalsAndCrossCheck("demo", d, cfg, legacy, "2026-10-13");
+    assert.ok(Array.isArray(r.findings));
+    assert.ok(r.store.repos.demo.files);
   });
 });
 
@@ -228,5 +276,11 @@ describe("v4 permanent blacklist", () => {
     assert.equal(r.banned, true);
     assert.equal(r.blacklist.repos.demo.since, "2026-10-01");
     assert.equal(r.blacklist.repos.demo.sha, "oldsha");
+  });
+  it("frees pardoned repos but keeps everyone else banned", () => {
+    const bl = { repos: { a: { repo: "o/a" }, b: { repo: "o/b" } } };
+    const r = applyPardons(bl, { pardoned: ["a"], reason: "fp" });
+    assert.deepEqual(r.freed, ["a"]);
+    assert.ok(!r.blacklist.repos.a && r.blacklist.repos.b);
   });
 });

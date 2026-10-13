@@ -1,0 +1,1 @@
+{"pardoned": ["hush-messenger", "hush-facebook"], "reason": "v6 FP verdict 2026-10-13: bans were built on test-fixture URLs plus hex-literal garbage IPs combined across unrelated files. Cross-window now requires same-file halves; test paths excluded."}

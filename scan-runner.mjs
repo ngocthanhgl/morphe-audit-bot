@@ -1,6 +1,6 @@
 import { execSync } from "node:child_process";
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
-import { loadConfig, scanDiff, renderRepoReport, updateSignalsAndCrossCheck, updateBlacklist } from "./scanner.mjs";
+import { loadConfig, scanDiff, renderRepoReport, updateSignalsAndCrossCheck, updateBlacklist, applyPardons } from "./scanner.mjs";
 import { analyzeBlob } from "./binary.mjs";
 import { mapSemgrep } from "./semgrep.mjs";
 import { buildReviewPrompt, callReviewer, reviewerDecision, readSpend, recordSpend } from "./llm-review.mjs";
@@ -23,6 +23,12 @@ const cfg = loadConfig("config/allowlist.json");
 const state = existsSync("state.json") ? JSON.parse(readFileSync("state.json", "utf8") || "{}") : {};
 let signals = existsSync("signals.json") ? JSON.parse(readFileSync("signals.json", "utf8") || "{}") : {};
 let blacklist = existsSync("blacklist.json") ? JSON.parse(readFileSync("blacklist.json", "utf8") || "{}") : {};
+const pardons = existsSync("config/pardons.json") ? JSON.parse(readFileSync("config/pardons.json", "utf8") || "{}") : {};
+{
+  const p = applyPardons(blacklist, pardons);
+  blacklist = p.blacklist;
+  for (const n of p.freed) console.log("PARDONED " + n + ": " + (pardons.reason || "manual pardon"));
+}
 let reviewQueue = existsSync("review-queue.json") ? JSON.parse(readFileSync("review-queue.json", "utf8") || "{}") : {};
 if (!reviewQueue.items) reviewQueue.items = {};
 if (!existsSync("work")) mkdirSync("work");
@@ -124,7 +130,7 @@ writeFileSync("review-queue.json", JSON.stringify(reviewQueue, null, 2) + "\n");
 if (!existsSync("llm-spend.json")) writeFileSync("llm-spend.json", JSON.stringify({ month: currentMonth(), total: 0 }, null, 2) + "\n");
 const totalCrit = rows.reduce((n, r) => n + (r.crit || 0), 0);
 writeFileSync("crit-alert.txt", String(totalCrit) + "\n");
-let readme = "# Morphe patches audit\n\nScans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Permanent blacklist: one critical finding bans a target forever (blacklist.json). v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan.\n\n## :octagonal_sign: Blacklisted — permanently untrusted\n\nOnce a target produces a critical finding it stays here forever. Clean later pushes never clear it; removal requires a manual edit of `blacklist.json`.\n\n";
+let readme = "# Morphe patches audit\n\nScans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Permanent blacklist: one critical finding bans a target forever (blacklist.json). v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json.\n\n## :octagonal_sign: Blacklisted — permanently untrusted\n\nOnce a target produces a critical finding it stays here forever. Clean later pushes never clear it; removal requires a manual pardon in `config/pardons.json`.\n\n";
 const banned = Object.entries((blacklist.repos || {}));
 if (banned.length === 0) {
   readme += "No blacklisted targets.\n\n";
