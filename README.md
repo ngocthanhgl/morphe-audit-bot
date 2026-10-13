@@ -1,10 +1,10 @@
 # Morphe patches audit
 
-Scans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Permanent blacklist: one critical finding bans a target forever (blacklist.json). v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json.
+Scans every 4h (`0 */4 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Permanent blacklist: one critical finding bans a target forever (blacklist.json). v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. v7: every critical/high goes through the LLM judge; bans only on LLM confirmation.
 
 ## :octagonal_sign: Blacklisted — permanently untrusted
 
-Once a target produces a critical finding it stays here forever. Clean later pushes never clear it; removal requires a manual pardon in `config/pardons.json`.
+Once the LLM confirms a malicious finding the target stays here forever. Clean later pushes never clear it; removal requires a manual pardon in `config/pardons.json`. Deterministic findings without confirmation never ban.
 
 No blacklisted targets.
 
@@ -14,22 +14,22 @@ No critical findings in this window.
 
 | target | scan | commit | status | crit | high | med | report |
 |---|---|---|---|---|---|---|---|
-| morphe-patches | 2026-10-13 | e546439 | OK | 0 | 0 | 0 | reports/2026-10-13/morphe-patches-run01-OK.md |
-| bearinmind | 2026-10-13 | ba25e7b | OK | 0 | 0 | 0 | reports/2026-10-13/bearinmind-run01-OK.md |
-| d0nj | 2026-10-13 | 04034fd | OK | 0 | 0 | 0 | reports/2026-10-13/d0nj-run01-OK.md |
-| piko | 2026-10-13 | a0ed9a5 | OK | 0 | 0 | 0 | reports/2026-10-13/piko-run01-OK.md |
-| piko-ig-lite | 2026-10-13 | b3f4a9d | OK | 0 | 0 | 0 | reports/2026-10-13/piko-ig-lite-run01-OK.md |
-| piko-newx | 2026-10-13 | 6c3b0b8 | OK | 0 | 0 | 0 | reports/2026-10-13/piko-newx-run01-OK.md |
-| gboard | 2026-10-13 | 6f8064a | OK | 0 | 0 | 0 | reports/2026-10-13/gboard-run01-OK.md |
-| hush-messenger | 2026-10-13 | 7452327 | OK | 0 | 0 | 0 | reports/2026-10-13/hush-messenger-run01-OK.md |
-| hush-facebook | 2026-10-13 | b06d2aa | OK | 0 | 0 | 0 | reports/2026-10-13/hush-facebook-run01-OK.md |
-| zeldris | 2026-10-13 | 9418386 | OK | 0 | 0 | 0 | reports/2026-10-13/zeldris-run01-OK.md |
-| adobo | 2026-10-13 | a42ace2 | OK | 0 | 0 | 0 | reports/2026-10-13/adobo-run01-OK.md |
-| doom | 2026-10-13 | e3bb3af | OK | 0 | 0 | 0 | reports/2026-10-13/doom-run01-OK.md |
+| morphe-patches | 2026-10-13 | e546439 | OK | 0 | 0 | 0 | reports/2026-10-13/morphe-patches-run02-OK.md |
+| bearinmind | 2026-10-13 | ba25e7b | OK | 0 | 0 | 0 | reports/2026-10-13/bearinmind-run02-OK.md |
+| d0nj | 2026-10-13 | 04034fd | OK | 0 | 0 | 0 | reports/2026-10-13/d0nj-run02-OK.md |
+| piko | 2026-10-13 | a0ed9a5 | OK | 0 | 0 | 0 | reports/2026-10-13/piko-run02-OK.md |
+| piko-ig-lite | 2026-10-13 | b3f4a9d | OK | 0 | 0 | 0 | reports/2026-10-13/piko-ig-lite-run02-OK.md |
+| piko-newx | 2026-10-13 | 6c3b0b8 | OK | 0 | 0 | 0 | reports/2026-10-13/piko-newx-run02-OK.md |
+| gboard | 2026-10-13 | 6f8064a | OK | 0 | 0 | 0 | reports/2026-10-13/gboard-run02-OK.md |
+| hush-messenger | 2026-10-13 | ee20c42 | OK | 0 | 0 | 0 | reports/2026-10-13/hush-messenger-run02-OK.md |
+| hush-facebook | 2026-10-13 | b06d2aa | OK | 0 | 0 | 0 | reports/2026-10-13/hush-facebook-run02-OK.md |
+| zeldris | 2026-10-13 | 9418386 | OK | 0 | 0 | 0 | reports/2026-10-13/zeldris-run02-OK.md |
+| adobo | 2026-10-13 | a42ace2 | OK | 0 | 0 | 0 | reports/2026-10-13/adobo-run02-OK.md |
+| doom | 2026-10-13 | e3bb3af | OK | 0 | 0 | 0 | reports/2026-10-13/doom-run02-OK.md |
 
 ## Review queue (needs human)
 
-LLM-suspect items below the auto-ban bar. Confirm in code, then ban by editing `blacklist.json` or dismiss by deleting the entry from `review-queue.json`.
+LLM-suspect items below the confirmation bar, plus pending items awaiting a usable verdict — no ban until the judge confirms. Confirm in code, then ban by editing `blacklist.json` or dismiss by deleting the entry from `review-queue.json`.
 
 Queue empty.
 
