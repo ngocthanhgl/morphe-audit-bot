@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { scanDiff, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, isTestPath, extractSignals } from "../scanner.mjs";
+import { scanDiff, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, isTestPath, extractSignals, reportFilename, nextRunSeq } from "../scanner.mjs";
 import { readFileSync } from "node:fs";
 
 const cfg = JSON.parse(readFileSync("config/allowlist.json", "utf8"));
@@ -282,5 +282,15 @@ describe("v4 permanent blacklist", () => {
     const r = applyPardons(bl, { pardoned: ["a"], reason: "fp" });
     assert.deepEqual(r.freed, ["a"]);
     assert.ok(!r.blacklist.repos.a && r.blacklist.repos.b);
+  });
+  it("names reports per scan with sequence and finding counts, never overwriting", () => {
+    assert.equal(reportFilename("doom", "2026-10-13", 3, "OK", { crit: 0, high: 0, med: 0 }), "doom-run03-OK.md");
+    assert.equal(reportFilename("hush-facebook", "2026-10-13", 4, "WARN", { crit: 0, high: 0, med: 1 }), "hush-facebook-run04-WARN-c0h0m1.md");
+    assert.equal(reportFilename("a/b", "2026-10-13", 1, "CRIT", { crit: 1, high: 2, med: 0 }), "a_b-run01-CRIT-c1h2m0.md");
+  });
+  it("computes the next run sequence from existing day files", () => {
+    assert.equal(nextRunSeq([], "doom"), 1);
+    assert.equal(nextRunSeq(["doom-run01-OK.md", "doom-run02-WARN-c0h0m1.md", "piko-run01-OK.md", "doom.md"], "doom"), 3);
+    assert.equal(nextRunSeq(["piko-run01-OK.md"], "doom"), 1);
   });
 });

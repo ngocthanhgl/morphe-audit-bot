@@ -474,7 +474,7 @@ export function applyPardons(blacklist, pardons) {
   return { blacklist: { repos: list }, freed };
 }
 
-export function updateBlacklist(name, repo, sha, findings, blacklist, today) {
+export function updateBlacklist(name, repo, sha, findings, blacklist, today, report) {
   const list = blacklist && blacklist.repos ? { ...blacklist.repos } : {};
   if (list[name]) return { blacklist: { repos: list }, banned: true, entry: list[name] };
   const crits = findings.filter((f) => f.severity === "critical");
@@ -484,10 +484,29 @@ export function updateBlacklist(name, repo, sha, findings, blacklist, today) {
     since: today,
     sha: String(sha).slice(0, 12),
     reason: crits[0].reason,
-    report: "reports/" + today + "/" + name + ".md",
+    report: report || ("reports/" + today + "/" + name + ".md"),
   };
   list[name] = entry;
   return { blacklist: { repos: list }, banned: true, entry };
+}
+
+export function reportFilename(name, date, seq, status, counts) {
+  const safe = String(name).replace(/[^A-Za-z0-9.-]+/g, "_");
+  const n = String(seq).padStart(2, "0");
+  const c = counts && (counts.crit + counts.high + counts.med) > 0
+    ? `-c${counts.crit}h${counts.high}m${counts.med}` : "";
+  return `${safe}-run${n}-${status}${c}.md`;
+}
+
+export function nextRunSeq(existingFiles, name) {
+  const esc = String(name).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp("^" + esc + "-run(\\d+)-");
+  let max = 0;
+  for (const f of existingFiles || []) {
+    const m = re.exec(String(f).split("/").pop());
+    if (m) max = Math.max(max, Number(m[1]));
+  }
+  return max + 1;
 }
 
 export function renderRepoReport(repo, sha, findings, date) {

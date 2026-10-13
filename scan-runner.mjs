@@ -1,6 +1,6 @@
 import { execSync } from "node:child_process";
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
-import { loadConfig, scanDiff, renderRepoReport, updateSignalsAndCrossCheck, updateBlacklist, applyPardons } from "./scanner.mjs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from "node:fs";
+import { loadConfig, scanDiff, renderRepoReport, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, reportFilename, nextRunSeq } from "./scanner.mjs";
 import { analyzeBlob } from "./binary.mjs";
 import { mapSemgrep } from "./semgrep.mjs";
 import { buildReviewPrompt, callReviewer, reviewerDecision, readSpend, recordSpend } from "./llm-review.mjs";
@@ -108,15 +108,18 @@ for (const t of targets) {
     let note = old ? "" : " (baseline: first scan, diff unavailable — run again after next window for diff-only results)";
     const reportDir = "reports/" + today;
     if (!existsSync(reportDir)) mkdirSync(reportDir, { recursive: true });
-    writeFileSync(reportDir + "/" + t.name + ".md", renderRepoReport(t.repo, head, findings, today) + "\n_" + note + "_\n");
     state[t.name] = head;
     const crit = findings.filter((f) => f.severity === "critical").length;
     const high = findings.filter((f) => f.severity === "high").length;
     const med = findings.filter((f) => f.severity === "medium").length;
-    const bl = updateBlacklist(t.name, t.repo, head, findings, blacklist, today);
+    const sev = crit > 0 ? "CRIT" : high > 0 ? "RED" : med > 0 ? "WARN" : "OK";
+    const seq = nextRunSeq(existsSync(reportDir) ? readdirSync(reportDir) : [], t.name);
+    const reportRel = reportDir + "/" + reportFilename(t.name, today, seq, sev, { crit, high, med });
+    writeFileSync(reportRel, renderRepoReport(t.repo, head, findings, today) + "\n_" + note + "_\n");
+    const bl = updateBlacklist(t.name, t.repo, head, findings, blacklist, today, reportRel);
     blacklist = bl.blacklist;
     const banned = bl.banned;
-    rows.push({ name: t.name, repo: t.repo, sha: head.slice(0, 7), status: banned ? "BANNED" : crit > 0 ? "CRIT" : high > 0 ? "RED" : med > 0 ? "WARN" : "OK", crit, high, med, crits: findings.filter((f) => f.severity === "critical"), report: "reports/" + today + "/" + t.name + ".md" });
+    rows.push({ name: t.name, repo: t.repo, sha: head.slice(0, 7), status: banned ? "BANNED" : sev, crit, high, med, crits: findings.filter((f) => f.severity === "critical"), report: reportRel });
   } catch (e) {
     rows.push({ name: t.name, repo: t.repo, sha: "error", status: "ERROR", crit: 0, high: 0, med: 0, crits: [] });
   }
