@@ -1,164 +1,52 @@
 {
   "items": {
-    "2026-10-14|hxreborn-morphe-patches|patches/src/main/resources/moviebox/dashhook.dex|pending": {
+    "2026-10-14|sysadmindoc-hushfeed|tools/verification-probe/src/app/hushfeed/verification/Probe.java|pending": {
       "date": "2026-10-14",
-      "target": "hxreborn-morphe-patches",
-      "repo": "hxreborn/morphe-patches",
-      "file": "patches/src/main/resources/moviebox/dashhook.dex",
+      "target": "sysadmindoc-hushfeed",
+      "repo": "SysAdminDoc/hushfeed",
+      "file": "tools/verification-probe/src/app/hushfeed/verification/Probe.java",
       "verdict": "pending",
       "confidence": 0,
       "category": "reviewer-error",
       "evidence": [
-        "[binary strings] reflection-hidden behavior with network sink"
+        "reflection-hidden behavior with network sink"
       ],
       "reasoning": "reviewer call failed; deterministic finding stands without ban",
       "source": "4h"
     },
-    "2026-10-14|chikuwadon-nicoid-re-patches|extensions/extension/src/main/java/e/e/a/Ranking190.java|pending": {
+    "2026-10-14|helllord77-media-patches|extensions/bongo/src/main/java/app/morphe/extension/bongo/repos/ContentRepo.java|pending": {
       "date": "2026-10-14",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "extensions/extension/src/main/java/e/e/a/Ranking190.java",
+      "target": "helllord77-media-patches",
+      "repo": "HellLord77/media-patches",
+      "file": "extensions/bongo/src/main/java/app/morphe/extension/bongo/repos/ContentRepo.java",
       "verdict": "pending",
       "confidence": 0,
       "category": "reviewer-error",
       "evidence": [
-        "cross-app private data access with network: Cookies"
+        "new non-allowlisted URL or IP"
       ],
       "reasoning": "reviewer call failed; deterministic finding stands without ban",
       "source": "4h"
     },
-    "2026-10-14|chikuwadon-nicoid-re-patches|extensions/extension/src/main/java/e/e/a/Nicoad190.java|pending": {
+    "2026-10-14|bearinmind|cross-window|pending": {
       "date": "2026-10-14",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "extensions/extension/src/main/java/e/e/a/Nicoad190.java",
+      "target": "bearinmind",
+      "repo": "bearinmindcat/morphe-patches",
+      "file": "cross-window",
       "verdict": "pending",
       "confidence": 0,
       "category": "reviewer-error",
       "evidence": [
-        "sensitive source reaches network sink"
+        "exfil completed across windows in extensions/extension/src/main/java/org/ungoogled/ui/SpeedCameras.java: new host https://lz4.overpass-api.de, https://z.overpass-api.de, https://maps.mail.ru with previously seen Location (2026-10-14)"
       ],
       "reasoning": "reviewer call failed; deterministic finding stands without ban",
       "source": "4h"
     },
-    "2026-10-14|chikuwadon-nicoid-re-patches|extensions/extension/src/main/java/e/e/a/MylistFollow190.java|pending": {
+    "2026-10-14|bearinmind|extensions/extension/src/main/java/org/ungoogled/ui/SpeedCameras.java|pending": {
       "date": "2026-10-14",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "extensions/extension/src/main/java/e/e/a/MylistFollow190.java",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "reviewer-error",
-      "evidence": [
-        "cross-app private data access with network: Cookies"
-      ],
-      "reasoning": "reviewer call failed; deterministic finding stands without ban",
-      "source": "4h"
-    },
-    "2026-10-14|chikuwadon-nicoid-re-patches|extensions/extension/src/main/java/e/e/a/AccountLists.java|pending": {
-      "date": "2026-10-14",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "extensions/extension/src/main/java/e/e/a/AccountLists.java",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "reviewer-error",
-      "evidence": [
-        "cross-app private data access with network: Cookies"
-      ],
-      "reasoning": "reviewer call failed; deterministic finding stands without ban",
-      "source": "4h"
-    },
-    "2026-10-14|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/method-delta.dex|pending": {
-      "date": "2026-10-14",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "patches/src/main/resources/nicoid/method-delta.dex",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "reviewer-error",
-      "evidence": [
-        "[binary strings] sensitive source reaches network sink"
-      ],
-      "reasoning": "reviewer call failed; deterministic finding stands without ban",
-      "source": "4h"
-    },
-    "2026-10-14|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/helpers.mpe|pending": {
-      "date": "2026-10-14",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "patches/src/main/resources/nicoid/helpers.mpe",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "reviewer-error",
-      "evidence": [
-        "[binary strings] reflection-hidden behavior with network sink"
-      ],
-      "reasoning": "reviewer call failed; deterministic finding stands without ban",
-      "source": "4h"
-    },
-    "2026-10-14|chikuwadon-nicoid-re-patches|extensions/extension/src/main/java/e/e/a/VideoDetails.java|pending": {
-      "date": "2026-10-14",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "extensions/extension/src/main/java/e/e/a/VideoDetails.java",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "reviewer-error",
-      "evidence": [
-        "cross-app private data access with network: Cookies"
-      ],
-      "reasoning": "reviewer call failed; deterministic finding stands without ban",
-      "source": "4h"
-    },
-    "2026-10-14|byehi98-okish-morphe-patches|extensions/swiftbackup/build.gradle.kts|pending": {
-      "date": "2026-10-14",
-      "target": "byehi98-okish-morphe-patches",
-      "repo": "byehi98/okish-morphe-patches",
-      "file": "extensions/swiftbackup/build.gradle.kts",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "reviewer-error",
-      "evidence": [
-        "new external dependency added — verify coordinates"
-      ],
-      "reasoning": "reviewer call failed; deterministic finding stands without ban",
-      "source": "4h"
-    },
-    "2026-10-14|heval99-heval-morphe-patches|patches/src/main/kotlin/app/template/patches/shared/Constants.kt|pending": {
-      "date": "2026-10-14",
-      "target": "heval99-heval-morphe-patches",
-      "repo": "heval99/Heval-Morphe-Patches",
-      "file": "patches/src/main/kotlin/app/template/patches/shared/Constants.kt",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "reviewer-error",
-      "evidence": [
-        "sensitive source reaches network sink"
-      ],
-      "reasoning": "reviewer call failed; deterministic finding stands without ban",
-      "source": "4h"
-    },
-    "2026-10-14|hxreborn-morphe-patches|extensions/extension/src/main/java/app/hxreborn/extension/lumo/LumoPlus.java|pending": {
-      "date": "2026-10-14",
-      "target": "hxreborn-morphe-patches",
-      "repo": "hxreborn/morphe-patches",
-      "file": "extensions/extension/src/main/java/app/hxreborn/extension/lumo/LumoPlus.java",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "reviewer-error",
-      "evidence": [
-        "WebView JS bridge with network sink: evaluateJavascript"
-      ],
-      "reasoning": "reviewer call failed; deterministic finding stands without ban",
-      "source": "4h"
-    },
-    "2026-10-14|sysadmindoc-hushtelegram|extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/MiniAppLocation.java|pending": {
-      "date": "2026-10-14",
-      "target": "sysadmindoc-hushtelegram",
-      "repo": "SysAdminDoc/HushTelegram",
-      "file": "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/MiniAppLocation.java",
+      "target": "bearinmind",
+      "repo": "bearinmindcat/morphe-patches",
+      "file": "extensions/extension/src/main/java/org/ungoogled/ui/SpeedCameras.java",
       "verdict": "pending",
       "confidence": 0,
       "category": "reviewer-error",
@@ -182,16 +70,184 @@
       "reasoning": "reviewer call failed; deterministic finding stands without ban",
       "source": "4h"
     },
-    "2026-10-13|commit-regrets-morphe-youtube-vr-patches|gradle/wrapper/gradle-wrapper.jar|pending": {
-      "date": "2026-10-13",
-      "target": "commit-regrets-morphe-youtube-vr-patches",
-      "repo": "commit-regrets/morphe-youtube-vr-patches",
-      "file": "gradle/wrapper/gradle-wrapper.jar",
+    "2026-10-14|sysadmindoc-hushtelegram|extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/MiniAppLocation.java|pending": {
+      "date": "2026-10-14",
+      "target": "sysadmindoc-hushtelegram",
+      "repo": "SysAdminDoc/HushTelegram",
+      "file": "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/MiniAppLocation.java",
       "verdict": "pending",
       "confidence": 0,
       "category": "reviewer-error",
       "evidence": [
-        "native binary added/changed — cannot review textually"
+        "sensitive source reaches network sink"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-14|hxreborn-morphe-patches|extensions/extension/src/main/java/app/hxreborn/extension/lumo/LumoPlus.java|pending": {
+      "date": "2026-10-14",
+      "target": "hxreborn-morphe-patches",
+      "repo": "hxreborn/morphe-patches",
+      "file": "extensions/extension/src/main/java/app/hxreborn/extension/lumo/LumoPlus.java",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "WebView JS bridge with network sink: evaluateJavascript"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-14|heval99-heval-morphe-patches|patches/src/main/kotlin/app/template/patches/shared/Constants.kt|pending": {
+      "date": "2026-10-14",
+      "target": "heval99-heval-morphe-patches",
+      "repo": "heval99/Heval-Morphe-Patches",
+      "file": "patches/src/main/kotlin/app/template/patches/shared/Constants.kt",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "sensitive source reaches network sink"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-14|byehi98-okish-morphe-patches|extensions/swiftbackup/build.gradle.kts|pending": {
+      "date": "2026-10-14",
+      "target": "byehi98-okish-morphe-patches",
+      "repo": "byehi98/okish-morphe-patches",
+      "file": "extensions/swiftbackup/build.gradle.kts",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "new external dependency added — verify coordinates"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-14|chikuwadon-nicoid-re-patches|extensions/extension/src/main/java/e/e/a/VideoDetails.java|pending": {
+      "date": "2026-10-14",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "extensions/extension/src/main/java/e/e/a/VideoDetails.java",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "cross-app private data access with network: Cookies"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-14|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/helpers.mpe|pending": {
+      "date": "2026-10-14",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "patches/src/main/resources/nicoid/helpers.mpe",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "[binary strings] reflection-hidden behavior with network sink"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-14|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/method-delta.dex|pending": {
+      "date": "2026-10-14",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "patches/src/main/resources/nicoid/method-delta.dex",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "[binary strings] sensitive source reaches network sink"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-14|chikuwadon-nicoid-re-patches|extensions/extension/src/main/java/e/e/a/AccountLists.java|pending": {
+      "date": "2026-10-14",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "extensions/extension/src/main/java/e/e/a/AccountLists.java",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "cross-app private data access with network: Cookies"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-14|chikuwadon-nicoid-re-patches|extensions/extension/src/main/java/e/e/a/MylistFollow190.java|pending": {
+      "date": "2026-10-14",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "extensions/extension/src/main/java/e/e/a/MylistFollow190.java",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "cross-app private data access with network: Cookies"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-14|chikuwadon-nicoid-re-patches|extensions/extension/src/main/java/e/e/a/Nicoad190.java|pending": {
+      "date": "2026-10-14",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "extensions/extension/src/main/java/e/e/a/Nicoad190.java",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "sensitive source reaches network sink"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-14|chikuwadon-nicoid-re-patches|extensions/extension/src/main/java/e/e/a/Ranking190.java|pending": {
+      "date": "2026-10-14",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "extensions/extension/src/main/java/e/e/a/Ranking190.java",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "cross-app private data access with network: Cookies"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-14|hxreborn-morphe-patches|patches/src/main/resources/moviebox/dashhook.dex|pending": {
+      "date": "2026-10-14",
+      "target": "hxreborn-morphe-patches",
+      "repo": "hxreborn/morphe-patches",
+      "file": "patches/src/main/resources/moviebox/dashhook.dex",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "[binary strings] reflection-hidden behavior with network sink"
+      ],
+      "reasoning": "reviewer call failed; deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-13|sysadmindoc-hushpinterest|extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/PinTransfer.java|pending": {
+      "date": "2026-10-13",
+      "target": "sysadmindoc-hushpinterest",
+      "repo": "SysAdminDoc/HushPinterest",
+      "file": "extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/PinTransfer.java",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "cross-app private data access with network: Cookies"
       ],
       "reasoning": "reviewer call failed; deterministic finding stands without ban",
       "source": "4h"
@@ -210,16 +266,16 @@
       "reasoning": "reviewer call failed; deterministic finding stands without ban",
       "source": "4h"
     },
-    "2026-10-13|sysadmindoc-hushpinterest|extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/PinTransfer.java|pending": {
+    "2026-10-13|commit-regrets-morphe-youtube-vr-patches|gradle/wrapper/gradle-wrapper.jar|pending": {
       "date": "2026-10-13",
-      "target": "sysadmindoc-hushpinterest",
-      "repo": "SysAdminDoc/HushPinterest",
-      "file": "extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/PinTransfer.java",
+      "target": "commit-regrets-morphe-youtube-vr-patches",
+      "repo": "commit-regrets/morphe-youtube-vr-patches",
+      "file": "gradle/wrapper/gradle-wrapper.jar",
       "verdict": "pending",
       "confidence": 0,
       "category": "reviewer-error",
       "evidence": [
-        "cross-app private data access with network: Cookies"
+        "native binary added/changed — cannot review textually"
       ],
       "reasoning": "reviewer call failed; deterministic finding stands without ban",
       "source": "4h"
