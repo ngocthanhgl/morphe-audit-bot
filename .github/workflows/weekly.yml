@@ -27,8 +27,8 @@ jobs:
           if [ -z "$LLM_API_KEY" ]; then echo "no LLM key, skipping model resolution"; exit 0; fi
           curl -s https://openrouter.ai/api/v1/models \
             -H "Authorization: Bearer $LLM_API_KEY" \
-            | node -e "let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{try{const j=JSON.parse(d);const free=(j.data||[]).filter(m=>(m.pricing&&(m.pricing.prompt==='0'||m.pricing.prompt===0)));const want=process.env.LLM_WANT||'';const pick=free.find(m=>m.id===want)||free[0];console.log(pick?pick.id:'');}catch(e){console.log('')}})" > .llm-model
-          echo "resolved model: $(cat .llm-model)"
+            | node -e "let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{try{const j=JSON.parse(d);const free=(j.data||[]).filter(m=>(m.pricing&&(m.pricing.prompt==='0'||m.pricing.prompt===0)));const want=process.env.LLM_WANT||'';const pick=free.find(m=>m.id===want)||free[0];const rest=free.filter(m=>!pick||m.id!==pick.id).slice(0,3).map(m=>m.id);console.log(pick?pick.id:'');console.log(rest.join(','));}catch(e){console.log('')}})" > .llm-model
+          echo "resolved model: $(sed -n 1p .llm-model)"
       - name: Weekly full-tree scan
         env:
           SCAN_TOKEN: ${{ secrets.SCAN_TOKEN }}
@@ -37,7 +37,7 @@ jobs:
           LLM_FALLBACKS: ${{ vars.LLM_FALLBACKS }}
           LLM_MONTHLY_BUDGET_USD: ${{ vars.LLM_MONTHLY_BUDGET_USD }}
         run: |
-          if [ -s .llm-model ]; then export LLM_MODEL="$(cat .llm-model)"; fi
+          if [ -s .llm-model ]; then export LLM_MODEL="$(sed -n 1p .llm-model)"; AUTO_FB="$(sed -n 2p .llm-model)"; if [ -n "$AUTO_FB" ]; then export LLM_FALLBACKS="${LLM_FALLBACKS:+$LLM_FALLBACKS,}$AUTO_FB"; fi; fi
           rm -f .llm-model
           node weekly-runner.mjs
       - name: Commit weekly reports without retriggering

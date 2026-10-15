@@ -54,12 +54,13 @@ function verdictBody(model, prompt, withSchema) {
   return body;
 }
 
-export async function callReviewer({ endpoint, apiKey, model, fallbacks = [], prompt, fetchImpl = fetch }) {
+export async function callReviewer({ endpoint, apiKey, model, fallbacks = [], prompt, fetchImpl = fetch, sleepImpl = (ms) => new Promise((r) => setTimeout(r, ms)) }) {
   const models = [model, ...fallbacks];
   let lastError = null;
   for (const m of models) {
     let attempt = 0;
     let withSchema = true;
+    let retriedThrottle = false;
     for (;;) {
       attempt++;
       const res = await fetchImpl(endpoint, {
@@ -88,7 +89,11 @@ export async function callReviewer({ endpoint, apiKey, model, fallbacks = [], pr
       const modelGone = res.status === 404 || (res.status === 400 && /model|endpoint|not.?found|no.?endpoints/i.test(errMsg));
       if (modelGone) break;
       if (res.status === 400 && withSchema && attempt === 1) { withSchema = false; continue; }
-      if (res.status !== 429 && res.status < 500) break;
+      if ((res.status === 429 || res.status >= 500) && !retriedThrottle) {
+        retriedThrottle = true;
+        await sleepImpl(8000);
+        continue;
+      }
       break;
     }
   }

@@ -46,16 +46,17 @@ describe("llm reviewer", () => {
     assert.deepEqual(r.verdict, GOOD);
     assert.equal(r.cost, 0.002);
   });
-  it("falls back to the next model on rate limit", async () => {
+  it("gives up with a throttled error after every model is retried once", async () => {
     const used = [];
     const fetchImpl = stubFetch((url, body) => {
       used.push(body.model);
-      if (used.length === 1) return { ok: false, status: 429, json: async () => ({}) };
-      return { ok: true, status: 200, json: async () => ({ choices: [{ message: { content: JSON.stringify(GOOD) } }], usage: {} }) };
+      return { ok: false, status: 429, json: async () => ({ error: { message: "rate limited" } }) };
     });
-    const r = await callReviewer({ endpoint: "https://e", apiKey: "k", model: "m1", fallbacks: ["m2"], prompt: { system: "s", user: "u" }, fetchImpl });
-    assert.deepEqual(used, ["m1", "m2"]);
-    assert.equal(r.model, "m2");
+    await assert.rejects(
+      callReviewer({ endpoint: "https://e", apiKey: "k", model: "m1", fallbacks: ["m2"], prompt: { system: "s", user: "u" }, fetchImpl, sleepImpl: async () => {} }),
+      /429/
+    );
+    assert.deepEqual(used, ["m1", "m1", "m2", "m2"]);
   });
   it("rejects verdicts without evidence or with bad confidence", () => {
     assert.equal(parseVerdict({ ...GOOD, evidence: [] }), null);
@@ -122,5 +123,18 @@ describe("llm reviewer", () => {
     assert.equal(e.category, "reviewer-error");
     assert.match(e.reasoning, /404/);
     assert.match(e.reasoning, /ghost-model/);
+  });
+  it("retries a throttled model once before moving to fallbacks", async () => {
+    const used = [];
+    const sleeps = [];
+    const fetchImpl = stubFetch((url, body) => {
+      used.push(body.model + (body.response_format ? "" : ":plain"));
+      if (used.length <= 2) return { ok: false, status: 429, json: async () => ({ error: { message: "Provider returned error" } }) };
+      return { ok: true, status: 200, json: async () => ({ choices: [{ message: { content: JSON.stringify(GOOD) } }], usage: {} }) };
+    });
+    const r = await callReviewer({ endpoint: "https://e", apiKey: "k", model: "m1", fallbacks: ["m2"], prompt: { system: "s", user: "u" }, fetchImpl, sleepImpl: async (ms) => { sleeps.push(ms); } });
+    assert.deepEqual(used, ["m1", "m1", "m2"]);
+    assert.equal(sleeps.length, 1);
+    assert.equal(r.model, "m2");
   });
 });
