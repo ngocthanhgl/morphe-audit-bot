@@ -100,6 +100,32 @@ export async function callReviewer({ endpoint, apiKey, model, fallbacks = [], pr
   throw lastError || new Error("reviewer failed with no models tried");
 }
 
+export function escalateVerdict({ queue, today, target, file, verdict }) {
+  const items = (queue && queue.items) || {};
+  for (const [k, e] of Object.entries(items)) {
+    const parts = String(k).split("|");
+    if (parts.length < 4 || parts[1] !== target || parts[2] !== file) continue;
+    if (parts[0] >= today) continue;
+    if (e && (e.verdict === "suspicious" || e.verdict === "malicious")) {
+      return { action: "ban", prior: e.date || parts[0], reason: "repeat non-benign verdict for " + target + "/" + file + " (" + (e.date || parts[0]) + " then " + today + ")" };
+    }
+  }
+  return { action: "queue", prior: null, reason: "" };
+}
+
+export function clearStrikes(queue, target, file) {
+  const items = (queue && queue.items) || {};
+  const removed = [];
+  for (const k of Object.keys(items)) {
+    const parts = String(k).split("|");
+    if (parts.length >= 4 && parts[1] === target && parts[2] === file) {
+      delete items[k];
+      removed.push(k);
+    }
+  }
+  return removed;
+}
+
 export function queueReviewerError({ queue, today, target, repo, file, reason, error, source }) {
   const key = today + "|" + target + "|" + file + "|pending";
   const raw = String((error && error.message) || error || "unknown").slice(0, 200)

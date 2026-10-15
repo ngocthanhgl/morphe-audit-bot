@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 
 import { loadConfig, scanDiff, renderRepoReport, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, reportFilename, nextRunSeq } from "./scanner.mjs";
 import { analyzeBlob } from "./binary.mjs";
 import { mapSemgrep } from "./semgrep.mjs";
-import { buildReviewPrompt, callReviewer, reviewerDecision, adjudicateFinding, queueReviewerError, readSpend, recordSpend } from "./llm-review.mjs";
+import { buildReviewPrompt, callReviewer, reviewerDecision, adjudicateFinding, escalateVerdict, clearStrikes, queueReviewerError, readSpend, recordSpend } from "./llm-review.mjs";
 
 import { cloneUrl } from "./targets.mjs";
 
@@ -125,11 +125,18 @@ for (const t of targets) {
             rt.llm = "confirmed";
             findings.push({ severity: "critical", llm: "confirmed", file: rt.file, reason: "[llm-reviewer " + r.model + "] malicious (" + r.verdict.confidence + ", " + r.verdict.category + "): " + r.verdict.evidence.join(","), excerpt: String(r.verdict.reasoning).slice(0, 500) });
           } else if (adj.action === "queue") {
-            rt.llm = "queued";
-            const key = today + "|" + t.name + "|" + rt.file + "|" + r.verdict.verdict;
-            reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, evidence: r.verdict.evidence, reasoning: String(r.verdict.reasoning).slice(0, 300), source: "4h" };
+            const esc = escalateVerdict({ queue: reviewQueue, today, target: t.name, file: rt.file, verdict: r.verdict });
+            if (esc.action === "ban") {
+              rt.llm = "confirmed";
+              findings.push({ severity: "critical", llm: "confirmed", file: rt.file, reason: "[repeat-offender " + r.model + "] " + esc.reason + ": " + r.verdict.category + " (" + r.verdict.confidence + ")", excerpt: String(r.verdict.reasoning).slice(0, 500) });
+            } else {
+              rt.llm = "queued";
+              const key = today + "|" + t.name + "|" + rt.file + "|" + r.verdict.verdict;
+              reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, evidence: r.verdict.evidence, reasoning: String(r.verdict.reasoning).slice(0, 300), source: "4h" };
+            }
           } else if (adj.action === "overrule") {
             rt.llm = "overruled";
+            clearStrikes(reviewQueue, t.name, rt.file);
             if (rt.severity === "critical") rt.severity = "high";
             rt.reason += " [llm: benign " + r.verdict.confidence + " — no ban]";
           } else {
@@ -198,7 +205,7 @@ readme += "| target | scan | commit | status | crit | high | med | report |\n|--
 for (const r of rows) {
   readme += "| " + r.name + " | " + today + " | " + r.sha + " | " + r.status + " | " + (r.crit || 0) + " | " + r.high + " | " + r.med + " | " + (r.report || ("reports/" + today + "/" + r.name + ".md")) + " |\n";
 }
-readme += "\n## Review queue (needs human)\n\nLLM-suspect items below the confirmation bar, plus pending items awaiting a usable verdict — no ban until the judge confirms. Confirm in code, then ban by editing `blacklist.json` or dismiss by deleting the entry from `review-queue.json`.\n\n";
+readme += "\n## Review queue (needs human)\n\nLLM-suspect items below the confirmation bar, plus pending items awaiting a usable verdict. Fully automatic: a repeat non-benign verdict for the same target+file across windows auto-bans with no human in the loop, and a benign verdict clears old strikes. `config/pardons.json` is the manual escape hatch.\n\n";
 if (queueItems.length === 0) {
   readme += "Queue empty.\n\n";
 } else {

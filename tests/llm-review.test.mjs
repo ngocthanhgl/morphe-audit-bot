@@ -8,6 +8,8 @@ import {
   parseVerdict,
   reviewerDecision,
   adjudicateFinding,
+  escalateVerdict,
+  clearStrikes,
   queueReviewerError,
   readSpend,
   recordSpend,
@@ -123,6 +125,28 @@ describe("llm reviewer", () => {
     assert.equal(e.category, "reviewer-error");
     assert.match(e.reasoning, /404/);
     assert.match(e.reasoning, /ghost-model/);
+  });
+  it("queues a first suspicious verdict but bans a repeat offender", () => {    const sus = { ...GOOD, verdict: "suspicious", confidence: 0.7 };
+    const empty = { items: {} };
+    const r1 = escalateVerdict({ queue: empty, today: "2026-10-15", target: "t", file: "a.kt", verdict: sus });
+    assert.equal(r1.action, "queue");
+    const prior = { items: { "2026-10-14|t|a.kt|suspicious": { date: "2026-10-14", verdict: "suspicious" } } };
+    const r2 = escalateVerdict({ queue: prior, today: "2026-10-15", target: "t", file: "a.kt", verdict: sus });
+    assert.equal(r2.action, "ban");
+    assert.match(r2.reason, /2026-10-14/);
+    const benignPrior = { items: { "2026-10-14|t|a.kt|benign": { date: "2026-10-14", verdict: "benign" } } };
+    assert.equal(escalateVerdict({ queue: benignPrior, today: "2026-10-15", target: "t", file: "a.kt", verdict: sus }).action, "queue");
+    const sameDay = { items: { "2026-10-15|t|a.kt|suspicious": { date: "2026-10-15", verdict: "suspicious" } } };
+    assert.equal(escalateVerdict({ queue: sameDay, today: "2026-10-15", target: "t", file: "a.kt", verdict: sus }).action, "queue");
+  });
+  it("clears old strikes when the judge says benign", () => {
+    const queue = { items: {
+      "2026-10-13|t|a.kt|suspicious": { date: "2026-10-13", verdict: "suspicious" },
+      "2026-10-14|t|b.kt|suspicious": { date: "2026-10-14", verdict: "suspicious" },
+      "2026-10-14|t|a.kt|pending": { date: "2026-10-14", verdict: "pending" },
+    } };
+    assert.deepEqual(clearStrikes(queue, "t", "a.kt"), ["2026-10-13|t|a.kt|suspicious", "2026-10-14|t|a.kt|pending"]);
+    assert.deepEqual(Object.keys(queue.items), ["2026-10-14|t|b.kt|suspicious"]);
   });
   it("retries a throttled model once before moving to fallbacks", async () => {
     const used = [];
