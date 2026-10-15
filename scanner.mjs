@@ -13,6 +13,8 @@ export function isScannableFile(name) {
 export function isTestPath(name) {
   const n = String(name);
   return /(^|\/)(test|tests|androidTest|__tests__)\//.test(n) ||
+    /^tools\//.test(n) ||
+    /(^|\/)verification-probe\//.test(n) ||
     /(^|\/)[^/]*Test\.(kt|java|js|ts|mjs)$/.test(n) ||
     /(^|\/)Test[^/]*\.(kt|java|js|ts|mjs)$/.test(n);
 }
@@ -20,6 +22,24 @@ export function isTestPath(name) {
 function hasAny(text, list) {
   return list.filter((k) => text.includes(k));
 }
+
+function sourceHits(text, sources) {
+  const scrubbed = String(text).replace(/Location(?:OnScreen|InWindow)/g, "");
+  return hasAny(scrubbed, sources);
+}
+
+function isVersionQuadHost(host) {
+  const parts = String(host).split(".");
+  return parts.length === 4 && parts.every((p) => /^\d{1,2}$/.test(p));
+}
+
+function isGeoUrl(url, geoHosts) {
+  const h = hostOf(String(url).replace(/%2e/gi, "."));
+  const list = geoHosts || [];
+  return list.some((e) => { const d = String(e).toLowerCase(); return h === d || h.endsWith("." + d); });
+}
+
+const VERSION_LINE = /version|versioncode|versionname|targetsdk|minsdk|compilesdk|apptarget/i;
 
 function validOctets(ip) {
   return ip.split(".").every((o) => /^\d{1,3}$/.test(o) && Number(o) <= 255);
@@ -40,22 +60,33 @@ function findNewHosts(text, allowDomains) {
   const out = new Set();
   const re = /https?:\/\/([A-Za-z0-9.-]+)/g;
   let m;
+  const skippedQuads = new Set();
   while ((m = re.exec(src)) !== null) {
     const raw = m[0].replace(/[.,;:!?)\]]+$/, "");
     const host = hostOf(raw).toLowerCase();
     if (!host || !validHost(host)) continue;
+    const after = src[m.index + m[0].length] || "";
+    if (isVersionQuadHost(host) && after !== "/") { skippedQuads.add(host); continue; }
     if (!allowDomains.some((d) => host === d || host.endsWith("." + d))) out.add(raw);
   }
   const dotted = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g;
-  let hit;
-  while ((hit = dotted.exec(src)) !== null) {
-    if (validOctets(hit[0]) && routableIp(hit[0])) out.add("http://" + hit[0]);
+  for (const line of src.split("\n")) {
+    const scope = VERSION_LINE.test(line)
+      ? line.replace(/(["'])\d+\.\d+\.\d+(?:\.\d+)?\1/g, "")
+      : line;
+    let hit;
+    while ((hit = dotted.exec(scope)) !== null) {
+      if (skippedQuads.has(hit[0])) continue;
+      if (validOctets(hit[0]) && routableIp(hit[0])) out.add("http://" + hit[0]);
+    }
+    dotted.lastIndex = 0;
   }
   const structured = [
     /\b(?:0[xX][0-9a-fA-F]{1,2}\.){3}0[xX][0-9a-fA-F]{1,2}\b/g,
     /\b0[0-7]{2,3}(?:\.0[0-7]{2,3}){3}\b/g,
   ];
   for (const r of structured) {
+    let hit;
     while ((hit = r.exec(src)) !== null) {
       const ip = hit[0].split(".").map((o) => (/^0[xX]/i.test(o) ? parseInt(o, 16) : parseInt(o, 8))).join(".");
       if (validOctets(ip) && routableIp(ip)) out.add("http://" + ip);
@@ -186,7 +217,7 @@ export function analyzeAdded(added, cfg) {
     obSecrets,
     intIp,
     perms: hasAny(normalized, cfg.dangerousPermissions),
-    src: hasAny(normalized, cfg.sources),
+    src: sourceHits(normalized, cfg.sources),
     sink: hasAny(normalized, cfg.sinks),
     secrets: plainSecrets,
     pin: hasAny(normalized, cfg.pinning),
@@ -225,6 +256,17 @@ export function parseDiff(diffText) {
   return files.filter((f) => f.binary || f.added.trim().length > 0);
 }
 
+function geoOnly(a, cfg) {
+  const allHosts = [...a.hosts, ...a.riskyHosts, ...a.obHosts];
+  if (a.src.length === 0 || !a.src.every((s) => /location/i.test(s))) return false;
+  if (allHosts.length === 0 || !allHosts.every((h) => isGeoUrl(h, cfg.geoHosts))) return false;
+  return a.sms.length === 0 && a.spy.length === 0 && a.keylog.length === 0 && a.staged.length === 0 &&
+    a.secrets.length === 0 && a.obSecrets.length === 0 && a.typo.length === 0 && a.pin.length === 0 &&
+    a.prx.length === 0 && a.perms.length === 0 && a.bridge.length === 0 && a.dns.length === 0 &&
+    a.root.length === 0 && a.media.length === 0 && a.reflect.length === 0 && a.handoff.length === 0 &&
+    a.intIp.length === 0;
+}
+
 export function findingsForFile(file, added, cfg) {
   const findings = [];
   const crit = (reason) => findings.push({ severity: "critical", file, reason, excerpt });
@@ -245,8 +287,12 @@ export function findingsForFile(file, added, cfg) {
     const gh = findNewHosts(added, cfg.domains);
     if (gh.length > 0) {
       findings.push({ severity: "high", file, reason: "new external build URL (supply chain): " + gh.join(", "), excerpt });
-    } else if (/^\s*(implementation|api|compileOnly)\s*\(/m.test(added)) {
-      findings.push({ severity: "info", file, reason: "new external dependency added — verify coordinates", excerpt });
+    } else {
+      const depLines = added.split("\n").filter((l) => /^\s*(implementation|api|compileOnly)\s*\(/.test(l));
+      const external = depLines.filter((l) => !/\(\s*(project\s*\(|files\s*\(|fileTree\s*\()/i.test(l));
+      if (external.length > 0) {
+        findings.push({ severity: "info", file, reason: "new external dependency added — verify coordinates", excerpt });
+      }
     }
     return findings;
   }
@@ -267,8 +313,10 @@ export function findingsForFile(file, added, cfg) {
   }
   const pkgPath = /\/data\/data\/[a-zA-Z0-9_.]+\.[a-zA-Z]+/.test(added);
   const appDb = hasAny(added, ["shared_prefs", "Cookies", "webview.db"]);
-  if ((pkgPath || appDb.length > 0) && net) {
-    crit("cross-app private data access with network: " + (pkgPath ? "other-package path" : appDb.join(",")));
+  if (pkgPath && net) {
+    crit("cross-app private data access with network: other-package path");
+  } else if (appDb.length > 0 && net) {
+    findings.push({ severity: "high", file, reason: "same-app stored data/cookies with network — verify same-site: " + appDb.join(","), excerpt });
   }
   if (a.root.length > 0) {
     if (pkgPath || appDb.length > 0) crit("root execution against app-private data: " + a.root.join(","));
@@ -285,7 +333,12 @@ export function findingsForFile(file, added, cfg) {
     findings.push({ severity: "high", file, reason: "obfuscated network indicator (base64/hex/split string): " + what, excerpt });
   }
   if (a.src.length > 0 && a.sink.length > 0) {
-    findings.push({ severity: "high", file, reason: "sensitive source reaches network sink", excerpt });
+    if (geoOnly(a, cfg)) {
+      const allHosts = [...a.hosts, ...a.riskyHosts, ...a.obHosts];
+      findings.push({ severity: "medium", file, reason: "location use with map/geocode API (downgraded): " + allHosts.join(", "), excerpt });
+    } else {
+      findings.push({ severity: "high", file, reason: "sensitive source reaches network sink", excerpt });
+    }
   }
   if (a.pin.length > 0 && (a.prx.length > 0 || a.hosts.length > 0 || a.riskyHosts.length > 0 || a.obHosts.length > 0)) {
     findings.push({ severity: "high", file, reason: "cert-pinning bypass combined with proxy or unknown host", excerpt });
@@ -334,6 +387,7 @@ export function scanDiff(diffText, cfg) {
   const out = [];
   for (const entry of parseDiff(diffText)) {
     if (entry.binary) {
+      if (/(^|\/)gradle\/wrapper\//.test(entry.file)) continue;
       const native = NATIVE_BIN.some((e) => entry.file.toLowerCase().endsWith(e));
       out.push({
         severity: native ? "medium" : "info",
@@ -422,16 +476,20 @@ export function updateSignalsAndCrossCheck(name, diffText, cfg, store, today) {
       });
     }
     if (curFile.hosts.length > 0 && prevTerms.length > 0) {
+      const geoXw = prevTerms.every((t) => /location/i.test(t)) && curFile.hosts.every((h) => isGeoUrl(h, cfg.geoHosts));
       findings.push({
-        severity: "high", file: "cross-window",
-        reason: "exfil completed across windows in " + path + ": new host " + curFile.hosts.join(", ") + " with previously seen " + prevTerms.join(", ") + " (" + prevUpdated + ")",
+        severity: geoXw ? "medium" : "high", file: "cross-window",
+        reason: (geoXw ? "location-to-map/API use split across windows in " : "exfil completed across windows in ") + path + ": new host " + curFile.hosts.join(", ") + " with previously seen " + prevTerms.join(", ") + " (" + prevUpdated + ")",
         excerpt: xw,
       });
     }
     if ((curFile.sources.length > 0 || curFile.sinks.length > 0) && (pf.hosts || []).length > 0) {
+      const newTerms = [...curFile.sources, ...curFile.sinks];
+      const geoXw = newTerms.length > 0 && newTerms.every((t) => /location/i.test(t)) &&
+        (pf.hosts || []).every((h) => isGeoUrl(h.v, cfg.geoHosts));
       findings.push({
-        severity: "high", file: "cross-window",
-        reason: "exfil completed across windows in " + path + ": previously seen host " + (pf.hosts || []).map((h) => h.v).join(", ") + " (" + prevUpdated + ") with new " + [...curFile.sources, ...curFile.sinks].join(", "),
+        severity: geoXw ? "medium" : "high", file: "cross-window",
+        reason: (geoXw ? "location-to-map/API use split across windows in " : "exfil completed across windows in ") + path + ": previously seen host " + (pf.hosts || []).map((h) => h.v).join(", ") + " (" + prevUpdated + ") with new " + newTerms.join(", "),
         excerpt: xw,
       });
     }

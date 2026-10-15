@@ -303,3 +303,82 @@ describe("v4 permanent blacklist", () => {
     assert.equal(nextRunSeq(["piko-run01-OK.md"], "doom"), 1);
   });
 });
+
+describe("v8 calibration (live Fleet FPs)", () => {
+  it("ignores version quadruples on version lines (doom Constants.kt)", () => {
+    const d = diffFor("patches/src/main/kotlin/app/template/patches/shared/Constants.kt", [
+      'targets = listOf(AppTarget(version = "4.6.7.1", versionCode = 3000933))',
+      'targets = listOf(AppTarget(version = "32.18.0.300", versionCode = 1243240206))',
+    ]);
+    assert.equal(scanDiff(d, cfg).length, 0);
+  });
+  it("still flags a bare routable IP on a non-version line", () => {
+    const d = diffFor("patches/Net.kt", ['val s = Socket("10.0.0.1", 4444)']);
+    const f = scanDiff(d, cfg);
+    assert.ok(f.length > 0);
+  });
+  it("ignores a pathless version-like-quad URL but keeps 3-digit-octet hosts", () => {
+    const d1 = diffFor("settings.gradle.kts", ['maven { url = uri("http://2.0.6.1") }']);
+    assert.equal(scanDiff(d1, cfg).length, 0);
+    const d2 = diffFor("patches/Ping.kt", ['val u = "http://192.168.1.1/status"']);
+    assert.ok(scanDiff(d2, cfg).length > 0);
+    const d3 = diffFor("patches/Ping.kt", ['val u = "http://10.0.0.1/api/collect"']);
+    assert.ok(scanDiff(d3, cfg).length > 0);
+  });
+  it("does not treat view coordinates as a location source", () => {
+    const d = diffFor("patches/Ui.kt", ["view.getLocationOnScreen(place);", "OkHttp.newCall(url).execute()"]);
+    assert.equal(scanDiff(d, cfg).length, 0);
+  });
+  it("still flags real location access reaching a sink", () => {
+    const d = diffFor("patches/Sync.kt", ["val l = lm.getLastKnownLocation()", "OkHttp.newCall(url).execute()"]);
+    const f = scanDiff(d, cfg);
+    assert.equal(f.length, 1);
+    assert.equal(f[0].severity, "high");
+  });
+  it("skips gradle-wrapper binaries but not other jars", () => {
+    const bin = (p) => "diff --git a/" + p + " b/" + p + "\nBinary files a/" + p + " and b/" + p + " differ\n";
+    assert.equal(scanDiff(bin("gradle/wrapper/gradle-wrapper.jar"), cfg).length, 0);
+    assert.equal(scanDiff(bin("libs/evil.jar"), cfg)[0].severity, "medium");
+  });
+  it("ignores internal project() deps but keeps catalog/coordinates visible", () => {
+    const d1 = diffFor("extensions/x/build.gradle.kts", ['implementation(project(":extensions:shared"))']);
+    assert.equal(scanDiff(d1, cfg).length, 0);
+    const d2 = diffFor("extensions/x/build.gradle.kts", ['implementation("com.squareup.okhttp3:okhttp:4.12.0")']);
+    assert.equal(scanDiff(d2, cfg)[0].severity, "info");
+    const d3 = diffFor("extensions/x/build.gradle.kts", ["api(libs.volley)"]);
+    assert.equal(scanDiff(d3, cfg)[0].severity, "info");
+  });
+  it("downgrades same-app cookie use to high but keeps cross-package paths critical", () => {
+    const d1 = diffFor("patches/Sess.kt", ["CookieManager.getInstance().getCookies(u)", "OkHttp.newCall(url).execute()"]);
+    const f1 = scanDiff(d1, cfg);
+    assert.ok(f1.every((f) => f.severity !== "critical"));
+    assert.ok(f1.some((f) => f.severity === "high" && /cookie/i.test(f.reason)));
+    const d2 = diffFor("patches/Sess.kt", ["val p = \"/data/data/com.other.app/shared_prefs/x\"", "OkHttp.newCall(url).execute()"]);
+    assert.equal(scanDiff(d2, cfg)[0].severity, "critical");
+  });
+  it("downgrades location-to-map-API to medium, keeps attacker hosts high", () => {
+    const d1 = diffFor("patches/Map.kt", ["val l = lm.getLastKnownLocation()", "OkHttp.newCall(url).execute()", 'val u = "https://lz4.overpass-api.de/api/interpreter"']);
+    const f1 = scanDiff(d1, cfg);
+    assert.equal(f1.length, 1);
+    assert.equal(f1[0].severity, "medium");
+    assert.match(f1[0].reason, /map\/geocode/);
+    const d2 = diffFor("patches/Map.kt", ["val l = lm.getLastKnownLocation()", "OkHttp.newCall(url).execute()", 'val u = "https://evil.example.evil123/x"']);
+    assert.equal(scanDiff(d2, cfg)[0].severity, "high");
+  });
+  it("downgrades cross-window location-to-map-API to medium", () => {
+    const mk = (sources, hosts) => ({ repos: { t: { files: { "patches/Map.kt": { hosts: [], sources, sinks: [], perms: [], pinning: [], sms: [], spy: [], keylog: [], staged: [] } }, updated: "2026-10-14" } } });
+    const withHosts = (store, hosts) => { store.repos.t.files["patches/Map.kt"].hosts = hosts; return store; };
+    const d = diffFor("patches/Map.kt", ['val u = "https://z.overpass-api.de/api/interpreter"']);
+    const r1 = updateSignalsAndCrossCheck("t", d, cfg, mk([{ v: "Location", d: "2026-10-14" }], []), "2026-10-14");
+    const xw1 = r1.findings.filter((f) => f.file === "cross-window");
+    assert.equal(xw1.length, 1);
+    assert.equal(xw1[0].severity, "medium");
+    const d2 = diffFor("patches/Map.kt", ['val u = "https://evil.example.evil123/x"']);
+    const r2 = updateSignalsAndCrossCheck("t", d2, cfg, mk([{ v: "Location", d: "2026-10-14" }], []), "2026-10-14");
+    assert.equal(r2.findings.filter((f) => f.file === "cross-window")[0].severity, "high");
+  });
+  it("skips repo-root dev-tooling dirs but not nested app packages named tools", () => {
+    assert.ok(isTestPath("tools/verification-probe/src/Probe.java"));
+    assert.ok(!isTestPath("patches/src/main/java/com/x/tools/Helper.kt"));
+  });
+});

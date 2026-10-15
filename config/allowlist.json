@@ -18,5 +18,6 @@
   "rootExec": ["exec(\"su", "su -c", "/xbin/su", "/bin/su"],
   "handoff": ["setPackage(", "createPackageContext"],
   "mediaSpy": ["MediaProjection", "createScreenCaptureIntent", "MediaRecorder", "AudioRecord", "CameraDevice"],
-  "reflection": ["getDeclaredMethod", "Method.invoke", "setAccessible", "getDeclaredField"]
+  "reflection": ["getDeclaredMethod", "Method.invoke", "setAccessible", "getDeclaredField"],
+  "geoHosts": ["overpass-api.de", "tile.openstreetmap.org", "nominatim.openstreetmap.org", "routing.openstreetmap.de", "maps.mail.ru"]
 }

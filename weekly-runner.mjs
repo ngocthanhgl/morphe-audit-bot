@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, rmSync
 import { renderRepoReport } from "./scanner.mjs";
 import { cloneUrl, prunableReports } from "./targets.mjs";
 import { mapSemgrep } from "./semgrep.mjs";
-import { buildReviewPrompt, callReviewer, reviewerDecision, readSpend, recordSpend } from "./llm-review.mjs";
+import { buildReviewPrompt, callReviewer, reviewerDecision, queueReviewerError, readSpend, recordSpend } from "./llm-review.mjs";
 
 const LLM_KEY = process.env.LLM_API_KEY || "";
 const LLM_MODEL = process.env.LLM_MODEL || "";
@@ -51,7 +51,10 @@ for (const t of targets) {
             const key = today + "|" + t.name + "|" + rt.file + "|" + r.verdict.verdict;
             reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, evidence: r.verdict.evidence, reasoning: String(r.verdict.reasoning).slice(0, 300), source: "weekly" };
           }
-        } catch { /* reviewer failed: deterministic findings stand */ }
+        } catch (e) {
+          rt.llm = "pending";
+          queueReviewerError({ queue: reviewQueue, today, target: t.name, repo: t.repo, file: rt.file, reason: rt.reason, error: e, source: "weekly" });
+        }
       }
     }
     const reportDir = "reports/weekly/" + today;

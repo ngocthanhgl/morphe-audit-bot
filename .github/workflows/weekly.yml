@@ -37,7 +37,7 @@ jobs:
           LLM_FALLBACKS: ${{ vars.LLM_FALLBACKS }}
           LLM_MONTHLY_BUDGET_USD: ${{ vars.LLM_MONTHLY_BUDGET_USD }}
         run: |
-          if [ -s .llm-model ] && [ -z "$LLM_MODEL" ]; then export LLM_MODEL="$(cat .llm-model)"; fi
+          if [ -s .llm-model ]; then export LLM_MODEL="$(cat .llm-model)"; fi
           rm -f .llm-model
           node weekly-runner.mjs
       - name: Commit weekly reports without retriggering

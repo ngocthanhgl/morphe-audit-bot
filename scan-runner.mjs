@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 
 import { loadConfig, scanDiff, renderRepoReport, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, reportFilename, nextRunSeq } from "./scanner.mjs";
 import { analyzeBlob } from "./binary.mjs";
 import { mapSemgrep } from "./semgrep.mjs";
-import { buildReviewPrompt, callReviewer, reviewerDecision, adjudicateFinding, readSpend, recordSpend } from "./llm-review.mjs";
+import { buildReviewPrompt, callReviewer, reviewerDecision, adjudicateFinding, queueReviewerError, readSpend, recordSpend } from "./llm-review.mjs";
 
 import { cloneUrl } from "./targets.mjs";
 
@@ -137,10 +137,9 @@ for (const t of targets) {
             const key = today + "|" + t.name + "|" + rt.file + "|pending";
             reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: "pending", confidence: 0, category: "unreviewed", evidence: [rt.reason], reasoning: "reviewer produced no usable verdict", source: "4h" };
           }
-        } catch {
+        } catch (e) {
           rt.llm = "pending";
-          const key = today + "|" + t.name + "|" + rt.file + "|pending";
-          reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: "pending", confidence: 0, category: "reviewer-error", evidence: [rt.reason], reasoning: "reviewer call failed; deterministic finding stands without ban", source: "4h" };
+          queueReviewerError({ queue: reviewQueue, today, target: t.name, repo: t.repo, file: rt.file, reason: rt.reason, error: e, source: "4h" });
         }
       }
     }
@@ -209,6 +208,6 @@ if (queueItems.length === 0) {
   }
   readme += "\n";
 }
-readme += "\n## Secrets policy\n\nNever paste tokens into chat or code. The workflow needs no token for public repos; if GitHub rate-limits, add an Actions secret named `SCAN_TOKEN` and use it via `secrets.SCAN_TOKEN` only. The LLM reviewer reads `LLM_API_KEY` (OpenRouter key, secret), `LLM_MODEL` / `LLM_FALLBACKS` (repo variables) and `LLM_MONTHLY_BUDGET_USD` (default 5) from the environment; without them the LLM layer is skipped silently.\n";
+readme += "\n## Secrets policy\n\nNever paste tokens into chat or code. The workflow needs no token for public repos; if GitHub rate-limits, add an Actions secret named `SCAN_TOKEN` and use it via `secrets.SCAN_TOKEN` only. The LLM reviewer reads `LLM_API_KEY` (OpenRouter key, secret) and optional `LLM_MODEL` / `LLM_FALLBACKS` (repo variables, auto-resolved to a live free model when empty) plus `LLM_MONTHLY_BUDGET_USD` (default 5); without a key the LLM layer is skipped silently.\n";
 writeFileSync("README.md", readme);
 console.log("done " + rows.filter((r) => r.status !== "ERROR").length + "/" + rows.length);

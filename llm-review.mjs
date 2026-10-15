@@ -22,56 +22,92 @@ export function buildReviewPrompt({ repo, file, reason, excerpt, history }) {
   return { system, user };
 }
 
+function verdictBody(model, prompt, withSchema) {
+  const body = {
+    model,
+    messages: [
+      { role: "system", content: prompt.system },
+      { role: "user", content: prompt.user },
+    ],
+    temperature: 0,
+  };
+  if (withSchema) {
+    body.response_format = {
+      type: "json_schema",
+      json_schema: {
+        name: "verdict",
+        strict: true,
+        schema: {
+          type: "object",
+          properties: {
+            verdict: { type: "string" },
+            confidence: { type: "number" },
+            category: { type: "string" },
+            evidence: { type: "array", items: { type: "string" } },
+            reasoning: { type: "string" },
+          },
+          required: ["verdict", "confidence", "category", "evidence", "reasoning"],
+        },
+      },
+    };
+  }
+  return body;
+}
+
 export async function callReviewer({ endpoint, apiKey, model, fallbacks = [], prompt, fetchImpl = fetch }) {
   const models = [model, ...fallbacks];
   let lastError = null;
   for (const m of models) {
-    const res = await fetchImpl(endpoint, {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer " + apiKey,
-        "Content-Type": "application/json",
-        "X-Title": "morphe-audit-bot",
-      },
-      body: JSON.stringify({
-        model: m,
-        messages: [
-          { role: "system", content: prompt.system },
-          { role: "user", content: prompt.user },
-        ],
-        temperature: 0,
-        response_format: {
-          type: "json_schema",
-          json_schema: {
-            name: "verdict",
-            strict: true,
-            schema: {
-              type: "object",
-              properties: {
-                verdict: { type: "string" },
-                confidence: { type: "number" },
-                category: { type: "string" },
-                evidence: { type: "array", items: { type: "string" } },
-                reasoning: { type: "string" },
-              },
-              required: ["verdict", "confidence", "category", "evidence", "reasoning"],
-            },
-          },
+    let attempt = 0;
+    let withSchema = true;
+    for (;;) {
+      attempt++;
+      const res = await fetchImpl(endpoint, {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + apiKey,
+          "Content-Type": "application/json",
+          "X-Title": "morphe-audit-bot",
         },
-      }),
-    });
-    if (res.ok) {
-      const data = await res.json();
-      const content = data.choices && data.choices[0] && data.choices[0].message
-        ? data.choices[0].message.content
-        : "";
-      const cost = data.usage && typeof data.usage.cost === "number" ? data.usage.cost : 0;
-      return { model: m, verdict: parseVerdictText(content), cost };
+        body: JSON.stringify(verdictBody(m, prompt, withSchema)),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const content = data.choices && data.choices[0] && data.choices[0].message
+          ? data.choices[0].message.content
+          : "";
+        const cost = data.usage && typeof data.usage.cost === "number" ? data.usage.cost : 0;
+        return { model: m, verdict: parseVerdictText(content), cost };
+      }
+      let errMsg = "";
+      try {
+        const eb = await res.json();
+        errMsg = (eb && eb.error && eb.error.message) ? String(eb.error.message) : JSON.stringify(eb).slice(0, 200);
+      } catch { /* body unreadable */ }
+      lastError = new Error("reviewer HTTP " + res.status + " for " + m + (errMsg ? ": " + errMsg.slice(0, 160) : ""));
+      const modelGone = res.status === 404 || (res.status === 400 && /model|endpoint|not.?found|no.?endpoints/i.test(errMsg));
+      if (modelGone) break;
+      if (res.status === 400 && withSchema && attempt === 1) { withSchema = false; continue; }
+      if (res.status !== 429 && res.status < 500) break;
+      break;
     }
-    lastError = new Error("reviewer HTTP " + res.status + " for " + m);
-    if (res.status !== 429 && res.status < 500) break;
   }
   throw lastError || new Error("reviewer failed with no models tried");
+}
+
+export function queueReviewerError({ queue, today, target, repo, file, reason, error, source }) {
+  const key = today + "|" + target + "|" + file + "|pending";
+  const raw = String((error && error.message) || error || "unknown").slice(0, 200)
+    .replace(/Bearer\s+\S+/gi, "Bearer ***")
+    .replace(/\b(sk|ghp|gho)_[A-Za-z0-9-]+/g, "***");
+  queue.items[key] = {
+    date: today, target, repo, file,
+    verdict: "pending", confidence: 0, category: "reviewer-error",
+    evidence: [reason],
+    reasoning: "reviewer call failed (" + raw + "); deterministic finding stands without ban",
+    source: source || "4h",
+  };
+  return key;
 }
 
 function parseVerdictText(text) {

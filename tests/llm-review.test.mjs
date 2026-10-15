@@ -8,6 +8,7 @@ import {
   parseVerdict,
   reviewerDecision,
   adjudicateFinding,
+  queueReviewerError,
   readSpend,
   recordSpend,
 } from "../llm-review.mjs";
@@ -90,5 +91,36 @@ describe("llm reviewer", () => {
     assert.ok(Math.abs(s.total - 0.03) < 1e-9);
     assert.equal(s.overBudget, false);
     assert.equal(readSpend(f, "2026-10", 0.02).overBudget, true);
+  });
+  it("tries the next model when the first is retired (404)", async () => {
+    const used = [];
+    const fetchImpl = stubFetch((url, body) => {
+      used.push(body.model);
+      if (used.length === 1) return { ok: false, status: 404, json: async () => ({ error: { message: "No endpoints found for stale-model" } }) };
+      return { ok: true, status: 200, json: async () => ({ choices: [{ message: { content: JSON.stringify(GOOD) } }], usage: {} }) };
+    });
+    const r = await callReviewer({ endpoint: "https://e", apiKey: "k", model: "stale-model", fallbacks: ["fresh-model"], prompt: { system: "s", user: "u" }, fetchImpl });
+    assert.deepEqual(used, ["stale-model", "fresh-model"]);
+    assert.equal(r.model, "fresh-model");
+  });
+  it("retries without schema when the model rejects structured output", async () => {
+    const bodies = [];
+    const fetchImpl = stubFetch((url, body) => {
+      bodies.push(body);
+      if (bodies.length === 1) return { ok: false, status: 400, json: async () => ({ error: { message: "response_format json_schema is not supported" } }) };
+      return { ok: true, status: 200, json: async () => ({ choices: [{ message: { content: JSON.stringify(GOOD) } }], usage: {} }) };
+    });
+    const r = await callReviewer({ endpoint: "https://e", apiKey: "k", model: "m1", fallbacks: [], prompt: { system: "s", user: "u" }, fetchImpl });
+    assert.equal(bodies.length, 2);
+    assert.ok(!("response_format" in bodies[1]));
+    assert.equal(r.model, "m1");
+  });
+  it("records reviewer failures with the error text for diagnosis", () => {
+    const queue = { items: {} };
+    const key = queueReviewerError({ queue, today: "2026-10-14", target: "t", repo: "o/r", file: "a.kt", reason: "src+sink", error: new Error("reviewer HTTP 404 for ghost-model"), source: "4h" });
+    const e = queue.items[key];
+    assert.equal(e.category, "reviewer-error");
+    assert.match(e.reasoning, /404/);
+    assert.match(e.reasoning, /ghost-model/);
   });
 });
