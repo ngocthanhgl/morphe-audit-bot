@@ -669,6 +669,28 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/messenger/src/main/java/app/hushmessenger/extension/ChoiceCodec.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/hushmessenger/patches/controls/StoryHold.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-10-15"
@@ -2022,6 +2044,28 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/morphe/patches/facebook/reels/OriginalAudio.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/feed/HeldInserts.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/hook/HeldInserts.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -13440,7 +13484,12 @@
         },
         "patches/src/main/kotlin/app/ftl/patches/VideoDownLoader/FixHlsSeekPatch.kt": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-10-15"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -13530,9 +13579,85 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/xplayer/src/main/java/app/ftl/extension/xplayer/ModPrefs.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/xplayer/src/main/java/app/ftl/extension/xplayer/ModSettings.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/ftl/patches/BanglaDictionary/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/ftl/patches/BanglaDictionary/DisablePronunciationNagPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/ftl/patches/BanglaDictionary/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-10-15"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/ftl/patches/XPlayer/RemoveEnhancerAnimationPatch.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-10-15"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-14"
+      "updated": "2026-10-15"
     },
     "hajs110208-morphe-patches": {
       "files": {
@@ -16438,9 +16563,64 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/chzzk/src/main/java/app/s/chzzk/extension/ViewerCountOverlay.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/s/chzzk/chat/ChatUiHooks.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/s/chzzk/chat/SettingsEntry.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/s/chzzk/chat/ViewerCountHooks.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/s/chzzk/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-14"
+      "updated": "2026-10-15"
     },
     "sudashiii-servus-patches": {
       "files": {
@@ -20176,6 +20356,10 @@
           "staged": []
         }
       },
+      "updated": "2026-10-15"
+    },
+    "alan7383-sofatime-patches": {
+      "files": {},
       "updated": "2026-10-15"
     }
   }
