@@ -1,3 +1,61 @@
 {
-  "items": {}
+  "items": {
+    "2026-10-15|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/method-delta.dex|pending": {
+      "date": "2026-10-15",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "patches/src/main/resources/nicoid/method-delta.dex",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "unreviewed",
+      "evidence": [
+        "[binary strings] sensitive source reaches network sink"
+      ],
+      "reasoning": "reviewer produced no usable verdict",
+      "source": "4h"
+    },
+    "2026-10-15|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/helpers.mpe|pending": {
+      "date": "2026-10-15",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "patches/src/main/resources/nicoid/helpers.mpe",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "unreviewed",
+      "evidence": [
+        "[binary strings] possible DNS exfiltration channel: getByName"
+      ],
+      "reasoning": "reviewer produced no usable verdict",
+      "source": "4h"
+    },
+    "2026-10-15|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/helpers.mpe|suspicious": {
+      "date": "2026-10-15",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "patches/src/main/resources/nicoid/helpers.mpe",
+      "verdict": "suspicious",
+      "confidence": 0.6,
+      "category": "exfiltration",
+      "evidence": [
+        "patches/src/main/resources/nicoid/helpers.mpe: static-analysis reason flags reflection-hidden behavior with network sink",
+        "patches/src/main/resources/nicoid/helpers.mpe: network-related strings present (Accept-Ranges, Connection, Content-Length, Content-Type, client=, comments, Response, bytes)"
+      ],
+      "reasoning": "The excerpt contains HTTP/network strings and a static-analysis warning about reflection-hidden behavior with a network sink, which is consistent with potential covert communication or data exfiltration. However, no actual diff lines or code demonstrating reflection, network calls, or exfiltration a",
+      "source": "4h"
+    },
+    "2026-10-15|alastor-kaneki-morphe-patches|extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditCurrentPost.java|pending": {
+      "date": "2026-10-15",
+      "target": "alastor-kaneki-morphe-patches",
+      "repo": "Alastor-Kaneki/Morphe-Patches",
+      "file": "extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditCurrentPost.java",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "unreviewed",
+      "evidence": [
+        "reflection-hidden behavior with network sink"
+      ],
+      "reasoning": "reviewer produced no usable verdict",
+      "source": "4h"
+    }
+  }
 }
