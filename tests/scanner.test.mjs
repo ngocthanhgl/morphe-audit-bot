@@ -85,7 +85,7 @@ describe("v2 smart rules", () => {
     assert.equal(ipInt.length, 10);
     const clean = diffFor("patches/V.kt", ["val versionCode = " + ipInt]);
     assert.equal(scanDiff(clean, cfg).length, 0);
-    const netty = diffFor("patches/Net.kt", ["val ip = " + ipInt, "OkHttp.newCall(url).execute()"]);
+    const netty = diffFor("patches/Net.kt", ["val ip = " + ipInt, "val host = InetAddress.getByName(ip)", "Socket(host, 443)"]);
     assert.ok(netty && scanDiff(netty, cfg).length > 0);
   });
   it("flags ngrok-style infra host as medium alone", () => {
@@ -151,7 +151,7 @@ describe("v6 false-positive kills", () => {
     assert.equal(scanDiff(diffFor("patches/U.kt", ["val u = \"https://www.\""]), cfg).length, 0);
   });
   it("still flags encoded IP when a real network sink is present", () => {
-    const d = diffFor("patches/Net.kt", ["val ip = 0xC0A80114", "OkHttp.newCall(ip).execute()"]);
+    const d = diffFor("patches/Net.kt", ["val ip = 0xC0A80114", "val host = InetAddress.getByName(ip)", "Socket(host, 4444)"]);
     const f = scanDiff(d, cfg);
     assert.ok(f.some((x) => x.severity === "medium"));
   });
@@ -380,5 +380,11 @@ describe("v8 calibration (live Fleet FPs)", () => {
   it("skips repo-root dev-tooling dirs but not nested app packages named tools", () => {
     assert.ok(isTestPath("tools/verification-probe/src/Probe.java"));
     assert.ok(!isTestPath("patches/src/main/java/com/x/tools/Helper.kt"));
+  });
+  it("ignores bare integer literals unless IP-conversion code is present", () => {
+    const d1 = diffFor("patches/Theme.kt", ["val c = 4281019179", "WebViewClient()", "loadUrl(u)"]);
+    assert.equal(scanDiff(d1, cfg).length, 0);
+    const d2 = diffFor("patches/Net.kt", ["val ip = 3232235777", "InetAddress.getByName((ip shr 24) + \".\" + ((ip shr 16) & 0xFF))", "Socket(a, 443)"]);
+    assert.ok(scanDiff(d2, cfg).some((f) => /decimal-encoded IP/i.test(f.reason)));
   });
 });

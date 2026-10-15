@@ -256,6 +256,14 @@ export function parseDiff(diffText) {
   return files.filter((f) => f.binary || f.added.trim().length > 0);
 }
 
+const IP_CONVERT = ["InetAddress", "getByName", "getAllByName", ">>>", "& 0xFF", "& 0xff", " and 0x"];
+
+function hasIpConversion(text) {
+  const t = String(text);
+  if (hasAny(t, IP_CONVERT).length > 0) return true;
+  return /(^|[^A-Za-z0-9_])(shr|ushr)([^A-Za-z0-9_]|$)/.test(t);
+}
+
 function geoOnly(a, cfg) {
   const allHosts = [...a.hosts, ...a.riskyHosts, ...a.obHosts];
   if (a.src.length === 0 || !a.src.every((s) => /location/i.test(s))) return false;
@@ -366,7 +374,7 @@ export function findingsForFile(file, added, cfg) {
   if (a.typo.length > 0) {
     findings.push({ severity: "high", file, reason: "typosquat of allowlisted domain: " + a.typo.map((t) => t.url + " (~" + t.keyword + ")").join(", "), excerpt });
   }
-  if (a.intIp.length > 0 && (a.sink.length > 0 || a.prx.length > 0) && findings.length === 0) {
+  if (a.intIp.length > 0 && (a.sink.length > 0 || a.prx.length > 0) && findings.length === 0 && hasIpConversion(added)) {
     findings.push({ severity: "medium", file, reason: "decimal-encoded IP literal with network context: " + a.intIp.join(", "), excerpt });
   }
   if (a.riskyHosts.length > 0) {
