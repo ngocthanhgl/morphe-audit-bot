@@ -1,57 +1,43 @@
 {
   "items": {
-    "2026-10-15|akash-sriram-morphe-google-photos|extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/ToolkitWebViewDialog.java|suspicious": {
-      "date": "2026-10-15",
-      "target": "akash-sriram-morphe-google-photos",
-      "repo": "Akash-Sriram/morphe-google-photos",
-      "file": "extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/ToolkitWebViewDialog.java",
+    "2026-10-16|alastor-kaneki-morphe-patches|cross-window|suspicious": {
+      "date": "2026-10-16",
+      "target": "alastor-kaneki-morphe-patches",
+      "repo": "Alastor-Kaneki/Morphe-Patches",
+      "file": "cross-window",
       "verdict": "suspicious",
-      "confidence": 0.35,
-      "category": "benign-other",
+      "confidence": 0.2,
+      "category": "exfiltration",
       "evidence": [
-        "extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/ToolkitWebViewDialog.java:1-18"
+        "extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditGalleryOverlayController.java"
       ],
-      "reasoning": "The excerpt shows only package declaration and import statements; no actual code behavior, sensitive sources, or network sinks are visible. The static-analysis claim that a sensitive source reaches a network sink cannot be verified from this excerpt alone. Because the relevant code is absent and the",
+      "reasoning": "No actual code diff was provided, only a static-analysis note alleging clipboard-related exfiltration to reddit.com in RedditGalleryOverlayController.java. Without inspectable code changes, malicious behavior cannot be confirmed; per policy, uncertain cases are rated suspicious rather than malicious",
       "source": "4h"
     },
-    "2026-10-15|akash-sriram-morphe-google-photos|extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/ToolkitWebViewDialog.java|pending": {
+    "2026-10-15|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/method-delta.dex|pending": {
       "date": "2026-10-15",
-      "target": "akash-sriram-morphe-google-photos",
-      "repo": "Akash-Sriram/morphe-google-photos",
-      "file": "extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/ToolkitWebViewDialog.java",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "patches/src/main/resources/nicoid/method-delta.dex",
       "verdict": "pending",
       "confidence": 0,
       "category": "unreviewed",
       "evidence": [
-        "WebView JS bridge with network sink: evaluateJavascript"
+        "[binary strings] sensitive source reaches network sink"
       ],
       "reasoning": "reviewer produced no usable verdict",
       "source": "4h"
     },
-    "2026-10-15|akash-sriram-morphe-google-photos|extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/NativeToolkitDialog.java|suspicious": {
+    "2026-10-15|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/helpers.mpe|pending": {
       "date": "2026-10-15",
-      "target": "akash-sriram-morphe-google-photos",
-      "repo": "Akash-Sriram/morphe-google-photos",
-      "file": "extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/NativeToolkitDialog.java",
-      "verdict": "suspicious",
-      "confidence": 0.35,
-      "category": "benign-other",
-      "evidence": [
-        "extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/NativeToolkitDialog.java:1-15"
-      ],
-      "reasoning": "The visible excerpt contains only the package declaration and standard Android UI imports (Dialog, DatePickerDialog, ClipboardManager, Bitmap, etc.). No reflection, network sockets, HTTP clients, or data exfiltration sinks appear in these lines. However, the static-analysis reason flags reflection-h",
-      "source": "4h"
-    },
-    "2026-10-15|alastor-kaneki-morphe-patches|extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditCurrentPost.java|pending": {
-      "date": "2026-10-15",
-      "target": "alastor-kaneki-morphe-patches",
-      "repo": "Alastor-Kaneki/Morphe-Patches",
-      "file": "extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditCurrentPost.java",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "patches/src/main/resources/nicoid/helpers.mpe",
       "verdict": "pending",
       "confidence": 0,
       "category": "unreviewed",
       "evidence": [
-        "reflection-hidden behavior with network sink"
+        "[binary strings] possible DNS exfiltration channel: getByName"
       ],
       "reasoning": "reviewer produced no usable verdict",
       "source": "4h"
@@ -71,32 +57,60 @@
       "reasoning": "The excerpt contains HTTP/network strings and a static-analysis warning about reflection-hidden behavior with a network sink, which is consistent with potential covert communication or data exfiltration. However, no actual diff lines or code demonstrating reflection, network calls, or exfiltration a",
       "source": "4h"
     },
-    "2026-10-15|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/helpers.mpe|pending": {
+    "2026-10-15|alastor-kaneki-morphe-patches|extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditCurrentPost.java|pending": {
       "date": "2026-10-15",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "patches/src/main/resources/nicoid/helpers.mpe",
+      "target": "alastor-kaneki-morphe-patches",
+      "repo": "Alastor-Kaneki/Morphe-Patches",
+      "file": "extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditCurrentPost.java",
       "verdict": "pending",
       "confidence": 0,
       "category": "unreviewed",
       "evidence": [
-        "[binary strings] possible DNS exfiltration channel: getByName"
+        "reflection-hidden behavior with network sink"
       ],
       "reasoning": "reviewer produced no usable verdict",
       "source": "4h"
     },
-    "2026-10-15|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/method-delta.dex|pending": {
+    "2026-10-15|akash-sriram-morphe-google-photos|extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/NativeToolkitDialog.java|suspicious": {
       "date": "2026-10-15",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "patches/src/main/resources/nicoid/method-delta.dex",
+      "target": "akash-sriram-morphe-google-photos",
+      "repo": "Akash-Sriram/morphe-google-photos",
+      "file": "extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/NativeToolkitDialog.java",
+      "verdict": "suspicious",
+      "confidence": 0.35,
+      "category": "benign-other",
+      "evidence": [
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/NativeToolkitDialog.java:1-15"
+      ],
+      "reasoning": "The visible excerpt contains only the package declaration and standard Android UI imports (Dialog, DatePickerDialog, ClipboardManager, Bitmap, etc.). No reflection, network sockets, HTTP clients, or data exfiltration sinks appear in these lines. However, the static-analysis reason flags reflection-h",
+      "source": "4h"
+    },
+    "2026-10-15|akash-sriram-morphe-google-photos|extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/ToolkitWebViewDialog.java|pending": {
+      "date": "2026-10-15",
+      "target": "akash-sriram-morphe-google-photos",
+      "repo": "Akash-Sriram/morphe-google-photos",
+      "file": "extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/ToolkitWebViewDialog.java",
       "verdict": "pending",
       "confidence": 0,
       "category": "unreviewed",
       "evidence": [
-        "[binary strings] sensitive source reaches network sink"
+        "WebView JS bridge with network sink: evaluateJavascript"
       ],
       "reasoning": "reviewer produced no usable verdict",
+      "source": "4h"
+    },
+    "2026-10-15|akash-sriram-morphe-google-photos|extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/ToolkitWebViewDialog.java|suspicious": {
+      "date": "2026-10-15",
+      "target": "akash-sriram-morphe-google-photos",
+      "repo": "Akash-Sriram/morphe-google-photos",
+      "file": "extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/ToolkitWebViewDialog.java",
+      "verdict": "suspicious",
+      "confidence": 0.35,
+      "category": "benign-other",
+      "evidence": [
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/toolkit/ToolkitWebViewDialog.java:1-18"
+      ],
+      "reasoning": "The excerpt shows only package declaration and import statements; no actual code behavior, sensitive sources, or network sinks are visible. The static-analysis claim that a sensitive source reaches a network sink cannot be verified from this excerpt alone. Because the relevant code is absent and the",
       "source": "4h"
     }
   }
