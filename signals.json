@@ -2594,7 +2594,7 @@
           "staged": []
         }
       },
-      "updated": "2026-10-16"
+      "updated": "2026-10-17"
     },
     "commit-regrets-morphe-youtube-vr-patches": {
       "files": {
@@ -8761,9 +8761,20 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/updates/DisableUpdateChecksPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-16"
+      "updated": "2026-10-17"
     },
     "sysadmindoc-hushthreads": {
       "files": {
@@ -9436,7 +9447,7 @@
           "staged": []
         }
       },
-      "updated": "2026-10-14"
+      "updated": "2026-10-17"
     },
     "sysadmindoc-hushtumblr": {
       "files": {
@@ -10111,7 +10122,7 @@
           "staged": []
         }
       },
-      "updated": "2026-10-14"
+      "updated": "2026-10-17"
     },
     "venusisjaded-venus-patches": {
       "files": {
@@ -10146,6 +10157,10 @@
             {
               "v": "https://plugins-list.pages.dev",
               "d": "2026-10-16"
+            },
+            {
+              "v": "https://media.discordapp.net",
+              "d": "2026-10-17"
             }
           ],
           "sources": [
@@ -10265,7 +10280,7 @@
           "staged": []
         }
       },
-      "updated": "2026-10-16"
+      "updated": "2026-10-17"
     },
     "bearinmind": {
       "files": {
@@ -26225,9 +26240,42 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/future/ads/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/future/ads/SkipAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/future/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-16"
+      "updated": "2026-10-17"
     },
     "sqzass-patches": {
       "files": {
@@ -27524,7 +27572,7 @@
     },
     "piko-newx": {
       "files": {},
-      "updated": "2026-10-16"
+      "updated": "2026-10-17"
     },
     "gboard": {
       "files": {
@@ -28091,6 +28139,22 @@
         }
       },
       "updated": "2026-10-16"
+    },
+    "hu-liberator-patches": {
+      "files": {
+        "patches/src/main/kotlin/app/template/patches/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        }
+      },
+      "updated": "2026-10-17"
     }
   }
 }
