@@ -10854,7 +10854,7 @@
           "staged": []
         }
       },
-      "updated": "2026-10-15"
+      "updated": "2026-10-17"
     },
     "jacksonjones2003-immersive-keyboard-patches": {
       "files": {
@@ -27521,7 +27521,7 @@
           "staged": []
         }
       },
-      "updated": "2026-10-16"
+      "updated": "2026-10-17"
     },
     "icysymmetra-tiktok-patches-for-morphe": {
       "files": {
@@ -28152,8 +28152,23 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/shared/BytecodeUtils.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
+      "updated": "2026-10-17"
+    },
+    "rabilrbl-fluffy-patches": {
+      "files": {},
       "updated": "2026-10-17"
     }
   }
