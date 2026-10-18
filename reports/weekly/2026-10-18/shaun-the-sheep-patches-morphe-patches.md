@@ -1,0 +1,7 @@
+# shaun-the-sheep-patches/morphe-patches — 2026-10-18
+
+Commit: 46d09a03cf81fcb69f669a18c6f9c0ac67633785 | Status: OK | crit:0 high:0 med:0
+
+No suspicious changes in this window.
+
+_weekly full-tree Semgrep scan_
