@@ -1,5 +1,23 @@
 {
   "items": {
+    "2026-10-19|sysadmindoc-hushfeed|extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java|suspicious": {
+      "date": "2026-10-19",
+      "target": "sysadmindoc-hushfeed",
+      "repo": "SysAdminDoc/hushfeed",
+      "file": "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java",
+      "verdict": "suspicious",
+      "confidence": 0.58,
+      "category": "exfiltration",
+      "evidence": [
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:9",
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:10",
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:12",
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:14",
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:15"
+      ],
+      "reasoning": "The excerpt shows Base64, WebView, JSONObject, and local-file handling, which are consistent with serializing a font and injecting it into page JavaScript. However, the reported evaluateJavascript call and its argument construction are not included, so it is impossible to verify that remote or untru",
+      "source": "4h"
+    },
     "2026-10-19|angeldark92-steamlink-patches|patches/src/main/resources/steamlink/androidxr/libgxr_xr_bridge.so|suspicious": {
       "date": "2026-10-19",
       "target": "angeldark92-steamlink-patches",
@@ -12,104 +30,6 @@
         "patches/src/main/resources/steamlink/androidxr/libgxr__xr__bridge.so:13750724"
       ],
       "reasoning": "The static analysis flags a binary at line 13750724 containing sensitive source strings (memcpy, fopen, fread, fclose) that reach a network sink — classic indicators of potential data exfiltration. However, the evidence is a single byte offset rather than an actual code line, and the presence of sta",
-      "source": "4h"
-    },
-    "2026-10-18|k8r8to-kizu-morphe-patches|patches/src/main/kotlin/io/github/bakwudo/uyu/patches/twitch/emotes/NativePickerHooks.kt|suspicious": {
-      "date": "2026-10-18",
-      "target": "k8r8to-kizu-morphe-patches",
-      "repo": "K8R8TO/kizu-morphe-patches",
-      "file": "patches/src/main/kotlin/io/github/bakwudo/uyu/patches/twitch/emotes/NativePickerHooks.kt",
-      "verdict": "suspicious",
-      "confidence": 0.72,
-      "category": "supply-chain",
-      "evidence": [
-        "patches/src/main/kotlin/io/github/bakwudo/uyu/patches/twitch/emotes/NativePickerHooks.kt:1-15"
-      ],
-      "reasoning": "The file imports from app.morphe.patcher (a third-party patcher library) and references internal constants for a runtime class (EmotePickerRuntime) and channel ID type. While the package name matches the legitimate project, the heavy dependency on an external patcher library and obfuscated class nam",
-      "source": "4h"
-    },
-    "2026-10-18|k8r8to-kizu-morphe-patches|extensions/extension/src/main/java/app/morphe/extension/twitch/emotes/EmotePickerImages.java|pending": {
-      "date": "2026-10-18",
-      "target": "k8r8to-kizu-morphe-patches",
-      "repo": "K8R8TO/kizu-morphe-patches",
-      "file": "extensions/extension/src/main/java/app/morphe/extension/twitch/emotes/EmotePickerImages.java",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "unreviewed",
-      "evidence": [
-        "typosquat of allowlisted domain: https://static-cdn.jtvnw.net (~gstatic), https://static-cdn.jtvnw.net (~gstatic), https://static-cdn.jtvnw.net (~gstatic)"
-      ],
-      "reasoning": "reviewer produced no usable verdict",
-      "source": "4h"
-    },
-    "2026-10-18|ihatenodejs-aidans-patches|extensions/extension/src/main/java/app/aidan/extension/geocaching/GeocacheEnrichmentBridge.java|suspicious": {
-      "date": "2026-10-18",
-      "target": "ihatenodejs-aidans-patches",
-      "repo": "ihatenodejs/aidans-patches",
-      "file": "extensions/extension/src/main/java/app/aidan/extension/geocaching/GeocacheEnrichmentBridge.java",
-      "verdict": "suspicious",
-      "confidence": 0.55,
-      "category": "exfiltration",
-      "evidence": [
-        "extensions/extension/src/main/java/app/aidan/extension/geocaching/GeocacheEnrichmentBridge.java:1"
-      ],
-      "reasoning": "The excerpt shows only standard Android/Java imports (SQLite, Cursor, Context, etc.). No obvious malicious patterns (e.g., native method calls, obfuscated class names, dynamic class loading) are visible in the provided snippet. The static-analysis reason mentions 'reflection-hidden behavior with net",
-      "source": "4h"
-    },
-    "2026-10-18|angeldark92-steamlink-patches|patches/src/main/resources/steamlink/androidxr/libgxr_performance_boost.so|suspicious": {
-      "date": "2026-10-18",
-      "target": "angeldark92-steamlink-patches",
-      "repo": "AngelDark92/steamlink-patches",
-      "file": "patches/src/main/resources/steamlink/androidxr/libgxr_performance_boost.so",
-      "verdict": "suspicious",
-      "confidence": 0.35,
-      "category": "benign-other",
-      "evidence": [
-        "patches/src/main/resources/steamlink/androidxr/libgxr_performance_boost.so:binary"
-      ],
-      "reasoning": "The flagged change is a native shared library (.so) provided only as a binary diff and cannot be reviewed textually. No source, strings, or disassembly are available to identify exfiltration, backdoor, spyware, or supply-chain behavior. A malicious verdict requires confidence >= 0.85 and exact offen",
-      "source": "4h"
-    },
-    "2026-10-18|blazeftl-ftl-patches|.github/assets/fonts/Poppins-BoldItalic.ttf|suspicious": {
-      "date": "2026-10-18",
-      "target": "blazeftl-ftl-patches",
-      "repo": "BlazeFTL/FTL-Patches",
-      "file": ".github/assets/fonts/Poppins-BoldItalic.ttf",
-      "verdict": "suspicious",
-      "confidence": 0.5,
-      "category": "benign-other",
-      "evidence": [
-        ".github/assets/fonts/Poppins-BoldItalic.ttf"
-      ],
-      "reasoning": "The flagged change is a binary TrueType font asset that cannot be reviewed textually. There is no readable code, comment, or string indicating exfiltration, backdoor, spyware, or supply-chain behavior, and no exact offending lines can be identified from a binary diff. Because the content cannot be a",
-      "source": "4h"
-    },
-    "2026-10-18|hxreborn-morphe-patches|extensions/extension/src/main/java/app/hxreborn/extension/privacynotes/ProUnlock.java|suspicious": {
-      "date": "2026-10-18",
-      "target": "hxreborn-morphe-patches",
-      "repo": "hxreborn/morphe-patches",
-      "file": "extensions/extension/src/main/java/app/hxreborn/extension/privacynotes/ProUnlock.java",
-      "verdict": "suspicious",
-      "confidence": 0.72,
-      "category": "exfiltration",
-      "evidence": [
-        "extensions/extension/src/main/java/app/hxreborn/extension/privacynotes/ProUnlock.java:14"
-      ],
-      "reasoning": "The file is a WebView JS bridge class with a constructor that does nothing visible, but the class name 'ProUnlock' and package suggest it handles pro-unlock logic. The static-analysis flag points to evaluateJavascript usage (not shown in excerpt but referenced by the analyzer). A WebView JS bridge t",
-      "source": "4h"
-    },
-    "2026-10-18|sysadmindoc-hushpinterest|extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/CopyImage.java|suspicious": {
-      "date": "2026-10-18",
-      "target": "sysadmindoc-hushpinterest",
-      "repo": "SysAdminDoc/HushPinterest",
-      "file": "extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/CopyImage.java",
-      "verdict": "suspicious",
-      "confidence": 0.72,
-      "category": "exfiltration",
-      "evidence": [
-        "extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/CopyImage.java:1-30"
-      ],
-      "reasoning": "The excerpt shows a network sink (ClipboardManager) being used in a file named CopyImage within a Pinterest extension, which is a suspicious combination for a 'copy image' action. The snippet is truncated and does not show the actual clipboard write logic, but the presence of ClipboardManager usage ",
       "source": "4h"
     },
     "2026-10-18|venusisjaded-venus-patches|patches/src/main/resources/venus/bootstrap.js|suspicious": {
@@ -126,30 +46,128 @@
       "reasoning": "The code uses feature flags (voice, copyBios, dashless, etc.) to conditionally select Metro module IDs and pass them to a `selectModules()` function. While this is a legitimate pattern for conditional module loading in a React Native app, the combination of 'risky-infra host' and the broad set of fe",
       "source": "4h"
     },
-    "2026-10-17|hxreborn-morphe-patches|patches/src/main/resources/moviebox/dashhook.dex|pending": {
-      "date": "2026-10-17",
+    "2026-10-18|sysadmindoc-hushpinterest|extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/CopyImage.java|suspicious": {
+      "date": "2026-10-18",
+      "target": "sysadmindoc-hushpinterest",
+      "repo": "SysAdminDoc/HushPinterest",
+      "file": "extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/CopyImage.java",
+      "verdict": "suspicious",
+      "confidence": 0.72,
+      "category": "exfiltration",
+      "evidence": [
+        "extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/CopyImage.java:1-30"
+      ],
+      "reasoning": "The excerpt shows a network sink (ClipboardManager) being used in a file named CopyImage within a Pinterest extension, which is a suspicious combination for a 'copy image' action. The snippet is truncated and does not show the actual clipboard write logic, but the presence of ClipboardManager usage ",
+      "source": "4h"
+    },
+    "2026-10-18|hxreborn-morphe-patches|extensions/extension/src/main/java/app/hxreborn/extension/privacynotes/ProUnlock.java|suspicious": {
+      "date": "2026-10-18",
       "target": "hxreborn-morphe-patches",
       "repo": "hxreborn/morphe-patches",
-      "file": "patches/src/main/resources/moviebox/dashhook.dex",
+      "file": "extensions/extension/src/main/java/app/hxreborn/extension/privacynotes/ProUnlock.java",
+      "verdict": "suspicious",
+      "confidence": 0.72,
+      "category": "exfiltration",
+      "evidence": [
+        "extensions/extension/src/main/java/app/hxreborn/extension/privacynotes/ProUnlock.java:14"
+      ],
+      "reasoning": "The file is a WebView JS bridge class with a constructor that does nothing visible, but the class name 'ProUnlock' and package suggest it handles pro-unlock logic. The static-analysis flag points to evaluateJavascript usage (not shown in excerpt but referenced by the analyzer). A WebView JS bridge t",
+      "source": "4h"
+    },
+    "2026-10-18|blazeftl-ftl-patches|.github/assets/fonts/Poppins-BoldItalic.ttf|suspicious": {
+      "date": "2026-10-18",
+      "target": "blazeftl-ftl-patches",
+      "repo": "BlazeFTL/FTL-Patches",
+      "file": ".github/assets/fonts/Poppins-BoldItalic.ttf",
+      "verdict": "suspicious",
+      "confidence": 0.5,
+      "category": "benign-other",
+      "evidence": [
+        ".github/assets/fonts/Poppins-BoldItalic.ttf"
+      ],
+      "reasoning": "The flagged change is a binary TrueType font asset that cannot be reviewed textually. There is no readable code, comment, or string indicating exfiltration, backdoor, spyware, or supply-chain behavior, and no exact offending lines can be identified from a binary diff. Because the content cannot be a",
+      "source": "4h"
+    },
+    "2026-10-18|angeldark92-steamlink-patches|patches/src/main/resources/steamlink/androidxr/libgxr_performance_boost.so|suspicious": {
+      "date": "2026-10-18",
+      "target": "angeldark92-steamlink-patches",
+      "repo": "AngelDark92/steamlink-patches",
+      "file": "patches/src/main/resources/steamlink/androidxr/libgxr_performance_boost.so",
+      "verdict": "suspicious",
+      "confidence": 0.35,
+      "category": "benign-other",
+      "evidence": [
+        "patches/src/main/resources/steamlink/androidxr/libgxr_performance_boost.so:binary"
+      ],
+      "reasoning": "The flagged change is a native shared library (.so) provided only as a binary diff and cannot be reviewed textually. No source, strings, or disassembly are available to identify exfiltration, backdoor, spyware, or supply-chain behavior. A malicious verdict requires confidence >= 0.85 and exact offen",
+      "source": "4h"
+    },
+    "2026-10-18|ihatenodejs-aidans-patches|extensions/extension/src/main/java/app/aidan/extension/geocaching/GeocacheEnrichmentBridge.java|suspicious": {
+      "date": "2026-10-18",
+      "target": "ihatenodejs-aidans-patches",
+      "repo": "ihatenodejs/aidans-patches",
+      "file": "extensions/extension/src/main/java/app/aidan/extension/geocaching/GeocacheEnrichmentBridge.java",
+      "verdict": "suspicious",
+      "confidence": 0.55,
+      "category": "exfiltration",
+      "evidence": [
+        "extensions/extension/src/main/java/app/aidan/extension/geocaching/GeocacheEnrichmentBridge.java:1"
+      ],
+      "reasoning": "The excerpt shows only standard Android/Java imports (SQLite, Cursor, Context, etc.). No obvious malicious patterns (e.g., native method calls, obfuscated class names, dynamic class loading) are visible in the provided snippet. The static-analysis reason mentions 'reflection-hidden behavior with net",
+      "source": "4h"
+    },
+    "2026-10-18|k8r8to-kizu-morphe-patches|extensions/extension/src/main/java/app/morphe/extension/twitch/emotes/EmotePickerImages.java|pending": {
+      "date": "2026-10-18",
+      "target": "k8r8to-kizu-morphe-patches",
+      "repo": "K8R8TO/kizu-morphe-patches",
+      "file": "extensions/extension/src/main/java/app/morphe/extension/twitch/emotes/EmotePickerImages.java",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "unreviewed",
+      "evidence": [
+        "typosquat of allowlisted domain: https://static-cdn.jtvnw.net (~gstatic), https://static-cdn.jtvnw.net (~gstatic), https://static-cdn.jtvnw.net (~gstatic)"
+      ],
+      "reasoning": "reviewer produced no usable verdict",
+      "source": "4h"
+    },
+    "2026-10-18|k8r8to-kizu-morphe-patches|patches/src/main/kotlin/io/github/bakwudo/uyu/patches/twitch/emotes/NativePickerHooks.kt|suspicious": {
+      "date": "2026-10-18",
+      "target": "k8r8to-kizu-morphe-patches",
+      "repo": "K8R8TO/kizu-morphe-patches",
+      "file": "patches/src/main/kotlin/io/github/bakwudo/uyu/patches/twitch/emotes/NativePickerHooks.kt",
+      "verdict": "suspicious",
+      "confidence": 0.72,
+      "category": "supply-chain",
+      "evidence": [
+        "patches/src/main/kotlin/io/github/bakwudo/uyu/patches/twitch/emotes/NativePickerHooks.kt:1-15"
+      ],
+      "reasoning": "The file imports from app.morphe.patcher (a third-party patcher library) and references internal constants for a runtime class (EmotePickerRuntime) and channel ID type. While the package name matches the legitimate project, the heavy dependency on an external patcher library and obfuscated class nam",
+      "source": "4h"
+    },
+    "2026-10-17|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/method-delta.dex|pending": {
+      "date": "2026-10-17",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "patches/src/main/resources/nicoid/method-delta.dex",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "[binary strings] sensitive source reaches network sink"
+      ],
+      "reasoning": "reviewer call failed (reviewer HTTP 429 for dots-studio/dots-3-note-preview:free: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day); deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-17|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/helpers.mpe|pending": {
+      "date": "2026-10-17",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "patches/src/main/resources/nicoid/helpers.mpe",
       "verdict": "pending",
       "confidence": 0,
       "category": "reviewer-error",
       "evidence": [
         "[binary strings] reflection-hidden behavior with network sink"
-      ],
-      "reasoning": "reviewer call failed (reviewer HTTP 429 for dots-studio/dots-3-note-preview:free: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day); deterministic finding stands without ban",
-      "source": "4h"
-    },
-    "2026-10-17|heval99-heval-morphe-patches|cross-window|pending": {
-      "date": "2026-10-17",
-      "target": "heval99-heval-morphe-patches",
-      "repo": "heval99/Heval-Morphe-Patches",
-      "file": "cross-window",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "reviewer-error",
-      "evidence": [
-        "exfil completed across windows in patches/src/main/kotlin/app/template/patches/shared/Constants.kt: previously seen host http://4.2.31.1 (2026-10-16) with new WebView"
       ],
       "reasoning": "reviewer call failed (reviewer HTTP 429 for dots-studio/dots-3-note-preview:free: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day); deterministic finding stands without ban",
       "source": "4h"
@@ -168,11 +186,25 @@
       "reasoning": "The excerpt only provides a static-analysis summary alleging cross-window exfiltration to Discord CDN hosts involving Location, Clipboard, and Socket. No actual patch diff or code lines are shown, so I cannot verify the behavior or cite exact offending lines. A malicious verdict requires confirmed c",
       "source": "4h"
     },
-    "2026-10-17|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/helpers.mpe|pending": {
+    "2026-10-17|heval99-heval-morphe-patches|cross-window|pending": {
       "date": "2026-10-17",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "patches/src/main/resources/nicoid/helpers.mpe",
+      "target": "heval99-heval-morphe-patches",
+      "repo": "heval99/Heval-Morphe-Patches",
+      "file": "cross-window",
+      "verdict": "pending",
+      "confidence": 0,
+      "category": "reviewer-error",
+      "evidence": [
+        "exfil completed across windows in patches/src/main/kotlin/app/template/patches/shared/Constants.kt: previously seen host http://4.2.31.1 (2026-10-16) with new WebView"
+      ],
+      "reasoning": "reviewer call failed (reviewer HTTP 429 for dots-studio/dots-3-note-preview:free: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day); deterministic finding stands without ban",
+      "source": "4h"
+    },
+    "2026-10-17|hxreborn-morphe-patches|patches/src/main/resources/moviebox/dashhook.dex|pending": {
+      "date": "2026-10-17",
+      "target": "hxreborn-morphe-patches",
+      "repo": "hxreborn/morphe-patches",
+      "file": "patches/src/main/resources/moviebox/dashhook.dex",
       "verdict": "pending",
       "confidence": 0,
       "category": "reviewer-error",
@@ -180,76 +212,6 @@
         "[binary strings] reflection-hidden behavior with network sink"
       ],
       "reasoning": "reviewer call failed (reviewer HTTP 429 for dots-studio/dots-3-note-preview:free: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day); deterministic finding stands without ban",
-      "source": "4h"
-    },
-    "2026-10-17|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/method-delta.dex|pending": {
-      "date": "2026-10-17",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "patches/src/main/resources/nicoid/method-delta.dex",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "reviewer-error",
-      "evidence": [
-        "[binary strings] sensitive source reaches network sink"
-      ],
-      "reasoning": "reviewer call failed (reviewer HTTP 429 for dots-studio/dots-3-note-preview:free: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day); deterministic finding stands without ban",
-      "source": "4h"
-    },
-    "2026-10-16|heval99-heval-morphe-patches|cross-window|suspicious": {
-      "date": "2026-10-16",
-      "target": "heval99-heval-morphe-patches",
-      "repo": "heval99/Heval-Morphe-Patches",
-      "file": "cross-window",
-      "verdict": "suspicious",
-      "confidence": 0.5,
-      "category": "exfiltration",
-      "evidence": [
-        "patches/src/main/kotlin/app/template/patches/shared/Constants.kt"
-      ],
-      "reasoning": "No actual patch diff or source code was provided, only a static-analysis summary referencing Constants.kt, host http://4.2.31.1, CallLog, and WebView. Without the exact offending lines, I cannot verify exfiltration behavior or meet the evidence/confidence threshold for a malicious verdict. The indic",
-      "source": "4h"
-    },
-    "2026-10-16|alastor-kaneki-morphe-patches|cross-window|suspicious": {
-      "date": "2026-10-16",
-      "target": "alastor-kaneki-morphe-patches",
-      "repo": "Alastor-Kaneki/Morphe-Patches",
-      "file": "cross-window",
-      "verdict": "suspicious",
-      "confidence": 0.2,
-      "category": "exfiltration",
-      "evidence": [
-        "extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditGalleryOverlayController.java"
-      ],
-      "reasoning": "No actual code diff was provided, only a static-analysis note alleging clipboard-related exfiltration to reddit.com in RedditGalleryOverlayController.java. Without inspectable code changes, malicious behavior cannot be confirmed; per policy, uncertain cases are rated suspicious rather than malicious",
-      "source": "4h"
-    },
-    "2026-10-16|venusisjaded-venus-patches|cross-window|pending": {
-      "date": "2026-10-16",
-      "target": "venusisjaded-venus-patches",
-      "repo": "VenusIsJaded/Venus-Patches",
-      "file": "cross-window",
-      "verdict": "pending",
-      "confidence": 0,
-      "category": "unreviewed",
-      "evidence": [
-        "exfil completed across windows in patches/src/main/resources/venus/bootstrap.js: previously seen host https://cdn.discordapp.com (2026-10-15) with new Clipboard"
-      ],
-      "reasoning": "reviewer produced no usable verdict",
-      "source": "4h"
-    },
-    "2026-10-16|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/method-delta.dex|suspicious": {
-      "date": "2026-10-16",
-      "target": "chikuwadon-nicoid-re-patches",
-      "repo": "chikuwadon/nicoid-re-patches",
-      "file": "patches/src/main/resources/nicoid/method-delta.dex",
-      "verdict": "suspicious",
-      "confidence": 0.6,
-      "category": "benign-other",
-      "evidence": [
-        "patches/src/main/resources/nicoid/method-delta.dex"
-      ],
-      "reasoning": "The DEX patch contains strings consistent with a Nico Nico Douga video client: HTTP/1.1, flapi.nicovideo.jp/api/getflv/, nico.ms, video player methods (isPlaying/pause/start), and watch-page data parsing. The network sink appears to be the service's own API rather than an attacker-controlled endpoin",
       "source": "4h"
     },
     "2026-10-16|hxreborn-morphe-patches|patches/src/main/resources/moviebox/dashhook.dex|suspicious": {
@@ -266,18 +228,60 @@
       "reasoning": "Static analysis flagged this DEX file for 'reflection hidden behavior with network sink', indicating potential exfiltration via reflection-based network calls. The excerpt shows obfuscated binary fragments typical of steganographic payloads. However, without the full diff context, the actual code be",
       "source": "4h"
     },
-    "2026-10-15|alastor-kaneki-morphe-patches|extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditCurrentPost.java|pending": {
-      "date": "2026-10-15",
-      "target": "alastor-kaneki-morphe-patches",
-      "repo": "Alastor-Kaneki/Morphe-Patches",
-      "file": "extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditCurrentPost.java",
+    "2026-10-16|chikuwadon-nicoid-re-patches|patches/src/main/resources/nicoid/method-delta.dex|suspicious": {
+      "date": "2026-10-16",
+      "target": "chikuwadon-nicoid-re-patches",
+      "repo": "chikuwadon/nicoid-re-patches",
+      "file": "patches/src/main/resources/nicoid/method-delta.dex",
+      "verdict": "suspicious",
+      "confidence": 0.6,
+      "category": "benign-other",
+      "evidence": [
+        "patches/src/main/resources/nicoid/method-delta.dex"
+      ],
+      "reasoning": "The DEX patch contains strings consistent with a Nico Nico Douga video client: HTTP/1.1, flapi.nicovideo.jp/api/getflv/, nico.ms, video player methods (isPlaying/pause/start), and watch-page data parsing. The network sink appears to be the service's own API rather than an attacker-controlled endpoin",
+      "source": "4h"
+    },
+    "2026-10-16|venusisjaded-venus-patches|cross-window|pending": {
+      "date": "2026-10-16",
+      "target": "venusisjaded-venus-patches",
+      "repo": "VenusIsJaded/Venus-Patches",
+      "file": "cross-window",
       "verdict": "pending",
       "confidence": 0,
       "category": "unreviewed",
       "evidence": [
-        "reflection-hidden behavior with network sink"
+        "exfil completed across windows in patches/src/main/resources/venus/bootstrap.js: previously seen host https://cdn.discordapp.com (2026-10-15) with new Clipboard"
       ],
       "reasoning": "reviewer produced no usable verdict",
+      "source": "4h"
+    },
+    "2026-10-16|alastor-kaneki-morphe-patches|cross-window|suspicious": {
+      "date": "2026-10-16",
+      "target": "alastor-kaneki-morphe-patches",
+      "repo": "Alastor-Kaneki/Morphe-Patches",
+      "file": "cross-window",
+      "verdict": "suspicious",
+      "confidence": 0.2,
+      "category": "exfiltration",
+      "evidence": [
+        "extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditGalleryOverlayController.java"
+      ],
+      "reasoning": "No actual code diff was provided, only a static-analysis note alleging clipboard-related exfiltration to reddit.com in RedditGalleryOverlayController.java. Without inspectable code changes, malicious behavior cannot be confirmed; per policy, uncertain cases are rated suspicious rather than malicious",
+      "source": "4h"
+    },
+    "2026-10-16|heval99-heval-morphe-patches|cross-window|suspicious": {
+      "date": "2026-10-16",
+      "target": "heval99-heval-morphe-patches",
+      "repo": "heval99/Heval-Morphe-Patches",
+      "file": "cross-window",
+      "verdict": "suspicious",
+      "confidence": 0.5,
+      "category": "exfiltration",
+      "evidence": [
+        "patches/src/main/kotlin/app/template/patches/shared/Constants.kt"
+      ],
+      "reasoning": "No actual patch diff or source code was provided, only a static-analysis summary referencing Constants.kt, host http://4.2.31.1, CallLog, and WebView. Without the exact offending lines, I cannot verify exfiltration behavior or meet the evidence/confidence threshold for a malicious verdict. The indic",
       "source": "4h"
     }
   }
