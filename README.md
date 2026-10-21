@@ -1,6 +1,6 @@
 # Morphe patches audit
 
-Scans 4x daily (`0 0,6,12,18 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Binary strings are unverified leads and cannot produce critical findings or bans. v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. Bans require a high-confidence malicious verdict for a code-level finding plus deterministic high/critical corroboration; repeat suspicious verdicts stay in the review queue.
+Scans 4x daily (`0 0,6,12,18 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Binary strings are unverified leads and cannot produce critical findings or bans. v5 layers: binary forensics, Semgrep taint, budget-limited OpenRouter LLM adjudication, weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. Only high-confidence malicious code findings with deterministic high/critical corroboration can cause a ban; lower-confidence verdicts remain visible in reports, and unavailable reviews are marked unreviewed.
 
 ## :octagonal_sign: Blacklisted — permanently untrusted
 
@@ -257,26 +257,10 @@ No critical findings in this window.
 | yann-soliman-morphe-patches | 2026-10-21 | 7252220 | OK | 0 | 0 | 0 | reports/2026-10-21/yann-soliman-morphe-patches-run01-OK.md |
 | zanuaimi-unipatches | 2026-10-21 | 3bb7707 | OK | 0 | 0 | 0 | reports/2026-10-21/zanuaimi-unipatches-run01-OK.md |
 
-## Review queue (needs human)
+## LLM review
 
-LLM-suspect items below the confirmation bar, plus pending items awaiting a usable verdict. Repeat non-benign verdicts remain queued and never auto-ban; a benign verdict clears old strikes. `config/pardons.json` is the manual escape hatch.
-
-| date | target | file | verdict | conf | evidence |
-|---|---|---|---|---|---|
-| 2026-10-19 | sysadmindoc-hushfeed | extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java | suspicious | 0.58 | extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:9,extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:10,extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:12,extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:14,extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:15 |
-| 2026-10-19 | angeldark92-steamlink-patches | patches/src/main/resources/steamlink/androidxr/libgxr_xr_bridge.so | suspicious | 0.82 | patches/src/main/resources/steamlink/androidxr/libgxr__xr__bridge.so:13750724 |
-| 2026-10-18 | sysadmindoc-hushpinterest | extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/CopyImage.java | suspicious | 0.72 | extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/CopyImage.java:1-30 |
-| 2026-10-18 | hxreborn-morphe-patches | extensions/extension/src/main/java/app/hxreborn/extension/privacynotes/ProUnlock.java | suspicious | 0.72 | extensions/extension/src/main/java/app/hxreborn/extension/privacynotes/ProUnlock.java:14 |
-| 2026-10-18 | blazeftl-ftl-patches | .github/assets/fonts/Poppins-BoldItalic.ttf | suspicious | 0.5 | .github/assets/fonts/Poppins-BoldItalic.ttf |
-| 2026-10-18 | angeldark92-steamlink-patches | patches/src/main/resources/steamlink/androidxr/libgxr_performance_boost.so | suspicious | 0.35 | patches/src/main/resources/steamlink/androidxr/libgxr_performance_boost.so:binary |
-| 2026-10-18 | ihatenodejs-aidans-patches | extensions/extension/src/main/java/app/aidan/extension/geocaching/GeocacheEnrichmentBridge.java | suspicious | 0.55 | extensions/extension/src/main/java/app/aidan/extension/geocaching/GeocacheEnrichmentBridge.java:1 |
-| 2026-10-18 | k8r8to-kizu-morphe-patches | extensions/extension/src/main/java/app/morphe/extension/twitch/emotes/EmotePickerImages.java | pending | 0 | typosquat of allowlisted domain: https://static-cdn.jtvnw.net (~gstatic), https://static-cdn.jtvnw.net (~gstatic), https://static-cdn.jtvnw.net (~gstatic) |
-| 2026-10-18 | k8r8to-kizu-morphe-patches | patches/src/main/kotlin/io/github/bakwudo/uyu/patches/twitch/emotes/NativePickerHooks.kt | suspicious | 0.72 | patches/src/main/kotlin/io/github/bakwudo/uyu/patches/twitch/emotes/NativePickerHooks.kt:1-15 |
-| 2026-10-17 | hxreborn-morphe-patches | patches/src/main/resources/moviebox/dashhook.dex | pending | 0 | [binary strings] reflection-hidden behavior with network sink |
-| 2026-10-16 | hxreborn-morphe-patches | patches/src/main/resources/moviebox/dashhook.dex | suspicious | 0.65 | patches/src/main/resources/moviebox/dashhook.dex:54C |
-| 2026-10-16 | alastor-kaneki-morphe-patches | cross-window | suspicious | 0.2 | extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditGalleryOverlayController.java |
-
+Suspicious and below-threshold malicious verdicts remain visible in each report without creating a manual queue. Reviews skipped because credentials/model are missing, the per-scan cap is reached, the monthly budget is exhausted, or the reviewer fails are marked `unreviewed`; these cases do not automatically ban a target. Call caps and the monthly budget are unchanged.
 
 ## Secrets policy
 
-Never paste tokens into chat or code. The workflow needs no token for public repos; if GitHub rate-limits, add an Actions secret named `SCAN_TOKEN` and use it via `secrets.SCAN_TOKEN` only. The LLM reviewer reads `LLM_API_KEY` (OpenRouter key, secret) and optional `LLM_MODEL` / `LLM_FALLBACKS` (repo variables, auto-resolved to a live free model when empty) plus `LLM_MONTHLY_BUDGET_USD` (default 5); without a key the LLM layer is skipped silently.
+Never paste tokens into chat or code. The workflow needs no token for public repos; if GitHub rate-limits, add an Actions secret named `SCAN_TOKEN` and use it via `secrets.SCAN_TOKEN` only. The LLM reviewer reads `LLM_API_KEY` (OpenRouter key, secret) and optional `LLM_MODEL` / `LLM_FALLBACKS` (repo variables, auto-resolved to a live free model when empty) plus `LLM_MONTHLY_BUDGET_USD` (default 5); without a key, findings are marked unreviewed.

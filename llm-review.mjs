@@ -100,34 +100,6 @@ export async function callReviewer({ endpoint, apiKey, model, fallbacks = [], pr
   throw lastError || new Error("reviewer failed with no models tried");
 }
 
-export function clearStrikes(queue, target, file) {
-  const items = (queue && queue.items) || {};
-  const removed = [];
-  for (const k of Object.keys(items)) {
-    const parts = String(k).split("|");
-    if (parts.length >= 4 && parts[1] === target && parts[2] === file) {
-      delete items[k];
-      removed.push(k);
-    }
-  }
-  return removed;
-}
-
-export function queueReviewerError({ queue, today, target, repo, file, reason, error, source }) {
-  const key = today + "|" + target + "|" + file + "|pending";
-  const raw = String((error && error.message) || error || "unknown").slice(0, 200)
-    .replace(/Bearer\s+\S+/gi, "Bearer ***")
-    .replace(/\b(sk|ghp|gho)_[A-Za-z0-9-]+/g, "***");
-  queue.items[key] = {
-    date: today, target, repo, file,
-    verdict: "pending", confidence: 0, category: "reviewer-error",
-    evidence: [reason],
-    reasoning: "reviewer call failed (" + raw + "); deterministic finding stands without ban",
-    source: source || "4h",
-  };
-  return key;
-}
-
 function parseVerdictText(text) {
   try {
     return parseVerdict(JSON.parse(String(text)));
@@ -150,16 +122,15 @@ export function parseVerdict(obj) {
 export function reviewerDecision({ verdict, detHigh }) {
   if (!verdict) return "ignore";
   if (verdict.verdict === "malicious" && verdict.confidence >= CONFIDENCE_BAN_THRESHOLD && detHigh) return "ban";
-  if (verdict.verdict === "malicious" || verdict.verdict === "suspicious") return "queue";
+  if (verdict.verdict === "malicious" || verdict.verdict === "suspicious") return "flag";
   return "ignore";
 }
 
 export function adjudicateFinding({ finding, verdict, detHigh }) {
-  if (!verdict) return { action: "pending" };
+  if (!verdict) return { action: "unreviewed" };
   const d = reviewerDecision({ verdict, detHigh });
   if (d === "ban" && finding && finding.banEligible !== false && finding.file !== "cross-window") return { action: "ban" };
-  if (d === "queue") return { action: "queue" };
-  if (d === "ban") return { action: "queue" };
+  if (d === "flag" || d === "ban") return { action: "flag" };
   return { action: "overrule" };
 }
 

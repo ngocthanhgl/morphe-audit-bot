@@ -639,7 +639,13 @@ export function renderRepoReport(repo, sha, findings, date) {
   let md = "# " + repo + " — " + date + "\n\nCommit: " + sha + " | Status: " + status + " | crit:" + crit + " high:" + high + " med:" + med + "\n\n";
   if (findings.length === 0) { md += "No suspicious changes in this window.\n"; return md; }
   for (const f of findings) {
-    md += "<details>\n<summary>[" + f.severity + "] " + f.file + " — " + f.reason + "</summary>\n\n```\n" + f.excerpt + "\n```\n\n</details>\n\n";
+    const review = f.llmReview;
+    const reviewText = review
+      ? "LLM review: " + (review.status === "unreviewed"
+        ? "unreviewed (" + review.reason + ")"
+        : review.verdict + " (" + review.confidence + ", " + review.category + "): " + review.reasoning) + "\n\n"
+      : "";
+    md += "<details>\n<summary>[" + f.severity + "] " + f.file + " — " + f.reason + "</summary>\n\n" + reviewText + "```\n" + f.excerpt + "\n```\n\n</details>\n\n";
   }
   return md;
 }

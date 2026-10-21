@@ -8,8 +8,6 @@ import {
   parseVerdict,
   reviewerDecision,
   adjudicateFinding,
-  clearStrikes,
-  queueReviewerError,
   readSpend,
   recordSpend,
 } from "../llm-review.mjs";
@@ -68,23 +66,23 @@ describe("llm reviewer", () => {
   it("accepts a well-formed verdict", () => {
     assert.deepEqual(parseVerdict(GOOD), GOOD);
   });
-  it("gates bans: only high-confidence malicious plus deterministic high", () => {
+  it("flags non-benign verdicts but only confirms high-confidence malicious plus deterministic high", () => {
     assert.equal(reviewerDecision({ verdict: { ...GOOD }, detHigh: true }), "ban");
-    assert.equal(reviewerDecision({ verdict: { ...GOOD }, detHigh: false }), "queue");
-    assert.equal(reviewerDecision({ verdict: { ...GOOD, confidence: 0.5 }, detHigh: true }), "queue");
-    assert.equal(reviewerDecision({ verdict: { ...GOOD, verdict: "suspicious" }, detHigh: true }), "queue");
+    assert.equal(reviewerDecision({ verdict: { ...GOOD }, detHigh: false }), "flag");
+    assert.equal(reviewerDecision({ verdict: { ...GOOD, confidence: 0.5 }, detHigh: true }), "flag");
+    assert.equal(reviewerDecision({ verdict: { ...GOOD, verdict: "suspicious" }, detHigh: true }), "flag");
     assert.equal(reviewerDecision({ verdict: { ...GOOD, verdict: "benign" }, detHigh: true }), "ignore");
     assert.equal(reviewerDecision({ verdict: null, detHigh: true }), "ignore");
   });
-  it("adjudicates findings: ban only on confirmation, overrule on benign, pending on failure", () => {
+  it("adjudicates findings without creating a manual queue", () => {
     const f = { severity: "critical", file: "x", reason: "y", excerpt: "" };
     assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD }, detHigh: true }).action, "ban");
-    assert.equal(adjudicateFinding({ finding: { ...f, banEligible: false }, verdict: { ...GOOD }, detHigh: true }).action, "queue");
-    assert.equal(adjudicateFinding({ finding: { ...f, file: "cross-window" }, verdict: { ...GOOD }, detHigh: true }).action, "queue");
-    assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD, confidence: 0.5 }, detHigh: true }).action, "queue");
-    assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD, verdict: "suspicious" }, detHigh: true }).action, "queue");
+    assert.equal(adjudicateFinding({ finding: { ...f, banEligible: false }, verdict: { ...GOOD }, detHigh: true }).action, "flag");
+    assert.equal(adjudicateFinding({ finding: { ...f, file: "cross-window" }, verdict: { ...GOOD }, detHigh: true }).action, "flag");
+    assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD, confidence: 0.5 }, detHigh: true }).action, "flag");
+    assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD, verdict: "suspicious" }, detHigh: true }).action, "flag");
     assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD, verdict: "benign" }, detHigh: true }).action, "overrule");
-    assert.equal(adjudicateFinding({ finding: f, verdict: null, detHigh: true }).action, "pending");
+    assert.equal(adjudicateFinding({ finding: f, verdict: null, detHigh: true }).action, "unreviewed");
   });
   it("tracks spend and enforces the budget cap", () => {
     const f = join(tmpdir(), "spend-test-" + process.pid + "-" + Date.now() + ".json");
@@ -119,26 +117,9 @@ describe("llm reviewer", () => {
     assert.ok(!("response_format" in bodies[1]));
     assert.equal(r.model, "m1");
   });
-  it("records reviewer failures with the error text for diagnosis", () => {
-    const queue = { items: {} };
-    const key = queueReviewerError({ queue, today: "2026-10-14", target: "t", repo: "o/r", file: "a.kt", reason: "src+sink", error: new Error("reviewer HTTP 404 for ghost-model"), source: "4h" });
-    const e = queue.items[key];
-    assert.equal(e.category, "reviewer-error");
-    assert.match(e.reasoning, /404/);
-    assert.match(e.reasoning, /ghost-model/);
-  });
   it("never promotes repeated suspicious verdicts to a ban", () => {
     const sus = { ...GOOD, verdict: "suspicious", confidence: 0.7 };
-    assert.equal(reviewerDecision({ verdict: sus, detHigh: true }), "queue");
-  });
-  it("clears old strikes when the judge says benign", () => {
-    const queue = { items: {
-      "2026-10-13|t|a.kt|suspicious": { date: "2026-10-13", verdict: "suspicious" },
-      "2026-10-14|t|b.kt|suspicious": { date: "2026-10-14", verdict: "suspicious" },
-      "2026-10-14|t|a.kt|pending": { date: "2026-10-14", verdict: "pending" },
-    } };
-    assert.deepEqual(clearStrikes(queue, "t", "a.kt"), ["2026-10-13|t|a.kt|suspicious", "2026-10-14|t|a.kt|pending"]);
-    assert.deepEqual(Object.keys(queue.items), ["2026-10-14|t|b.kt|suspicious"]);
+    assert.equal(reviewerDecision({ verdict: sus, detHigh: true }), "flag");
   });
   it("retries a throttled model once before moving to fallbacks", async () => {
     const used = [];

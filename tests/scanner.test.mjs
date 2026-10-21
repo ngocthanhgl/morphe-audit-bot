@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { scanDiff, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, isTestPath, extractSignals, reportFilename, nextRunSeq } from "../scanner.mjs";
+import { scanDiff, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, isTestPath, extractSignals, reportFilename, nextRunSeq, renderRepoReport } from "../scanner.mjs";
 import { readFileSync } from "node:fs";
 
 const cfg = JSON.parse(readFileSync("config/allowlist.json", "utf8"));
@@ -11,6 +11,14 @@ function diffFor(file, addedLines) {
 }
 
 describe("audit rules", () => {
+  it("includes LLM adjudication and unreviewed reasons in reports", () => {
+    const report = renderRepoReport("o/r", "abc1234", [
+      { severity: "high", file: "A.kt", reason: "sensitive data to network", excerpt: "code", llmReview: { verdict: "suspicious", confidence: 0.7, category: "exfiltration", reasoning: "sink not established" } },
+      { severity: "medium", file: "B.kt", reason: "unknown host", excerpt: "code", llmReview: { status: "unreviewed", reason: "monthly LLM budget reached" } },
+    ], "2026-10-22");
+    assert.match(report, /suspicious \(0.7, exfiltration\): sink not established/);
+    assert.match(report, /unreviewed \(monthly LLM budget reached\)/);
+  });
   it("ignores premium-unlock-only patches", () => {
     const d = diffFor("patches/Unlock.kt", ["returnEarly(true)", "val isPremium = true"]);
     assert.equal(scanDiff(d, cfg).length, 0);

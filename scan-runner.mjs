@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 
 import { loadConfig, scanDiff, renderRepoReport, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, reportFilename, nextRunSeq } from "./scanner.mjs";
 import { analyzeBlob } from "./binary.mjs";
 import { mapSemgrep } from "./semgrep.mjs";
-import { buildReviewPrompt, callReviewer, adjudicateFinding, clearStrikes, queueReviewerError, readSpend, recordSpend } from "./llm-review.mjs";
+import { buildReviewPrompt, callReviewer, adjudicateFinding, readSpend, recordSpend } from "./llm-review.mjs";
 
 import { cloneUrl } from "./targets.mjs";
 
@@ -16,8 +16,11 @@ const LLM_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
 const LLM_MAX_REVIEWS = 12;
 let llmReviewsUsed = 0;
 function currentMonth() { return new Date().toISOString().slice(0, 7); }
-function llmAllowed() {
-  return LLM_KEY && LLM_MODEL && llmReviewsUsed < LLM_MAX_REVIEWS && !readSpend("llm-spend.json", currentMonth(), LLM_BUDGET).overBudget;
+function llmUnavailableReason() {
+  if (!LLM_KEY || !LLM_MODEL) return "LLM key/model not configured";
+  if (llmReviewsUsed >= LLM_MAX_REVIEWS) return "per-scan review cap reached";
+  if (readSpend("llm-spend.json", currentMonth(), LLM_BUDGET).overBudget) return "monthly LLM budget reached";
+  return "";
 }
 
 const today = new Date().toISOString().slice(0, 10);
@@ -32,8 +35,6 @@ const pardons = existsSync("config/pardons.json") ? JSON.parse(readFileSync("con
   blacklist = p.blacklist;
   for (const n of p.freed) console.log("PARDONED " + n + ": " + (pardons.reason || "manual pardon"));
 }
-let reviewQueue = existsSync("review-queue.json") ? JSON.parse(readFileSync("review-queue.json", "utf8") || "{}") : {};
-if (!reviewQueue.items) reviewQueue.items = {};
 if (!existsSync("work")) mkdirSync("work");
 
 const rows = [];
@@ -110,9 +111,10 @@ for (const t of targets) {
         .sort((a, b) => (a.severity === b.severity ? 0 : a.severity === "critical" ? -1 : 1));
       if (freshAuthor && findings.length > 0 && reviewTargets.length === 0 && findings[0]) reviewTargets.push(findings[0]);
       for (const rt of reviewTargets) {
-        if (!llmAllowed()) {
+        const unavailable = llmUnavailableReason();
+        if (unavailable) {
           rt.llm = "unreviewed";
-          rt.reason += " [llm: unreviewed — review cap or budget reached, no ban]";
+          rt.llmReview = { status: "unreviewed", reason: unavailable };
           continue;
         }
         try {
@@ -123,24 +125,23 @@ for (const t of targets) {
           const adj = adjudicateFinding({ finding: rt, verdict: r.verdict, detHigh });
           if (adj.action === "ban") {
             rt.llm = "confirmed";
+            rt.llmReview = { verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, reasoning: r.verdict.reasoning };
             findings.push({ severity: "critical", llm: "confirmed", file: rt.file, reason: "[llm-reviewer " + r.model + "] malicious (" + r.verdict.confidence + ", " + r.verdict.category + "): " + r.verdict.evidence.join(","), excerpt: String(r.verdict.reasoning).slice(0, 500) });
-          } else if (adj.action === "queue") {
-            rt.llm = "queued";
-            const key = today + "|" + t.name + "|" + rt.file + "|" + r.verdict.verdict;
-            reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, evidence: r.verdict.evidence, reasoning: String(r.verdict.reasoning).slice(0, 300), source: "4h" };
+          } else if (adj.action === "flag") {
+            rt.llm = "flagged";
+            rt.llmReview = { verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, reasoning: r.verdict.reasoning };
           } else if (adj.action === "overrule") {
             rt.llm = "overruled";
-            clearStrikes(reviewQueue, t.name, rt.file);
+            rt.llmReview = { verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, reasoning: r.verdict.reasoning };
             if (rt.severity === "critical") rt.severity = "high";
             rt.reason += " [llm: benign " + r.verdict.confidence + " — no ban]";
           } else {
-            rt.llm = "pending";
-            const key = today + "|" + t.name + "|" + rt.file + "|pending";
-            reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: "pending", confidence: 0, category: "unreviewed", evidence: [rt.reason], reasoning: "reviewer produced no usable verdict", source: "4h" };
+            rt.llm = "unreviewed";
+            rt.llmReview = { status: "unreviewed", reason: "reviewer returned no usable verdict" };
           }
         } catch (e) {
-          rt.llm = "pending";
-          queueReviewerError({ queue: reviewQueue, today, target: t.name, repo: t.repo, file: rt.file, reason: rt.reason, error: e, source: "4h" });
+          rt.llm = "unreviewed";
+          rt.llmReview = { status: "unreviewed", reason: "reviewer request failed; no automatic ban" };
         }
       }
     }
@@ -166,13 +167,10 @@ for (const t of targets) {
 writeFileSync("state.json", JSON.stringify(state, null, 2) + "\n");
 writeFileSync("signals.json", JSON.stringify(signals, null, 2) + "\n");
 writeFileSync("blacklist.json", JSON.stringify(blacklist, null, 2) + "\n");
-const queueItems = Object.values(reviewQueue.items || {}).sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, 20);
-reviewQueue.items = Object.fromEntries(queueItems.map((q) => [q.date + "|" + q.target + "|" + q.file + "|" + q.verdict, q]));
-writeFileSync("review-queue.json", JSON.stringify(reviewQueue, null, 2) + "\n");
 if (!existsSync("llm-spend.json")) writeFileSync("llm-spend.json", JSON.stringify({ month: currentMonth(), total: 0 }, null, 2) + "\n");
 const totalCrit = rows.reduce((n, r) => n + (r.crit || 0), 0);
 writeFileSync("crit-alert.txt", String(totalCrit) + "\n");
-let readme = "# Morphe patches audit\n\nScans 4x daily (`0 0,6,12,18 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Binary strings are unverified leads and cannot produce critical findings or bans. v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. Bans require a high-confidence malicious verdict for a code-level finding plus deterministic high/critical corroboration; repeat suspicious verdicts stay in the review queue.\n\n## :octagonal_sign: Blacklisted — permanently untrusted\n\nA target is added only after the LLM confirms a high-confidence malicious code-level finding with deterministic corroboration. Clean later pushes do not clear confirmed bans; removal requires a manual pardon in `config/pardons.json`. Binary-string and cross-window-only findings cannot trigger a ban.\n\n";
+let readme = "# Morphe patches audit\n\nScans 4x daily (`0 0,6,12,18 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Binary strings are unverified leads and cannot produce critical findings or bans. v5 layers: binary forensics, Semgrep taint, budget-limited OpenRouter LLM adjudication, weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. Only high-confidence malicious code findings with deterministic high/critical corroboration can cause a ban; lower-confidence verdicts remain visible in reports, and unavailable reviews are marked unreviewed.\n\n## :octagonal_sign: Blacklisted — permanently untrusted\n\nA target is added only after the LLM confirms a high-confidence malicious code-level finding with deterministic corroboration. Clean later pushes do not clear confirmed bans; removal requires a manual pardon in `config/pardons.json`. Binary-string and cross-window-only findings cannot trigger a ban.\n\n";
 const banned = Object.entries((blacklist.repos || {}));
 if (banned.length === 0) {
   readme += "No blacklisted targets.\n\n";
@@ -199,16 +197,6 @@ readme += "| target | scan | commit | status | crit | high | med | report |\n|--
 for (const r of rows) {
   readme += "| " + r.name + " | " + today + " | " + r.sha + " | " + r.status + " | " + (r.crit || 0) + " | " + r.high + " | " + r.med + " | " + (r.report || ("reports/" + today + "/" + r.name + ".md")) + " |\n";
 }
-readme += "\n## Review queue (needs human)\n\nLLM-suspect items below the confirmation bar, plus pending items awaiting a usable verdict. Repeat non-benign verdicts remain queued and never auto-ban; a benign verdict clears old strikes. `config/pardons.json` is the manual escape hatch.\n\n";
-if (queueItems.length === 0) {
-  readme += "Queue empty.\n\n";
-} else {
-  readme += "| date | target | file | verdict | conf | evidence |\n|---|---|---|---|---|---|\n";
-  for (const q of queueItems) {
-    readme += "| " + q.date + " | " + q.target + " | " + q.file + " | " + q.verdict + " | " + q.confidence + " | " + (q.evidence || []).join(",") + " |\n";
-  }
-  readme += "\n";
-}
-readme += "\n## Secrets policy\n\nNever paste tokens into chat or code. The workflow needs no token for public repos; if GitHub rate-limits, add an Actions secret named `SCAN_TOKEN` and use it via `secrets.SCAN_TOKEN` only. The LLM reviewer reads `LLM_API_KEY` (OpenRouter key, secret) and optional `LLM_MODEL` / `LLM_FALLBACKS` (repo variables, auto-resolved to a live free model when empty) plus `LLM_MONTHLY_BUDGET_USD` (default 5); without a key the LLM layer is skipped silently.\n";
+readme += "\n## LLM review\n\nSuspicious and below-threshold malicious verdicts remain visible in each report without creating a manual queue. Reviews skipped because credentials/model are missing, the per-scan cap is reached, the monthly budget is exhausted, or the reviewer fails are marked `unreviewed`; these cases do not automatically ban a target. Call caps and the monthly budget are unchanged.\n\n## Secrets policy\n\nNever paste tokens into chat or code. The workflow needs no token for public repos; if GitHub rate-limits, add an Actions secret named `SCAN_TOKEN` and use it via `secrets.SCAN_TOKEN` only. The LLM reviewer reads `LLM_API_KEY` (OpenRouter key, secret) and optional `LLM_MODEL` / `LLM_FALLBACKS` (repo variables, auto-resolved to a live free model when empty) plus `LLM_MONTHLY_BUDGET_USD` (default 5); without a key, findings are marked unreviewed.\n";
 writeFileSync("README.md", readme);
 console.log("done " + rows.filter((r) => r.status !== "ERROR").length + "/" + rows.length);
