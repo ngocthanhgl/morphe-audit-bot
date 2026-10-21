@@ -44,12 +44,18 @@ export function analyzeBlob(path, buf, cfg) {
   const findings = [];
   const text = extractStrings(buf).join("\n");
   for (const f of findingsForFile(path, text, cfg)) {
-    findings.push({ ...f, reason: "[binary strings] " + f.reason });
+    findings.push({
+      ...f,
+      severity: f.severity === "critical" || f.severity === "high" ? "medium" : f.severity,
+      banEligible: false,
+      reason: "[binary strings, unverified] " + f.reason,
+    });
   }
   if (buf.length >= 512 && shannonEntropy(buf) > 7.2) {
     findings.push({
       severity: "medium",
       file: path,
+      banEligible: false,
       reason: "high-entropy blob (packed or encrypted?) — treat as unreviewable",
       excerpt: "(entropy " + shannonEntropy(buf).toFixed(2) + " bits/byte over " + buf.length + " bytes)",
     });

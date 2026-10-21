@@ -39,6 +39,11 @@ describe("binary forensics", () => {
   });
   it("runs string content through the rule engine (embedded secret)", () => {
     const f = analyzeBlob("lib/arm64/libx.so", bufWith("AKIAIOSFODNN7EXAMPLE"), cfg);
-    assert.ok(f.some((x) => x.severity === "high"));
+    assert.ok(f.some((x) => x.severity === "medium" && x.banEligible === false && /unverified/.test(x.reason)));
+  });
+  it("does not treat string-only keylogging indicators as critical behavior", () => {
+    const f = analyzeBlob("lib/arm64/libx.so", bufWith("override fun onKeyEvent(e: KeyEvent)\nsocket.send(keyCode)\n" + EVIL), cfg);
+    assert.ok(f.length > 0);
+    assert.ok(f.every((x) => x.severity === "medium" && x.banEligible === false));
   });
 });

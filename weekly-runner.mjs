@@ -1,9 +1,9 @@
 import { execSync } from "node:child_process";
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, rmSync } from "node:fs";
-import { renderRepoReport, updateBlacklist } from "./scanner.mjs";
+import { renderRepoReport, updateBlacklist, applyPardons } from "./scanner.mjs";
 import { cloneUrl, prunableReports } from "./targets.mjs";
 import { mapSemgrep } from "./semgrep.mjs";
-import { buildReviewPrompt, callReviewer, reviewerDecision, escalateVerdict, clearStrikes, queueReviewerError, readSpend, recordSpend } from "./llm-review.mjs";
+import { buildReviewPrompt, callReviewer, reviewerDecision, clearStrikes, queueReviewerError, readSpend, recordSpend } from "./llm-review.mjs";
 
 const LLM_KEY = process.env.LLM_API_KEY || "";
 const LLM_MODEL = process.env.LLM_MODEL || "";
@@ -20,6 +20,8 @@ if (!existsSync("work-weekly")) mkdirSync("work-weekly");
 let reviewQueue = existsSync("review-queue.json") ? JSON.parse(readFileSync("review-queue.json", "utf8") || "{}") : {};
 if (!reviewQueue.items) reviewQueue.items = {};
 let blacklist = existsSync("blacklist.json") ? JSON.parse(readFileSync("blacklist.json", "utf8") || "{}") : {};
+const pardons = existsSync("config/pardons.json") ? JSON.parse(readFileSync("config/pardons.json", "utf8") || "{}") : {};
+blacklist = applyPardons(blacklist, pardons).blacklist;
 const summary = [];
 for (const t of targets) {
   const dir = "work-weekly/" + t.name;
@@ -49,13 +51,8 @@ for (const t of targets) {
           if (action === "ban") {
             findings.push({ severity: "critical", llm: "confirmed", file: rt.file, reason: "[llm-reviewer " + r.model + "] malicious (" + r.verdict.confidence + ", " + r.verdict.category + "): " + r.verdict.evidence.join(","), excerpt: String(r.verdict.reasoning).slice(0, 500) });
           } else if (action === "queue") {
-            const esc = escalateVerdict({ queue: reviewQueue, today, target: t.name, file: rt.file, verdict: r.verdict });
-            if (esc.action === "ban") {
-              findings.push({ severity: "critical", llm: "confirmed", file: rt.file, reason: "[repeat-offender " + r.model + "] " + esc.reason + ": " + r.verdict.category + " (" + r.verdict.confidence + ")", excerpt: String(r.verdict.reasoning).slice(0, 500) });
-            } else {
-              const key = today + "|" + t.name + "|" + rt.file + "|" + r.verdict.verdict;
-              reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, evidence: r.verdict.evidence, reasoning: String(r.verdict.reasoning).slice(0, 300), source: "weekly" };
-            }
+            const key = today + "|" + t.name + "|" + rt.file + "|" + r.verdict.verdict;
+            reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, evidence: r.verdict.evidence, reasoning: String(r.verdict.reasoning).slice(0, 300), source: "weekly" };
           } else {
             clearStrikes(reviewQueue, t.name, rt.file);
           }

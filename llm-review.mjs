@@ -100,19 +100,6 @@ export async function callReviewer({ endpoint, apiKey, model, fallbacks = [], pr
   throw lastError || new Error("reviewer failed with no models tried");
 }
 
-export function escalateVerdict({ queue, today, target, file, verdict }) {
-  const items = (queue && queue.items) || {};
-  for (const [k, e] of Object.entries(items)) {
-    const parts = String(k).split("|");
-    if (parts.length < 4 || parts[1] !== target || parts[2] !== file) continue;
-    if (parts[0] >= today) continue;
-    if (e && (e.verdict === "suspicious" || e.verdict === "malicious")) {
-      return { action: "ban", prior: e.date || parts[0], reason: "repeat non-benign verdict for " + target + "/" + file + " (" + (e.date || parts[0]) + " then " + today + ")" };
-    }
-  }
-  return { action: "queue", prior: null, reason: "" };
-}
-
 export function clearStrikes(queue, target, file) {
   const items = (queue && queue.items) || {};
   const removed = [];
@@ -170,8 +157,9 @@ export function reviewerDecision({ verdict, detHigh }) {
 export function adjudicateFinding({ finding, verdict, detHigh }) {
   if (!verdict) return { action: "pending" };
   const d = reviewerDecision({ verdict, detHigh });
-  if (d === "ban") return { action: "ban" };
+  if (d === "ban" && finding && finding.banEligible !== false && finding.file !== "cross-window") return { action: "ban" };
   if (d === "queue") return { action: "queue" };
+  if (d === "ban") return { action: "queue" };
   return { action: "overrule" };
 }
 

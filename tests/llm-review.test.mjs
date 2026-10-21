@@ -8,7 +8,6 @@ import {
   parseVerdict,
   reviewerDecision,
   adjudicateFinding,
-  escalateVerdict,
   clearStrikes,
   queueReviewerError,
   readSpend,
@@ -80,6 +79,8 @@ describe("llm reviewer", () => {
   it("adjudicates findings: ban only on confirmation, overrule on benign, pending on failure", () => {
     const f = { severity: "critical", file: "x", reason: "y", excerpt: "" };
     assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD }, detHigh: true }).action, "ban");
+    assert.equal(adjudicateFinding({ finding: { ...f, banEligible: false }, verdict: { ...GOOD }, detHigh: true }).action, "queue");
+    assert.equal(adjudicateFinding({ finding: { ...f, file: "cross-window" }, verdict: { ...GOOD }, detHigh: true }).action, "queue");
     assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD, confidence: 0.5 }, detHigh: true }).action, "queue");
     assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD, verdict: "suspicious" }, detHigh: true }).action, "queue");
     assert.equal(adjudicateFinding({ finding: f, verdict: { ...GOOD, verdict: "benign" }, detHigh: true }).action, "overrule");
@@ -126,18 +127,9 @@ describe("llm reviewer", () => {
     assert.match(e.reasoning, /404/);
     assert.match(e.reasoning, /ghost-model/);
   });
-  it("queues a first suspicious verdict but bans a repeat offender", () => {    const sus = { ...GOOD, verdict: "suspicious", confidence: 0.7 };
-    const empty = { items: {} };
-    const r1 = escalateVerdict({ queue: empty, today: "2026-10-15", target: "t", file: "a.kt", verdict: sus });
-    assert.equal(r1.action, "queue");
-    const prior = { items: { "2026-10-14|t|a.kt|suspicious": { date: "2026-10-14", verdict: "suspicious" } } };
-    const r2 = escalateVerdict({ queue: prior, today: "2026-10-15", target: "t", file: "a.kt", verdict: sus });
-    assert.equal(r2.action, "ban");
-    assert.match(r2.reason, /2026-10-14/);
-    const benignPrior = { items: { "2026-10-14|t|a.kt|benign": { date: "2026-10-14", verdict: "benign" } } };
-    assert.equal(escalateVerdict({ queue: benignPrior, today: "2026-10-15", target: "t", file: "a.kt", verdict: sus }).action, "queue");
-    const sameDay = { items: { "2026-10-15|t|a.kt|suspicious": { date: "2026-10-15", verdict: "suspicious" } } };
-    assert.equal(escalateVerdict({ queue: sameDay, today: "2026-10-15", target: "t", file: "a.kt", verdict: sus }).action, "queue");
+  it("never promotes repeated suspicious verdicts to a ban", () => {
+    const sus = { ...GOOD, verdict: "suspicious", confidence: 0.7 };
+    assert.equal(reviewerDecision({ verdict: sus, detHigh: true }), "queue");
   });
   it("clears old strikes when the judge says benign", () => {
     const queue = { items: {

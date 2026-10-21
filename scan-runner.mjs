@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 
 import { loadConfig, scanDiff, renderRepoReport, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, reportFilename, nextRunSeq } from "./scanner.mjs";
 import { analyzeBlob } from "./binary.mjs";
 import { mapSemgrep } from "./semgrep.mjs";
-import { buildReviewPrompt, callReviewer, reviewerDecision, adjudicateFinding, escalateVerdict, clearStrikes, queueReviewerError, readSpend, recordSpend } from "./llm-review.mjs";
+import { buildReviewPrompt, callReviewer, adjudicateFinding, clearStrikes, queueReviewerError, readSpend, recordSpend } from "./llm-review.mjs";
 
 import { cloneUrl } from "./targets.mjs";
 
@@ -125,15 +125,9 @@ for (const t of targets) {
             rt.llm = "confirmed";
             findings.push({ severity: "critical", llm: "confirmed", file: rt.file, reason: "[llm-reviewer " + r.model + "] malicious (" + r.verdict.confidence + ", " + r.verdict.category + "): " + r.verdict.evidence.join(","), excerpt: String(r.verdict.reasoning).slice(0, 500) });
           } else if (adj.action === "queue") {
-            const esc = escalateVerdict({ queue: reviewQueue, today, target: t.name, file: rt.file, verdict: r.verdict });
-            if (esc.action === "ban") {
-              rt.llm = "confirmed";
-              findings.push({ severity: "critical", llm: "confirmed", file: rt.file, reason: "[repeat-offender " + r.model + "] " + esc.reason + ": " + r.verdict.category + " (" + r.verdict.confidence + ")", excerpt: String(r.verdict.reasoning).slice(0, 500) });
-            } else {
-              rt.llm = "queued";
-              const key = today + "|" + t.name + "|" + rt.file + "|" + r.verdict.verdict;
-              reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, evidence: r.verdict.evidence, reasoning: String(r.verdict.reasoning).slice(0, 300), source: "4h" };
-            }
+            rt.llm = "queued";
+            const key = today + "|" + t.name + "|" + rt.file + "|" + r.verdict.verdict;
+            reviewQueue.items[key] = { date: today, target: t.name, repo: t.repo, file: rt.file, verdict: r.verdict.verdict, confidence: r.verdict.confidence, category: r.verdict.category, evidence: r.verdict.evidence, reasoning: String(r.verdict.reasoning).slice(0, 300), source: "4h" };
           } else if (adj.action === "overrule") {
             rt.llm = "overruled";
             clearStrikes(reviewQueue, t.name, rt.file);
@@ -178,7 +172,7 @@ writeFileSync("review-queue.json", JSON.stringify(reviewQueue, null, 2) + "\n");
 if (!existsSync("llm-spend.json")) writeFileSync("llm-spend.json", JSON.stringify({ month: currentMonth(), total: 0 }, null, 2) + "\n");
 const totalCrit = rows.reduce((n, r) => n + (r.crit || 0), 0);
 writeFileSync("crit-alert.txt", String(totalCrit) + "\n");
-let readme = "# Morphe patches audit\n\nScans 4x daily (`0 0,6,12,18 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Permanent blacklist: one critical finding bans a target forever (blacklist.json). v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. v7: every critical/high goes through the LLM judge; bans only on LLM confirmation.\n\n## :octagonal_sign: Blacklisted — permanently untrusted\n\nOnce the LLM confirms a malicious finding the target stays here forever. Clean later pushes never clear it; removal requires a manual pardon in `config/pardons.json`. Deterministic findings without confirmation never ban.\n\n";
+let readme = "# Morphe patches audit\n\nScans 4x daily (`0 0,6,12,18 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Binary strings are unverified leads and cannot produce critical findings or bans. v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. Bans require a high-confidence malicious verdict for a code-level finding plus deterministic high/critical corroboration; repeat suspicious verdicts stay in the review queue.\n\n## :octagonal_sign: Blacklisted — permanently untrusted\n\nA target is added only after the LLM confirms a high-confidence malicious code-level finding with deterministic corroboration. Clean later pushes do not clear confirmed bans; removal requires a manual pardon in `config/pardons.json`. Binary-string and cross-window-only findings cannot trigger a ban.\n\n";
 const banned = Object.entries((blacklist.repos || {}));
 if (banned.length === 0) {
   readme += "No blacklisted targets.\n\n";
@@ -205,7 +199,7 @@ readme += "| target | scan | commit | status | crit | high | med | report |\n|--
 for (const r of rows) {
   readme += "| " + r.name + " | " + today + " | " + r.sha + " | " + r.status + " | " + (r.crit || 0) + " | " + r.high + " | " + r.med + " | " + (r.report || ("reports/" + today + "/" + r.name + ".md")) + " |\n";
 }
-readme += "\n## Review queue (needs human)\n\nLLM-suspect items below the confirmation bar, plus pending items awaiting a usable verdict. Fully automatic: a repeat non-benign verdict for the same target+file across windows auto-bans with no human in the loop, and a benign verdict clears old strikes. `config/pardons.json` is the manual escape hatch.\n\n";
+readme += "\n## Review queue (needs human)\n\nLLM-suspect items below the confirmation bar, plus pending items awaiting a usable verdict. Repeat non-benign verdicts remain queued and never auto-ban; a benign verdict clears old strikes. `config/pardons.json` is the manual escape hatch.\n\n";
 if (queueItems.length === 0) {
   readme += "Queue empty.\n\n";
 } else {
