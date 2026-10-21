@@ -6,17 +6,15 @@ let model = process.env.LLM_MODEL || "";
 let fallbacks = (process.env.LLM_FALLBACKS || "").split(",").map((s) => s.trim()).filter(Boolean);
 
 if (!apiKey) throw new Error("LLM_API_KEY is required");
-if (!model) {
-  const response = await fetch("https://openrouter.ai/api/v1/models", {
-    headers: { Authorization: "Bearer " + apiKey },
-  });
-  if (!response.ok) throw new Error("OpenRouter model lookup failed with HTTP " + response.status);
-  const data = await response.json();
-  const free = (data.data || []).filter((entry) => entry.pricing && Number(entry.pricing.prompt) === 0);
-  if (free.length === 0) throw new Error("OpenRouter returned no free models");
-  model = free[0].id;
-  fallbacks = [...fallbacks, ...free.slice(1, 4).map((entry) => entry.id)];
-}
+const response = await fetch("https://openrouter.ai/api/v1/models", {
+  headers: { Authorization: "Bearer " + apiKey },
+});
+if (!response.ok) throw new Error("OpenRouter model lookup failed with HTTP " + response.status);
+const data = await response.json();
+const free = (data.data || []).filter((entry) => entry.pricing && Number(entry.pricing.prompt) === 0);
+if (!model) model = free[0]?.id || "";
+if (!model) throw new Error("OpenRouter returned no free models");
+fallbacks = [...fallbacks, ...free.filter((entry) => entry.id !== model).slice(0, 3).map((entry) => entry.id)];
 
 const file = "ClipboardSync.kt";
 const excerpt = [
