@@ -42,7 +42,7 @@ export function shannonEntropy(buf) {
 
 export function analyzeBlob(path, buf, cfg) {
   const findings = [];
-  const text = extractStrings(buf).join("\n");
+  const text = extractStrings(buf).map((s) => JSON.stringify(s)).join("\n");
   for (const f of findingsForFile(path, text, cfg)) {
     findings.push({
       ...f,

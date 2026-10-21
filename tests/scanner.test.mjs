@@ -21,6 +21,28 @@ describe("audit rules", () => {
     assert.equal(f.length, 1);
     assert.equal(f[0].severity, "high");
   });
+  it("ignores security indicators in comments but scans executable code", () => {
+    const comments = diffFor("patches/Notes.kt", [
+      "// getDeviceId() is documented here; OkHttp is only mentioned",
+      "/* READ_SMS, TextWatcher, and https://evil.example.evil123 are examples */",
+      'val help = "the literal // is not a comment"',
+    ]);
+    assert.equal(scanDiff(comments, cfg).length, 0);
+    const code = diffFor("patches/Sync.kt", [
+      "// getDeviceId() should not count",
+      "val id = getDeviceId()",
+      "OkHttp.newCall(url).execute()",
+    ]);
+    assert.ok(scanDiff(code, cfg).some((f) => f.severity === "high"));
+  });
+  it("preserves comment-like content in Kotlin raw strings", () => {
+    const d = diffFor("patches/Docs.kt", [
+      'val example = """',
+      "https://evil.example.evil123/path",
+      '"""',
+    ]);
+    assert.equal(scanDiff(d, cfg).length, 1);
+  });
   it("flags unknown exfil host as medium", () => {
     const d = diffFor("patches/Ping.kt", ["val u = \"https://evil.example.evil123/ping\""]);
     const f = scanDiff(d, cfg);

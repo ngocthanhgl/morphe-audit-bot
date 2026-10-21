@@ -19,6 +19,60 @@ export function isTestPath(name) {
     /(^|\/)Test[^/]*\.(kt|java|js|ts|mjs)$/.test(n);
 }
 
+function stripComments(text) {
+  const source = String(text);
+  let out = "";
+  let quote = "";
+  let lineComment = false;
+  let blockComment = false;
+  let xmlComment = false;
+  for (let i = 0; i < source.length; i++) {
+    const c = source[i], next = source[i + 1], third = source[i + 2];
+    if (lineComment) {
+      if (c === "\n") { lineComment = false; out += c; }
+      else out += " ";
+    } else if (blockComment || xmlComment) {
+      if ((blockComment && c === "*" && next === "/") || (xmlComment && source.slice(i, i + 3) === "-->")) {
+        const length = blockComment ? 2 : 3;
+        out += " ".repeat(length);
+        i += length - 1;
+        blockComment = false;
+        xmlComment = false;
+      } else {
+        out += c === "\n" ? "\n" : " ";
+      }
+    } else if (quote) {
+      out += c;
+      if (c === "\\" && i + 1 < source.length) out += source[++i];
+      else if (quote === '"' && c === '"' && next === '"' && third === '"') {
+        out += '""';
+        i += 2;
+        quote = "";
+      } else if (c === quote) quote = "";
+    } else if (c === "/" && next === "/") {
+      out += "  ";
+      i++;
+      lineComment = true;
+    } else if (c === "/" && next === "*") {
+      out += "  ";
+      i++;
+      blockComment = true;
+    } else if (c === "<" && source.slice(i, i + 4) === "<!--") {
+      out += "    ";
+      i += 3;
+      xmlComment = true;
+    } else {
+      out += c;
+      if (c === '"' && next === '"' && third === '"') {
+        out += '""';
+        i += 2;
+        quote = '"';
+      } else if (c === '"' || c === "'" || c === "`") quote = c;
+    }
+  }
+  return out;
+}
+
 function hasAny(text, list) {
   return list.filter((k) => text.includes(k));
 }
@@ -195,14 +249,15 @@ function decodeBlobs(text) {
 }
 
 export function analyzeAdded(added, cfg) {
-  const normalized = normalizeText(added);
+  const code = stripComments(added);
+  const normalized = normalizeText(code);
   const decoded = decodeBlobs(normalized);
   const enriched = normalized + "\n" + decoded;
-  const plainHosts = findNewHosts(added, cfg.domains);
+  const plainHosts = findNewHosts(code, cfg.domains);
   const enrichedHosts = findNewHosts(enriched, cfg.domains);
   const obHosts = enrichedHosts.filter((h) => !plainHosts.includes(h));
   const testSecrets = (t) => cfg.secretPatterns.filter((p) => new RegExp(p).test(t));
-  const plainSecrets = testSecrets(added);
+  const plainSecrets = testSecrets(code);
   const obSecrets = testSecrets(enriched).filter((s) => !plainSecrets.includes(s));
   const riskyHosts = enrichedHosts.filter((h) => isRiskyUrl(h, cfg.riskyInfra || []));
   const typo = findTyposquat(enrichedHosts, cfg);
@@ -279,8 +334,9 @@ export function findingsForFile(file, added, cfg) {
   const findings = [];
   const crit = (reason) => findings.push({ severity: "critical", file, reason, excerpt });
   const excerpt = added.split("\n").slice(0, 15).join("\n");
-  const a = analyzeAdded(added, cfg);
-  const hasPlaceholderKey = added.includes("REPLACE_WITH_");
+  const code = stripComments(added);
+  const a = analyzeAdded(code, cfg);
+  const hasPlaceholderKey = code.includes("REPLACE_WITH_");
   const net = a.sink.length > 0 || a.hosts.length > 0 || a.riskyHosts.length > 0 || a.obHosts.length > 0;
   const hasHost = a.hosts.length > 0 || a.riskyHosts.length > 0 || a.obHosts.length > 0;
   const isGradle = /\.gradle(\.kts)?$/.test(file);
@@ -292,11 +348,11 @@ export function findingsForFile(file, added, cfg) {
     a.reflect.length === 0 && a.typo.length === 0;
   if (isPremiumOnly) return findings;
   if (isGradle) {
-    const gh = findNewHosts(added, cfg.domains);
+    const gh = findNewHosts(code, cfg.domains);
     if (gh.length > 0) {
       findings.push({ severity: "high", file, reason: "new external build URL (supply chain): " + gh.join(", "), excerpt });
     } else {
-      const depLines = added.split("\n").filter((l) => /^\s*(implementation|api|compileOnly)\s*\(/.test(l));
+      const depLines = code.split("\n").filter((l) => /^\s*(implementation|api|compileOnly)\s*\(/.test(l));
       const external = depLines.filter((l) => !/\(\s*(project\s*\(|files\s*\(|fileTree\s*\()/i.test(l));
       if (external.length > 0) {
         findings.push({ severity: "info", file, reason: "new external dependency added — verify coordinates", excerpt });
@@ -319,8 +375,8 @@ export function findingsForFile(file, added, cfg) {
     if (hasHost) crit("runtime code download and execution (dropper): " + a.staged.join(","));
     else if (a.sink.length > 0) findings.push({ severity: "high", file, reason: "dynamic code loading with network sink", excerpt });
   }
-  const pkgPath = /\/data\/data\/[a-zA-Z0-9_.]+\.[a-zA-Z]+/.test(added);
-  const appDb = hasAny(added, ["shared_prefs", "Cookies", "webview.db"]);
+  const pkgPath = /\/data\/data\/[a-zA-Z0-9_.]+\.[a-zA-Z]+/.test(code);
+  const appDb = hasAny(code, ["shared_prefs", "Cookies", "webview.db"]);
   if (pkgPath && net) {
     crit("cross-app private data access with network: other-package path");
   } else if (appDb.length > 0 && net) {
@@ -330,7 +386,7 @@ export function findingsForFile(file, added, cfg) {
     if (pkgPath || appDb.length > 0) crit("root execution against app-private data: " + a.root.join(","));
     else if (a.sink.length > 0) findings.push({ severity: "high", file, reason: "root execution with network sink", excerpt });
   }
-  if (added.includes("createPackageContext") && a.sink.length > 0 && findings.length === 0) {
+  if (code.includes("createPackageContext") && a.sink.length > 0 && findings.length === 0) {
     findings.push({ severity: "high", file, reason: "data handoff to external package context with network sink", excerpt });
   }
   if (a.secrets.length > 0) {
@@ -374,7 +430,7 @@ export function findingsForFile(file, added, cfg) {
   if (a.typo.length > 0) {
     findings.push({ severity: "high", file, reason: "typosquat of allowlisted domain: " + a.typo.map((t) => t.url + " (~" + t.keyword + ")").join(", "), excerpt });
   }
-  if (a.intIp.length > 0 && (a.sink.length > 0 || a.prx.length > 0) && findings.length === 0 && hasIpConversion(added)) {
+  if (a.intIp.length > 0 && (a.sink.length > 0 || a.prx.length > 0) && findings.length === 0 && hasIpConversion(code)) {
     findings.push({ severity: "medium", file, reason: "decimal-encoded IP literal with network context: " + a.intIp.join(", "), excerpt });
   }
   if (a.riskyHosts.length > 0) {
