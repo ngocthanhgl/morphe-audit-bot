@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { scanDiff, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, isTestPath, extractSignals, reportFilename, nextRunSeq } from "../scanner.mjs";
+import { scanDiff, updateSignalsAndCrossCheck, updateBlacklist, applyPardons, isTestPath, extractSignals, reportFilename, nextRunSeq, renderRepoReport } from "../scanner.mjs";
 import { readFileSync } from "node:fs";
 
 const cfg = JSON.parse(readFileSync("config/allowlist.json", "utf8"));
@@ -11,6 +11,14 @@ function diffFor(file, addedLines) {
 }
 
 describe("audit rules", () => {
+  it("includes LLM adjudication and unreviewed reasons in reports", () => {
+    const report = renderRepoReport("o/r", "abc1234", [
+      { severity: "high", file: "A.kt", reason: "sensitive data to network", excerpt: "code", llmReview: { verdict: "suspicious", confidence: 0.7, category: "exfiltration", reasoning: "sink not established" } },
+      { severity: "medium", file: "B.kt", reason: "unknown host", excerpt: "code", llmReview: { status: "unreviewed", reason: "monthly LLM budget reached" } },
+    ], "2026-10-22");
+    assert.match(report, /suspicious \(0.7, exfiltration\): sink not established/);
+    assert.match(report, /unreviewed \(monthly LLM budget reached\)/);
+  });
   it("ignores premium-unlock-only patches", () => {
     const d = diffFor("patches/Unlock.kt", ["returnEarly(true)", "val isPremium = true"]);
     assert.equal(scanDiff(d, cfg).length, 0);
@@ -21,6 +29,28 @@ describe("audit rules", () => {
     assert.equal(f.length, 1);
     assert.equal(f[0].severity, "high");
   });
+  it("ignores security indicators in comments but scans executable code", () => {
+    const comments = diffFor("patches/Notes.kt", [
+      "// getDeviceId() is documented here; OkHttp is only mentioned",
+      "/* READ_SMS, TextWatcher, and https://evil.example.evil123 are examples */",
+      'val help = "the literal // is not a comment"',
+    ]);
+    assert.equal(scanDiff(comments, cfg).length, 0);
+    const code = diffFor("patches/Sync.kt", [
+      "// getDeviceId() should not count",
+      "val id = getDeviceId()",
+      "OkHttp.newCall(url).execute()",
+    ]);
+    assert.ok(scanDiff(code, cfg).some((f) => f.severity === "high"));
+  });
+  it("preserves comment-like content in Kotlin raw strings", () => {
+    const d = diffFor("patches/Docs.kt", [
+      'val example = """',
+      "https://evil.example.evil123/path",
+      '"""',
+    ]);
+    assert.equal(scanDiff(d, cfg).length, 1);
+  });
   it("flags unknown exfil host as medium", () => {
     const d = diffFor("patches/Ping.kt", ["val u = \"https://evil.example.evil123/ping\""]);
     const f = scanDiff(d, cfg);
@@ -29,6 +59,12 @@ describe("audit rules", () => {
   });
   it("ignores allowlisted google/youtube hosts", () => {
     const d = diffFor("patches/Api.kt", ["val u = \"https://www.googleapis.com/youtube/v3/captions\""]);
+    assert.equal(scanDiff(d, cfg).length, 0);
+  });
+  it("ignores the Android XML resource namespace", () => {
+    const d = diffFor("patches/CustomFontPatch.kt", [
+      'appendLine("<font-family xmlns:android=\\"http://schemas.android.com/apk/res/android\\">")',
+    ]);
     assert.equal(scanDiff(d, cfg).length, 0);
   });
   it("flags embedded secrets as high", () => {

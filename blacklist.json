@@ -1,25 +1,3 @@
 {
-  "repos": {
-    "chikuwadon-nicoid-re-patches": {
-      "repo": "chikuwadon/nicoid-re-patches",
-      "since": "2026-10-18",
-      "sha": "3a91ab4f9ca6",
-      "reason": "[binary strings] possible keystroke capture with network exfil: TextWatcher",
-      "report": "reports/2026-10-18/chikuwadon-nicoid-re-patches-run01-CRIT-c8h6m1.md"
-    },
-    "venusisjaded-venus-patches": {
-      "repo": "VenusIsJaded/Venus-Patches",
-      "since": "2026-10-18",
-      "sha": "cde24fdf431e",
-      "reason": "[repeat-offender xingchen-agi/xing4.0-29b-a4b:free] repeat non-benign verdict for venusisjaded-venus-patches/cross-window (2026-10-17 then 2026-10-18): exfiltration (0.72)",
-      "report": "reports/2026-10-18/venusisjaded-venus-patches-run04-CRIT-c2h4m0.md"
-    },
-    "heval99-heval-morphe-patches": {
-      "repo": "heval99/Heval-Morphe-Patches",
-      "since": "2026-10-19",
-      "sha": "a4506115f3bd",
-      "reason": "[repeat-offender minimax/minimax-m3.1-flash:free] repeat non-benign verdict for heval99-heval-morphe-patches/cross-window (2026-10-16 then 2026-10-19): exfiltration (0.78)",
-      "report": "reports/2026-10-19/heval99-heval-morphe-patches-run02-CRIT-c2h3m8.md"
-    }
-  }
+  "repos": {}
 }

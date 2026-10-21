@@ -1,16 +1,12 @@
 # Morphe patches audit
 
-Scans 4x daily (`0 0,6,12,18 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Permanent blacklist: one critical finding bans a target forever (blacklist.json). v5 layers: binary forensics, Semgrep taint, OpenRouter LLM reviewer (gated), weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. v7: every critical/high goes through the LLM judge; bans only on LLM confirmation.
+Scans 4x daily (`0 0,6,12,18 * * *`). Diff-only since last state. Premium-unlock patterns are ignored by design. Smart rules (v3): critical tier (SMS/OTP theft, notification/accessibility capture, keylogging, dropper, cross-app data theft), deobfuscation, typosquat detection, supply-chain and DNS-exfil rules, cross-window memory via signals.json (45d). Binary strings are unverified leads and cannot produce critical findings or bans. v5 layers: binary forensics, Semgrep taint, budget-limited OpenRouter LLM adjudication, weekly full-tree scan. v6: test-path exclusion, validated IP hosts, same-file cross-window, human pardons via config/pardons.json. Only high-confidence malicious code findings with deterministic high/critical corroboration can cause a ban; lower-confidence verdicts remain visible in reports, and unavailable reviews are marked unreviewed.
 
 ## :octagonal_sign: Blacklisted — permanently untrusted
 
-Once the LLM confirms a malicious finding the target stays here forever. Clean later pushes never clear it; removal requires a manual pardon in `config/pardons.json`. Deterministic findings without confirmation never ban.
+Only a high-confidence malicious verdict for a code-level finding with deterministic corroboration can add a target. Clean later pushes do not clear confirmed bans; removal requires a manual pardon in `config/pardons.json`. Binary-string and cross-window-only findings cannot trigger a ban.
 
-| :octagonal_sign: | target | since | reason | evidence |
-|---|---|---|---|---|
-| :octagonal_sign: | chikuwadon-nicoid-re-patches (chikuwadon/nicoid-re-patches) | 2026-10-18 | [binary strings] possible keystroke capture with network exfil: TextWatcher | reports/2026-10-18/chikuwadon-nicoid-re-patches-run01-CRIT-c8h6m1.md |
-| :octagonal_sign: | venusisjaded-venus-patches (VenusIsJaded/Venus-Patches) | 2026-10-18 | [repeat-offender xingchen-agi/xing4.0-29b-a4b:free] repeat non-benign verdict for venusisjaded-venus-patches/cross-window (2026-10-17 then 2026-10-18): exfiltration (0.72) | reports/2026-10-18/venusisjaded-venus-patches-run04-CRIT-c2h4m0.md |
-| :octagonal_sign: | heval99-heval-morphe-patches (heval99/Heval-Morphe-Patches) | 2026-10-19 | [repeat-offender minimax/minimax-m3.1-flash:free] repeat non-benign verdict for heval99-heval-morphe-patches/cross-window (2026-10-16 then 2026-10-19): exfiltration (0.78) | reports/2026-10-19/heval99-heval-morphe-patches-run02-CRIT-c2h3m8.md |
+No blacklisted targets.
 
 ## :warning: Critical findings
 
@@ -77,9 +73,9 @@ No critical findings in this window.
 | casketpizza-morphe-waze-system-tts | 2026-10-21 | 14ad480 | OK | 0 | 0 | 0 | reports/2026-10-21/casketpizza-morphe-waze-system-tts-run01-OK.md |
 | catsmoker-anime-witcher-patches | 2026-10-21 | 2cf90b5 | OK | 0 | 0 | 0 | reports/2026-10-21/catsmoker-anime-witcher-patches-run01-OK.md |
 | cesbar-zpatches | 2026-10-21 | 883ccfe | OK | 0 | 0 | 0 | reports/2026-10-21/cesbar-zpatches-run01-OK.md |
-| ch3thanhs-stylus | 2026-10-21 | a714364 | WARN | 0 | 0 | 1 | reports/2026-10-21/ch3thanhs-stylus-run01-WARN-c0h0m1.md |
+| ch3thanhs-stylus | 2026-10-21 | a714364 | ALLOWLISTED | 0 | 0 | 0 | reports/2026-10-21/ch3thanhs-stylus-run01-WARN-c0h0m1.md |
 | chicco-carone-morphe-patches-chicco | 2026-10-21 | ef21ab6 | OK | 0 | 0 | 0 | reports/2026-10-21/chicco-carone-morphe-patches-chicco-run01-OK.md |
-| chikuwadon-nicoid-re-patches | 2026-10-21 | 3a91ab4 | BANNED | 0 | 0 | 0 | reports/2026-10-18/chikuwadon-nicoid-re-patches-run01-CRIT-c8h6m1.md |
+| chikuwadon-nicoid-re-patches | 2026-10-21 | 3a91ab4 | PARDONED | 0 | 0 | 0 | reports/2026-10-18/chikuwadon-nicoid-re-patches-run01-CRIT-c8h6m1.md |
 | chukfinley-tidal-patches | 2026-10-21 | 178bc02 | OK | 0 | 0 | 0 | reports/2026-10-21/chukfinley-tidal-patches-run01-OK.md |
 | commit-regrets-morphe-youtube-vr-patches | 2026-10-21 | 611e9f4 | OK | 0 | 0 | 0 | reports/2026-10-21/commit-regrets-morphe-youtube-vr-patches-run01-OK.md |
 | comoestaisamigos-ck-zombies-morphe-patches | 2026-10-21 | 749ba1e | OK | 0 | 0 | 0 | reports/2026-10-21/comoestaisamigos-ck-zombies-morphe-patches-run01-OK.md |
@@ -118,7 +114,7 @@ No critical findings in this window.
 | hashtagbasit-aimal-patches | 2026-10-21 | 2cea794 | OK | 0 | 0 | 0 | reports/2026-10-21/hashtagbasit-aimal-patches-run01-OK.md |
 | helllord77-media-patches | 2026-10-21 | 681354c | OK | 0 | 0 | 0 | reports/2026-10-21/helllord77-media-patches-run01-OK.md |
 | hellveticastandard-hellveticapatches | 2026-10-21 | 1b605a2 | OK | 0 | 0 | 0 | reports/2026-10-21/hellveticastandard-hellveticapatches-run01-OK.md |
-| heval99-heval-morphe-patches | 2026-10-21 | a450611 | BANNED | 0 | 0 | 0 | reports/2026-10-19/heval99-heval-morphe-patches-run02-CRIT-c2h3m8.md |
+| heval99-heval-morphe-patches | 2026-10-21 | a450611 | PARDONED | 0 | 0 | 0 | reports/2026-10-19/heval99-heval-morphe-patches-run02-CRIT-c2h3m8.md |
 | heyymichii-michii-patches | 2026-10-21 | 18edc77 | OK | 0 | 0 | 0 | reports/2026-10-21/heyymichii-michii-patches-run01-OK.md |
 | hhawkinsau-hh-patches | 2026-10-21 | f7d89d1 | OK | 0 | 0 | 0 | reports/2026-10-21/hhawkinsau-hh-patches-run01-OK.md |
 | hiosdra-morphe-patches | 2026-10-21 | 8180c40 | OK | 0 | 0 | 0 | reports/2026-10-21/hiosdra-morphe-patches-run01-OK.md |
@@ -248,7 +244,7 @@ No critical findings in this window.
 | totsiaw-proxma-patches | 2026-10-21 | b5c54cc | SHALLOW | 0 | 0 | 0 | reports/2026-10-21/totsiaw-proxma-patches-run01-OK.md |
 | unkybadtouch-plex-morphe-patches | 2026-10-21 | 216d2eb | OK | 0 | 0 | 0 | reports/2026-10-21/unkybadtouch-plex-morphe-patches-run01-OK.md |
 | v4n1x-morphe-patches | 2026-10-21 | 40ef3ad | OK | 0 | 0 | 0 | reports/2026-10-21/v4n1x-morphe-patches-run01-OK.md |
-| venusisjaded-venus-patches | 2026-10-21 | cde24fd | BANNED | 0 | 0 | 0 | reports/2026-10-18/venusisjaded-venus-patches-run04-CRIT-c2h4m0.md |
+| venusisjaded-venus-patches | 2026-10-21 | cde24fd | PARDONED | 0 | 0 | 0 | reports/2026-10-18/venusisjaded-venus-patches-run04-CRIT-c2h4m0.md |
 | vipinvip-railone-patches | 2026-10-21 | ea245d4 | OK | 0 | 0 | 0 | reports/2026-10-21/vipinvip-railone-patches-run01-OK.md |
 | virzak-morphe-patches | 2026-10-21 | e39e88c | OK | 0 | 0 | 0 | reports/2026-10-21/virzak-morphe-patches-run01-OK.md |
 | waggbr-wagg13patch_morphe | 2026-10-21 | f5d913c | OK | 0 | 0 | 0 | reports/2026-10-21/waggbr-wagg13patch_morphe-run01-OK.md |
@@ -261,34 +257,10 @@ No critical findings in this window.
 | yann-soliman-morphe-patches | 2026-10-21 | 7252220 | OK | 0 | 0 | 0 | reports/2026-10-21/yann-soliman-morphe-patches-run01-OK.md |
 | zanuaimi-unipatches | 2026-10-21 | 3bb7707 | OK | 0 | 0 | 0 | reports/2026-10-21/zanuaimi-unipatches-run01-OK.md |
 
-## Review queue (needs human)
+## LLM review
 
-LLM-suspect items below the confirmation bar, plus pending items awaiting a usable verdict. Fully automatic: a repeat non-benign verdict for the same target+file across windows auto-bans with no human in the loop, and a benign verdict clears old strikes. `config/pardons.json` is the manual escape hatch.
-
-| date | target | file | verdict | conf | evidence |
-|---|---|---|---|---|---|
-| 2026-10-19 | sysadmindoc-hushfeed | extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java | suspicious | 0.58 | extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:9,extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:10,extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:12,extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:14,extensions/tiktok/src/main/java/app/morphe/extension/tiktok/font/WebFont.java:15 |
-| 2026-10-19 | angeldark92-steamlink-patches | patches/src/main/resources/steamlink/androidxr/libgxr_xr_bridge.so | suspicious | 0.82 | patches/src/main/resources/steamlink/androidxr/libgxr__xr__bridge.so:13750724 |
-| 2026-10-18 | venusisjaded-venus-patches | patches/src/main/resources/venus/bootstrap.js | suspicious | 0.72 | patches/src/main/resources/venus/bootstrap.js:3-18 |
-| 2026-10-18 | sysadmindoc-hushpinterest | extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/CopyImage.java | suspicious | 0.72 | extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/CopyImage.java:1-30 |
-| 2026-10-18 | hxreborn-morphe-patches | extensions/extension/src/main/java/app/hxreborn/extension/privacynotes/ProUnlock.java | suspicious | 0.72 | extensions/extension/src/main/java/app/hxreborn/extension/privacynotes/ProUnlock.java:14 |
-| 2026-10-18 | blazeftl-ftl-patches | .github/assets/fonts/Poppins-BoldItalic.ttf | suspicious | 0.5 | .github/assets/fonts/Poppins-BoldItalic.ttf |
-| 2026-10-18 | angeldark92-steamlink-patches | patches/src/main/resources/steamlink/androidxr/libgxr_performance_boost.so | suspicious | 0.35 | patches/src/main/resources/steamlink/androidxr/libgxr_performance_boost.so:binary |
-| 2026-10-18 | ihatenodejs-aidans-patches | extensions/extension/src/main/java/app/aidan/extension/geocaching/GeocacheEnrichmentBridge.java | suspicious | 0.55 | extensions/extension/src/main/java/app/aidan/extension/geocaching/GeocacheEnrichmentBridge.java:1 |
-| 2026-10-18 | k8r8to-kizu-morphe-patches | extensions/extension/src/main/java/app/morphe/extension/twitch/emotes/EmotePickerImages.java | pending | 0 | typosquat of allowlisted domain: https://static-cdn.jtvnw.net (~gstatic), https://static-cdn.jtvnw.net (~gstatic), https://static-cdn.jtvnw.net (~gstatic) |
-| 2026-10-18 | k8r8to-kizu-morphe-patches | patches/src/main/kotlin/io/github/bakwudo/uyu/patches/twitch/emotes/NativePickerHooks.kt | suspicious | 0.72 | patches/src/main/kotlin/io/github/bakwudo/uyu/patches/twitch/emotes/NativePickerHooks.kt:1-15 |
-| 2026-10-17 | chikuwadon-nicoid-re-patches | patches/src/main/resources/nicoid/method-delta.dex | pending | 0 | [binary strings] sensitive source reaches network sink |
-| 2026-10-17 | chikuwadon-nicoid-re-patches | patches/src/main/resources/nicoid/helpers.mpe | pending | 0 | [binary strings] reflection-hidden behavior with network sink |
-| 2026-10-17 | venusisjaded-venus-patches | cross-window | suspicious | 0.5 | patches/src/main/resources/venus/bootstrap.js |
-| 2026-10-17 | heval99-heval-morphe-patches | cross-window | pending | 0 | exfil completed across windows in patches/src/main/kotlin/app/template/patches/shared/Constants.kt: previously seen host http://4.2.31.1 (2026-10-16) with new WebView |
-| 2026-10-17 | hxreborn-morphe-patches | patches/src/main/resources/moviebox/dashhook.dex | pending | 0 | [binary strings] reflection-hidden behavior with network sink |
-| 2026-10-16 | hxreborn-morphe-patches | patches/src/main/resources/moviebox/dashhook.dex | suspicious | 0.65 | patches/src/main/resources/moviebox/dashhook.dex:54C |
-| 2026-10-16 | chikuwadon-nicoid-re-patches | patches/src/main/resources/nicoid/method-delta.dex | suspicious | 0.6 | patches/src/main/resources/nicoid/method-delta.dex |
-| 2026-10-16 | venusisjaded-venus-patches | cross-window | pending | 0 | exfil completed across windows in patches/src/main/resources/venus/bootstrap.js: previously seen host https://cdn.discordapp.com (2026-10-15) with new Clipboard |
-| 2026-10-16 | alastor-kaneki-morphe-patches | cross-window | suspicious | 0.2 | extensions/extension/src/main/java/dev/alastorkaneki/morphe/extension/reddit/RedditGalleryOverlayController.java |
-| 2026-10-16 | heval99-heval-morphe-patches | cross-window | suspicious | 0.5 | patches/src/main/kotlin/app/template/patches/shared/Constants.kt |
-
+Suspicious and below-threshold malicious verdicts remain visible in each report without creating a manual queue. Reviews skipped because credentials/model are missing, the per-scan cap is reached, the monthly budget is exhausted, or the reviewer fails are marked `unreviewed`; these cases do not automatically ban a target. Call caps and the monthly budget are unchanged.
 
 ## Secrets policy
 
-Never paste tokens into chat or code. The workflow needs no token for public repos; if GitHub rate-limits, add an Actions secret named `SCAN_TOKEN` and use it via `secrets.SCAN_TOKEN` only. The LLM reviewer reads `LLM_API_KEY` (OpenRouter key, secret) and optional `LLM_MODEL` / `LLM_FALLBACKS` (repo variables, auto-resolved to a live free model when empty) plus `LLM_MONTHLY_BUDGET_USD` (default 5); without a key the LLM layer is skipped silently.
+Never paste tokens into chat or code. The workflow needs no token for public repos; if GitHub rate-limits, add an Actions secret named `SCAN_TOKEN` and use it via `secrets.SCAN_TOKEN` only. The LLM reviewer reads `LLM_API_KEY` (OpenRouter key, secret) and optional `LLM_MODEL` / `LLM_FALLBACKS` (repo variables, auto-resolved to a live free model when empty) plus `LLM_MONTHLY_BUDGET_USD` (default 5); without a key, findings are marked unreviewed.
