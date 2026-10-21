@@ -73,7 +73,7 @@ No critical findings in this window.
 | casketpizza-morphe-waze-system-tts | 2026-10-21 | 14ad480 | OK | 0 | 0 | 0 | reports/2026-10-21/casketpizza-morphe-waze-system-tts-run01-OK.md |
 | catsmoker-anime-witcher-patches | 2026-10-21 | 2cf90b5 | OK | 0 | 0 | 0 | reports/2026-10-21/catsmoker-anime-witcher-patches-run01-OK.md |
 | cesbar-zpatches | 2026-10-21 | 883ccfe | OK | 0 | 0 | 0 | reports/2026-10-21/cesbar-zpatches-run01-OK.md |
-| ch3thanhs-stylus | 2026-10-21 | a714364 | WARN | 0 | 0 | 1 | reports/2026-10-21/ch3thanhs-stylus-run01-WARN-c0h0m1.md |
+| ch3thanhs-stylus | 2026-10-21 | a714364 | ALLOWLISTED | 0 | 0 | 0 | reports/2026-10-21/ch3thanhs-stylus-run01-WARN-c0h0m1.md |
 | chicco-carone-morphe-patches-chicco | 2026-10-21 | ef21ab6 | OK | 0 | 0 | 0 | reports/2026-10-21/chicco-carone-morphe-patches-chicco-run01-OK.md |
 | chikuwadon-nicoid-re-patches | 2026-10-21 | 3a91ab4 | PARDONED | 0 | 0 | 0 | reports/2026-10-18/chikuwadon-nicoid-re-patches-run01-CRIT-c8h6m1.md |
 | chukfinley-tidal-patches | 2026-10-21 | 178bc02 | OK | 0 | 0 | 0 | reports/2026-10-21/chukfinley-tidal-patches-run01-OK.md |

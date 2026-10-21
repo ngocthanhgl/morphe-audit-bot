@@ -31,6 +31,12 @@ describe("audit rules", () => {
     const d = diffFor("patches/Api.kt", ["val u = \"https://www.googleapis.com/youtube/v3/captions\""]);
     assert.equal(scanDiff(d, cfg).length, 0);
   });
+  it("ignores the Android XML resource namespace", () => {
+    const d = diffFor("patches/CustomFontPatch.kt", [
+      'appendLine("<font-family xmlns:android=\\"http://schemas.android.com/apk/res/android\\">")',
+    ]);
+    assert.equal(scanDiff(d, cfg).length, 0);
+  });
   it("flags embedded secrets as high", () => {
     const d = diffFor("patches/Key.kt", ["val k = \"AKIAIOSFODNN7EXAMPLE\""]);
     const f = scanDiff(d, cfg);
