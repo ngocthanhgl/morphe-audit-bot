@@ -5620,7 +5620,7 @@
           "staged": []
         }
       },
-      "updated": "2026-10-13"
+      "updated": "2026-10-24"
     },
     "ihatenodejs-aidans-patches": {
       "files": {
@@ -11900,6 +11900,61 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/interaction/searchsuggestions/SearchRewardsGetters.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/misc/optimizer/OptimizerMethodContracts.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/misc/popups/BlockPopupsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/misc/settings/ForYouLongPress.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/shared/Stories.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-10-24"
@@ -16519,7 +16574,12 @@
         },
         "extensions/waze/src/main/java/org/ungoogled/waze/Customization.java": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-10-24"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -16618,7 +16678,12 @@
         },
         "patches/src/main/kotlin/org/ungoogled/patches/waze/WazeExtrasPatches.kt": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-10-24"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -16727,7 +16792,7 @@
           "staged": []
         }
       },
-      "updated": "2026-10-23"
+      "updated": "2026-10-24"
     },
     "akshayykadam-pixelboard": {
       "files": {
@@ -18873,6 +18938,61 @@
               "d": "2026-10-24"
             }
           ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/nuvio-apk-updates/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/nuvio-apk-updates/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/nuvio-apk-updates/src/main/java/software/santodan/extension/nuvioupdate/UpdateInstall.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/nuvio-apk-updates/src/main/java/software/santodan/extension/nuvioupdate/UpdateProgress.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/java/santodan/patches/NuvioUpdateFlowPatch.java": {
+          "hosts": [],
           "sources": [],
           "sinks": [],
           "perms": [],
@@ -23041,6 +23161,28 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/morphe/patches/instagram/reels/fullscreen/ReelFillHook.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/misc/AccentHue.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/misc/MaterialYou.java": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -31560,9 +31702,20 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/ftl/patches/1dm/Change1DMToIDMPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-23"
+      "updated": "2026-10-24"
     },
     "hajs110208-morphe-patches": {
       "files": {
@@ -38819,9 +38972,42 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/steamlink/binary/BlueNoiseLayouts.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/steamlink/binary/VdSdrFoveaPatchHelper.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/util/SteamLink2395NativeAudit.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-22"
+      "updated": "2026-10-24"
     },
     "helllord77-media-patches": {
       "files": {
