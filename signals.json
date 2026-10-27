@@ -1035,6 +1035,28 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/messenger/src/main/java/app/hushmessenger/extension/LogOut.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/hushmessenger/patches/controls/Logout.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-10-27"
@@ -5196,6 +5218,83 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/morphe/patches/facebook/misc/appicons/LauncherIconStyle.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/download/PlayerSources.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/download/PostDownloadButton.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/feed/PostSaveButton.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/feed/PostSources.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/reels/ReelsOrder.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/actionrow/ActionRowAnchors.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/actionrow/PostActionButtonsPatch.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -10685,7 +10784,12 @@
             }
           ],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-10-27"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -12907,6 +13011,110 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/morphe/patches/tiktok/interaction/videooverlays/FollowingSkylight.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/download/DownloadDetails.java": {
+          "hosts": [
+            {
+              "v": "https://www.tiktok.com",
+              "d": "2026-10-27"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/download/SaveNetwork.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/settings/preference/ChoicePreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/settings/preference/InputTextPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/settings/preference/categories/ScreenTimePreferenceCategory.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/speed/HoldSpeedHud.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/wellbeing/FeedLock.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/wellbeing/FeedSchedule.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/interaction/speed/Fingerprints.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -19292,6 +19500,52 @@
           "staged": []
         },
         "patches/src/main/kotlin/org/ungoogled/patches/samsungnotes/misc/EnableNonOneUiPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/waze/WazeRemovePermissionsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [
+            {
+              "v": "READ_CONTACTS",
+              "d": "2026-10-27"
+            },
+            {
+              "v": "CAMERA",
+              "d": "2026-10-27"
+            },
+            {
+              "v": "READ_PHONE_STATE",
+              "d": "2026-10-27"
+            }
+          ],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/waze/WazeRemoveSignInPromptsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/waze/WazeRemoveTelemetryPatch.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -26367,6 +26621,116 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/morphe/patches/instagram/stories/progressbar/StoryProgressBarPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/direct/ChatReels.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/feed/CarouselPeek.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/feed/HomePlace.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/stories/StorySeekBar.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/stories/StorySeekReader.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/stories/TrayBadge.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/hushgram/extension/shared/ViewWatcher.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/direct/reels/SwipeChatReelsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/feed/place/KeepHomePlacePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/stories/seekbar/StorySeekBarPatch.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -68762,6 +69126,10 @@
         }
       },
       "updated": "2026-10-26"
+    },
+    "jaydenluuuu-sys-line-font-patches": {
+      "files": {},
+      "updated": "2026-10-27"
     }
   }
 }
