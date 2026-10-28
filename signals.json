@@ -1059,7 +1059,7 @@
           "staged": []
         }
       },
-      "updated": "2026-10-27"
+      "updated": "2026-10-28"
     },
     "hush-facebook": {
       "files": {
@@ -5304,9 +5304,86 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/feed/FullPostText.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/reels/ReelMidCards.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/theme/AccentColor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/theme/MarkColors.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/theme/TonePalette.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/posttext/ShowFullPostTextPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/layout/theme/MarkColorsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-27"
+      "updated": "2026-10-28"
     },
     "commit-regrets-morphe-youtube-vr-patches": {
       "files": {
@@ -13124,9 +13201,20 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/settings/preference/MorpheTikTokAboutPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-27"
+      "updated": "2026-10-28"
     },
     "sysadmindoc-hushpinterest": {
       "files": {
@@ -20358,9 +20446,53 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/extension/src/main/java/app/immersivekeyboard/extension/VivoThemesPicker.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/app/immersivekeyboard/extension/VivoWallpapers.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/app/immersivekeyboard/extension/WallpaperSwitch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/immersivekeyboard/patches/gboard/WallpaperPermissionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-27"
+      "updated": "2026-10-28"
     },
     "mich111discord-mightymichs-patches": {
       "files": {
@@ -49311,7 +49443,7 @@
     },
     "piko-newx": {
       "files": {},
-      "updated": "2026-10-26"
+      "updated": "2026-10-28"
     },
     "gboard": {
       "files": {
@@ -69130,6 +69262,3454 @@
     "jaydenluuuu-sys-line-font-patches": {
       "files": {},
       "updated": "2026-10-27"
+    },
+    "wchill-patcheddit": {
+      "files": {
+        "extensions/boost/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/MorpheBoostNativeStatics.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/FixSLinksPatch.java": {
+          "hosts": [
+            {
+              "v": "https://www.reddit.com",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "https://v.redd.it",
+              "d": "2026-10-28"
+            }
+          ],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/RemoveObsoleteProfileTabsPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/codeblock/CodeBlockHtmlNormalizer.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/debug/ExceptionHook.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/debug/ExceptionLogStore.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/debug/FatalCrashLogs.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/gallery/GalleryAnimatedPreview.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/gifsearch/GifUrlInsertion.java": {
+          "hosts": [
+            {
+              "v": "https://media.giphy.com",
+              "d": "2026-10-28"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [
+            {
+              "v": "CAMERA",
+              "d": "2026-10-28"
+            }
+          ],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/gifsearch/ImeGifInputConnection.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/AutoSavingCache.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/HttpUtils.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/NoOpUrlStreamHandler.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/OkHttpRequestHook.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/arcticshift/ArcticShift.java": {
+          "hosts": [
+            {
+              "v": "https://arctic-shift.photon-reddit.com",
+              "d": "2026-10-28"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/arcticshift/ArcticShiftThrottlingInterceptor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/cache/CacheDao.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/cache/CacheDatabase.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/cache/CacheEntry.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/imgur/ImgurUndeleteInterceptor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/reddit/GlideRedditMediaWayback.java": {
+          "hosts": [
+            {
+              "v": "https://i.redd.it",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "http://i.redd.it",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "https://preview.redd.it",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "http://preview.redd.it",
+              "d": "2026-10-28"
+            }
+          ],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/reddit/RedditApiUtils.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/reddit/RedditMediaUndeleteInterceptor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/reddit/RedditSubmissionUndeleteInterceptor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/reddit/RedditSubredditUndeleteInterceptor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/redgifs/RedgifsUrlSanitizerInterceptor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/wayback/WaybackMachine.java": {
+          "hosts": [
+            {
+              "v": "https://web.archive.org",
+              "d": "2026-10-28"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/wayback/WaybackResponse.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/http/wayback/WaybackThrottlingInterceptor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/media/ImageDismissTuning.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/oauth/OAuthTokenAccounts.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/oauth/OAuthTokenException.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/oauth/OAuthTokenPayload.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/oauth/OAuthTokenValidator.java": {
+          "hosts": [
+            {
+              "v": "https://www.reddit.com",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "https://oauth.reddit.com",
+              "d": "2026-10-28"
+            }
+          ],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/search/SearchExploreRows.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/search/SearchInsertedRowsTracker.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/settings/EditorImageHostingFragment.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/settings/ExceptionLogFragment.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/settings/FatalCrashLogsFragment.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/settings/MorpheSettingsFragment.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/settings/OAuthTokensFragment.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/sidebar/SidebarTrendingPosts.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/upload/EditorImageHostPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/upload/EditorImagePreview.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [
+            {
+              "v": "TextWatcher",
+              "d": "2026-10-28"
+            }
+          ],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/upload/ExternalImageUploadSettings.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/upload/ImgBbApiKeyPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/upload/ImgBbUploader.java": {
+          "hosts": [
+            {
+              "v": "https://api.imgbb.com",
+              "d": "2026-10-28"
+            }
+          ],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/AdaptiveRefreshRate.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/BoostFabClearance.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-10-28"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/BoostFeedEndFooter.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-10-28"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/BoostFilteredPageAutoLoad.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/BoostFlairContrast.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/BoostNavContentClearance.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/BoostSearchBottomNavigation.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/BoostSnackbarAnchor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/BoostSystemBarInsetsFix.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-10-28"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/BoostUndeleteSettings.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/CacheUtils.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/CompatibleRateLimiter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/Emojis.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/LoggingUtils.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/MarkdownRenderer.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/java/app/morphe/extension/boost/utils/SettingsUtils.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/kotlin/app/morphe/extension/boost/api/BoostFieldNames.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/kotlin/app/morphe/extension/boost/media/GalleryPlayback.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/kotlin/app/morphe/extension/boost/media/MediaNativeBindings.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/kotlin/app/morphe/extension/boost/navigation/BoostNativeListings.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/kotlin/app/morphe/extension/boost/navigation/BoostNativeNavigation.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/src/main/kotlin/app/morphe/extension/boost/upload/ExternalImageUploadFactory.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/java/com/rubenmayayo/reddit/models/imgur/ImageResponse.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/java/com/rubenmayayo/reddit/models/imgur/Upload.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/activity/ActivityApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/activity/result/ResultApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/activity/result/contract/ContractApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/appcompat/app/AppApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/appcompat/view/menu/MenuApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/appcompat/widget/ToolbarApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/coordinatorlayout/widget/CoordinatorLayoutApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/core/app/AppApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/core/content/ContentApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/core/internal/view/ViewApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/core/view/ViewApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/drawerlayout/widget/DrawerLayoutApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/fragment/app/FragmentApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/lifecycle/LifecycleApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/lifecycle/viewmodel/ViewmodelApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/loader/app/AppApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/recyclerview/widget/RecyclerViewApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/savedstate/SavedstateApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/androidx/work/WorkerApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/app/morphe/extension/boost/api/BoostNativeApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/app/morphe/extension/boost/api/internal/InternalApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/app/morphe/extension/boost/api/runtime/androidx/room/RoomApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/app/morphe/extension/boost/api/runtime/kotlin/jvm/internal/InternalApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/app/morphe/extension/boost/api/runtime/kotlin/reflect/ReflectApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/activeandroid/ActiveAndroidApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/afollestad/materialdialogs/MaterialdialogsApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/afollestad/materialdialogs/folderselector/FolderselectorApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/bumptech/glide/GlideApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/bumptech/glide/load/engine/cache/CacheApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/bumptech/glide/manager/ManagerApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/bumptech/glide/request/RequestApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/exoplayer2/ExoPlayerApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/exoplayer2/ext/okhttp/OkhttpApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/exoplayer2/source/MediaSourceApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/exoplayer2/source/dash/DashMediaSourceApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/exoplayer2/source/hls/HlsMediaSourceApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/exoplayer2/ui/PlayerViewApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/exoplayer2/upstream/UpstreamApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/gms/internal/common/GmsCommonApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/gms/internal/gcm/GmsGcmApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/gms/internal/stats/GmsStatsApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/gms/tasks/TaskApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/material/appbar/AppBarApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/material/badge/BadgeApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/material/behavior/ScrollBehaviorApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/material/bottomnavigation/BottomNavigationApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/material/bottomsheet/BottomSheetApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/material/internal/InternalApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/material/navigation/NavigationBarApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/google/android/material/shape/ShapeApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/liuguangqiang/swipeback/SwipeBackLayoutApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/androidsnudown/AndroidsnudownApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/RedditApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/aa/AaApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/models/generic/GenericApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/models/reddit/RedditApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/activities/ActivitiesApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/adapters/AdaptersApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/comments/CommentsApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/customviews/CustomviewsApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/customviews/dialogs/DialogsApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/customviews/menu/MenuApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/drafts/DraftsApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/fragments/FragmentsApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/fragments/imagemodel/ImagemodelApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/messages/MessagesApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/messages/fragment/FragmentApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/profile/ProfileApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/search/SearchApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/sidebar/today/TodayApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/submissions/search/SearchApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/submissions/subreddit/SubredditApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/submit/v2/V2Api.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/subscriptions/SubscriptionsApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/ui/upload/UploadApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/work/notifications/NotificationsApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/boost/stub/src/main/kotlin/com/rubenmayayo/reddit/work/trending/TrendingApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/joey/src/main/java/app/morphe/extension/joey/APIUtils.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/fixes/login/ModifyWebViewPatch.java": {
+          "hosts": [
+            {
+              "v": "http://147.0.0.0",
+              "d": "2026-10-28"
+            }
+          ],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "loadUrl",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/misc/PatchCategory.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/misc/resources/AddResourcesPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/AppCompatibility.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/ExtensionPatches.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/FixRAllPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/FixRedgifsApiPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/FixSLinksPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/InstallOkHttpInterceptorsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/ModifyWebViewPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/SpoofClientPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/baconreader/api/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/baconreader/api/SpoofClientPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/baconreader/fix/login/ModifyWebViewPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/baconreader/fix/redgifs/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/baconreader/fix/redgifs/FixRedgifsApiPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/BoostHookUtils.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/api/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/api/SpoofClientPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/bindings/BoostApi.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/bindings/BoostBindings.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/debug/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/debug/HookExceptionHandler.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/codeblock/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/codeblock/FixCodeBlockRenderingPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/crashlytics/DisableCrashlyticsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/crashlytics/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/feed/AutoLoadFilteredPagePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/feed/FeedEndFooterPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/feed/FixRAllPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/flair/ReadableFlairLabelsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/gallery/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/gallery/GalleryAnimatedPreviewPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/gifsearch/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/gifsearch/KeyboardGifInsertionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/gifsearch/RestoreGifUrlInsertionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/hide/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/hide/FixHideInvalidIndexPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/homefab/AnchorSnackbarAboveNavigationPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/homefab/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/homefab/FixFabDependencyClearancePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/homefab/FixFabNestedScrollFallbackPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/homefab/FixHomeFloatingActionMenuOverlapPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/insets/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/insets/FixNavigationBarOverlapPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/login/ModifyWebViewPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/media/ImageDismissTuningPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/profileabout/FixProfileAboutScrollingPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/profiletabs/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/profiletabs/RemoveObsoleteProfileTabsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/refresh/AdaptiveRefreshRatePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/search/BoostSearchDefaultDiscoveryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/search/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/searchnav/BoostBottomNavigationSystemSurfacePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/searchnav/BoostHomeBottomNavigationPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/searchnav/BoostInboxProfileSystemUnderlayPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/searchnav/BoostSearchBottomNavigationPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/searchnav/BoostSubredditBottomNavigationSurfacePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/searchnav/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/sidebartrending/BoostSidebarTrendingTodayPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/sidebartrending/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/slink/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/slink/FixSLinksPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/upload/EditorImageHostingPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/upload/EditorImagePreviewPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/upload/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/upload/RedditImageUploadsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/widget/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/fix/widget/FixImageWidgetClickTargetPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/http/InterceptHttpRequests.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/http/UndeletePatchMarkers.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/http/archive/AddArchiveLinksPatch.kt": {
+          "hosts": [
+            {
+              "v": "https://archive.is",
+              "d": "2026-10-28"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/http/archive/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/http/imgur/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/http/imgur/UndeleteImgurPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/http/reddit/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/http/reddit/UndeleteRedditPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/misc/extension/BoostExtensionLibraries.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/misc/extension/BoostExtensionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "openConnection",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/misc/extension/mapping/BoostLibraryVerifier.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/misc/extension/mapping/DexMappingRewriter.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/misc/extension/mapping/DexReferences.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/misc/extension/mapping/ProguardMapping.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/misc/settings/BoostMorpheSettingsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/boostforreddit/misc/settings/OAuthTokensPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/infinity/api/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/infinity/api/SpoofClientPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/infinity/fix/login/ModifyWebViewPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/joey/ads/DisableAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/joey/ads/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/joey/api/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/joey/api/SpoofClientPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/joey/detection/piracy/DisablePiracyDetectionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/joey/detection/piracy/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/joey/fix/login/ModifyWebViewPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/redditisfun/ads/FakePremium.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/redditisfun/ads/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/redditisfun/api/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/redditisfun/api/ImgurAlbumsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/redditisfun/api/SpoofClientPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/redditisfun/fix/login/ModifyWebViewPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/relay/api/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/relay/api/SpoofClientPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/relay/fix/login/ModifyWebViewPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/relay/fix/slink/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/relay/fix/slink/FixSLinksPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/ads/DisableAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/ads/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/detection/piracy/DisablePiracyDetectionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/detection/piracy/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforlemmy/ads/DisableAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/ads/DisableAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/annoyances/startup/DisableSyncForLemmyBottomSheetPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/annoyances/startup/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/api/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/api/SpoofClientPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/fix/login/ModifyWebViewPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/fix/redgifs/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/fix/redgifs/FixRedgifsApiPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/fix/slink/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/fix/slink/FixSLinksPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/fix/thumbnail/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/fix/thumbnail/FixPostThumbnailsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/fix/user/UseUserEndpointPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/fix/video/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/customclients/sync/syncforreddit/fix/video/FixVideoDownloadsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/layout/morphe_boost_imgbb_api_key_dialog.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/layout/morphe_boost_log_divider.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/layout/morphe_boost_log_text.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/layout/morphe_boost_oauth_editor.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/xml/morphe_boost_diagnostics_entry.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/xml/morphe_boost_editor_image_hosting.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/xml/morphe_boost_editor_image_hosting_entry.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/xml/morphe_boost_exception_log.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/xml/morphe_boost_fatal_crash_logs.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/xml/morphe_boost_oauth_entry.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/xml/morphe_boost_oauth_tokens.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/xml/morphe_boost_settings_entry.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/boost/xml/morphe_boost_settings_skeleton.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "settings.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        }
+      },
+      "updated": "2026-10-28"
     }
   }
 }
