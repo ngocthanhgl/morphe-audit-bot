@@ -19643,9 +19643,344 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/samsungsoundassistant/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/android/os/SemSystemProperties.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/android/view/SemBlurInfo.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/com/samsung/android/cocktailbar/SemCocktailBarManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/com/samsung/android/cocktailbar/SemCocktailProvider.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/com/samsung/android/desktopmode/SemDesktopModeManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/com/samsung/android/desktopmode/SemDesktopModeState.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/com/samsung/android/feature/SemFloatingFeature.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/com/samsung/android/game/SemGameManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/com/samsung/android/media/SemSoundAssistantManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/com/samsung/android/view/SemWindowManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/org/ungoogled/samsungsoundassistant/AppVolumeBoot.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/org/ungoogled/samsungsoundassistant/AppVolumeService.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/org/ungoogled/samsungsoundassistant/AppVolumes.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/org/ungoogled/samsungsoundassistant/Fallbacks.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/org/ungoogled/samsungsoundassistant/FineVolume.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/org/ungoogled/samsungsoundassistant/OneUi.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/org/ungoogled/samsungsoundassistant/Sem.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/waze/src/main/java/org/ungoogled/waze/Chime.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/waze/src/main/java/org/ungoogled/waze/Flock.java": {
+          "hosts": [
+            {
+              "v": "https://overpass-api.de",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "https://lz4.overpass-api.de",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "https://z.overpass-api.de",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "https://maps.mail.ru",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "https://overpass.private.coffee",
+              "d": "2026-10-28"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-10-28"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "Socket",
+              "d": "2026-10-28"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-10-28"
+            }
+          ],
+          "perms": [
+            {
+              "v": "ACCESS_FINE_LOCATION",
+              "d": "2026-10-28"
+            }
+          ],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/waze/src/main/java/org/ungoogled/waze/ZoneBar.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [
+            {
+              "v": "CAMERA",
+              "d": "2026-10-28"
+            }
+          ],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/samsungsoundassistant/SamsungSoundAssistantConstants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/samsungsoundassistant/misc/EnableNonOneUiPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/waze/WazeFlockCamerasPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/waze/WazeZoneBarPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-27"
+      "updated": "2026-10-28"
     },
     "akshayykadam-pixelboard": {
       "files": {
@@ -37990,7 +38325,7 @@
           "staged": []
         }
       },
-      "updated": "2026-10-27"
+      "updated": "2026-10-28"
     },
     "hajs110208-morphe-patches": {
       "files": {
@@ -44725,9 +45060,42 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/batteryguru/premium/BatteryGuruUnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/batterypods/premium/BatteryPodsPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/batterypods/premium/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-14"
+      "updated": "2026-10-28"
     },
     "angeldark92-steamlink-patches": {
       "files": {
