@@ -44567,9 +44567,31 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/coffeebusiness/src/main/java/pl/dudek/extension/coffeebusiness/CoffeeUpdateNotice.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/coffeebusiness/UpdateNoticePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-25"
+      "updated": "2026-10-29"
     },
     "rikodev-morphed-pl": {
       "files": {},
@@ -45095,7 +45117,7 @@
           "staged": []
         }
       },
-      "updated": "2026-10-28"
+      "updated": "2026-10-29"
     },
     "angeldark92-steamlink-patches": {
       "files": {
@@ -48877,9 +48899,293 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/speed/HboSpeedController.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/speed/HboSpeedPanel.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/speed/Logger.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/speed/PlayerBridge.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/speed/Prefs.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/speed/VideoSurface.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/ajstrick81/morphe/extension/pluto/ads/PlutoV17ManifestProbe.java": {
+          "hosts": [
+            {
+              "v": "https://aomedia.org",
+              "d": "2026-10-29"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/ajstrick81/morphe/extension/twitchatv/ads/TwitchAtvWebViewHelper.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-10-29"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/hbomax/FingerprintsSpeed.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/hbomax/HBOPlaybackSpeedPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/pluto/ads/FingerprintsV17.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/pluto/ads/SkipAdsV17Patch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/pluto/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/raiplay/ads/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/raiplay/debug/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/raiplay/debug/WebViewDebugPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-10-29"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/raiplay/live/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/raiplay/live/FixLiveVariantPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/raiplay/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/twitchatv/speed/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/twitchatv/speed/TwitchSpeedTogglePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-10-29"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/xumo/ads/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/xumo/ads/SkipAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/xumo/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-26"
+      "updated": "2026-10-29"
     },
     "sqzass-patches": {
       "files": {
@@ -49745,9 +50051,141 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "morphe-patches/patches/src/main/kotlin/app/morphe/patches/pixelcamera/PixelCameraPatchUtils.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "morphe-patches/patches/src/main/kotlin/app/morphe/patches/pixelcamera/brightness/MaxBrightnessPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "morphe-patches/patches/src/main/kotlin/app/morphe/patches/pixelcamera/pro/ProControlsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "morphe-patches/patches/src/main/kotlin/app/morphe/patches/pixelcamera/quality/ProImageQualityPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "morphe-patches/patches/src/main/kotlin/app/morphe/patches/pixelcamera/quickaccess/QuickAccessPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "morphe-patches/patches/src/main/kotlin/app/morphe/patches/pixelcamera/video/Av1VideoEncodingPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "morphe-patches/src/main/kotlin/app/morphe/patches/pixelcamera/PixelCameraPatchUtils.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "morphe-patches/src/main/kotlin/app/morphe/patches/pixelcamera/brightness/MaxBrightnessPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "morphe-patches/src/main/kotlin/app/morphe/patches/pixelcamera/pro/ProControlsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "morphe-patches/src/main/kotlin/app/morphe/patches/pixelcamera/quality/ProImageQualityPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "morphe-patches/src/main/kotlin/app/morphe/patches/pixelcamera/quickaccess/QuickAccessPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "morphe-patches/src/main/kotlin/app/morphe/patches/pixelcamera/video/Av1VideoEncodingPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-27"
+      "updated": "2026-10-29"
     },
     "alastor-kaneki-morphe-patches": {
       "files": {
@@ -51746,7 +52184,7 @@
     },
     "piko-newx": {
       "files": {},
-      "updated": "2026-10-28"
+      "updated": "2026-10-29"
     },
     "gboard": {
       "files": {
@@ -54143,9 +54581,91 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/extension/src/main/java/app/linkedin/extension/IconDrawable.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/app/linkedin/extension/NavPanelPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/app/linkedin/extension/SduiComponentFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/app/linkedin/extension/Settings.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/extension/src/main/java/app/linkedin/extension/SettingsActivity.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/linkedin/patches/feed/HideFeedContentPatches.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/linkedin/patches/misc/GmsCoreSupportPatch.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-10-29"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-25"
+      "updated": "2026-10-29"
     },
     "nekogryphou-gryphous-morphe-patches": {
       "files": {
@@ -70969,9 +71489,20 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/viber/ads/HideAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-24"
+      "updated": "2026-10-29"
     },
     "bufferk-morphe-patches": {
       "files": {
@@ -75013,6 +75544,33 @@
         }
       },
       "updated": "2026-10-28"
+    },
+    "hellveticastandard-hellveticapatches": {
+      "files": {
+        "patches/src/main/kotlin/app/hellvetica/patches/sankaku/DisableInfinitePopupPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/hellvetica/patches/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        }
+      },
+      "updated": "2026-10-29"
     }
   }
 }
