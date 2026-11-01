@@ -1,0 +1,7 @@
+# braiNtropy/braintropy-patches — 2026-11-01
+
+Commit: f25a2cd70e4e76fc979b97cb76ffb31202e98d5c | Status: OK | crit:0 high:0 med:0
+
+No suspicious changes in this window.
+
+_weekly full-tree Semgrep scan_
