@@ -8193,6 +8193,105 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/chats/ChatsGateAnchors.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/reels/ReelFullscreenPill.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/StorelessApk.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack/com/facebook/superpack/AssetDecompressionException.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack/com/facebook/superpack/AssetDecompressor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack/com/facebook/superpack/SuperpackArchive.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack/com/facebook/superpack/SuperpackFile.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack/compile-only/android/content/res/AssetManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack/hushfacebook/superpack/DecodeStore.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-11-06"
@@ -17589,6 +17688,61 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/ResourceIdCache.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/featuregatelab/FeatureGateLabRuntime.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/featuregatelab/StructuredConfigController.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/navigation/DiscoverTab.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/navigation/NavigationTabsFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-11-06"
@@ -23464,6 +23618,220 @@
           "staged": []
         },
         "settings.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/rootmute/HushBlogRulePost.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/rootmute/HushDashboardTimeline.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/rootmute/RootPostLocalTimeline.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/rootmute/RootPostMenu.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/rootmute/RootPostMuteStore.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/settings/WordPreviewSection.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [
+            {
+              "v": "TextWatcher",
+              "d": "2026-11-06"
+            }
+          ],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/timeline/DashboardPosts.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/timeline/ExploreHeader.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/timeline/HushBlockRow.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/timeline/HushLikedPost.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/timeline/HushPostFacts.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/timeline/LongPosts.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/timeline/WordPreview.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tumblr/ads/SponsoredExploreHeader.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tumblr/rootmute/DashboardPagePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tumblr/timeline/CollapseLongPostsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tumblr/timeline/CollapseLongTrails.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tumblr/timeline/HideLikedPostsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tumblr/timeline/HidePostsWithWordsPatch.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -85951,9 +86319,934 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.1/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.10/MergeHelperDex117.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.10/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.10/java/e/e/a/Dev112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.10/java/e/e/a/Dev115.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.10/java/e/e/a/Dev116.java": {
+          "hosts": [
+            {
+              "v": "https://ext.nicovideo.jp",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "https://nicovideo.cdn.nimg.jp",
+              "d": "2026-11-06"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-06"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-06"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.10/java/e/e/a/LegacyCacheCleanup113.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.10/java/e/e/a/StorageDiagnostics112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.11/MergeHelperDex117.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.11/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.11/java/e/e/a/Dev112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.11/java/e/e/a/Dev115.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.11/java/e/e/a/Dev116.java": {
+          "hosts": [
+            {
+              "v": "https://ext.nicovideo.jp",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "https://nicovideo.cdn.nimg.jp",
+              "d": "2026-11-06"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-06"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-06"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.11/java/e/e/a/LegacyCacheCleanup113.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.11/java/e/e/a/StorageDiagnostics112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.2/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.2/java/e/e/a/Dev112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.2/java/e/e/a/StorageDiagnostics112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.3/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.3/java/e/e/a/Dev112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.3/java/e/e/a/LegacyCacheCleanup113.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.3/java/e/e/a/StorageDiagnostics112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.4/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.4/java/e/e/a/Dev112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.4/java/e/e/a/Dev115.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.4/java/e/e/a/LegacyCacheCleanup113.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.4/java/e/e/a/StorageDiagnostics112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.5/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.5/java/e/e/a/Dev112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.5/java/e/e/a/Dev115.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.5/java/e/e/a/Dev116.java": {
+          "hosts": [
+            {
+              "v": "https://api.nicoad.nicovideo.jp",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "https://ext.nicovideo.jp",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "https://nicovideo.cdn.nimg.jp",
+              "d": "2026-11-06"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-06"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-06"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.5/java/e/e/a/LegacyCacheCleanup113.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.5/java/e/e/a/StorageDiagnostics112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.6/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.6/java/e/e/a/Dev112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.6/java/e/e/a/Dev115.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.6/java/e/e/a/Dev116.java": {
+          "hosts": [
+            {
+              "v": "https://ext.nicovideo.jp",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "https://nicovideo.cdn.nimg.jp",
+              "d": "2026-11-06"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-06"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-06"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.6/java/e/e/a/LegacyCacheCleanup113.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.6/java/e/e/a/StorageDiagnostics112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.7/MergeHelperDex117.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.7/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.7/java/e/e/a/Dev112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.7/java/e/e/a/Dev115.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.7/java/e/e/a/Dev116.java": {
+          "hosts": [
+            {
+              "v": "https://ext.nicovideo.jp",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "https://nicovideo.cdn.nimg.jp",
+              "d": "2026-11-06"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-06"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-06"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.7/java/e/e/a/LegacyCacheCleanup113.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.7/java/e/e/a/StorageDiagnostics112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.8/MergeHelperDex117.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.8/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.8/java/e/e/a/Dev112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.8/java/e/e/a/Dev115.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.8/java/e/e/a/Dev116.java": {
+          "hosts": [
+            {
+              "v": "https://ext.nicovideo.jp",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "https://nicovideo.cdn.nimg.jp",
+              "d": "2026-11-06"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-06"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-06"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.8/java/e/e/a/LegacyCacheCleanup113.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.8/java/e/e/a/StorageDiagnostics112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.9/MergeHelperDex117.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.9/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.9/java/e/e/a/Dev112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.9/java/e/e/a/Dev115.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.9/java/e/e/a/Dev116.java": {
+          "hosts": [
+            {
+              "v": "https://ext.nicovideo.jp",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "https://nicovideo.cdn.nimg.jp",
+              "d": "2026-11-06"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-06"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-06"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.9/java/e/e/a/LegacyCacheCleanup113.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2-dev.9/java/e/e/a/StorageDiagnostics112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2/MergeHelperDex117.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2/java/e/e/a/Dev111.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2/java/e/e/a/Dev112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2/java/e/e/a/Dev115.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2/java/e/e/a/Dev116.java": {
+          "hosts": [
+            {
+              "v": "https://ext.nicovideo.jp",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "https://nicovideo.cdn.nimg.jp",
+              "d": "2026-11-06"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-06"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-06"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-06"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2/java/e/e/a/LegacyCacheCleanup113.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v1.10.2/java/e/e/a/StorageDiagnostics112.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-04"
+      "updated": "2026-11-06"
     },
     "hxreborn-morphe-patches": {
       "files": {
@@ -107843,7 +109136,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-04"
+      "updated": "2026-11-06"
     },
     "alastor-kaneki-morphe-patches": {
       "files": {
@@ -143844,6 +145137,33 @@
         }
       },
       "updated": "2026-11-04"
+    },
+    "catsmoker-anime-witcher-patches": {
+      "files": {
+        "patches/src/main/kotlin/com/anime/witcher/patches/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/com/anime/witcher/patches/Rebranding.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        }
+      },
+      "updated": "2026-11-06"
     }
   }
 }
