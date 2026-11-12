@@ -9214,6 +9214,28 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/download/RenditionPicker.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/navigation/starttab/FeedsSubtabAnchors.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-11-12"
@@ -12340,7 +12362,12 @@
           "staged": []
         },
         "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/settings/preference/ReleaseNotesData.java": {
-          "hosts": [],
+          "hosts": [
+            {
+              "v": "http://4.12.0.1",
+              "d": "2026-11-12"
+            }
+          ],
           "sources": [],
           "sinks": [],
           "perms": [],
@@ -19371,6 +19398,160 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/comment/CommentFold.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/feedfilter/SearchTabs.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/interaction/Haptics.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/settings/preference/SearchTabChecklistPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/wellbeing/FeedPause.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/shared/misc/extension/SharedExtensionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/interaction/downloads/DmStickerPreviewHook.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/misc/commentsort/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/misc/translation/DoNotAutoTranslate.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/misc/translation/TranslateInto.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/misc/voicecomments/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/privacy/RootSignalHooks.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/profile/LocalProfileCountHooks.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/shared/SwitchedReturn.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-11-12"
@@ -24370,6 +24551,39 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/morphe/patches/telegram/misc/textdirection/TextDirectionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/OpenById.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/settings/OpenByIdEditor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/settings/ProxyListsEditor.java": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -91434,7 +91648,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-11"
+      "updated": "2026-11-12"
     },
     "rjbiermann-brave-waffle": {
       "files": {
@@ -94963,7 +95177,12 @@
           "hosts": [],
           "sources": [],
           "sinks": [],
-          "perms": [],
+          "perms": [
+            {
+              "v": "CAMERA",
+              "d": "2026-11-12"
+            }
+          ],
           "pinning": [],
           "sms": [],
           "spy": [],
@@ -98819,7 +99038,12 @@
         },
         "extensions/instagram/src/main/java/app/hushgram/extension/instagram/feed/CarouselArrows.java": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-12"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -101695,6 +101919,83 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/morphe/patches/instagram/misc/profilesaved/SavedOnProfilePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/direct/ChatLocks.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/media/PlaybackQuality.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/media/QualityChoice.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/media/QualityReader.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/settings/CategoryGroups.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/media/quality/DefaultPlaybackQualityPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/media/quality/QualityAnchors.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -133431,9 +133732,449 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/MergeLiveDex.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/CommentOutlineOpacity.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/ExitBackPolicy.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/ExitModeOptions.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/GestureAxisOptions.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/HlsBlankSegmentPolicy.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/HlsFullSegmentPolicy.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/HlsKeyRefreshPolicy.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/HlsKeyRefreshingPlaylistParser.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/LiveRecoveryPolicy.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/LiveStreamUpdatePolicy.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/LocalPlaylists.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-12"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/MultiTabPlacement.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveActivity.java": {
+          "hosts": [
+            {
+              "v": "https://live.nicovideo.jp",
+              "d": "2026-11-12"
+            },
+            {
+              "v": "https://www.nicovideo.jp",
+              "d": "2026-11-12"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Clipboard",
+              "d": "2026-11-12"
+            },
+            {
+              "v": "ClipboardManager",
+              "d": "2026-11-12"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveArtwork.java": {
+          "hosts": [
+            {
+              "v": "https://live.nicovideo.jp",
+              "d": "2026-11-12"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-12"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-12"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-12"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveBrowser.java": {
+          "hosts": [
+            {
+              "v": "https://live2.nicovideo.jp",
+              "d": "2026-11-12"
+            },
+            {
+              "v": "https://live.nicovideo.jp",
+              "d": "2026-11-12"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-12"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-12"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-12"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveCatalog.java": {
+          "hosts": [
+            {
+              "v": "https://live.nicovideo.jp",
+              "d": "2026-11-12"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveCommentsView.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveData.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "Socket",
+              "d": "2026-11-12"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveDiagnostics.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveEntry.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveIo.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveListGestures.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveNg.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicolivePlayerFrame.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveService.java": {
+          "hosts": [
+            {
+              "v": "https://live.nicovideo.jp",
+              "d": "2026-11-12"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveSession.java": {
+          "hosts": [
+            {
+              "v": "https://live.nicovideo.jp",
+              "d": "2026-11-12"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-12"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "OkHttp",
+              "d": "2026-11-12"
+            },
+            {
+              "v": "Socket",
+              "d": "2026-11-12"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveSwipeLayout.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NicoliveUi.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/NormalVideoInsets.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.0-dev.1/java/e/e/a/ThumbnailCorners.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-10"
+      "updated": "2026-11-12"
     },
     "hxreborn-morphe-patches": {
       "files": {
@@ -140172,9 +140913,42 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/snaptube/src/main/java/app/ftl/extension/snaptube/SnaptubeToolsHider.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/ftl/patches/SnapTube/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/ftl/patches/SnapTube/RemoveWatchAdToDownloadPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-08"
+      "updated": "2026-11-12"
     },
     "hajs110208-morphe-patches": {
       "files": {
@@ -142343,6 +143117,10 @@
             {
               "v": "ClipboardManager",
               "d": "2026-10-16"
+            },
+            {
+              "v": "getPrimaryClip",
+              "d": "2026-11-12"
             }
           ],
           "sinks": [],
@@ -142350,7 +143128,12 @@
           "pinning": [],
           "sms": [],
           "spy": [],
-          "keylog": [],
+          "keylog": [
+            {
+              "v": "TextWatcher",
+              "d": "2026-11-12"
+            }
+          ],
           "staged": []
         },
         "extensions/hevalcontrols/src/main/java/app/template/extension/hevalcontrols/ui/Palette.java": {
@@ -144573,7 +145356,12 @@
         },
         "patches/src/main/kotlin/app/template/patches/wemuslim/layout/HidePremiumBannersPatch.kt": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-12"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -146515,6 +147303,10 @@
             {
               "v": "https://family.adguard-dns.com",
               "d": "2026-11-04"
+            },
+            {
+              "v": "https://dns.nextdns.io",
+              "d": "2026-11-12"
             }
           ],
           "sources": [],
@@ -146783,9 +147575,1072 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/flashscore/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/flashscore/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/flashscore/src/main/java/app/template/extension/flashscore/AnimationSpeed.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/flashscore/src/main/java/app/template/extension/flashscore/HevalControlsEntry.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/flashscore/src/main/java/app/template/extension/flashscore/NavigationBarStrip.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/flashscore/src/main/java/app/template/extension/flashscore/SystemFonts.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/fotmob/src/main/java/app/template/extension/fotmob/AmoledBlack.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/fotmob/src/main/java/app/template/extension/fotmob/SpoilerFree.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/hevalcontrols/core/src/main/java/app/template/extension/hevalcontrols/Sections.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/hevalcontrols/core/src/main/java/app/template/extension/hevalcontrols/SettingsTransfer.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/hevalcontrols/src/main/java/app/template/extension/hevalcontrols/ui/Icons.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/hevalcontrols/src/main/java/app/template/extension/hevalcontrols/ui/Profiles.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/scores365/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/scores365/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/scores365/src/main/java/app/template/extension/scores365/ListFilters.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/scores365/src/main/java/app/template/extension/scores365/SettingsEntry.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/scores365/src/main/java/app/template/extension/scores365/SpoilerFree.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/sofascore/src/main/java/app/template/extension/sofascore/SpoilerFree.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/webviewads/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/webviewads/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/webviewads/src/main/java/app/template/extension/webviewads/AdBlock.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-12"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/wemuslim/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/wemuslim/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/wemuslim/src/main/java/app/template/extension/wemuslim/ShortcutFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/wemuslim/src/main/java/app/template/extension/wemuslim/ShortcutLinks.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/addmusic/premium/EnablePremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/allente/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/allente/misc/telemetry/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/berlingske/ads/DisableAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-12"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/berlingske/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/blockbuster/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/blockbuster/misc/telemetry/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/ekstrabladet/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/exfilemanager/ads/DisableAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/exfilemanager/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/exfilemanager/premium/EnablePremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/firefoxfocus/misc/layout/MoveAddressBarToBottomPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/flashscore/controls/FlashscoreControls.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/flashscore/controls/FlashscoreControlsRowPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/flashscore/misc/animations/AnimationSpeedPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/flashscore/misc/edge/ForceEdgeToEdgePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/flashscore/misc/font/UseSystemFontPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/flashscore/misc/font/UseSystemFontStylesPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/flashscore/misc/notifications/BlockMarketingNotificationsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/flashscore/misc/signature/SpoofSignaturePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/fotmob/misc/theme/AmoledBlackPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/fotmob/plus/ShowFotMobPlusLogoPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/fotmob/spoiler/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/fotmob/spoiler/SpoilerFreeModePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/jyllandsposten/ads/DisableAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-12"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/jyllandsposten/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [
+            {
+              "v": "https://c.jyllands-posten.dk",
+              "d": "2026-11-12"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/niagara/misc/FixHomeScreenNumbersTilePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/nordiskfilmplus/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/nordiskfilmplus/misc/telemetry/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/nordjyske/ads/DisableAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-12"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/nordjyske/misc/paywall/UnlockArticlesPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/nordjyske/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/notialarm/misc/license/DisableLicenseCheckPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/notialarm/premium/EnablePremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/notialarm/premium/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/polnews/ads/DisableAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-12"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/polnews/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/scores365/controls/Scores365Controls.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/scores365/lists/HideListsPatches.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/scores365/misc/theme/AmoledBlackPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/scores365/spoiler/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/scores365/spoiler/SpoilerFeatures.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/scores365/spoiler/SpoilerFreeModePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/shared/misc/telemetry/BugsnagStartup.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/shared/misc/telemetry/FirebaseManifestSwitches.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/shared/misc/theme/AmoledBlack.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/shared/telemetry/GemiusAudience.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/sofascore/layout/HideMainTabsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/sofascore/layout/HideMatchChatPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/sofascore/misc/developer/UnlockDeveloperOptionsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/sofascore/misc/theme/AmoledBlackPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/sofascore/misc/update/DisableUpdatePromptsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/sofascore/misc/video/TurnOffVideoAutoplayPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/sofascore/spoiler/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/sofascore/spoiler/SpoilerFreeModePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/truecaller/misc/callscreen/HidePoorNetworkWarningPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/truecaller/misc/privacy/DisableWhoViewedMePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/truecaller/misc/privacy/FallbackOverride.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/truecaller/misc/privacy/PrivacyDefaultsPatch.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "CallLog",
+              "d": "2026-11-12"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/truecaller/misc/privacy/TurnOffAdCampaignAnalyticsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/tv2nyheder/ads/DisableAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/tv2nyheder/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/tv2nyheder/misc/telemetry/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/tv2play/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/wemuslim/layout/HideActivityBannersPatch.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-12"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/wemuslim/layout/HideShortcutPromotionsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/wemuslim/layout/HideUmmahTabPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/yousee/misc/telemetry/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-04"
+      "updated": "2026-11-12"
     },
     "xob0t-morphe-patches": {
       "files": {
@@ -146983,7 +148838,12 @@
         },
         "patches/src/main/kotlin/app/wildberries/patches/ads/RemoveWildberriesAdsPatch.kt": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-12"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -147004,7 +148864,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-11"
+      "updated": "2026-11-12"
     },
     "andrewliang25-morphe-patches": {
       "files": {
@@ -150588,9 +152448,53 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/steamlink/androidxr/NativeQuadFarPlanePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/steamlink/binary/NativeQuadFarLayouts.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/steamlink/binary/NativeQuadFarPlane.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/template/patches/steamlink/binary/NativeQuadFarScene.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-10"
+      "updated": "2026-11-12"
     },
     "helllord77-media-patches": {
       "files": {
@@ -155316,7 +157220,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-11"
+      "updated": "2026-11-12"
     },
     "sqzass-patches": {
       "files": {
@@ -215553,6 +217457,22 @@
         }
       },
       "updated": "2026-11-11"
+    },
+    "cesbar-zpatches": {
+      "files": {
+        "patches/src/main/kotlin/app/cesbar/patches/all/misc/ExportAllComponents.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        }
+      },
+      "updated": "2026-11-12"
     }
   }
 }
