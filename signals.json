@@ -471,7 +471,12 @@
           "sms": [],
           "spy": [],
           "keylog": [],
-          "staged": []
+          "staged": [
+            {
+              "v": "defineClass",
+              "d": "2026-11-14"
+            }
+          ]
         },
         "extensions/messenger/src/main/AndroidManifest.xml": {
           "hosts": [],
@@ -2344,6 +2349,202 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/hushmessenger/patches/controls/ChatHeadVideo.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/messenger/src/main/java/app/hushmessenger/extension/GmsCore.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/hushmessenger/patches/controls/CallButtonLists.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/Bubbles.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/Chats.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-14"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/Coexist.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/CompatReport.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-14"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/Controls.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/Drawer.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/Extras.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/Inbox.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/Looks.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/Media.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/Menus.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/MessageLog.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/Tabs.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/compat/TopBar.java": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -13300,7 +13501,12 @@
         },
         "patches/build.gradle.kts": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-14"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -20924,6 +21130,10 @@
             {
               "v": "ClipboardManager",
               "d": "2026-10-18"
+            },
+            {
+              "v": "getPrimaryClip",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [
@@ -21445,6 +21655,72 @@
           "staged": []
         },
         "scripts/ResourceTableCheck.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/DownloadFolder.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/coexist/OwnAuthorities.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/notifications/PushNotifications.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/pinterest/coexist/ChangePackageNamePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/pinterest/coexist/OwnPackage.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/pinterest/ui/HideScreenshotSharePatch.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -28510,6 +28786,132 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/morphe/patches/tumblr/timeline/ExpandLongPosts.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/mature/AllowedMatureContent.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/settings/SpokenLine.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/timeline/HushAccountBlog.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/timeline/HushAccountBlogs.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/timeline/HushReblogSource.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/ui/BlazeButtons.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/ui/BlogTags.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tumblr/src/main/java/app/hushtumblr/extension/tumblr/ui/HushTagBlog.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tumblr/timeline/HideReblogsOfYoursPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tumblr/ui/HideBlazePromptsPatch.kt": {
+          "hosts": [
+            {
+              "v": "http://47.0.0.108",
+              "d": "2026-11-14"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tumblr/ui/TagBlogSearchPatch.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -91354,9 +91756,603 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/coloroslauncher/src/main/java/org/ungoogled/coloroslauncher/Profiles.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/nothinglauncher/src/main/java/org/ungoogled/nothinglauncher/Calls.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/photos/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/photos/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/photos/src/main/java/org/ungoogled/photos/Flags.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/photos/src/main/java/org/ungoogled/photos/Promos.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/photos/src/main/java/org/ungoogled/photos/Tools.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsunggallery/src/main/java/org/ungoogled/samsunggallery/BackNavigation.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungkeyboard/src/main/java/org/ungoogled/samsungkeyboard/Languages.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/android/hardware/display/SemWifiDisplayStatus.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/android/os/SemSystemProperties.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/android/widget/SeekBar$SemOnSeekBarHoverListener.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/app/SemMultiWindowManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/cocktailbar/SemCocktailBarManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/cover/CoverState.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/cover/ICoverManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/cover/ICoverManagerCallback.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/cover/ICoverStateListenerCallback.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/cover/INfcLedCoverTouchListenerCallback.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/desktopmode/SemDesktopModeManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/desktopmode/SemDesktopModeState.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/feature/SemCscFeature.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/feature/SemFloatingFeature.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/knox/SemPersonaManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/knox/SemRemoteContentManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/media/SemExtendedFormat.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/media/SemMediaPlayer.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/sepunion/SemEventDelegationManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/com/samsung/android/widget/SemHoverPopupWindow.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/org/ungoogled/samsungvideolibrary/Fallbacks.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/org/ungoogled/samsungvideolibrary/MediaMirror.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/org/ungoogled/samsungvideolibrary/OneUi.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/org/ungoogled/samsungvideolibrary/Sem.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideolibrary/src/main/java/org/ungoogled/samsungvideolibrary/Services.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideoplayer/src/main/java/org/ungoogled/samsungvideoplayer/OpenedFiles.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/maps/ui/lightmap/LightMapPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/maps/ui/region/MapRegionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/nothinglauncher/v2/NothingLauncher2Members.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/photos/PhotosConstants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/photos/PhotosDex.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/photos/PhotosHideAiPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/photos/PhotosHidePromosPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/photos/PhotosMicrogSupportPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/photos/PhotosRemoveTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/samsungvideolibrary/SamsungVideoLibraryConstants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/samsungvideolibrary/misc/EnableNonOneUiPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/samsungvideolibrary/misc/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/samsungvideolibrary/misc/HideEndOfSupportNoticePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/samsungvideolibrary/privacy/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/samsungvideolibrary/privacy/PrivacyPatches.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/shared/MicrogBadge.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/xiaomilauncher/v5/XiaomiLauncher5Members.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-13"
+      "updated": "2026-11-14"
     },
     "akshayykadam-pixelboard": {
       "files": {
@@ -92719,7 +93715,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-10"
+      "updated": "2026-11-14"
     },
     "jacksonjones2003-immersive-keyboard-patches": {
       "files": {
@@ -104456,6 +105452,50 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/feed/HomeLeftSwipe.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/media/SpringSteps.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/feed/swipecreate/StopSwipeToCreatePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/media/background/BackgroundSprings.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-11-14"
@@ -106256,9 +107296,284 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/swiftbackup/src/main/java/app/morphe/extension/swiftbackup/SettingsBundle.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/csrracing/currency/UnlimitedCashPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/csrracing/currency/UnlimitedGoldPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/csrracing/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/csrracing/shared/NativeBytePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/headsoccer/patches/collab/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/headsoccer/patches/collab/UnlockCollabCharactersPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/magicsort/ads/InstantRewardedPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/magicsort/ads/RemoveAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/magicsort/billing/FreeIapPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/magicsort/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/magicsort/shared/NativeBytePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/smashbandits/patches/billing/FreeStorePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/smashbandits/patches/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/sonicdash/patches/ads/AdRemovalPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/sonicdash/patches/ads/FreeAdRewardsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/sonicdash/patches/billing/FreeStorePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/sonicdash/patches/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/swiftbackup/patches/backup/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/swiftbackup/patches/backup/SwiftBackupLocalAccountBackupPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/swiftbackup/patches/cloud/SwiftBackupCloudWithoutSignInPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/trafficrider/patches/ads/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/trafficrider/patches/ads/TrafficRiderAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/trafficrider/patches/billing/TrafficRiderBillingBypassPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/trafficrider/patches/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-10"
+      "updated": "2026-11-14"
     },
     "chikuwadon-nicoid-re-patches": {
       "files": {
@@ -137040,9 +138355,542 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/util/PatchListGenerator.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.1/java/e/e/a/FullscreenContinuity203.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.1/java/e/e/a/MenuVisible203.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.1/java/e/e/a/PlaybackContinuation203.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.11/java/e/e/a/Mp3Save213.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.11/java/e/e/a/Mp3Transcode213.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.12/MergeLiveDex.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.12/java/e/e/a/Mp3Audio214.java": {
+          "hosts": [
+            {
+              "v": "https://nvapi.nicovideo.jp",
+              "d": "2026-11-14"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.12/java/e/e/a/Mp3Save214.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.13/MergeLiveDex.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.14/MergeLiveDex.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.15/MergeLiveDex.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.15/java/e/e/a/PlayerStart215.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.16/MergeLiveDex.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.16/java/e/e/a/ExternalBack216.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.16/java/e/e/a/SettingsSummary216.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.17/MergeLiveDex.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.17/java/e/e/a/SettingsSummary217.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.18/MergeLiveDex.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.18/java/e/e/a/AppSwitchGuard.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.18/java/e/e/a/ExternalBack218.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.2/java/e/e/a/NicoliveFloatingMini204.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.2/java/e/e/a/PlaybackContinuation204.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.2/java/e/e/a/PopupFullscreen204.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.2/java/e/e/a/QueueVisibility204.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.3/java/e/e/a/FullscreenHandoff205.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.3/java/e/e/a/MediaSeek205.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.3/java/e/e/a/NicoliveFloatingMini205.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.4/java/e/e/a/FullscreenHandoff206.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.4/java/e/e/a/MediaSeek206.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.4/java/e/e/a/NicoliveFloatingMini206.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.4/java/e/e/a/PlayerStart206.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.5/java/e/e/a/DrawerFront207.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.5/java/e/e/a/FullscreenHandoff207.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.5/java/e/e/a/PlayerStart207.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.6/java/e/e/a/DrawerFront208.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.6/java/e/e/a/FullscreenHandoff208.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.6/java/e/e/a/NormalGlowLayer208.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.6/java/e/e/a/PlayerStart208.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.7/java/e/e/a/DrawerFront209.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.7/java/e/e/a/FullscreenHandoff209.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.7/java/e/e/a/PlayerStart209.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.8/java/e/e/a/DrawerFront210.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.8/java/e/e/a/FullscreenHandoff210.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.8/java/e/e/a/PlayerStart210.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.9/java/e/e/a/DrawerFront211.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.9/java/e/e/a/FullscreenHandoff211.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.3-dev.9/java/e/e/a/PlayerStart211.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-13"
+      "updated": "2026-11-14"
     },
     "hxreborn-morphe-patches": {
       "files": {
@@ -153757,9 +155605,31 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/extension/src/main/java/app/polishapps/extension/all/MicroGMaps.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/polishapps/patches/all/MicroGMapsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-11"
+      "updated": "2026-11-14"
     },
     "riky-dev-morphe-patches": {
       "files": {
@@ -162008,6 +163878,138 @@
               "d": "2026-11-14"
             }
           ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/apps/AllowTextSelectionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/apps/ChangeVersionCodeNamePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/apps/ForcedUpdateBypassPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/apps/RateUsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/apps/RenameAppPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/device/SpoofAndroidIdPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/device/SpoofSimPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/internet/KillTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/looks/AllowScreenrecordingPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/looks/AllowScreenshotsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/looks/ForceDarkModePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/looks/SkipSplashPatch.kt": {
+          "hosts": [],
           "sources": [],
           "sinks": [],
           "perms": [],
@@ -221506,6 +223508,744 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/morphe/patches/all/misc/telemetry/TelemetryEliminationPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "settings.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/all/misc/packagename/ChangePackageNamePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        }
+      },
+      "updated": "2026-11-14"
+    },
+    "bholeykabhakt-android-patches-xtra": {
+      "files": {
+        "extensions/branding/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/branding/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/branding/src/main/java/io/github/bholeykabhakt/extension/branding/NotificationIcon.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/stellariumassetpack/src/main/java/io/github/bholeykabhakt/extension/common/ZipInstaller.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-14"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-14"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-14"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/stellariumassetpack/src/main/java/io/github/bholeykabhakt/extension/stellariumassetpack/AssetShim.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/stellariumassetpack/src/main/java/io/github/bholeykabhakt/extension/stellariumassetpack/CatalogDownloader.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/zangibackup/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/zangibackup/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/zangibackup/src/main/java/io/github/bholeykabhakt/extension/zangibackup/ZBackup.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-14"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/zangibackup/src/main/java/io/github/bholeykabhakt/extension/zangibackup/ZBackupActivity.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/zangibackup/src/main/java/io/github/bholeykabhakt/extension/zangibackup/ZCrypto.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/zangibackup/src/main/java/io/github/bholeykabhakt/extension/zangibackup/ZHooks.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/zangibackup/src/main/java/io/github/bholeykabhakt/extension/zangibackup/ZRestartActivity.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/all/branding/BrandingPresets.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/all/branding/CustomBrandingPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/all/bypassadbdetection/BypassAdbDetectionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/all/disableanalytics/DisableAnalyticsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/all/disablefacebooktracking/DisableFacebookTrackingPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/atmfee/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/atmfee/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-14"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/atmfee/HideLocationPopupPatch.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-14"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/atmfee/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/automate/BypassBlocksLimitPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/autosync/DePairIpVmPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/autosync/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/autosync/ForceIntegrityStatePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/autosync/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/backdrops/DisablePairipPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/backdrops/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/blockerx/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/circuitsimulator/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/circuitsimulator/UnlockAllFeaturesPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/inshorts/NoLoginPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/inshorts/RemoveAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/skytonight/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/skytonight/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/solidexplorer/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/solidexplorer/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/solidexplorer/UnlockProPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/speedtest/analytics/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/speedtest/analytics/NoAnalyticsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/speedtest/noads/AdFreeAccountPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/starwalk2/DisableTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/starwalk2/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/stellarium/InstallExtendedCatalogPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/stellarium/LoadExtendedCatalogShimPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/stellarium/UnlockPlusPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/ufovpn/DisablePairipPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/ufovpn/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/utils/BytecodeUtils.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/utils/Elf64.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/utils/NativePatching.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/utils/PairIp.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/vpnify/DisablePairipPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/vpnify/SpoofSignatureHashPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/vpnify/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/zangi/BackupRestorePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/zangi/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/zangi/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/util/PatchListGenerator.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
