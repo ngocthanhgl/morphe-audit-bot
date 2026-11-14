@@ -2554,6 +2554,17 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/hushmessenger/patches/controls/SharedWalk.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-11-14"
@@ -9913,6 +9924,174 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/misc/PostMenuItems.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/reels/SkipLabel.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/settings/HoldReactSetting.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/L10nTableTh.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/postmenu/PostMenuItemsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/postmenu/PostMenuSheetAnchors.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/postmenu/PostMenuSheetHookPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack-desktop/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack-desktop/gradle/verification-metadata.xml": {
+          "hosts": [
+            {
+              "v": "https://schema.gradle.org",
+              "d": "2026-11-14"
+            },
+            {
+              "v": "http://www.w3.org",
+              "d": "2026-11-14"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-14"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack-desktop/settings.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack-desktop/src/main/java/hushfacebook/superpack/desktop/DecoderEmulator.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack-desktop/src/main/java/hushfacebook/superpack/desktop/DesktopDecode.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack-desktop/src/main/java/hushfacebook/superpack/desktop/EmulatedSuperpack.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "scripts/superpack-desktop/src/main/java/hushfacebook/superpack/desktop/Relr.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-11-14"
@@ -10222,7 +10401,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-11"
+      "updated": "2026-11-14"
     },
     "debakarr-morphe-patches": {
       "files": {},
@@ -12352,6 +12531,10 @@
             {
               "v": "Location",
               "d": "2026-11-05"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [],
@@ -12368,6 +12551,10 @@
             {
               "v": "Location",
               "d": "2026-11-05"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [],
@@ -12384,6 +12571,10 @@
             {
               "v": "Location",
               "d": "2026-11-05"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [],
@@ -12400,6 +12591,10 @@
             {
               "v": "Location",
               "d": "2026-11-05"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [],
@@ -12416,6 +12611,10 @@
             {
               "v": "Location",
               "d": "2026-11-05"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [],
@@ -12432,6 +12631,10 @@
             {
               "v": "Location",
               "d": "2026-11-05"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [],
@@ -12444,7 +12647,12 @@
         },
         "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/settings/L10nTranslationsRu.java": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -12459,6 +12667,10 @@
             {
               "v": "Location",
               "d": "2026-11-05"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [],
@@ -15062,6 +15274,10 @@
             {
               "v": "Location",
               "d": "2026-10-16"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [],
@@ -18876,6 +19092,10 @@
             {
               "v": "Location",
               "d": "2026-11-02"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [],
@@ -19901,6 +20121,10 @@
             {
               "v": "Location",
               "d": "2026-11-10"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [],
@@ -20315,6 +20539,10 @@
             {
               "v": "Location",
               "d": "2026-11-13"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
             }
           ],
           "sinks": [],
@@ -20425,6 +20653,110 @@
           "staged": []
         },
         "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/feed/StoriesPillGlass.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/comment/ReplyPages.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/download/NativePhotoSaves.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/feed/CaptionLine.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/inbox/MessageTimes.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/interaction/StoppedVideoScreen.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/live/LivePipRecord.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/settings/SettingsRows.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Contacts",
+              "d": "2026-11-14"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/settings/preference/SettingsRowChecklistPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/misc/inbox/MessageTimes.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -21721,6 +22053,50 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/morphe/patches/pinterest/ui/HideScreenshotSharePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/build.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/pinterest/ui/BoardPicker.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/pinterest/ui/ExpandBoardListPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/pinterest/ui/HideSuggestedBoardsPatch.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -93713,6 +94089,17 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "pixelboard-patches/extensions/extension/src/main/java/com/akshaykadam/pixelboard/extension/rambler/GboardRamblerRotationGrace.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-11-14"
@@ -157287,7 +157674,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-12"
+      "updated": "2026-11-14"
     },
     "helllord77-media-patches": {
       "files": {
@@ -182929,9 +183316,64 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/jptt/src/main/java/app/lchanc3/extension/jptt/TerminalEscapePatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/lchanc3/patches/dmmvr/handtracking/HandTrackingPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/lchanc3/patches/dmmvr/handtracking/NativeCode.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/lchanc3/patches/dmmvr/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/lchanc3/patches/jptt/terminal/FixTerminalEscapeSequencesPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-25"
+      "updated": "2026-11-14"
     },
     "piko-ig-lite": {
       "files": {
@@ -217455,7 +217897,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-04"
+      "updated": "2026-11-14"
     },
     "torbenstriegel-morphe-patches-custom": {
       "files": {
@@ -224257,6 +224699,50 @@
           "staged": []
         },
         "settings.gradle.kts": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/everycircuit/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/simurelay/BypassAntiModPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/simurelay/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/io/github/bholeykabhakt/patches/simurelay/UnlockAllFeaturesPatch.kt": {
           "hosts": [],
           "sources": [],
           "sinks": [],
