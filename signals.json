@@ -2576,9 +2576,64 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/messenger/src/main/java/app/hushmessenger/extension/PastePhoto.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/messenger/src/main/java/app/hushmessenger/extension/SettingsTextEs.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/messenger/src/main/java/app/hushmessenger/extension/UnsentWords.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/hushmessenger/patches/controls/LocalRead.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/hushmessenger/patches/controls/PastePhoto.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-15"
+      "updated": "2026-11-16"
     },
     "hush-facebook": {
       "files": {
@@ -10147,9 +10202,91 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/feed/HiddenPosts.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/comments/options/CommentReactionRowPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/comments/options/CommenterBadges.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "Socket",
+              "d": "2026-11-16"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/hook/HiddenPosts.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/posttext/NameBoxes.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/media/progressbar/LiveSeek.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/reels/SharedReelFriendSheet.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-15"
+      "updated": "2026-11-16"
     },
     "commit-regrets-morphe-youtube-vr-patches": {
       "files": {
@@ -20865,9 +21002,113 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/download/LiveSpeechAudio.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/download/TrackMuxer.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/ghostmode/LiveUnseen.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/ghostmode/LiveUnseenButton.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/ghostmode/StoryReads.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/live/LiveListen.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [
+            {
+              "v": "RECORD_AUDIO",
+              "d": "2026-11-16"
+            }
+          ],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/live/LiveMentions.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/speed/HoldPullGuard.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/spoof/sim/ImageLoads.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-15"
+      "updated": "2026-11-16"
     },
     "sysadmindoc-hushpinterest": {
       "files": {
@@ -22216,9 +22457,20 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/pinterest/src/main/java/app/hushpinterest/extension/pinterest/actions/PinViewer.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-15"
+      "updated": "2026-11-16"
     },
     "sysadmindoc-hushtelegram": {
       "files": {
@@ -24157,7 +24409,12 @@
           "hosts": [],
           "sources": [],
           "sinks": [],
-          "perms": [],
+          "perms": [
+            {
+              "v": "RECORD_AUDIO",
+              "d": "2026-11-16"
+            }
+          ],
           "pinning": [],
           "sms": [],
           "spy": [],
@@ -26327,9 +26584,293 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/DoNotDisturb.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/FileIcons.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/FolderReads.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/JoinDates.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/KeepRemoved.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/KeepSecretTimed.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/LinkPreviewRules.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/LocalPins.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/ReadReceipt.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/RegistrationDate.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Clipboard",
+              "d": "2026-11-16"
+            },
+            {
+              "v": "ClipboardManager",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/SessionDevice.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/TranslateBar.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/settings/LinkPreviewRulesEditor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/settings/SessionDeviceEditor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/analytics/FolderReadsSupport.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/analytics/SessionDeviceSupport.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/deleted/KeepRemovedHooks.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/deleted/KeepSecretTimedHooks.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/drafts/LinkPreviewRulesSupport.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/folders/LocalPinsSupport.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/ids/MemberJoinDates.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/messagemenu/AlsoDeleteCheckedSupport.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/proxymenu/DoNotDisturbSupport.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/savedownloads/FileIconsSupport.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/telegram/misc/translate/PinnedBarSupport.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-15"
+      "updated": "2026-11-16"
     },
     "sysadmindoc-hushthreads": {
       "files": {
@@ -31664,7 +32205,12 @@
           "staged": []
         },
         "patches/src/main/kotlin/org/ungoogled/patches/samsungsoundassistant/SamsungSoundAssistantConstants.kt": {
-          "hosts": [],
+          "hosts": [
+            {
+              "v": "http://8.1.00.6",
+              "d": "2026-11-16"
+            }
+          ],
           "sources": [],
           "sinks": [],
           "perms": [],
@@ -39554,7 +40100,12 @@
           "staged": []
         },
         "patches/src/main/kotlin/org/ungoogled/patches/samsungcalculator/SamsungCalculatorConstants.kt": {
-          "hosts": [],
+          "hosts": [
+            {
+              "v": "http://12.4.00.13",
+              "d": "2026-11-16"
+            }
+          ],
           "sources": [],
           "sinks": [],
           "perms": [],
@@ -39810,7 +40361,12 @@
           "staged": []
         },
         "patches/src/main/kotlin/org/ungoogled/patches/samsungmyfiles/SamsungMyFilesConstants.kt": {
-          "hosts": [],
+          "hosts": [
+            {
+              "v": "http://15.2.03.2",
+              "d": "2026-11-16"
+            }
+          ],
           "sources": [],
           "sinks": [],
           "perms": [],
@@ -67323,7 +67879,12 @@
           "staged": []
         },
         "patches/src/main/kotlin/org/ungoogled/patches/samsungphone/SamsungPhoneConstants.kt": {
-          "hosts": [],
+          "hosts": [
+            {
+              "v": "http://16.3.52.1",
+              "d": "2026-11-16"
+            }
+          ],
           "sources": [],
           "sinks": [],
           "perms": [],
@@ -92166,7 +92727,12 @@
           "staged": []
         },
         "patches/src/main/kotlin/org/ungoogled/patches/samsungeditorlite/SamsungEditorLiteConstants.kt": {
-          "hosts": [],
+          "hosts": [
+            {
+              "v": "http://4.0.85.20",
+              "d": "2026-11-16"
+            }
+          ],
           "sources": [],
           "sinks": [],
           "perms": [],
@@ -93697,9 +94263,205 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/extension/src/main/java/org/ungoogled/ui/AppLanguage.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungcapture/src/main/java/org/ungoogled/samsungcapture/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungclock/src/main/java/org/ungoogled/samsungclock/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungcontacts/src/main/java/org/ungoogled/samsungcontacts/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungeditorlite/src/main/java/org/ungoogled/samsungeditorlite/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungmessages/src/main/java/org/ungoogled/samsungmessages/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungmyfiles/src/main/java/org/ungoogled/samsungmyfiles/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungonehand/src/main/java/org/ungoogled/samsungonehand/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungphone/src/main/java/org/ungoogled/samsungphone/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungreminder/src/main/java/org/ungoogled/samsungreminder/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungroutines/src/main/java/org/ungoogled/samsungroutines/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungsoundassistant/src/main/java/org/ungoogled/samsungsoundassistant/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvideoplayer/src/main/java/org/ungoogled/samsungvideoplayer/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungvoicerecorder/src/main/java/org/ungoogled/samsungvoicerecorder/Android13.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/maps/ui/AppLanguagePatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/samsung/NewerAndroid.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/org/ungoogled/patches/samsung/NewerAndroidMembers.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            },
+            {
+              "v": "Contacts",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-15"
+      "updated": "2026-11-16"
     },
     "akshayykadam-pixelboard": {
       "files": {
@@ -106909,9 +107671,288 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/direct/ActiveNow.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/direct/CollectionLocks.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/download/PhotoScrub.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/download/PictureFetch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/download/Vp9Video.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/feed/ChatReach.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/feed/FeedSeekShape.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/feed/MenuItems.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/misc/AccentRings.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/misc/TextSize.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/profile/ReelSort.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/profile/SentRequests.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/settings/SentRequestsPage.java": {
+          "hosts": [
+            {
+              "v": "https://www.instagram.com",
+              "d": "2026-11-16"
+            }
+          ],
+          "sources": [
+            {
+              "v": "Clipboard",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [
+            {
+              "v": "TextWatcher",
+              "d": "2026-11-16"
+            }
+          ],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/stories/StoryButtonRows.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/stories/StoryRingThickness.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/direct/presence/ShorterActiveNowPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/download/video/AskForVp9Patch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/feed/hold/HoldFeedVideoLock.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/feed/menuitems/MenuItemsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/misc/theme/AccentRings.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/misc/theme/DspColors.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/profile/follow/SentFollowRequestsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/profile/reelsort/SortProfileReelsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/stories/ring/StoryRingThickness.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-15"
+      "updated": "2026-11-16"
     },
     "totsiaw-proxma-patches": {
       "files": {
@@ -108984,9 +110025,130 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/aliensdrivemecrazy/patches/ads/AdmcInstantRewardsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/aliensdrivemecrazy/patches/ads/AdmcRemoveAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/aliensdrivemecrazy/patches/money/AdmcUnlimitedCoinsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/aliensdrivemecrazy/patches/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/aliensdrivemecrazy/patches/shared/NativeSites.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/opheliasparadise/patches/pairip/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/opheliasparadise/patches/pairip/PairIPBypassPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/opheliasparadise/patches/premium/PremiumUnlockPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/opheliasparadise/patches/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/swampattack2/patches/ads/AdRemovalPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/swampattack2/patches/ads/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-14"
+      "updated": "2026-11-16"
     },
     "chikuwadon-nicoid-re-patches": {
       "files": {
@@ -141316,6 +142478,281 @@
           "staged": []
         },
         "porting/revisions/v2.0.5-dev.9/java/e/e/a/UiStrings.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.1/java/e/e/a/CommentFlow220.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.10/java/e/e/a/FullscreenSettings270.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.10/java/e/e/a/PlaybackChoiceOrder270.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.11/java/e/e/a/AppResume253.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.11/java/e/e/a/FullscreenOptions262.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.11/java/e/e/a/FullscreenOptions265.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.11/java/e/e/a/FullscreenSettings270.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.11/java/e/e/a/PlaybackChoiceOrder270.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.12/VerifySettingsLinks.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.13/java/e/e/a/VideoMenu274.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.2/java/e/e/a/CommentFlow220.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.3/java/e/e/a/FullscreenOptions262.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.4/java/e/e/a/CommentFlow220.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.5/java/e/e/a/CommentFlow220.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.5/java/e/e/a/FullscreenOptions265.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.6/java/e/e/a/FullscreenOptions262.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.6/java/e/e/a/FullscreenOptions265.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.6/java/e/e/a/PlaybackChoice266.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.8/java/e/e/a/FullscreenOptions262.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.8/java/e/e/a/FullscreenOptions265.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.8/java/e/e/a/PlaybackChoice266.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.8/java/e/e/a/ScrollingComments267.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.8/java/e/e/a/ScrollingTimeline267.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.9/java/e/e/a/FullscreenOptions262.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.0.6-dev.9/java/e/e/a/FullscreenOptions265.java": {
           "hosts": [],
           "sources": [],
           "sinks": [],
@@ -189403,6 +190840,10 @@
             {
               "v": "openConnection",
               "d": "2026-10-30"
+            },
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-16"
             }
           ],
           "perms": [],
@@ -190656,7 +192097,12 @@
         "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/requests/StreamingDataRequest.java": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -192160,7 +193606,12 @@
         "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/SpoofVideoStreamsSideEffectsPreference.java": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -192334,7 +193785,12 @@
         },
         "patches/src/main/kotlin/app/morphe/patches/music/interaction/crossfade/Fingerprints.kt": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -192356,7 +193812,12 @@
         },
         "patches/src/main/kotlin/app/morphe/patches/music/interaction/jam/Fingerprints.kt": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -193218,7 +194679,12 @@
         },
         "patches/src/main/kotlin/app/morphe/patches/shared/misc/debugging/EnableDebuggingPatch.kt": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Clipboard",
+              "d": "2026-11-16"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -193510,7 +194976,12 @@
         "patches/src/main/kotlin/app/morphe/patches/shared/misc/spoof/SpoofVideoStreamsPatch.kt": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -194087,7 +195558,12 @@
         },
         "patches/src/main/kotlin/app/morphe/patches/youtube/layout/hide/shorts/Fingerprints.kt": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -194098,7 +195574,12 @@
         },
         "patches/src/main/kotlin/app/morphe/patches/youtube/layout/hide/shorts/HideShortsComponentsPatch.kt": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -195035,7 +196516,12 @@
         "patches/src/main/resources/addresources/values-af-rZA/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195068,7 +196554,12 @@
         "patches/src/main/resources/addresources/values-af-rZA/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195099,7 +196590,12 @@
         "patches/src/main/resources/addresources/values-am-rET/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195110,7 +196606,12 @@
         "patches/src/main/resources/addresources/values-am-rET/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195152,7 +196653,12 @@
         "patches/src/main/resources/addresources/values-ar-rSA/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195185,7 +196691,12 @@
         "patches/src/main/resources/addresources/values-ar-rSA/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195216,7 +196727,12 @@
         "patches/src/main/resources/addresources/values-as-rIN/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195227,7 +196743,12 @@
         "patches/src/main/resources/addresources/values-as-rIN/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195269,7 +196790,12 @@
         "patches/src/main/resources/addresources/values-az-rAZ/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195302,7 +196828,12 @@
         "patches/src/main/resources/addresources/values-az-rAZ/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195333,7 +196864,12 @@
         "patches/src/main/resources/addresources/values-be-rBY/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195344,7 +196880,12 @@
         "patches/src/main/resources/addresources/values-be-rBY/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195377,7 +196918,12 @@
         "patches/src/main/resources/addresources/values-bg-rBG/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195410,7 +196956,12 @@
         "patches/src/main/resources/addresources/values-bg-rBG/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195452,7 +197003,12 @@
         "patches/src/main/resources/addresources/values-bn-rBD/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195485,7 +197041,12 @@
         "patches/src/main/resources/addresources/values-bn-rBD/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195527,7 +197088,12 @@
         "patches/src/main/resources/addresources/values-bs-rBA/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195538,7 +197104,12 @@
         "patches/src/main/resources/addresources/values-bs-rBA/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195569,7 +197140,12 @@
         "patches/src/main/resources/addresources/values-ca-rES/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195580,7 +197156,12 @@
         "patches/src/main/resources/addresources/values-ca-rES/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195622,7 +197203,12 @@
         "patches/src/main/resources/addresources/values-ckb-rIR/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195655,7 +197241,12 @@
         "patches/src/main/resources/addresources/values-ckb-rIR/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195688,7 +197279,12 @@
         "patches/src/main/resources/addresources/values-cs-rCZ/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195721,7 +197317,12 @@
         "patches/src/main/resources/addresources/values-cs-rCZ/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195763,7 +197364,12 @@
         "patches/src/main/resources/addresources/values-da-rDK/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195796,7 +197402,12 @@
         "patches/src/main/resources/addresources/values-da-rDK/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195838,7 +197449,12 @@
         "patches/src/main/resources/addresources/values-de-rDE/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195871,7 +197487,12 @@
         "patches/src/main/resources/addresources/values-de-rDE/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195913,7 +197534,12 @@
         "patches/src/main/resources/addresources/values-el-rGR/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195946,7 +197572,12 @@
         "patches/src/main/resources/addresources/values-el-rGR/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -195988,7 +197619,12 @@
         "patches/src/main/resources/addresources/values-es-rES/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196021,7 +197657,12 @@
         "patches/src/main/resources/addresources/values-es-rES/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196052,7 +197693,12 @@
         "patches/src/main/resources/addresources/values-et-rEE/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196063,7 +197709,12 @@
         "patches/src/main/resources/addresources/values-et-rEE/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196094,7 +197745,12 @@
         "patches/src/main/resources/addresources/values-eu-rES/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196110,7 +197766,12 @@
               "d": "2026-10-30"
             }
           ],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196143,7 +197804,12 @@
         "patches/src/main/resources/addresources/values-fa-rIR/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196176,7 +197842,12 @@
         "patches/src/main/resources/addresources/values-fa-rIR/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196218,7 +197889,12 @@
         "patches/src/main/resources/addresources/values-fi-rFI/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196251,7 +197927,12 @@
         "patches/src/main/resources/addresources/values-fi-rFI/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196293,7 +197974,12 @@
         "patches/src/main/resources/addresources/values-fil-rPH/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196326,7 +198012,12 @@
         "patches/src/main/resources/addresources/values-fil-rPH/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196368,7 +198059,12 @@
         "patches/src/main/resources/addresources/values-fr-rFR/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196401,7 +198097,12 @@
         "patches/src/main/resources/addresources/values-fr-rFR/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196443,7 +198144,12 @@
         "patches/src/main/resources/addresources/values-ga-rIE/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196476,7 +198182,12 @@
         "patches/src/main/resources/addresources/values-ga-rIE/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196518,7 +198229,12 @@
         "patches/src/main/resources/addresources/values-gl-rES/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196540,7 +198256,12 @@
         "patches/src/main/resources/addresources/values-gl-rES/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196626,7 +198347,12 @@
         "patches/src/main/resources/addresources/values-hi-rIN/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196659,7 +198385,12 @@
         "patches/src/main/resources/addresources/values-hi-rIN/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196701,7 +198432,12 @@
         "patches/src/main/resources/addresources/values-hr-rHR/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196734,7 +198470,12 @@
         "patches/src/main/resources/addresources/values-hr-rHR/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196767,7 +198508,12 @@
         "patches/src/main/resources/addresources/values-hu-rHU/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196800,7 +198546,12 @@
         "patches/src/main/resources/addresources/values-hu-rHU/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196831,7 +198582,12 @@
         "patches/src/main/resources/addresources/values-hy-rAM/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196842,7 +198598,12 @@
         "patches/src/main/resources/addresources/values-hy-rAM/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196884,7 +198645,12 @@
         "patches/src/main/resources/addresources/values-in-rID/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196917,7 +198683,12 @@
         "patches/src/main/resources/addresources/values-in-rID/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196959,7 +198730,12 @@
         "patches/src/main/resources/addresources/values-is-rIS/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -196992,7 +198768,12 @@
         "patches/src/main/resources/addresources/values-is-rIS/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197034,7 +198815,12 @@
         "patches/src/main/resources/addresources/values-it-rIT/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197067,7 +198853,12 @@
         "patches/src/main/resources/addresources/values-it-rIT/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197109,7 +198900,12 @@
         "patches/src/main/resources/addresources/values-iw-rIL/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197142,7 +198938,12 @@
         "patches/src/main/resources/addresources/values-iw-rIL/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197175,7 +198976,12 @@
         "patches/src/main/resources/addresources/values-ja-rJP/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197208,7 +199014,12 @@
         "patches/src/main/resources/addresources/values-ja-rJP/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197239,7 +199050,12 @@
         "patches/src/main/resources/addresources/values-ka-rGE/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197250,7 +199066,12 @@
         "patches/src/main/resources/addresources/values-ka-rGE/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197281,7 +199102,12 @@
         "patches/src/main/resources/addresources/values-kk-rKZ/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197292,7 +199118,12 @@
         "patches/src/main/resources/addresources/values-kk-rKZ/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197389,7 +199220,12 @@
         "patches/src/main/resources/addresources/values-kmr-rTR/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197416,7 +199252,12 @@
               "d": "2026-10-30"
             }
           ],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197491,7 +199332,12 @@
         "patches/src/main/resources/addresources/values-ko-rKR/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197524,7 +199370,12 @@
         "patches/src/main/resources/addresources/values-ko-rKR/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197555,7 +199406,12 @@
         "patches/src/main/resources/addresources/values-ky-rKG/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197566,7 +199422,12 @@
         "patches/src/main/resources/addresources/values-ky-rKG/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197597,7 +199458,12 @@
         "patches/src/main/resources/addresources/values-lo-rLA/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197608,7 +199474,12 @@
         "patches/src/main/resources/addresources/values-lo-rLA/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197641,7 +199512,12 @@
         "patches/src/main/resources/addresources/values-lt-rLT/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197674,7 +199550,12 @@
         "patches/src/main/resources/addresources/values-lt-rLT/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197705,7 +199586,12 @@
         "patches/src/main/resources/addresources/values-lv-rLV/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197727,7 +199613,12 @@
         "patches/src/main/resources/addresources/values-lv-rLV/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197771,7 +199662,12 @@
         "patches/src/main/resources/addresources/values-mai-rIN/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197813,7 +199709,12 @@
         "patches/src/main/resources/addresources/values-mk-rMK/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197840,7 +199741,12 @@
               "d": "2026-10-30"
             }
           ],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197862,7 +199768,12 @@
         "patches/src/main/resources/addresources/values-mn-rMN/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197873,7 +199784,12 @@
         "patches/src/main/resources/addresources/values-mn-rMN/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197904,7 +199820,12 @@
         "patches/src/main/resources/addresources/values-mr-rIN/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197915,7 +199836,12 @@
         "patches/src/main/resources/addresources/values-mr-rIN/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197957,7 +199883,12 @@
         "patches/src/main/resources/addresources/values-ms-rMY/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -197968,7 +199899,12 @@
         "patches/src/main/resources/addresources/values-ms-rMY/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198043,7 +199979,12 @@
         "patches/src/main/resources/addresources/values-nb-rNO/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198076,7 +200017,12 @@
         "patches/src/main/resources/addresources/values-nb-rNO/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198151,7 +200097,12 @@
         "patches/src/main/resources/addresources/values-nl-rNL/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198184,7 +200135,12 @@
         "patches/src/main/resources/addresources/values-nl-rNL/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198292,7 +200248,12 @@
         "patches/src/main/resources/addresources/values-pl-rPL/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198325,7 +200286,12 @@
         "patches/src/main/resources/addresources/values-pl-rPL/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198367,7 +200333,12 @@
         "patches/src/main/resources/addresources/values-pt-rBR/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198400,7 +200371,12 @@
         "patches/src/main/resources/addresources/values-pt-rBR/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198442,7 +200418,12 @@
         "patches/src/main/resources/addresources/values-pt-rPT/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198475,7 +200456,12 @@
         "patches/src/main/resources/addresources/values-pt-rPT/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198508,7 +200494,12 @@
         "patches/src/main/resources/addresources/values-ro-rRO/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198541,7 +200532,12 @@
         "patches/src/main/resources/addresources/values-ro-rRO/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198574,7 +200570,12 @@
         "patches/src/main/resources/addresources/values-ru-rRU/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198607,7 +200608,12 @@
         "patches/src/main/resources/addresources/values-ru-rRU/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198682,7 +200688,12 @@
         "patches/src/main/resources/addresources/values-sk-rSK/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198715,7 +200726,12 @@
         "patches/src/main/resources/addresources/values-sk-rSK/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198757,7 +200773,12 @@
         "patches/src/main/resources/addresources/values-sl-rSI/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198790,7 +200811,12 @@
         "patches/src/main/resources/addresources/values-sl-rSI/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198823,7 +200849,12 @@
         "patches/src/main/resources/addresources/values-sr-rCS/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198856,7 +200887,12 @@
         "patches/src/main/resources/addresources/values-sr-rCS/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198889,7 +200925,12 @@
         "patches/src/main/resources/addresources/values-sr-rSP/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198922,7 +200963,12 @@
         "patches/src/main/resources/addresources/values-sr-rSP/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198964,7 +201010,12 @@
         "patches/src/main/resources/addresources/values-sv-rSE/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -198997,7 +201048,12 @@
         "patches/src/main/resources/addresources/values-sv-rSE/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199028,7 +201084,12 @@
         "patches/src/main/resources/addresources/values-sw-rKE/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199039,7 +201100,12 @@
         "patches/src/main/resources/addresources/values-sw-rKE/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199070,7 +201136,12 @@
         "patches/src/main/resources/addresources/values-ta-rIN/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199081,7 +201152,12 @@
         "patches/src/main/resources/addresources/values-ta-rIN/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199160,7 +201236,12 @@
         "patches/src/main/resources/addresources/values-th-rTH/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199193,7 +201274,12 @@
         "patches/src/main/resources/addresources/values-th-rTH/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199235,7 +201321,12 @@
         "patches/src/main/resources/addresources/values-tr-rTR/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199268,7 +201359,12 @@
         "patches/src/main/resources/addresources/values-tr-rTR/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199310,7 +201406,12 @@
         "patches/src/main/resources/addresources/values-uk-rUA/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199343,7 +201444,12 @@
         "patches/src/main/resources/addresources/values-uk-rUA/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199440,7 +201546,12 @@
         "patches/src/main/resources/addresources/values-uz-rUZ/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199451,7 +201562,12 @@
         "patches/src/main/resources/addresources/values-uz-rUZ/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199493,7 +201609,12 @@
         "patches/src/main/resources/addresources/values-vi-rVN/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199526,7 +201647,12 @@
         "patches/src/main/resources/addresources/values-vi-rVN/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199559,7 +201685,12 @@
         "patches/src/main/resources/addresources/values-zh-rCN/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199592,7 +201723,12 @@
         "patches/src/main/resources/addresources/values-zh-rCN/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199625,7 +201761,12 @@
         "patches/src/main/resources/addresources/values-zh-rTW/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199658,7 +201799,12 @@
         "patches/src/main/resources/addresources/values-zh-rTW/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199689,7 +201835,12 @@
         "patches/src/main/resources/addresources/values-zu-rZA/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199700,7 +201851,12 @@
         "patches/src/main/resources/addresources/values-zu-rZA/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199764,7 +201920,12 @@
         "patches/src/main/resources/addresources/values/shared-youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -199808,7 +201969,12 @@
         "patches/src/main/resources/addresources/values/youtube/strings.xml": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -200214,7 +202380,12 @@
           "staged": []
         },
         "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/model/MiniLyricsFormatter.java": {
-          "hosts": [],
+          "hosts": [
+            {
+              "v": "https://www.unicode.org",
+              "d": "2026-11-16"
+            }
+          ],
           "sources": [],
           "sinks": [],
           "perms": [],
@@ -201010,7 +203181,12 @@
         "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/requests/PlayerRoutes.java": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -202468,7 +204644,12 @@
           "pinning": [],
           "sms": [],
           "spy": [],
-          "keylog": [],
+          "keylog": [
+            {
+              "v": "TextWatcher",
+              "d": "2026-11-16"
+            }
+          ],
           "staged": []
         },
         "extensions/youtube/src/main/java/app/morphe/extension/youtube/videoplayer/PlayAllButton.java": {
@@ -208060,7 +210241,12 @@
         "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/ClientType.java": {
           "hosts": [],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -208185,7 +210371,12 @@
             }
           ],
           "sources": [],
-          "sinks": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -208359,7 +210550,12 @@
         },
         "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/YouTubeGlassNavigationBar.java": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -208852,9 +211048,2998 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/all/change-version-code/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/all/change-version-code/src/main/java/app/morphe/extension/all/versioncode/DisablePlayStoreUpdatesPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/AutoSongVersionPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-16"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-16"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/DeviceFilesSearchPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/DisableAudioDuckingPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/DisableAutoCaptionsPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/EnableAudioVideoSwitchPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/LoopVideoPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/MusicGlassMiniplayer.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/MusicMediaNotificationControlsPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/OpenSystemShareSheetPatch.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "getSerial",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/PauseWhenMutedPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/RememberVideoQualityPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/album/PlaylistRequest.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/components/LayoutComponentsFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/downloads/ExportMenuItem.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/JamArtwork.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/JamClock.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/JamCompletion.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/JamMetadata.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/JamMirror.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/JamPlayback.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/JamPlayerState.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/JamUI.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/NativeQueueList.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/QueueCommand.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/QueueModel.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/YouTubeMusicBridge.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/ipc/IJamBridge.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/jam/ipc/IJamCompanion.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/model/LyricsRetiming.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/DeviceLyricsTab.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/GapLineView.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/LyricsActiveLines.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/LyricsLayoutCalc.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/LyricsLineAlphas.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/LyricsLineMath.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/LyricsReadingCalc.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/LyricsScrollEngine.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/LyricsSearchDialog.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/LyricsSectionTags.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/LyricsTextUtils.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/LyricsWordBoundaries.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/LyricsWordTimingCalc.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/SpringEasing.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/SyllableRomanLayout.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/WordGeometry.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/lyrics/ui/WordTiming.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/scrobbling/ScrobbleManager.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/patches/scrobbling/listenbrainz/ListenBrainz.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/settings/preference/MusicGlassMiniplayerPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/music/src/main/java/app/morphe/extension/music/settings/search/MusicSearchViewController.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/AppIconPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/CustomFontPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/DisableModernHomePatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/DisableScreenshotPopupPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/ForceSystemFontPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/HideAdsPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/HideAskButtonPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/HideNavigationButtonsPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/HideSidebarComponentsPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/HideTrendingShelvesPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/OpenLinksDirectlyPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/OpenLinksExternallyPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/RemoveSubRedditDialogPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/SanitizeSharingLinksPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/patches/ShowViewCountPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/settings/preference/BooleanSettingPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/settings/preference/RedditSettingsStyle.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/src/main/java/app/morphe/extension/reddit/ui/MorpheSettingsIconVectorDrawable.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/reddit/stub/src/main/java/com/reddit/domain/model/ILink.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/oauth2/object/ActivationCodeData.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/oauth2/requests/OAuth2Routes.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/BaseAppRefreshRatePatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/BaseChangeStartPagePatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/BaseInAppDownloadsPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/BaseVideoInformation.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/CheckWatchHistoryDomainNameResolutionPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/ConversionContext.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/HideFullscreenAdsPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/MediaHttpHeader.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/OfflineVideoExporter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/TreeNodeElementPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/components/BaseCustomFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/components/BufferHideStatsTracker.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/components/ByteArrayFilterGroupList.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/components/FilterGroup.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/components/FilterGroupList.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/components/StringFilterGroupList.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/spans/SpanFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/spans/SpanFilterGroup.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/spans/SpanFilterGroupList.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/patches/spans/StringSpanFilterGroupList.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/privacy/LinkSanitizer.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/requests/proxy/DelegatingHttpURLConnection.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/returnyoutubedislike/requests/RYDVoteData.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/settings/preference/ClearNewSettingsIndicatorPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/settings/preference/ExportFolderPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/settings/preference/FeatureFlagsBisect.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/settings/preference/ForceOriginalAudioSwitchPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/settings/preference/MwebSignInPreference.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "CookieManager",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            },
+            {
+              "v": "loadUrl",
+              "d": "2026-11-16"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/sponsorblock/SponsorBlockHelpers.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/sponsorblock/objects/UserStats.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/MwebSignIn.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "getCookie",
+              "d": "2026-11-16"
+            },
+            {
+              "v": "CookieManager",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-16"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-16"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/MwebSiteSession.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "CookieManager",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            },
+            {
+              "v": "loadUrl",
+              "d": "2026-11-16"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/MwebStream.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/SabrContexts.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/SabrReadaheadLimit.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/WebViewCheck.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/JavaScriptEngineSupport.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/PlayerDataExtractor.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/common/CacheError.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/common/CacheService.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/common/CachedData.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/provider/ChallengeInput.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/provider/ChallengeOutput.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/provider/ContentProviderError.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/provider/JsChallengeProvider.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/provider/JsChallengeProviderError.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/provider/JsChallengeProviderRejectedRequest.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/provider/JsChallengeProviderResponse.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/provider/JsChallengeRequest.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/provider/JsChallengeResponse.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/provider/JsChallengeType.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/runtime/JsRuntimeChalBaseJCP.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/runtime/ResponseData.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/runtime/Script.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/runtime/ScriptSource.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/runtime/ScriptType.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/runtime/ScriptVariant.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/js/nsigsolver/runtime/SolverOutput.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/spoof/potoken/PoTokenWebView.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/library/src/main/java/app/morphe/extension/shared/ui/glass/GlassBackdrop.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/src/main/AndroidManifest.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/stub/src/main/java/com/facebook/yoga/YogaNative.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/stub/src/main/java/com/google/android/libraries/youtube/media/interfaces/HttpHeader.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/stub/src/main/java/org/chromium/net/CronetEngine.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/stub/src/main/java/org/chromium/net/Proxy.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/stub/src/main/java/org/chromium/net/ProxyOptions.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/stub/src/main/java/org/chromium/net/UrlRequest.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/stub/src/main/java/org/chromium/net/UrlResponseInfo.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared-youtube/stub/src/main/java/org/chromium/net/impl/CronetUrlRequest.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/checks/Check.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/checks/PatchInfo.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/patches/ExperimentalAppNoticePatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/requests/Route.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/settings/preference/BooleanSettingPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/settings/preference/BulletPointSwitchPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/settings/preference/ColorPickerPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/settings/preference/ColorPickerView.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/settings/preference/LinkHandlingPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/settings/preference/PreferenceTranslations.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/settings/preference/ResettableEditTextPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/settings/preference/SeekBarsPreviewPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/settings/preference/SettingChange.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/settings/preference/SettingPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/settings/preference/about/AboutLinksWebClient.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-16"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/ui/CustomDialog.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [
+            {
+              "v": "TextWatcher",
+              "d": "2026-11-16"
+            }
+          ],
+          "staged": []
+        },
+        "extensions/shared/library/src/main/java/app/morphe/extension/shared/ui/IconSpan.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/addon/AddOnApi.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/ambientlight/LightView.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/AppRefreshRatePatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/AutoplayControlPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/AutoplayRule.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/BackgroundPlaybackPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/FixMediaSessionStopPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/FixPreferenceIconPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/FullscreenPlaylistPanelPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/LoopCountPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/LoopVideoPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/PictureinPictureButtonPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/PlaybackInFeedsPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/SavePushNotificationsPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/TapToSeekPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/ToolBarPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/components/AdvancedVideoQualityMenuFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/components/AiSListFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/components/PlaybackSpeedMenuFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/dearrow/DeArrowAccountRequest.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-16"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/dearrow/DeArrowBrandingRequest.java": {
+          "hosts": [
+            {
+              "v": "https://sponsor.ajay.app",
+              "d": "2026-11-16"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/dearrow/DeArrowTitleIcon.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/dearrow/DeArrowVoteButton.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/dearrow/DeArrowVoteDialog.java": {
+          "hosts": [
+            {
+              "v": "https://i.ytimg.com",
+              "d": "2026-11-16"
+            }
+          ],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-16"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-16"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/dearrow/DeArrowVoteRequest.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-16"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/originaltitles/LocalizedTitleRequest.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/originaltitles/TitleLayouts.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/spans/SanitizeVideoSubtitleFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/spans/SearchLinksFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/spoof/SpoofOSNamePatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/theme/MorpheSettingsIconDynamicDrawable.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/patches/voiceovertranslation/TranscriptTranslator.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/DeArrowAccountPreferenceCategory.java": {
+          "hosts": [
+            {
+              "v": "https://sb.ltn.fi",
+              "d": "2026-11-16"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/DeArrowGuidelinesPreference.java": {
+          "hosts": [
+            {
+              "v": "https://wiki.sponsor.ajay.app",
+              "d": "2026-11-16"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/DeArrowPrivateUserIdPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/DeArrowTimeStepPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/DeArrowVoteButtonSwitchPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/GuidelinesSwitchPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/HideAudioFlyoutMenuPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/LiveStreamDVRDurationPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/LiveStreamDVRPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/LoopCountClearPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/SavedPushNotificationsPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/settings/preference/SpoofVideoStreamsMwebSignInPreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/sponsorblock/preferences/SponsorBlockCreateSegmentSwitchPreference.java": {
+          "hosts": [
+            {
+              "v": "https://wiki.sponsor.ajay.app",
+              "d": "2026-11-16"
+            }
+          ],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/sponsorblock/ui/NewSegmentLayout.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/videoplayer/AutoplayButton.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/videoplayer/LegacyPlayerControlButton.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/videoplayer/LoopCountFlyoutButton.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/videoplayer/PlaybackSpeedDialogButton.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/videoplayer/PlayerButtonIcons.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/src/main/java/app/morphe/extension/youtube/videoplayer/PlaylistPanelButton.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/stub/src/main/java/android/support/v4/media/MediaDescriptionCompat.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/youtube/stub/src/main/java/com/google/android/gms/common/api/GoogleApiActivity.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/interaction/audioducking/DisableAudioDuckingPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/interaction/audioducking/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/interaction/loop/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/interaction/loop/LoopVideoPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/interaction/pausewhenmuted/PauseWhenMutedPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/layout/captions/DisableAutoCaptionsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/layout/captions/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/layout/hide/general/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/misc/audiovideoswitch/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/misc/gms/DeviceFilesSearchFix.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/misc/medianotification/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/misc/medianotification/MediaNotificationControlsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/misc/privacy/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/misc/privacy/SanitizeSharingLinksPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/misc/sharesheet/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/misc/sharesheet/OpenSystemShareSheetPatch.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "getSerial",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/video/playerresponse/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/video/quality/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/music/video/quality/RememberVideoQualityPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/reddit/layout/subredditdialog/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/shared/misc/downloads/ExportDownloads.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/shared/misc/glide/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/shared/misc/settings/preference/SwitchPreference.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/youtube/ad/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/youtube/interaction/autoplay/AutoplayControlPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/youtube/interaction/downloads/OfflineDownloadResume.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/youtube/interaction/loop/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/youtube/interaction/loop/LoopCountPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/youtube/interaction/playlistpanel/PlaylistPanelButtonPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/youtube/layout/music/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/youtube/layout/player/playlistpanel/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-16"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/youtube/layout/player/playlistpanel/FullscreenPlaylistPanelPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/youtube/misc/fix/mediasession/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/youtube/misc/fix/mediasession/FixMediaSessionStopPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/dearrowbutton/drawable/morphe_yt_dearrow.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/dearrowbutton/drawable/morphe_yt_dearrow_bold.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/dearrowbutton/host/layout/youtube_controls_layout.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/lyricscurrentbutton/drawable/morphe_yt_crosshair.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/playlistpanelbutton/host/layout/youtube_controls_layout.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/settings/drawable/morphe_settings_icon_reddit.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/resources/settings/layout/morphe_preference_search_history_screen.xml": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/stub/src/main/java/android/os/Build.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-10"
+      "updated": "2026-11-16"
     },
     "foxxoowo-foxxo-patches": {
       "files": {
@@ -227767,6 +232952,60 @@
         }
       },
       "updated": "2026-11-15"
+    },
+    "mxkrgt-dbtcoach-morphe-patches": {
+      "files": {
+        "patches/src/main/kotlin/app/dbtcoach/patches/premium/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/dbtcoach/patches/premium/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/dbtcoach/patches/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        }
+      },
+      "updated": "2026-11-16"
+    },
+    "rafag00-morphe-patches": {
+      "files": {
+        "patches/src/main/kotlin/app/rafag00/patches/sony/UseMorpheYouTubeMusicPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        }
+      },
+      "updated": "2026-11-16"
     }
   }
 }
