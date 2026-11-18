@@ -3154,6 +3154,33 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/messenger/src/main/java/app/hushmessenger/extension/ChoiceFiles.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Contacts",
+              "d": "2026-11-18"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/messenger/src/main/java/app/hushmessenger/extension/InChatMenu.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-11-18"
@@ -10931,6 +10958,50 @@
               "d": "2026-11-18"
             }
           ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/settings/InAppProxy.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/confirm/StoryReactions.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/postprompts/ReactionBubbles.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/feed/postprompts/ReactorNames.kt": {
+          "hosts": [],
+          "sources": [],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -23546,7 +23617,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-17"
+      "updated": "2026-11-18"
     },
     "sysadmindoc-hushtelegram": {
       "files": {
@@ -24193,7 +24264,12 @@
         },
         "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/misc/MainTabs.java": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Contacts",
+              "d": "2026-11-18"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -24521,7 +24597,12 @@
         },
         "patches/src/main/kotlin/app/morphe/patches/telegram/misc/contacts/QuietContactsNagPatch.kt": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Contacts",
+              "d": "2026-11-18"
+            }
+          ],
           "sinks": [],
           "perms": [
             {
@@ -25646,7 +25727,12 @@
           "staged": []
         },
         "patches/src/main/kotlin/app/morphe/patches/telegram/misc/apps/NewChatsBlockSupport.kt": {
-          "hosts": [],
+          "hosts": [
+            {
+              "v": "http://13.2.2.1",
+              "d": "2026-11-18"
+            }
+          ],
           "sources": [],
           "sinks": [],
           "perms": [],
@@ -28403,6 +28489,17 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/telegram/src/main/java/app/hushtelegram/extension/telegram/settings/NewRowDots.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-11-18"
@@ -29740,7 +29837,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-15"
+      "updated": "2026-11-18"
     },
     "sysadmindoc-hushtumblr": {
       "files": {
@@ -31485,7 +31582,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-15"
+      "updated": "2026-11-18"
     },
     "venusisjaded-venus-patches": {
       "files": {
@@ -144641,6 +144738,120 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "porting/revisions/v2.1.1-release/AmbientCard217.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-18"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.1.1-release/BulkMove211.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.1.1-release/MoveConfirm212.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.1.1-release/NativeMylistMove215.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.1.1-release/SearchResponse212.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-18"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.1.1-release/TabFolderNav214.java": {
+          "hosts": [
+            {
+              "v": "https://nvapi.nicovideo.jp",
+              "d": "2026-11-18"
+            },
+            {
+              "v": "https://www.nicovideo.jp",
+              "d": "2026-11-18"
+            }
+          ],
+          "sources": [
+            {
+              "v": "getCookie",
+              "d": "2026-11-18"
+            },
+            {
+              "v": "CookieManager",
+              "d": "2026-11-18"
+            }
+          ],
+          "sinks": [
+            {
+              "v": "HttpURLConnection",
+              "d": "2026-11-18"
+            },
+            {
+              "v": "openConnection",
+              "d": "2026-11-18"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "porting/revisions/v2.1.1-release/TabSymbols213.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
       "updated": "2026-11-18"
@@ -192430,9 +192641,20 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/extension/src/main/java/app/template/extension/pinterest/PinMenuFilter.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-14"
+      "updated": "2026-11-18"
     },
     "k8r8to-kizu-morphe-patches": {
       "files": {
@@ -217940,9 +218162,31 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/com/feurstagram/patches/ascent/UnlockPremiumPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/com/feurstagram/patches/vampiresurvivors/UnlockAllDlcPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-10-31"
+      "updated": "2026-11-18"
     },
     "dh6k-morphe-patches": {
       "files": {
