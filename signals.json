@@ -3183,7 +3183,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-18"
+      "updated": "2026-11-19"
     },
     "hush-facebook": {
       "files": {
@@ -11141,9 +11141,31 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/reels/CleanReturn.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/facebook/src/main/java/app/morphe/extension/facebook/reels/ReelCleanReturn.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-18"
+      "updated": "2026-11-19"
     },
     "commit-regrets-morphe-youtube-vr-patches": {
       "files": {
@@ -22440,9 +22462,64 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/diagnostics/MainScreenRestarts.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/download/ProfilePictureViewer.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/privacy/WatchHistoryRecording.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/profile/ProfileAddBio.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/tiktok/promobanners/ProfileAddBio.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-18"
+      "updated": "2026-11-19"
     },
     "sysadmindoc-hushpinterest": {
       "files": {
@@ -24154,7 +24231,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-18"
+      "updated": "2026-11-19"
     },
     "sysadmindoc-hushtelegram": {
       "files": {
@@ -29039,7 +29116,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-18"
+      "updated": "2026-11-19"
     },
     "sysadmindoc-hushthreads": {
       "files": {
@@ -30374,7 +30451,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-18"
+      "updated": "2026-11-19"
     },
     "sysadmindoc-hushtumblr": {
       "files": {
@@ -32196,7 +32273,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-18"
+      "updated": "2026-11-19"
     },
     "venusisjaded-venus-patches": {
       "files": {
@@ -110617,9 +110694,75 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/misc/FacebookAppLogin.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/misc/InstagramSignature.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/feed/audioicon/TagIndicator.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/misc/resignedtrust/FacebookAppLogin.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/misc/resignedtrust/RestoreTrustPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/profile/threads/EmptyProfilePrompt.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-18"
+      "updated": "2026-11-19"
     },
     "totsiaw-proxma-patches": {
       "files": {
@@ -145545,7 +145688,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-18"
+      "updated": "2026-11-19"
     },
     "hxreborn-morphe-patches": {
       "files": {
@@ -170701,9 +170844,58 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/extension/src/main/java/ajstrick81/morphe/extension/mediaset/ads/MediasetAdBlocker.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/mediaset/ads/Fingerprints.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-19"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/mediaset/ads/SkipAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/ajstrick81/morphe/patches/mediaset/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-17"
+      "updated": "2026-11-19"
     },
     "sqzass-patches": {
       "files": {
@@ -172807,9 +172999,20 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/radiogarden/subscription/UnlockSubscriptionPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-18"
+      "updated": "2026-11-19"
     },
     "zanuaimi-unipatches": {
       "files": {
@@ -193387,9 +193590,20 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/browzomje/patches/pinterest/navigation/messages/BottomBarMessagesPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-18"
+      "updated": "2026-11-19"
     },
     "k8r8to-kizu-morphe-patches": {
       "files": {
@@ -231574,9 +231788,47 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/extension/java/app/danielthemaniel/patches/campfire/extension/ExternalLinks.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/danielthemaniel/patches/campfire/SkipExternalLinkDialogPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [
+            {
+              "v": "WebView",
+              "d": "2026-11-19"
+            }
+          ],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/danielthemaniel/patches/pokegenie/PairIPBypassOCRScanningPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-16"
+      "updated": "2026-11-19"
     },
     "benzophury-oraimo-health-morphe-patches": {
       "files": {
@@ -238978,6 +239230,22 @@
         }
       },
       "updated": "2026-11-17"
+    },
+    "adderalladmiral-psychonaut-journal-patches": {
+      "files": {
+        "patches/src/main/kotlin/app/journal/patches/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        }
+      },
+      "updated": "2026-11-19"
     }
   }
 }
