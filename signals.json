@@ -14629,7 +14629,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-15"
+      "updated": "2026-11-21"
     },
     "logm1lo-logm1lo-patches": {
       "files": {
@@ -196162,7 +196162,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-20"
+      "updated": "2026-11-21"
     },
     "heyymichii-michii-patches": {
       "files": {
@@ -200022,9 +200022,86 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/extension/src/main/java/app/stylus/extension/chatgpt/patches/CustomFontPatch.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/stylus/patches/chatgpt/font/CustomFontPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/stylus/patches/chatgpt/font/CustomMonospaceFontPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/stylus/patches/chatgpt/font/FontHooks.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/stylus/patches/chatgpt/font/FontOptions.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/stylus/patches/chatgpt/font/FontResources.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/stylus/patches/chatgpt/shared/Constants.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-07"
+      "updated": "2026-11-21"
     },
     "hammadhassan94-ary-live": {
       "files": {
