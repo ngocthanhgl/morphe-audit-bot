@@ -1,0 +1,402 @@
+# ajstrick81/morphe-androidtv-patches — 2026-11-22
+
+Commit: de31b807bcef1ea7d03dd3d6ca5e5c0dae2bda68 | Status: WARN | crit:0 high:0 med:44
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/discoveryplus/ads/DplayStreamSelector.java:34 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/discoveryplus/ads/DplayStreamSelector.java:42 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/espn/ads/EspnAdBreakOverlayHelper.kt:260 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/espn/ads/EspnAdBreakOverlayHelper.kt:284 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/espn/ads/EspnAdBreakOverlayHelper.kt:287 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/espn/ads/EspnAdBreakOverlayHelper.kt:290 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/espn/ads/EspnAdBreakOverlayHelper.kt:313 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/espn/ads/EspnAdBreakOverlayHelper.kt:314 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/espn/ads/EspnAdBreakOverlayHelper.kt:346 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/espn/ads/EspnAdBreakOverlayHelper.kt:394 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/espn/ads/EspnAdBreakOverlayHelper.kt:396 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/espn/ads/EspnAdBreakOverlayHelper.kt:398 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/espn/ads/EspnAdBreakOverlayHelper.kt:731 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/ads/HboManifestFilter.java:159 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/ads/HboManifestFilter.java:167 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/ads/HboManifestFilter.java:171 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/ads/HboManifestFilter.java:232 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/ads/HboManifestFilter.java:236 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/ads/HboManifestFilter.java:279 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/ads/HboStreamSelector.java:60 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/ads/HboStreamSelector.java:68 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/speed/PlayerBridge.java:140 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/speed/PlayerBridge.java:183 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/speed/PlayerBridge.java:294 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/speed/PlayerBridge.java:296 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/hbomax/speed/PlayerBridge.java:365 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/pluto/ads/PlutoLiveSlateHelper.kt:242 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/pluto/ads/PlutoLiveSlateHelper.kt:243 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/pluto/ads/PlutoLiveSlateHelper.kt:244 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/pluto/ads/PlutoLiveSlateHelper.kt:258 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/tubi/ads/SkipAdsPatch.java:122 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/tubi/ads/SkipAdsPatch.java:127 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/gms/GmsCoreSupportPatch.java:122 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/gms/GmsCoreSupportPatch.java:135 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/gms/GmsCoreSupportPatch.java:153 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/gms/GmsCoreSupportPatch.java:160 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/gms/GmsCoreSupportPatch.java:184 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/gms/GmsCoreSupportPatch.java:192 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/gms/GmsCoreSupportPatch.java:196 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/gms/GmsCoreSupportPatch.java:201 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/gms/GmsCoreSupportPatch.java:231 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/gms/GmsCoreSupportPatch.java:243 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/gms/GmsCoreSupportPatch.java:247 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+<details>
+<summary>[medium] work-weekly/ajstrick81-morphe-androidtv-patches/extensions/extension/src/main/java/ajstrick81/morphe/extension/youtubetv/scripts/TvScripts.java:77 — [semgrep semgrep.morphe-reflection-hidden-call] reflection used to resolve a call (inspect what it hides)</summary>
+
+```
+requires login
+```
+
+</details>
+
+
+_weekly full-tree Semgrep scan_
