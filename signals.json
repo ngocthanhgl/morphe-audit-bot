@@ -3845,7 +3845,16 @@
           "hosts": [],
           "sources": [],
           "sinks": [],
-          "perms": [],
+          "perms": [
+            {
+              "v": "RECORD_AUDIO",
+              "d": "2026-11-28"
+            },
+            {
+              "v": "READ_PHONE_STATE",
+              "d": "2026-11-28"
+            }
+          ],
           "pinning": [],
           "sms": [],
           "spy": [],
@@ -4042,12 +4051,7 @@
           "hosts": [],
           "sources": [],
           "sinks": [],
-          "perms": [
-            {
-              "v": "CAMERA",
-              "d": "2026-10-13"
-            }
-          ],
+          "perms": [],
           "pinning": [],
           "sms": [],
           "spy": [],
@@ -12867,9 +12871,33 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/facebook/chats/CallRouteAnchors.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [
+            {
+              "v": "RECORD_AUDIO",
+              "d": "2026-11-28"
+            },
+            {
+              "v": "CAMERA",
+              "d": "2026-11-28"
+            },
+            {
+              "v": "READ_PHONE_STATE",
+              "d": "2026-11-28"
+            }
+          ],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-27"
+      "updated": "2026-11-28"
     },
     "commit-regrets-morphe-youtube-vr-patches": {
       "files": {
@@ -17193,12 +17221,7 @@
           "staged": []
         },
         "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/settings/preference/TikTokPreferenceFragment.java": {
-          "hosts": [
-            {
-              "v": "https://ko-fi.com",
-              "d": "2026-10-13"
-            }
-          ],
+          "hosts": [],
           "sources": [
             {
               "v": "Location",
@@ -17528,12 +17551,7 @@
           "pinning": [],
           "sms": [],
           "spy": [],
-          "keylog": [
-            {
-              "v": "TextWatcher",
-              "d": "2026-10-13"
-            }
-          ],
+          "keylog": [],
           "staged": []
         },
         "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/translation/NativeDmTranslation.java": {
@@ -19934,7 +19952,12 @@
         },
         "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/interaction/AccountFacts.java": {
           "hosts": [],
-          "sources": [],
+          "sources": [
+            {
+              "v": "Clipboard",
+              "d": "2026-11-28"
+            }
+          ],
           "sinks": [],
           "perms": [],
           "pinning": [],
@@ -22511,6 +22534,30 @@
             {
               "v": "https://www.tiktok.com",
               "d": "2026-10-27"
+            },
+            {
+              "v": "https://www.instagram.com",
+              "d": "2026-11-28"
+            },
+            {
+              "v": "https://www.snapchat.com",
+              "d": "2026-11-28"
+            },
+            {
+              "v": "https://x.com",
+              "d": "2026-11-28"
+            },
+            {
+              "v": "https://www.twitch.tv",
+              "d": "2026-11-28"
+            },
+            {
+              "v": "https://www.threads.com",
+              "d": "2026-11-28"
+            },
+            {
+              "v": "https://www.facebook.com",
+              "d": "2026-11-28"
             }
           ],
           "sources": [],
@@ -26970,9 +27017,58 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/feed/Notices.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Location",
+              "d": "2026-11-28"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/profile/CustomBadge.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/profile/PrivateLists.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/tiktok/src/main/java/app/morphe/extension/tiktok/settings/preference/CustomBadgePreference.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-27"
+      "updated": "2026-11-28"
     },
     "sysadmindoc-hushpinterest": {
       "files": {
@@ -37976,12 +38072,7 @@
               "d": "2026-10-14"
             }
           ],
-          "sources": [
-            {
-              "v": "Location",
-              "d": "2026-10-13"
-            }
-          ],
+          "sources": [],
           "sinks": [
             {
               "v": "Socket",
@@ -38001,28 +38092,9 @@
           "staged": []
         },
         "extensions/extension/src/main/java/org/ungoogled/ui/Steer.java": {
-          "hosts": [
-            {
-              "v": "https://brouter.de",
-              "d": "2026-10-13"
-            }
-          ],
-          "sources": [
-            {
-              "v": "Location",
-              "d": "2026-10-13"
-            }
-          ],
-          "sinks": [
-            {
-              "v": "HttpURLConnection",
-              "d": "2026-10-13"
-            },
-            {
-              "v": "openConnection",
-              "d": "2026-10-13"
-            }
-          ],
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
           "perms": [],
           "pinning": [],
           "sms": [],
@@ -103172,9 +103244,63 @@
           ],
           "keylog": [],
           "staged": []
+        },
+        "extensions/samsungcontacts/src/main/java/org/ungoogled/samsungcontacts/Groups.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Contacts",
+              "d": "2026-11-28"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungcontacts/src/main/java/org/ungoogled/samsungcontacts/LocalAccount.java": {
+          "hosts": [],
+          "sources": [
+            {
+              "v": "Contacts",
+              "d": "2026-11-28"
+            }
+          ],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/samsungcontacts/src/main/java/org/ungoogled/samsungcontacts/WidgetUpdates.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/waze/src/main/java/org/ungoogled/waze/SpotifySession.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-27"
+      "updated": "2026-11-28"
     },
     "akshayykadam-pixelboard": {
       "files": {
@@ -105876,9 +106002,20 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/mightymich/morphe/patches/com.whatsapp/WhatsAppIconAssets.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-27"
+      "updated": "2026-11-28"
     },
     "rjbiermann-brave-waffle": {
       "files": {
@@ -108073,12 +108210,7 @@
           "pinning": [],
           "sms": [],
           "spy": [],
-          "keylog": [
-            {
-              "v": "TextWatcher",
-              "d": "2026-10-13"
-            }
-          ],
+          "keylog": [],
           "staged": []
         },
         "extensions/instagram/src/main/java/app/hushgram/extension/instagram/download/ProfilePictureViewer.java": {
@@ -108180,12 +108312,7 @@
               "d": "2026-10-31"
             }
           ],
-          "sources": [
-            {
-              "v": "Location",
-              "d": "2026-10-13"
-            }
-          ],
+          "sources": [],
           "sinks": [],
           "perms": [
             {
@@ -108196,12 +108323,7 @@
           "pinning": [],
           "sms": [],
           "spy": [],
-          "keylog": [
-            {
-              "v": "TextWatcher",
-              "d": "2026-10-13"
-            }
-          ],
+          "keylog": [],
           "staged": []
         },
         "extensions/instagram/src/main/java/app/hushgram/extension/instagram/settings/QuickSetupKeys.java": {
@@ -119028,9 +119150,108 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/direct/InboxTabs.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/misc/SharpReelsIcon.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/reels/DoubleTapLike.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/settings/GhostActions.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/stories/StoryAnswerSeen.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "extensions/instagram/src/main/java/app/hushgram/extension/instagram/stories/StorySeen.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/direct/ghost/BlockGhostActionsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/direct/inboxtabs/InboxTabsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/morphe/patches/instagram/stories/seen/StoryAnswerSeen.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-27"
+      "updated": "2026-11-28"
     },
     "totsiaw-proxma-patches": {
       "files": {
