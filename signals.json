@@ -176284,9 +176284,20 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "patches/src/main/kotlin/app/andrewliang/patches/line/hidevoomtab/HideVoomTabPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-26"
+      "updated": "2026-11-28"
     },
     "bigyank-morphe-patches-samsung": {
       "files": {
@@ -177418,9 +177429,53 @@
           "spy": [],
           "keylog": [],
           "staged": []
+        },
+        "extensions/extension/src/main/java/app/polishapps/extension/olx/FlutterAds.java": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/polishapps/patches/olx/ads/HideAdsPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/polishapps/patches/olx/shared/Stubs.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
+        },
+        "patches/src/main/kotlin/app/polishapps/patches/olx/telemetry/BlockTelemetryPatch.kt": {
+          "hosts": [],
+          "sources": [],
+          "sinks": [],
+          "perms": [],
+          "pinning": [],
+          "sms": [],
+          "spy": [],
+          "keylog": [],
+          "staged": []
         }
       },
-      "updated": "2026-11-27"
+      "updated": "2026-11-28"
     },
     "riky-dev-morphe-patches": {
       "files": {
@@ -210425,7 +210480,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-27"
+      "updated": "2026-11-28"
     },
     "hammadhassan94-ary-live": {
       "files": {
@@ -263665,7 +263720,7 @@
           "staged": []
         }
       },
-      "updated": "2026-11-24"
+      "updated": "2026-11-28"
     },
     "spookyexe-morphe-patches": {
       "files": {
